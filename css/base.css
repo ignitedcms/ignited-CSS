@@ -174,7 +174,10 @@ ol {
   .col,
   [class*=" col-"],
   [class^=col-] {
-    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
@@ -186,6 +189,14 @@ ol {
 | Utility classes
 |---------------------------------------------------------------
 */
+.bg-primary {
+  background-color: #13b11b;
+}
+
+.no-margin {
+  margin: 0;
+}
+
 .pull-right {
   float: right;
 }
