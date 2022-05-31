@@ -12,21 +12,28 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 400;
+    // font-weight: 200;
     font-family: $font; 
+    color: #333333;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
     box-sizing: border-box;
     margin: 0;
-    background-color: $background;
+    // background-color: $background;
     padding: 0
 }
 
 body {
     font-size: $font-size;
     font-family: $font;
+    color: $font-color ;
     line-height: $line-height;
     letter-spacing: .01em;
 }

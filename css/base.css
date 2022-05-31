@@ -9,33 +9,40 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
-  font-family: sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #333333;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  background-color: #F7FAFC;
   padding: 0;
 }
 
 body {
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #666666;
   line-height: 25px;
   letter-spacing: .01em;
 }
 
 a {
-  color: #7858d8;
+  color: #d8c758;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
 }
 
 a:hover {
-  color: #7858d8;
+  color: #d8c758;
 }
 
 /*
@@ -45,7 +52,7 @@ a:hover {
 */
 .container {
   position: relative;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -190,7 +197,7 @@ ol {
 |---------------------------------------------------------------
 */
 .bg-primary {
-  background-color: #7858d8;
+  background-color: #d8c758;
   color: #ffffff;
 }
 
