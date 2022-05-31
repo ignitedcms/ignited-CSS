@@ -29,13 +29,13 @@ body {
 }
 
 a {
-  color: #13b11b;
+  color: #7858d8;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
 }
 
 a:hover {
-  color: #13b11b;
+  color: #7858d8;
 }
 
 /*
@@ -190,7 +190,8 @@ ol {
 |---------------------------------------------------------------
 */
 .bg-primary {
-  background-color: #13b11b;
+  background-color: #7858d8;
+  color: #ffffff;
 }
 
 .no-margin {
