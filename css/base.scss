@@ -152,7 +152,7 @@ ol {
     text-align: left
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:$tablet) {
 
     .col,
     [class*=" col-"],
@@ -233,13 +233,13 @@ ol {
     width: 100%
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:$mobile) {
     .hide-phone {
         display: none
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:$tablet) {
     .hide-tablet {
         display: none
     }

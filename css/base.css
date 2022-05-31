@@ -177,7 +177,7 @@ ol {
   text-align: left;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .col,
   [class*=" col-"],
   [class^=col-] {
@@ -279,13 +279,13 @@ ol {
   width: 100%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .hide-phone {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .hide-tablet {
     display: none;
   }
