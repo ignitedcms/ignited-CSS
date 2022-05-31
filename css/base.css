@@ -24,6 +24,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
+  background-color: #F7FAFC;
   padding: 0;
 }
 
@@ -193,12 +194,32 @@ ol {
 
 /*
 |---------------------------------------------------------------
+| Panels
+|---------------------------------------------------------------
+*/
+.panel {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/*
+|---------------------------------------------------------------
 | Utility classes
 |---------------------------------------------------------------
 */
 .bg-primary {
   background-color: #d8c758;
   color: #ffffff;
+}
+
+.drop-shadow {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.br {
+  border-radius: 5px;
 }
 
 .no-margin {
