@@ -24,7 +24,6 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  background-color: #F7FAFC;
   padding: 0;
 }
 
@@ -34,6 +33,10 @@ body {
   color: #666666;
   line-height: 25px;
   letter-spacing: .01em;
+}
+
+p {
+  margin-top: 10px;
 }
 
 a {
@@ -200,7 +203,8 @@ ol {
 .panel {
   position: relative;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px;
+  border: 1px solid #cccccc;
 }
 
 /*
