@@ -45,4 +45,9 @@
   -ms-flex-direction: row;
   flex-direction: row;
 }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #cccccc;
+}
 /*# sourceMappingURL=forms.css.map */

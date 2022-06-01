@@ -31,4 +31,40 @@
   color: #666666;
   border: 1px solid #ccc;
 }
+
+/*
+    |---------------------------------------------------------------
+    | Button groups
+    |---------------------------------------------------------------
+    */
+.btn-group button {
+  border-radius: 0;
+  border: 1px solid #ccc;
+  /* Green border */
+  cursor: pointer;
+  float: left;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button.btn {
+  border-radius: 0px;
+}
+
+.btn-group button.btn:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.btn-group button.btn:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none;
+}
 /*# sourceMappingURL=buttons.css.map */
