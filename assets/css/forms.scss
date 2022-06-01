@@ -4,7 +4,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     width: 100%;
-    padding: .175rem .75rem;
+    padding: .275rem .85rem;
     border-radius: $border-radius;
     font-family: inherit;
     font-size: 1em;
@@ -24,7 +24,7 @@
     background-color: #fff;
     border-color: $form-focus-color;
     outline: 0;
-    box-shadow: 0 0 0 0.3rem lighten($form-focus-color, 40);
+    box-shadow: 0 0 0 0.3rem lighten($form-focus-color, 25);
   }
 
   .form-control:disabled {

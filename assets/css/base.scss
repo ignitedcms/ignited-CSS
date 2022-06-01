@@ -9,7 +9,7 @@
 html {
     box-sizing: border-box;
     margin: 0;
-    background-color: $background;
+    // background-color: $background;
     padding: 0
 }
 
@@ -26,12 +26,12 @@ p{
 }
 
 a {
-    color: $primary;
+    color: $link-color;
     transition: all .1s ease
 }
 
 a:hover {
-    color: $primary;
+    color: $link-color;
 }
 
 /*
@@ -189,6 +189,13 @@ ol {
 .no-margin{
     margin: 0;
 }
+
+.img-responsive
+{
+    max-width: 100%;
+    height: auto;
+}
+
 
 .pull-right {
     float: right

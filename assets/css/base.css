@@ -9,7 +9,6 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  background-color: #F7FAFC;
   padding: 0;
 }
 
@@ -26,13 +25,13 @@ p {
 }
 
 a {
-  color: #c73b4d;
+  color: #5cbef7;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
 }
 
 a:hover {
-  color: #c73b4d;
+  color: #5cbef7;
 }
 
 /*
@@ -214,6 +213,11 @@ ol {
 
 .no-margin {
   margin: 0;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }
 
 .pull-right {
