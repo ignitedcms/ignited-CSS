@@ -6,6 +6,7 @@
   min-width: 200px;
   min-height: 100px;
   border: 1px solid #ccc;
+  z-index: 1;
 }
 
 .dropdown-item {
