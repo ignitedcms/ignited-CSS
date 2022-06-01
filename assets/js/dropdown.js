@@ -10,7 +10,7 @@
 Vue.component('drop-down',{
     template: 
     `
-    <button class="btn btn-white drop-shadow" v-on:click="show =!show" v-click-outside="away">Click me {{show}}
+    <button class="btn btn-white drop-shadow" v-on:click="show =!show" v-click-outside="away">Click me
         <div v-if="show" class="dropdown br drop-shadow fade-in-bottom">
             <slot></slot> 
         </div>
