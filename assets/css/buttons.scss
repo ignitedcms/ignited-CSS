@@ -19,7 +19,8 @@
     cursor: pointer;
     border-radius: $border-radius;
     transition: all 0.5s;
-
+    user-select: none;
+    
     &-primary {
         background-color: $primary;
     }

@@ -1,0 +1,22 @@
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 300px;
+  min-height: 200px;
+}
+
+.dropdown-item {
+  padding: 15px;
+}
+
+.dropdown-item a {
+  text-decoration: none;
+  color: #666666;
+}
+
+.dropdown-item:hover {
+  background-color: red;
+}
+/*# sourceMappingURL=drop-downs.css.map */
