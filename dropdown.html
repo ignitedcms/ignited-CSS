@@ -14,7 +14,7 @@
 
     <!-- vue 2 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-
+    <script src="https://cdn.rawgit.com/simplesmiler/vue-clickaway/2.1.0/dist/vue-clickaway.js"></script>
 </head>
 
 <body>
@@ -23,8 +23,8 @@
             <div class="col">
                 <h3>Dropdowns</h3>
                 <div class="form-group">
-                    <div class="btn btn-white drop-shadow" v-on:click="show =!show">Click me
-                        <div v-if="show" class="dropdown br drop-shadow" >
+                    <button class="btn btn-white drop-shadow" v-on:click="show =!show" v-on-clickaway="away">Click me
+                        <div v-if="show" class="dropdown br drop-shadow fade-in-bottom" >
                             <div class="row">
                                 <div class="col no-margin">
                                     <div class="dropdown-item">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -64,9 +64,16 @@
     <script>
         var app = new Vue({
             el: '#app',
+            mixins: [VueClickaway.mixin],
             data: {
                 message: 'Hello',
                 show: false,
+            },
+            methods:{
+                away:function()
+                {
+                    this.show = false;
+                }
             }
         })
     </script>
