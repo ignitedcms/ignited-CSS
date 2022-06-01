@@ -3,7 +3,7 @@
   top: 50px;
   left: 0;
   background-color: #ffffff;
-  min-width: 300px;
+  min-width: 200px;
   min-height: 100px;
   border: 1px solid #ccc;
 }
@@ -20,10 +20,6 @@
 }
 
 .dropdown-item:hover {
-  background-color: #c73b4d;
-}
-
-.dropdown-item:hover a {
-  color: #ffffff;
+  background-color: #f3f3f3;
 }
 /*# sourceMappingURL=drop-downs.css.map */
