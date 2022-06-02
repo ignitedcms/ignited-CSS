@@ -20,7 +20,7 @@
     border-radius: $border-radius;
     transition: all 0.5s;
     user-select: none;
-    
+
     &-primary {
         background-color: $primary;
     }
@@ -58,17 +58,34 @@
 }
 
 .btn-group button.btn {
-    border-radius:0px;
+    border-radius: 0px;
 }
+
 .btn-group button.btn:first-child {
-    border-radius:6px 0 0 6px;
+    border-radius: 6px 0 0 6px;
 }
 
 .btn-group button.btn:last-child {
-    border-radius:0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
 }
 
 
 .btn-group button:not(:last-child) {
     border-right: none;
+}
+
+/*
+|---------------------------------------------------------------
+| Button utility classes
+|---------------------------------------------------------------
+*/
+.rm-btn-styles {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: left;
 }
