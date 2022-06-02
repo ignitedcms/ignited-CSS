@@ -6,14 +6,14 @@
 | Use slots to repeat child components
 | Use props to pass in data MUST use kebab case eg postTitle => post-title 
 |---------------------------------------------------------------
-|
+| https://learnvue.co/2019/12/building-reusable-components-in-vuejs-tabs/#final-reusable-component-files
 |
 */
 Vue.component('tabs',{
     template: 
     `
         <div>
-            <slot></slot> 
+             <slot></slot> 
         </div>
     `,
     data:function(){
@@ -29,20 +29,25 @@ Vue.component('tabItem',{
     template: 
     `
     <div>
-        <div class="bg-primary"> {{tabid}} </div>
-        <button class="rm-btn-styles tab-header" v-on:click="tabid = id">{{title}}</button>
-        <div v-if="tabid ==id">{{title}}</div>
+  {{tabs}} {{selectedTab}}
+  <div v-on:click="hey(id)">xxx</div>
+  <slot></slot>
     </div>
     `,
     data:function(){
 
         return{
-            tabid : 1
+            selectedTab:0,
+            tabs:[]
         }
     },
+    /*must use created*/
+    created(){
+        this.tabs = this.$children 
+    },
     methods:{
-        testing: function () {
-            this.tabid = 3;
+        hey: function (x) {
+            this.selectedTab = x
         },
     } 
 });
