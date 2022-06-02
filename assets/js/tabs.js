@@ -1,7 +1,7 @@
 /*
 |---------------------------------------------------------------
-| Dropdowns 
-| 
+| Tabs
+|
 | Components only data must be passed as a function
 | Use slots to repeat child components
 | Use props to pass in data MUST use kebab case eg postTitle => post-title 
@@ -9,47 +9,42 @@
 |
 |
 */
-Vue.component('drop-down',{
+Vue.component('tabs',{
     template: 
     `
-    <button class="btn btn-white drop-shadow" v-on:click="show =!show" v-click-outside="away">Click me
-        <div v-if="show" class="dropdown br drop-shadow fade-in-bottom">
+        <div>
             <slot></slot> 
         </div>
-    </button>
     `,
     data:function(){
 
         return{
-            message: 'Hello',
-            show: false,
+            message: 'tabs',
+        }
+    }
+});
+
+Vue.component('tabItem',{
+    props: ['id','title'],
+    template: 
+    `
+    <div>
+        <div class="bg-primary"> {{tabid}} </div>
+        <button class="rm-btn-styles tab-header" v-on:click="tabid = id">{{title}}</button>
+        <div v-if="tabid ==id">{{title}}</div>
+    </div>
+    `,
+    data:function(){
+
+        return{
+            tabid : 1
         }
     },
     methods:{
-        away: function () {
-            this.show = false;
+        testing: function () {
+            this.tabid = 3;
         },
     } 
-});
-
-Vue.component('item',{
-    props: ['title','url'],
-    template: 
-    `
-    <div class="row">
-        <div class="col no-margin">
-            <div class="dropdown-item">
-                <a href="{{url}}" class="left">{{title}}</a>
-            </div>
-        </div>
-    </div>
-    `,
-    // data:function(){
-
-    //     return{
-
-    //     }
-    // }
 });
 
 /*
