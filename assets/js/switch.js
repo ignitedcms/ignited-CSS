@@ -14,6 +14,7 @@ Vue.component('switchIos',{
     template: 
     `
     <label class="form-switch">
+    {{show}}
     <input type="checkbox" v-model="show" />
     <i ></i> <div class="switch-text">{{title}}</div>
     </label>
