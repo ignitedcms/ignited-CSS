@@ -10,11 +10,14 @@
 |
 */
 Vue.component('modal',{
+    props:['button'],
     template: 
     `
     <div>
-        <modal-content v-on:send="sendMsg" v-if="show"></modal-content>
-        <button @click="show = true">show</button>
+        <modal-content v-on:send="sendMsg" v-if="show">
+          <slot></slot>
+        </modal-content>
+        <button @click="show = true">{{button}}</button>
     </div>
     `,
     data:function(){
@@ -35,7 +38,7 @@ Vue.component('modal-content',{
     template: 
     `
     <div>
-    modal content
+    <slot></slot>
     <p @click="click">close</p>
     </div>
     `,
