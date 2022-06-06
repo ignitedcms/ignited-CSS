@@ -10,14 +10,14 @@
 |
 */
 Vue.component('modal',{
-    props:['button'],
+    props:['button-title'],
     template: 
     `
     <div>
         <modal-content v-on:send="sendMsg" v-if="show">
           <slot></slot>
         </modal-content>
-        <button @click="show = true">{{button}}</button>
+        <button @click="show = true">{{buttonTitle}}</button>
     </div>
     `,
     data:function(){
