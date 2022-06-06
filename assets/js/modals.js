@@ -10,12 +10,11 @@
 |
 */
 Vue.component('modal',{
-    props:['title'],
     template: 
     `
     <div>
-        {{message}}
-        <modal-button v-on:send="sendText"></modal-button>
+        <modal-content v-on:send="sendText" v-if="show"></modal-content>
+        <button @click="show = true">show</button>
     </div>
     `,
     data:function(){
@@ -27,18 +26,18 @@ Vue.component('modal',{
     },
     methods: {
       sendText(text) {
-        this.message = text
+        this.show = text
       }
     }
 });
 
-Vue.component('modal-button',{
+Vue.component('modal-content',{
     template: 
     `
-    <button @click="click">
-        iambutton
-        <modal-popup v-if="show"></modal-popup>
-    </button>
+    <div>
+    modal content
+    <p @click="click">close</p>
+    </div>
     `,
     data:function(){
 
@@ -49,24 +48,8 @@ Vue.component('modal-button',{
     },
     methods: {
       click() {
-        this.$emit('send', 'bye')
+        this.$emit('send', false)
       }
-    }
-});
-
-Vue.component('modal-popup',{
-    template: 
-    `
-    <div style="background-color:red;">
-      popup
-    </div>
-    `,
-    data:function(){
-
-        return{
-            message: 'Hello',
-            show: false,
-        }
     }
 });
 
