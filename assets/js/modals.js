@@ -39,7 +39,7 @@ Vue.component('modal-content',{
     `
     <div>
     <slot></slot>
-    <p @click="click">close</p>
+    <p @click="closing">close</p>
     </div>
     `,
     data:function(){
@@ -49,7 +49,7 @@ Vue.component('modal-content',{
         }
     },
     methods: {
-      click() {
+      closing() {
         this.$emit('send', false)
       }
     }
