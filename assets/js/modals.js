@@ -5,6 +5,9 @@
 | Components only data must be passed as a function
 | Use slots to repeat child components
 | Use props to pass in data MUST use kebab case eg postTitle => post-title 
+| 
+| https://www.youtube.com/watch?v=Et6pHpKOHys&list=PL3VM-unCzF8iRyPotjFsgy7EfuCITvr_3&index=10 
+| https://stackoverflow.com/questions/42156059/vuejs-2-send-event-from-component-to-parent 
 |---------------------------------------------------------------
 |
 |
