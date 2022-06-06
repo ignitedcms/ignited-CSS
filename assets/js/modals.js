@@ -14,7 +14,51 @@ Vue.component('modal',{
     template: 
     `
     <div>
-        iamamodal
+        {{message}}
+        <modal-button v-on:send="sendText"></modal-button>
+    </div>
+    `,
+    data:function(){
+
+        return{
+            message: 'Hello',
+            show: false,
+        }
+    },
+    methods: {
+      sendText(text) {
+        this.message = text
+      }
+    }
+});
+
+Vue.component('modal-button',{
+    template: 
+    `
+    <button @click="click">
+        iambutton
+        <modal-popup v-if="show"></modal-popup>
+    </button>
+    `,
+    data:function(){
+
+        return{
+            message: 'Hello',
+            show: false,
+        }
+    },
+    methods: {
+      click() {
+        this.$emit('send', 'bye')
+      }
+    }
+});
+
+Vue.component('modal-popup',{
+    template: 
+    `
+    <div style="background-color:red;">
+      popup
     </div>
     `,
     data:function(){
@@ -25,8 +69,6 @@ Vue.component('modal',{
         }
     }
 });
-
-
 
 /*
 |---------------------------------------------------------------
