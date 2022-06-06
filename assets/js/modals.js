@@ -13,7 +13,7 @@ Vue.component('modal',{
     template: 
     `
     <div>
-        <modal-content v-on:send="sendText" v-if="show"></modal-content>
+        <modal-content v-on:send="sendMsg" v-if="show"></modal-content>
         <button @click="show = true">show</button>
     </div>
     `,
@@ -25,8 +25,8 @@ Vue.component('modal',{
         }
     },
     methods: {
-      sendText(text) {
-        this.show = text
+      sendMsg(msg) {
+        this.show = msg
       }
     }
 });
@@ -42,8 +42,7 @@ Vue.component('modal-content',{
     data:function(){
 
         return{
-            message: 'Hello',
-            show: false,
+          //nothing
         }
     },
     methods: {
