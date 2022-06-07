@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA;;;;;EAKE;AAEF,AAAA,UAAU,CAAA;EACN,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "accordions.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "accordions.css"
+}
