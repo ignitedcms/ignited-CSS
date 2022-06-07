@@ -13,45 +13,38 @@ Vue.component('tabs',{
     template: 
     `
         <div>
+        <li v-for='(tab, index) in tabs'>
+         {{ tab.title }}
+        </li>
              <slot></slot> 
         </div>
     `,
     data:function(){
 
         return{
-            message: 'tabs',
+          selectedIndex: 0,
+          tabs: []        
         }
-    }
+    },
+    created () {
+      this.tabs = this.$children
+  	}
 });
 
 Vue.component('tab-item',{
     props: ['title'],
     template: 
     `
-    <div>
-      <div class="header" v-on:click="set_active">
-        {{title}}
-      </div>
-      <div v-if="is_active" class="content">
-        <slot></slot>
-      </div>
+    <div class='tab' v-show='is_active'>
+      <slot></slot>
     </div>
     `,
     data:function(){
 
         return{
-          is_active:false
+          is_active:true
         }
-    },
-    /*must use created*/
-    mounted(){
-        this.tabs = this.$children
-    },
-    methods:{
-        set_active: function () {
-            this.is_active = ! this.is_active
-        },
-    } 
+    }
 });
 
 /*
