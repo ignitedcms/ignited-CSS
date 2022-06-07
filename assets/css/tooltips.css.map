@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA;;;;;;;EAOE;AAEF,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,KAAK;CAC1B",
+    "sources": [
+        "tooltips.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "tooltips.css"
+}
