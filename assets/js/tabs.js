@@ -32,7 +32,7 @@ Vue.component('tabs', {
     this.tabs = this.$children
   },
   mounted() {
-    this.selectTab(0)
+     this.selectTab(0)
   },
   methods: {
     selectTab(i) {
