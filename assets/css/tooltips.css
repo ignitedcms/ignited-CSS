@@ -7,6 +7,28 @@
 |
 */
 .tooltip {
-  background-color: green;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 200px;
+  padding: 10px;
+  top: 20px;
+  left: -10px;
+  z-index: 1;
+}
+
+.tooltip-dark {
+  background-color: #292F3E;
+  border: 1px solid #292F3E;
+  color: white;
+}
+
+.tooltip-rel {
+  position: relative;
+}
+
+.tooltip-highlight {
+  background-color: #c73b4d;
+  color: #fff;
 }
 /*# sourceMappingURL=tooltips.css.map */

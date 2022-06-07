@@ -10,5 +10,29 @@
 */
 
 .tooltip{
-    background-color: green;
+
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 200px;
+    padding:10px;
+    top:20px;
+    left:-10px;
+    z-index: 1;
+
+    &-dark{
+        background-color: $tertiary;
+        border: 1px solid $tertiary;
+        color:white;
+    }
+}
+
+.tooltip-rel{
+    position: relative;
+}
+
+.tooltip-highlight{
+    background-color: $primary;
+    color: #fff;
+
 }

@@ -12,8 +12,9 @@
 Vue.component('tooltip',{
     template: 
     `
-    <button class="btn btn-white drop-shadow" v-on:click="show =!show" v-click-outside="away">Click me
-        <div v-if="show" class="dropdown br drop-shadow fade-in-bottom">
+    <button class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
+     <span class="tooltip-highlight"> Click me </span>
+        <div v-if="show" class="tooltip   br drop-shadow fade-in-bottom">
             <slot></slot> 
         </div>
     </button>
@@ -32,25 +33,6 @@ Vue.component('tooltip',{
     } 
 });
 
-Vue.component('item',{
-    props: ['title','url'],
-    template: 
-    `
-    <div class="row">
-        <div class="col no-margin">
-            <div class="dropdown-item">
-                <a href="{{url}}" class="left">{{title}}</a>
-            </div>
-        </div>
-    </div>
-    `,
-    // data:function(){
-
-    //     return{
-
-    //     }
-    // }
-});
 
 /*
 |---------------------------------------------------------------
