@@ -53,4 +53,14 @@
     width: 100%;
   }
 }
+
+/*
+  |---------------------------------------------------------------
+  | remove later testing components
+  |---------------------------------------------------------------
+  |
+  */
+.tab__selected {
+  background-color: red;
+}
 /*# sourceMappingURL=tabs.css.map */
