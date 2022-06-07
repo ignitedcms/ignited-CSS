@@ -14,7 +14,7 @@ Vue.component('tooltip',{
     `
     <button class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
      <span class="tooltip-highlight"> Click me </span>
-        <div v-if="show" class="tooltip   br drop-shadow fade-in-bottom">
+        <div v-if="show" class="tooltip   br drop-shadow fade-in">
             <slot></slot> 
         </div>
     </button>
