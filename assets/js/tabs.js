@@ -24,30 +24,32 @@ Vue.component('tabs',{
     }
 });
 
-Vue.component('tabItem',{
-    props: ['id','title'],
+Vue.component('tab-item',{
+    props: ['title'],
     template: 
     `
     <div>
-  {{tabs}} {{selectedTab}}
-  <div v-on:click="hey(id)">xxx</div>
-  <slot></slot>
+      <div class="header" v-on:click="set_active">
+        {{title}}
+      </div>
+      <div v-if="is_active" class="content">
+        <slot></slot>
+      </div>
     </div>
     `,
     data:function(){
 
         return{
-            selectedTab:0,
-            tabs:[]
+          is_active:false
         }
     },
     /*must use created*/
-    created(){
-        this.tabs = this.$children 
+    mounted(){
+        this.tabs = this.$children
     },
     methods:{
-        hey: function (x) {
-            this.selectedTab = x
+        set_active: function () {
+            this.is_active = ! this.is_active
         },
     } 
 });
