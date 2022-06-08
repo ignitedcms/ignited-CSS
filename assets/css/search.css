@@ -15,6 +15,7 @@
   padding: 15px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .search-item a {

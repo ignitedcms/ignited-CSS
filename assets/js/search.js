@@ -1,6 +1,6 @@
 /*
 |---------------------------------------------------------------
-| Dropdowns 
+| Search dropdowns 
 | 
 | Components only data must be passed as a function
 | Use slots to repeat child components
@@ -13,15 +13,11 @@ Vue.component('search',{
   template: 
   `
   <div>
-  <div class="form-group">
     <input type="text" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
     <div class="small">Some message goes here</div>
     <div v-if="show" class="search br drop-shadow fade-in">
           <slot></slot> 
       </div>
-  </div> 
-
-  
   </div>
   `,
   data:function(){
