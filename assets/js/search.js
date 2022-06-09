@@ -15,8 +15,8 @@ Vue.component('search',{
   <div>
     <input type="text" v-model="message" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
     <div v-if="show" class="search br drop-shadow fade-in">
-      <div v-for='(tab, index) in searches' @click="my_select(tab.val)" class="search-item">
-        {{tab.val}}
+      <div v-for='(search, index) in searches' @click="my_select(search.val)" class="search-item">
+        {{search.val}}
       </div>
     </div>
     <slot/>
