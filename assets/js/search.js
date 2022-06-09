@@ -13,11 +13,13 @@ Vue.component('search',{
   template: 
   `
   <div>
-    <input type="text" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
-    <div class="small">Some message goes here</div>
+    <input type="text" v-model="message" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
     <div v-if="show" class="search br drop-shadow fade-in">
-          <slot></slot> 
+      <div v-for='(tab, index) in searches' @click="my_select(tab.val)" class="search-item">
+        {{tab.val}}
       </div>
+    </div>
+    <slot/>
   </div>
   `,
   data:function(){
@@ -25,34 +27,38 @@ Vue.component('search',{
       return{
           message: 'Hello',
           show: false,
+          searches: []
       }
+  },
+  mounted() {
+    this.searches = this.$children
   },
   methods:{
       away: function () {
           this.show = false;
       },
+      my_select(str)
+      {
+        this.message = str;
+      }
   } 
 });
 
-Vue.component('item',{
-  props: ['value'],
+Vue.component('search-item', {
+  props:['val'],
   template: 
-  `
-  <div class="row">
-      <div class="col no-margin">
-          <div class="search-item">
-            {{value}}
-          </div>
-      </div>
-  </div>
-  `,
-  // data:function(){
+    `
+    `,
+  data: function () {
 
-  //     return{
-
-  //     }
-  // }
+    return {
+    //nothing
+    }
+  }
 });
+
+
+
 
 /*
 |---------------------------------------------------------------
