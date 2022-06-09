@@ -5,13 +5,14 @@
     position: absolute;
     font-family: inherit;
     font-size: inherit;
-    top:50px;
+    top:40px;
     left:0;
     background-color: #ffffff;
     width: 100%;
-    min-height: 100px;
+    height: 150px;
     border: 1px solid #ccc;
     z-index: 1;
+    overflow: auto;
     &-item{
         padding:15px;
         transition: all 0.5s;

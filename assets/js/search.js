@@ -25,7 +25,7 @@ Vue.component('search',{
   data:function(){
 
       return{
-          message: 'Hello',
+          message: '',
           show: false,
           searches: []
       }
