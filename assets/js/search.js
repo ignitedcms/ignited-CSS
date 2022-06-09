@@ -15,8 +15,12 @@ Vue.component('search',{
   <div>
     <input type="text" v-model="message" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
     <div v-if="show" class="search br drop-shadow fade-in">
-      <div v-for='(search, index) in searches' @click="my_select(search.val)" class="search-item">
-        {{search.val}}
+      <div v-for='(search, index) in searches' @click="my_select(search.val)">
+
+        <div v-show="searchFunc(search.val)" class="search-item">
+          {{search.val}}
+        </div>
+
       </div>
     </div>
     <slot/>
@@ -40,7 +44,14 @@ Vue.component('search',{
       my_select(str)
       {
         this.message = str;
-      }
+      },
+      searchFunc(param) {
+        if (param.toLowerCase().includes(this.message.toLowerCase())) {
+          return true;
+        } else {
+          return false;
+        }
+      },
   } 
 });
 
