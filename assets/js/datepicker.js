@@ -41,9 +41,15 @@ Vue.component('datepicker', {
       </table>
 
       <table>
-      <td v-for="i in this.arr" @click="getIndex(i)">
-        {{i}} 
-      </td>
+      <div v-for="i in this.arr" @click="getIndex(i)" class="pull-left">
+        {{i.type}}
+        <div v-if="i.type === 'tr'">
+            <div class="clearfix"></div>
+        </div>
+        <div v-else> 
+        {{i.value}} 
+        </div>
+      </div>
         </table>
 </div>
     `,
@@ -75,7 +81,7 @@ Vue.component('datepicker', {
     methods: {
         getIndex(str)
         {
-            alert(str)
+            alert(str.stamp)
         },
         next() {
             this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;
@@ -131,8 +137,11 @@ Vue.component('datepicker', {
                         row.appendChild(cell);
                     
                         //testing
-                        this.arr.push('-');
+                        // this.arr.push('-');
+                        let obj = { type: "td", value: "", stamp: "-", offset: j };
+                        this.arr.push(obj);
                         
+
                     } 
                     else if (date > daysInMonth) 
                     {
@@ -151,13 +160,23 @@ Vue.component('datepicker', {
                         
 
                         //testing
-                        this.arr.push(date.toString());
+                        // this.arr.push(date.toString());
+                        //don't forget to add one to the month!
+                        let newMonth = month + 1;
 
+                        // Basic usage of dateFormat refer to documentation
+                        let tmpStamp = year + "/" + newMonth + "/" + date;
+                        // let newStamp = dateFormat(tmpStamp, "yyyy/mm/dd");
+
+                        let obj = { type: "td", value: date, stamp: tmpStamp, offset: j };
+                        this.arr.push(obj);
 
                         date++;
                     }
                 }
 
+                let obj = { type: "tr", value: "null", stamp: "null" };
+                this.arr.push(obj);
                 tbl.appendChild(row); // appending each row into calendar body.
             }
         }
