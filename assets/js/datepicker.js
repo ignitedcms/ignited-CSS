@@ -68,6 +68,11 @@ Vue.component('datepicker', {
 
         <tbody id="calendar-body"></tbody>
       </table>
+
+      <div v-for="i in this.arr">
+        {{i}} 
+      </div>
+
 </div>
     `,
     data: function () {
@@ -91,6 +96,7 @@ Vue.component('datepicker', {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            arr:[],
             show: false,
         }
     },
@@ -114,6 +120,9 @@ Vue.component('datepicker', {
         },
 
         showCalendar(month, year) {
+
+            //testing reset array
+            this.arr = [];
 
             let firstDay = (new Date(year, month)).getDay();
             let daysInMonth = 32 - new Date(year, month, 32).getDate();
@@ -144,6 +153,10 @@ Vue.component('datepicker', {
                         let cellText = document.createTextNode("");
                         cell.appendChild(cellText);
                         row.appendChild(cell);
+                    
+                        //testing
+                        this.arr.push('-');
+                        
                     } 
                     else if (date > daysInMonth) 
                     {
@@ -159,6 +172,12 @@ Vue.component('datepicker', {
                         } // color today's date
                         cell.appendChild(cellText);
                         row.appendChild(cell);
+                        
+
+                        //testing
+                        this.arr.push(date.toString());
+
+
                         date++;
                     }
                 }
