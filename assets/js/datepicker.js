@@ -88,8 +88,8 @@ Vue.component('datepicker', {
 
         return {
             today: new Date(),
-            currentMonth: this.today.getMonth(),
-            currentYear: this.today.getFullYear(),
+            currentMonth: new Date().getMonth(),
+            currentYear: new Date().getFullYear(),
             months:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 
             show: false,
         }
@@ -99,13 +99,13 @@ Vue.component('datepicker', {
          {
             this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;
             this.currentMonth = (this.currentMonth + 1) % 12;
-            showCalendar(this.currentMonth, this.currentYear);
+            this.showCalendar(this.currentMonth, this.currentYear);
          },
 
          previous() {
             this.currentYear = (this.currentMonth === 0) ? this.currentYear - 1 : this.currentYear;
             this.currentMonth = (this.currentMonth === 0) ? 11 : this.currentMonth - 1;
-            showCalendar(this.currentMonth, this.currentYear);
+            this.showCalendar(this.currentMonth, this.currentYear);
         },
 
          jump() {
@@ -125,7 +125,7 @@ Vue.component('datepicker', {
             tbl.innerHTML = "";
         
             // filing data about month and in the page via DOM.
-            monthAndYear.innerHTML = months[month] + " " + year;
+            monthAndYear.innerHTML = this.months[month] + " " + year;
             selectYear.value = year;
             // selectMonth.value = month;
         
