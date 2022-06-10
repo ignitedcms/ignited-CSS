@@ -16,9 +16,13 @@ Vue.component('datepicker', {
       <input class="form-control" v-model="message" v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
       <div class="date-buttons-container">
-        <button id="previous" class="btn btn-white" @click="previous()">Prev</button>
+        <button  class="date-button" @click="previous()">
+            <i data-feather="chevron-left"></i>
+        </button>
         {{months[currentMonth]}} {{currentYear}}
-        <button id="next" class="btn btn-white" @click="next()">Next</button>
+        <button  class="date-button" @click="next()">
+            <i data-feather="chevron-right"></i>
+        </button>
       </div>
 
       <div v-for="i in this.arr" @click="getIndex(i)" >
