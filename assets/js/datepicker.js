@@ -86,12 +86,6 @@ Vue.component('datepicker', {
             let firstDay = (new Date(year, month)).getDay();
             let daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-
-            // filing data about month and in the page via DOM.
-            // monthAndYear.innerHTML = this.months[month] + " " + year;
-            // selectYear.value = year;
-            // selectMonth.value = month;
-
             // creating all cells
             let date = 1;
             for (let i = 0; i < 6; i++) 
@@ -112,7 +106,10 @@ Vue.component('datepicker', {
                     }
                     else 
                     {
-                        if (date === this.today.getDate() && year === this.today.getFullYear() && month === this.today.getMonth()) 
+                        if (date === this.today.getDate() 
+                            && year === this.today.getFullYear() 
+                            && month === this.today.getMonth()
+                            ) 
                         {
                             // cell.classList.add("bg-today");
                         } // color today's date
