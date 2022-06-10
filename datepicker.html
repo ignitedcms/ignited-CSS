@@ -19,59 +19,17 @@
 <body>
     <div class="container" id="app">
 
+
+
+
         <div class="row">
             <div class="col">
                 <h3>Datepicker</h3>
 
-                    
-                                <i data-feather="chevron-left" ></i>
+                <i data-feather="chevron-left"></i>
+
                 <div class="form-group">
-                    <datepicker>
-                        <div class="date-container drop-shadow bg-white mt">
-                            <div class="date-buttons-container">
-                              <div class="date-button" >
-                                <i data-feather="chevron-left" ></i>
-                              </div>
-                              <h5 class="text-center">2022</h5>
-                
-                              <div class="date-button">
-                                <i data-feather="chevron-right" ></i>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-12 mt">
-                                <div>
-                                  <div class="cal-day">SUN</div>
-                                  <div class="cal-day">MON</div>
-                                  <div class="cal-day">TUE</div>
-                                  <div class="cal-day">WED</div>
-                                  <div class="cal-day">THU</div>
-                                  <div class="cal-day">FRI</div>
-                                  <div class="cal-day">SAT</div>
-                                  <div class="cal">1</div>
-                                  <div class="cal">2</div>
-                                  <div class="cal">3</div>
-                                  <div class="cal">4</div>
-                                  <div class="cal">5</div>
-                                  <div class="cal">6</div>
-                                  <div class="cal">7</div>
-                                  <div class="clearfix"></div>
-                                  <div class="cal">9</div>
-                                  <div class="cal">10</div>
-                                  <div class="cal">11</div>
-                                  <div class="cal">12</div>
-                                  <div class="cal">13</div>
-                                  <div class="cal">14</div>
-                                  <div class="cal">15</div>
-                                  <div class="cal">16</div>
-                                  <div class="cal">17</div>
-                                  <div class="cal">18</div>
-                                  <div class="cal">19</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                    </datepicker>
+                    <datepicker></datepicker>
                 </div>
 
                 
@@ -82,8 +40,10 @@
     <!-- feather icons -->
     <script src="assets/js/feather.js"></script>
     <script src="assets/js/datepicker.js"></script>
-    <script>
-      feather.replace()
+      <script>
+      feather.replace({
+        class: "font-primary",
+      });
     </script>
 </body>
 
