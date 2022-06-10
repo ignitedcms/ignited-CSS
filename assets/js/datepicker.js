@@ -11,34 +11,12 @@
 */
 Vue.component('datepicker', {
     template: `
-    <div class="temp">
-    <div>
-        <button id="previous" class="button button-primary" @click="previous()">Previous</button>
-        <button id="next" class="button button-white" @click="next()">Next</button>
+<div class="temp">
+      <div>
+        <button id="previous" class="btn btn-white" @click="previous()">Prev</button>
+        <button id="next" class="btn btn-white" @click="next()">Next</button>
       </div>
-      <form>
-        <label for="year">year</label>
-        <select class="form-control" name="year" id="year" >
-          <option value="2019">2019</option>
-          <option value="2020">2020</option>
-          <option value="2021">2021</option>
-        </select>
-      </form>
-      <h3 id="monthAndYear"></h3>
-      <table id="calendar">
-        <thead>
-          <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-        </thead>
-        <tbody id="calendar-body"></tbody>
-      </table>
+      
 
       <div v-for="i in this.arr" @click="getIndex(i)" >
         <div v-if="i.type == 'tr'" class="clearfix">
@@ -51,19 +29,6 @@ Vue.component('datepicker', {
     `,
     data: function () {
 
-        /*
-        let today = new Date();
-        let currentMonth = today.getMonth();
-        let currentYear = today.getFullYear();
-        let selectYear = document.getElementById("year");
-        // let selectMonth = document.getElementById("month");
-
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        let monthAndYear = document.getElementById("monthAndYear");
-        showCalendar(currentMonth, currentYear);
-
-        */
 
         return {
             today: new Date(),
@@ -105,13 +70,9 @@ Vue.component('datepicker', {
             let firstDay = (new Date(year, month)).getDay();
             let daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-            let tbl = document.getElementById("calendar-body"); // body of the calendar
-
-            // clearing all previous cells
-            tbl.innerHTML = "";
 
             // filing data about month and in the page via DOM.
-            monthAndYear.innerHTML = this.months[month] + " " + year;
+            // monthAndYear.innerHTML = this.months[month] + " " + year;
             // selectYear.value = year;
             // selectMonth.value = month;
 
@@ -119,25 +80,15 @@ Vue.component('datepicker', {
             let date = 1;
             for (let i = 0; i < 6; i++) 
             {
-                // creates a table row
-                let row = document.createElement("tr");
 
                 //creating individual cells, filing them up with data.
                 for (let j = 0; j < 7; j++) 
                 {
                     if (i === 0 && j < firstDay) 
                     {
-                        let cell = document.createElement("td");
-                        let cellText = document.createTextNode("");
-                        cell.appendChild(cellText);
-                        row.appendChild(cell);
-                    
                         //testing
-                        // this.arr.push('-');
                         let obj = { type: "td", value: "-", stamp: "-", offset: j };
                         this.arr.push(obj);
-                        
-
                     } 
                     else if (date > daysInMonth) 
                     {
@@ -145,22 +96,15 @@ Vue.component('datepicker', {
                     }
                     else 
                     {
-                        let cell = document.createElement("td");
-                        let cellText = document.createTextNode(date);
                         if (date === this.today.getDate() && year === this.today.getFullYear() && month === this.today.getMonth()) 
                         {
-                            cell.classList.add("bg-today");
+                            // cell.classList.add("bg-today");
                         } // color today's date
-                        cell.appendChild(cellText);
-                        row.appendChild(cell);
                         
-
-                        //testing
-                        // this.arr.push(date.toString());
                         //don't forget to add one to the month!
                         let newMonth = month + 1;
 
-                        //Simple date conversion to make it valid eg 04
+                        //Simple date conversion to make it valid eg 2022-04-04
                         if (newMonth.toString().length < 2) 
                         {
                             aa = '0' + newMonth;
@@ -181,9 +125,6 @@ Vue.component('datepicker', {
                         // Basic usage of dateFormat refer to documentation
                         let tmpStamp = year + "-" + aa + "-" + bb;
 
-                        
-
-
 
                         let obj = { type: "td", value: date, stamp: tmpStamp, offset: j };
                         this.arr.push(obj);
@@ -194,7 +135,6 @@ Vue.component('datepicker', {
 
                 let obj = { type: "tr", value: "null", stamp: "null" };
                 this.arr.push(obj);
-                tbl.appendChild(row); // appending each row into calendar body.
             }
         }
     }
