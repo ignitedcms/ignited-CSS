@@ -4,7 +4,6 @@
 
 .date-container {
   max-width: 350px;
-  margin: 0 auto;
 }
 
 .date-buttons-container {
@@ -73,7 +72,6 @@
   position: relative;
   float: left;
   width: 14.2857142857%;
-  min-height: 40px;
   cursor: pointer;
 }
 
@@ -103,6 +101,6 @@
   position: relative;
   float: left;
   width: 14.2857142857%;
-  min-height: 70px;
+  min-height: 50px;
 }
 /*# sourceMappingURL=datepicker.css.map */

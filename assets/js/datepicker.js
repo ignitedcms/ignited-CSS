@@ -11,7 +11,7 @@
 */
 Vue.component('datepicker', {
     template: `
-<div class="temp">
+<div class="date-container">
 
         <input class="form-control" v-model="message">
       <div>
