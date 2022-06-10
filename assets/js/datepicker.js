@@ -12,6 +12,8 @@
 Vue.component('datepicker', {
     template: `
 <div class="temp">
+
+        <input class="form-control" v-model="message">
       <div>
         <button id="previous" class="btn btn-white" @click="previous()">Prev</button>
         <button id="next" class="btn btn-white" @click="next()">Next</button>
@@ -31,6 +33,7 @@ Vue.component('datepicker', {
 
 
         return {
+            message:'',
             today: new Date(),
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -42,7 +45,9 @@ Vue.component('datepicker', {
     methods: {
         getIndex(str)
         {
-            alert(str.stamp)
+            //This is where the full datestamp
+            //comes from
+            this.message = str.stamp
         },
         next() {
             this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;
@@ -125,6 +130,7 @@ Vue.component('datepicker', {
                         // Basic usage of dateFormat refer to documentation
                         let tmpStamp = year + "-" + aa + "-" + bb;
 
+                        //bind to v-model
 
                         let obj = { type: "td", value: date, stamp: tmpStamp, offset: j };
                         this.arr.push(obj);
