@@ -40,17 +40,13 @@ Vue.component('datepicker', {
         <tbody id="calendar-body"></tbody>
       </table>
 
-      <table>
-      <div v-for="i in this.arr" @click="getIndex(i)" class="pull-left">
-        {{i.type}}
-        <div v-if="i.type === 'tr'">
-            <div class="clearfix"></div>
+      <div v-for="i in this.arr" @click="getIndex(i)" >
+        <div v-if="i.type == 'tr'" class="clearfix">
         </div>
-        <div v-else> 
+        <div v-else class="pull-left cal cal-day"> 
         {{i.value}} 
         </div>
       </div>
-        </table>
 </div>
     `,
     data: function () {
@@ -138,7 +134,7 @@ Vue.component('datepicker', {
                     
                         //testing
                         // this.arr.push('-');
-                        let obj = { type: "td", value: "", stamp: "-", offset: j };
+                        let obj = { type: "td", value: "-", stamp: "-", offset: j };
                         this.arr.push(obj);
                         
 
