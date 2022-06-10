@@ -16,6 +16,7 @@ Vue.component('datepicker', {
         <input class="form-control" v-model="message">
       <div>
         <button id="previous" class="btn btn-white" @click="previous()">Prev</button>
+        {{months[currentMonth]}} {{currentYear}}
         <button id="next" class="btn btn-white" @click="next()">Next</button>
       </div>
       
@@ -31,7 +32,6 @@ Vue.component('datepicker', {
     `,
     data: function () {
 
-
         return {
             message:'',
             today: new Date(),
@@ -41,6 +41,9 @@ Vue.component('datepicker', {
             arr:[],
             show: false,
         }
+    },
+    created(){
+            this.showCalendar(this.currentMonth, this.currentYear)
     },
     methods: {
         getIndex(str)
