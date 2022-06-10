@@ -12,12 +12,13 @@
 Vue.component('datepicker',{
     template: 
     `
-    <button class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
-     <span class="tooltip-highlight"> Click me </span>
-        <div v-if="show" class="tooltip   br drop-shadow fade-in">
+    <div>
+    <input type="text" class="form-control" placeholder="testing dates" v-on:click="show =!show" v-click-outside="away">
+        <div v-if="show" class="fade-in">
             <slot></slot> 
         </div>
     </button>
+    </div>
     `,
     data:function(){
 
