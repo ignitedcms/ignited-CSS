@@ -126,7 +126,7 @@ Vue.component('datepicker', {
         
             // filing data about month and in the page via DOM.
             monthAndYear.innerHTML = this.months[month] + " " + year;
-            selectYear.value = year;
+            // selectYear.value = year;
             // selectMonth.value = month;
         
             // creating all cells
