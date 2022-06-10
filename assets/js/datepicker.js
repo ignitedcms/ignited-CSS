@@ -13,21 +13,22 @@ Vue.component('datepicker', {
     template: `
 <div class="date-container">
 
-        <input class="form-control" v-model="message">
+      <input class="form-control" v-model="message" readonly>
+      <div class="date-flyout">
       <div>
         <button id="previous" class="btn btn-white" @click="previous()">Prev</button>
         {{months[currentMonth]}} {{currentYear}}
         <button id="next" class="btn btn-white" @click="next()">Next</button>
       </div>
-      
 
       <div v-for="i in this.arr" @click="getIndex(i)" >
         <div v-if="i.type == 'tr'" class="clearfix">
         </div>
         <div v-else class="pull-left cal cal-day"> 
-        {{i.value}} 
+            {{i.value}} 
         </div>
       </div>
+    </div>
 </div>
     `,
     data: function () {
