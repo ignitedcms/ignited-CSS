@@ -160,9 +160,30 @@ Vue.component('datepicker', {
                         //don't forget to add one to the month!
                         let newMonth = month + 1;
 
+                        //Simple date conversion to make it valid eg 04
+                        if (newMonth.toString().length < 2) 
+                        {
+                            aa = '0' + newMonth;
+                        }
+                        else
+                        {
+                            aa = newMonth.toString();
+                        }
+                        if (date.toString().length < 2) 
+                        {
+                            bb = '0' + date.toString();
+                        }
+                        else
+                        {
+                            bb = date.toString();
+                        }
+
                         // Basic usage of dateFormat refer to documentation
-                        let tmpStamp = year + "/" + newMonth + "/" + date;
-                        // let newStamp = dateFormat(tmpStamp, "yyyy/mm/dd");
+                        let tmpStamp = year + "-" + aa + "-" + bb;
+
+                        
+
+
 
                         let obj = { type: "td", value: date, stamp: tmpStamp, offset: j };
                         this.arr.push(obj);
