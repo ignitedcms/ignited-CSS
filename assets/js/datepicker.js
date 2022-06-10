@@ -13,9 +13,9 @@ Vue.component('datepicker', {
     template: `
 <div class="date-container">
 
-      <input class="form-control" v-model="message" readonly>
-      <div class="date-flyout">
-      <div>
+      <input class="form-control" v-model="message" v-on:click="show =!show"  readonly>
+      <div class="date-flyout drop-shadow fade-in" v-show="show" >
+      <div class="date-buttons-container">
         <button id="previous" class="btn btn-white" @click="previous()">Prev</button>
         {{months[currentMonth]}} {{currentYear}}
         <button id="next" class="btn btn-white" @click="next()">Next</button>
@@ -47,6 +47,9 @@ Vue.component('datepicker', {
             this.showCalendar(this.currentMonth, this.currentYear)
     },
     methods: {
+        away: function () {
+            this.show = false;
+        },
         getIndex(str)
         {
             //This is where the full datestamp

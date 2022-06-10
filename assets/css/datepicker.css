@@ -8,11 +8,11 @@
 
 .date-flyout {
   position: absolute;
-  min-height: 410px;
+  min-height: 390px;
   min-width: 350px;
-  top: 40px;
+  top: 45px;
   left: 0;
-  padding: 30px;
+  padding: 15px;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 5px;
