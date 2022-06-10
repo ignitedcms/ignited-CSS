@@ -13,8 +13,8 @@ Vue.component('datepicker',{
     template: 
     `
     <div>
-    <input type="text" class="form-control" placeholder="testing dates" v-on:click="show =!show" v-click-outside="away">
-        <div v-if="show" class="fade-in">
+    <input type="text" class="form-control" placeholder="testing dates" v-on:click="show =!show" >
+        <div v-if="show" class="fade-in datepicker">
             <slot></slot> 
         </div>
     </button>

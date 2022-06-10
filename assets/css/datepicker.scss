@@ -1,5 +1,68 @@
 @import "variables";
 
-.datepicker{
-   background-color: blue; 
+.datepicker {
+    background-color: $background;
+}
+
+.date-container {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.date-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.date-button {
+    position: relative;
+    background-color: $tertiary;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #cccccc;
+}
+
+.cal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: gray;
+    position: relative;
+    float: left;
+    width: 14.2857142857%;
+    min-height: 40px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primary;
+        border-radius: 4px;
+        color: #ffffff;
+    }
+}
+
+.cal-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #222222;
+    position: relative;
+    float: left;
+    width: 14.2857142857%;
+    min-height: 70px;
+
 }
