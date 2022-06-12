@@ -29,7 +29,6 @@ Vue.component('switchIos',{
 });
 
 
-
 /*
 |---------------------------------------------------------------
 | Special directive for click outside
@@ -51,14 +50,3 @@ Vue.directive('click-outside', {
       document.body.removeEventListener('click', this.event)
     },
   });
-
-/*
-|---------------------------------------------------------------
-| Base entry for vue app
-|---------------------------------------------------------------
-|
-*/
-
-var app = new Vue({
-    el: '#app',
-})

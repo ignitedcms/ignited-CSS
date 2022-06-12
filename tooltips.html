@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 
-<body>
+<body style="height: 100vh;">
     <div class="container" id="app">
 
         <div class="row">
@@ -43,7 +43,19 @@
     </div>
 
     <script src="assets/js/toooltips.js"></script>
+    <script src="assets/js/click-outside.js"></script>
+    <script>
+        /*
+        |---------------------------------------------------------------
+        | Base entry for vue app
+        |---------------------------------------------------------------
+        |
+        */
 
+        var app = new Vue({
+            el: '#app',
+        })
+    </script>
 </body>
 
 </html>

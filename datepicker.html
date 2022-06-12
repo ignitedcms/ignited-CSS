@@ -35,14 +35,32 @@
         </div>
     </div>
 
-    <!-- feather icons -->
-    <script src="assets/js/feather.js"></script>
-    <script src="assets/js/datepicker.js"></script>
+        <!-- feather icons -->
+        <script src="assets/js/feather.js"></script>
+
+        <!-- Click out must go before all other scripts -->
+        <script src="assets/js/click-outside.js"></script>
+        <script src="assets/js/datepicker.js"></script>
+    
+        <script>
+            /*
+            |---------------------------------------------------------------
+            | Base entry for vue app
+            |---------------------------------------------------------------
+            |
+            |
+            */
+            var app = new Vue({
+                el: '#app',
+            })
+        </script>
+
       <script>
       feather.replace({
         class: "font-primary",
       });
     </script>
+
 </body>
 
 </html>

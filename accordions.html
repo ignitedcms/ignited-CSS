@@ -34,8 +34,23 @@
         </div>
     </div>
 
-    <script src="assets/js/accordions.js"></script>
-
+        <!-- Click out must go before all other scripts -->
+        <script src="assets/js/click-outside.js"></script>
+        <script src="assets/js/accordions.js"></script>
+    
+        <script>
+            /*
+            |---------------------------------------------------------------
+            | Base entry for vue app
+            |---------------------------------------------------------------
+            |
+            |
+            */
+    
+            var app = new Vue({
+                el: '#app',
+            })
+        </script>
 </body>
 
 </html>
