@@ -26,16 +26,18 @@ Vue.component('datepicker', {
             
         </div>
         <div class="date-days">
-            <div class="cal cal-day">Sun</div>
-            <div class="cal cal-day">Mon</div>
-            <div class="cal cal-day">Tue</div>
-            <div class="cal cal-day">Wed</div>
-            <div class="cal cal-day">Thu</div>
-            <div class="cal cal-day">Fri</div>
-            <div class="cal cal-day">Sat</div>
+            <div class="cal-no-hover cal-day">Sun</div>
+            <div class="cal-no-hover cal-day">Mon</div>
+            <div class="cal-no-hover cal-day">Tue</div>
+            <div class="cal-no-hover cal-day">Wed</div>
+            <div class="cal-no-hover cal-day">Thu</div>
+            <div class="cal-no-hover cal-day">Fri</div>
+            <div class="cal-no-hover cal-day">Sat</div>
         </div>
         <div v-for="i in this.arr" @click="getIndex(i)" >
             <div v-if="i.type == 'tr'" class="clearfix">
+            </div>
+            <div v-else-if="i.value == ''" class="cal-no-hover cal-day">
             </div>
             <button v-else class="rm-btn-styles pull-left cal cal-day"> 
                 {{i.value}} 
@@ -107,7 +109,7 @@ Vue.component('datepicker', {
                     if (i === 0 && j < firstDay) 
                     {
                         //testing
-                        let obj = { type: "td", value: "", stamp: "null" };
+                        let obj = { type: "td", value: "", stamp: "" };
                         this.arr.push(obj);
                     } 
                     else if (date > daysInMonth) 
@@ -157,7 +159,7 @@ Vue.component('datepicker', {
                     }
                 }
 
-                let obj = { type: "tr", value: "", stamp: "null" };
+                let obj = { type: "tr", value: "", stamp: "" };
                 this.arr.push(obj);
             }
         }
