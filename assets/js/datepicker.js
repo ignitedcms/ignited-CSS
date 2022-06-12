@@ -11,7 +11,7 @@
 */
 Vue.component('datepicker', {
     template: `
-<div class="date-container">
+<div class="date-container" @click.stop v-click-outside="away">
 
       <input class="form-control" v-model="message" v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
