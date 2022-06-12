@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,GAAG;CACxB",
+    "sources": [
+        "range-sliders.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "range-sliders.css"
+}
