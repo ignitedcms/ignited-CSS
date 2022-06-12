@@ -15,23 +15,32 @@ Vue.component('datepicker', {
 
       <input class="form-control" v-model="message" v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
-      <div class="date-buttons-container">
-        <button class="date-button rm-btn-styles" @click="previous()">
-            <i data-feather="chevron-left"></i>
-        </button>
-        {{months[currentMonth]}} {{currentYear}}
-        <button  class="date-button" @click="next()">
-            <i data-feather="chevron-right"></i>
-        </button>
-      </div>
-
-      <div v-for="i in this.arr" @click="getIndex(i)" >
-        <div v-if="i.type == 'tr'" class="clearfix">
+        <div class="date-buttons-container">
+            <button class="date-button rm-btn-styles" @click="previous()">
+                <i data-feather="chevron-left"></i>
+            </button>
+            {{months[currentMonth]}} {{currentYear}}
+            <button  class="date-button rm-btn-styles" @click="next()">
+                <i data-feather="chevron-right"></i>
+            </button>
+            
         </div>
-        <button v-else class="rm-btn-styles pull-left cal cal-day"> 
-            {{i.value}} 
-        </button>
-      </div>
+        <div class="date-days">
+            <div class="cal cal-day">Sun</div>
+            <div class="cal cal-day">Mon</div>
+            <div class="cal cal-day">Tue</div>
+            <div class="cal cal-day">Wed</div>
+            <div class="cal cal-day">Thu</div>
+            <div class="cal cal-day">Fri</div>
+            <div class="cal cal-day">Sat</div>
+        </div>
+        <div v-for="i in this.arr" @click="getIndex(i)" >
+            <div v-if="i.type == 'tr'" class="clearfix">
+            </div>
+            <button v-else class="rm-btn-styles pull-left cal cal-day"> 
+                {{i.value}} 
+            </button>
+        </div>
     </div>
 </div>
     `,
@@ -43,6 +52,7 @@ Vue.component('datepicker', {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
             arr:[],
             show: false,
         }
@@ -97,7 +107,7 @@ Vue.component('datepicker', {
                     if (i === 0 && j < firstDay) 
                     {
                         //testing
-                        let obj = { type: "td", value: "-", stamp: "-", offset: j };
+                        let obj = { type: "td", value: "", stamp: "null" };
                         this.arr.push(obj);
                     } 
                     else if (date > daysInMonth) 
@@ -140,14 +150,14 @@ Vue.component('datepicker', {
 
                         //bind to v-model
 
-                        let obj = { type: "td", value: date, stamp: tmpStamp, offset: j };
+                        let obj = { type: "td", value: date, stamp: tmpStamp };
                         this.arr.push(obj);
 
                         date++;
                     }
                 }
 
-                let obj = { type: "tr", value: "null", stamp: "null" };
+                let obj = { type: "tr", value: "", stamp: "null" };
                 this.arr.push(obj);
             }
         }
