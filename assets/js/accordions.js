@@ -29,10 +29,10 @@ Vue.component('accordion-item',{
     `
     <div class="row">
         <div class="col no-margin">
-            <div class="dropdown-item" @click="toggle">
+            <button class="accordion-title rm-btn-styles" @click="toggle">
                 {{title}}
-            </div>
-            <div class="content" v-if="is_active">
+            </button>
+            <div class="accordion-content" v-if="is_active">
                 <slot></slot>
             </div>
         </div>
