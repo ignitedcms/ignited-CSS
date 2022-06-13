@@ -40,6 +40,11 @@
   cursor: pointer;
 }
 
+.date-chunk {
+  float: left;
+  width: 33.33%;
+}
+
 .date-years {
   position: relative;
   max-height: 300px;
@@ -48,14 +53,15 @@
 }
 
 .date-years-row {
-  padding: 5px;
+  padding: 10px;
   background-color: #f3f3f3;
   width: 100%;
+  text-align: center;
   cursor: pointer;
 }
 
 .date-years-row:hover {
-  background-color: silver;
+  background-color: #dadada;
 }
 
 .date-button {

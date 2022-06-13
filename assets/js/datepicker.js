@@ -49,7 +49,7 @@ Vue.component('datepicker', {
             
         </div>
         <div class="date-years" v-if="!dateDays">
-            <div class="row " v-for="year in years">
+            <div class="date-chunk" v-for="year in years">
                 <button v-on:click="set_year(year)" class="rm-btn-styles date-years-row">{{year}}</button>
             </div>
             
