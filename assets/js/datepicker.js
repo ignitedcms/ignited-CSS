@@ -81,6 +81,7 @@ Vue.component('datepicker', {
         set_year(year) {
             this.dateDays = true;
             this.currentYear = year;
+            this.showCalendar(this.currentMonth, this.currentYear);
         },
         getIndex(str) {
             //This is where the full datestamp
