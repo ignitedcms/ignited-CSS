@@ -29,7 +29,7 @@
   background: #ffffff;
   cursor: pointer;
   -webkit-box-shadow: -1px 9px 4px -7px rgba(0, 0, 0, 0.68);
-  box-shadow: -1px 9px 4px -7px rgba(0, 0, 0, 0.68);
+          box-shadow: -1px 9px 4px -7px rgba(0, 0, 0, 0.68);
 }
 
 .slider2::-moz-range-thumb {
@@ -38,7 +38,6 @@
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
-  -webkit-box-shadow: -1px 9px 4px -7px rgba(0, 0, 0, 0.68);
   box-shadow: -1px 9px 4px -7px rgba(0, 0, 0, 0.68);
 }
 /*# sourceMappingURL=range-sliders.css.map */
