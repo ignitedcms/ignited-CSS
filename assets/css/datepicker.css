@@ -36,6 +36,28 @@
       flex-wrap: wrap;
 }
 
+.year-box {
+  cursor: pointer;
+}
+
+.date-years {
+  position: relative;
+  max-height: 300px;
+  overflow: auto;
+  margin-top: 15px;
+}
+
+.date-years-row {
+  padding: 5px;
+  background-color: #f3f3f3;
+  width: 100%;
+  cursor: pointer;
+}
+
+.date-years-row:hover {
+  background-color: silver;
+}
+
 .date-button {
   position: relative;
   padding: 5px;

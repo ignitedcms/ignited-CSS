@@ -30,6 +30,29 @@
     flex-wrap: wrap;
 }
 
+.year-box{
+    cursor: pointer;
+}
+
+.date-years{
+    position: relative;
+    max-height: 300px;
+    overflow: auto;
+    margin-top: 15px;
+
+    &-row{
+        padding:5px;
+        background-color: $light-grey;
+        width: 100%;
+        cursor: pointer;
+        
+        &:hover{
+            background-color: darken($light-grey,20);
+        }
+    }
+}
+
+
 .date-button {
     position: relative;
     padding: 5px;
