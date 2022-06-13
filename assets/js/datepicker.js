@@ -12,16 +12,15 @@
 Vue.component('datepicker', {
     template: `
 <div class="date-container" @click.stop v-click-outside="away">
-    {{dateDays}}
       <input class="form-control" v-model="message" v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
         <div class="date-buttons-container">
             <button class="date-button rm-btn-styles" @click="previous()">
                 <i data-feather="chevron-left"></i>
             </button>
-            <div v-on:click="dateDays = !dateDays" class="year-box">
+            <button v-on:click="dateDays = !dateDays" class="year-box rm-btn-styles">
             {{months[currentMonth]}} {{currentYear}}
-            </div>
+            </button>
             <button  class="date-button rm-btn-styles" @click="next()">
                 <i data-feather="chevron-right"></i>
             </button>
@@ -80,8 +79,8 @@ Vue.component('datepicker', {
             this.show = false;
         },
         set_year(year) {
-            alert(year);
             this.dateDays = true;
+            this.currentYear = year;
         },
         getIndex(str) {
             //This is where the full datestamp
