@@ -16,7 +16,7 @@
   border-radius: 5px;
 }
 
-.bottom {
-  bottom: -80vh;
+.hide-toast {
+  display: none;
 }
 /*# sourceMappingURL=toasts.css.map */

@@ -24,17 +24,17 @@
                 <h3>Toasts</h3>
 
                 <div class="form-group">
-                    <button class="btn btn-white drop-shadow">show another toast</button>
+                    <button class="btn btn-white drop-shadow" v-on:click="test()">show another toast</button>
                 </div>
 
             </div>
         </div>
-        
+
     </div>
 
     <!-- toasts -->
     <div class="toasts">
-        <div class="toast drop-shadow fade-in-bottom">fds</div>
+        <div id="snackbar" class="toast drop-shadow ">fds</div>
         <div class="toast drop-shadow fade-in-bottom">a</div>
     </div>
 
@@ -50,6 +50,23 @@
 
         var app = new Vue({
             el: '#app',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+                test()
+                {
+                    var x = document.getElementById("snackbar");
+
+                    x.className = "toast drop-shadow fade-in-bottom";
+
+                    // After 3 seconds, remove the show class from DIV
+                    setTimeout(function()
+                    { 
+                        x.className = x.className.replace("toast drop-shadow", "hide-toast fade-in");
+                     }, 1000);
+                }
+            }
 
         })
     </script>
