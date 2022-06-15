@@ -81,7 +81,7 @@
 }
 
 .form-switch input:checked + i {
-  background-color: #c73b4d;
+  background-color: #6ecf78;
 }
 
 .form-switch input:checked + i::before {

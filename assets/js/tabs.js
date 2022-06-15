@@ -8,16 +8,16 @@
 |---------------------------------------------------------------
 | https://learnvue.co/2019/12/building-reusable-components-in-vuejs-tabs/#final-reusable-component-files
 |
+| v-bind:class='{"tab__selected": (index == selectedIndex)}'
 */
 Vue.component('tabs', {
   template: `
-        <div>
-        <li v-for='(tab, index) in tabs'
+        <div class="tab-container">
+        <button v-for='(tab, index) in tabs'
         @click='selectTab(index)'
-        v-bind:class='{"tab__selected": (index == selectedIndex)}'
-        >
+        class="rm-btn-styles tab-header">
          {{ tab.title }}
-        </li>
+        </button>
              <slot></slot> 
         </div>
     `,
@@ -48,7 +48,7 @@ Vue.component('tabs', {
 Vue.component('tab-item', {
   props: ['title'],
   template: `
-    <div class='tab' v-show='is_active'>
+    <div class='tab-content' v-show='is_active'>
       <slot></slot>
     </div>
     `,

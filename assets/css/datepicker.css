@@ -36,6 +36,37 @@
       flex-wrap: wrap;
 }
 
+.year-box {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.date-chunk {
+  float: left;
+  width: 33.33%;
+}
+
+.date-years {
+  position: relative;
+  max-height: 300px;
+  overflow: auto;
+  margin-top: 15px;
+}
+
+.date-years-row {
+  padding: 10px;
+  background-color: #f3f3f3;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.date-years-row:hover {
+  background-color: #dadada;
+}
+
 .date-button {
   position: relative;
   padding: 5px;

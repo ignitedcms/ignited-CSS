@@ -13,80 +13,44 @@
 |
 */
 Vue.component('modal',{
-    props:['button-title'],
+    props:['button-title','modal-header'],
     template: 
     `
     <div>
-        <modal-content v-on:send="sendMsg" v-if="show">
+    <button class="btn btn-white " v-on:click="open=true" v-click-outside="away">
+      {{buttonTitle}} 
+    </button>
+    <div class="modal" v-show="open">
+      <div class="modal-content" @click.stop>
+
+        <div class="modal-header">
+          <button class="rm-btn-styles close" v-on:click="open = false">&times;</button>
+          <h4>{{modalHeader}}</h4>
+        </div>
+        <div class="modal-body">
           <slot></slot>
-        </modal-content>
-        <button @click="show = true">{{buttonTitle}}</button>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-12 right">
+              <button class="btn btn-primary pull-right" v-on:click="open = false">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
     `,
     data:function(){
 
         return{
             message: 'Hello',
-            show: false,
+            open: false,
         }
     },
     methods: {
-      sendMsg(msg) {
-        this.show = msg
-      }
+      away: function () {
+        this.open = false;
+      },
     }
 });
-
-Vue.component('modal-content',{
-    template: 
-    `
-    <div>
-    <slot></slot>
-    <p @click="closing">close</p>
-    </div>
-    `,
-    data:function(){
-
-        return{
-          //nothing
-        }
-    },
-    methods: {
-      closing() {
-        this.$emit('send', false)
-      }
-    }
-});
-
-/*
-|---------------------------------------------------------------
-| Special directive for click outside
-|---------------------------------------------------------------
-|
-| https://stackoverflow.com/questions/36170425/detect-click-outside-element
-*/
-
-Vue.directive('click-outside', {
-    bind: function (el, binding, vnode) {
-      this.event = function (event) {
-        if (!(el == event.target || el.contains(event.target))) {
-          vnode.context[binding.expression](event);
-        }
-      };
-      document.body.addEventListener('click', this.event)
-    },
-    unbind: function (el) {
-      document.body.removeEventListener('click', this.event)
-    },
-  });
-
-/*
-|---------------------------------------------------------------
-| Base entry for vue app
-|---------------------------------------------------------------
-|
-*/
-
-var app = new Vue({
-    el: '#app',
-})

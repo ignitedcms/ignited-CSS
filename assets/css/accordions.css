@@ -4,7 +4,26 @@
 |---------------------------------------------------------------
 |
 */
-.accordion {
-  background-color: blue;
+.accordion-title {
+  padding: 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  width: 100% !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.accordion-title:hover {
+  background-color: #c73b4d;
+  color: #fff;
+}
+
+.accordion-content {
+  padding: 30px;
 }
 /*# sourceMappingURL=accordions.css.map */
