@@ -1,5 +1,27 @@
 @import "variables";
 
-.full-calendar{
+.full-calendar {
     background-color: aqua;
+}
+
+.collection {
+    padding: 40px;
+}
+
+.child {
+
+    border: 1px solid #ccc;
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    float: left;
+    background-color: #ffffff;
+    margin-top: -1px;
+    margin-left: -1px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.child:hover {
+    background: $light-grey;
 }
