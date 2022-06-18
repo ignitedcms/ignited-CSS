@@ -17,15 +17,21 @@
 </head>
 
 <body>
-    <div  id="app">
+    <div class="p-r p-l" id="app">
         <h2>Full calendar</h2>
-       
+
         <div class="full-calendar">fds</div>
 
+        
+        
 
         
-    </div>
 
+
+
+    </div>
+    <!-- feather icons -->
+    <script src="assets/js/feather.js"></script>
     <script src="assets/js/click-outside.js"></script>
     <script src="assets/js/modals.js"></script>
 
@@ -33,6 +39,11 @@
         var app = new Vue({
             el: '#app',
         })
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
     </script>
 </body>
 
