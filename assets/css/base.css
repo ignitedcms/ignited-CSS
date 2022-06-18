@@ -210,8 +210,13 @@ ol {
   color: #ffffff;
 }
 
-.bg-white {
+.bg-light {
   background-color: #ffffff;
+}
+
+.bg-dark {
+  background-color: #292F3E;
+  color: #ffffff;
 }
 
 .drop-shadow {
@@ -223,8 +228,87 @@ ol {
   border-radius: 5px;
 }
 
+.no-select {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .no-margin {
   margin: 0;
+}
+
+/*
+|---------------------------------------------------------------
+| Margins and paddings
+|---------------------------------------------------------------
+*/
+.m {
+  margin: 10px;
+}
+
+.m-t {
+  margin-top: 10px;
+}
+
+.m-l {
+  margin-left: 10px;
+}
+
+.m-r {
+  margin-right: 10px;
+}
+
+.m-b {
+  margin-bottom: 10px;
+}
+
+.p {
+  padding: 10px;
+}
+
+.p-t {
+  padding-top: 10px;
+}
+
+.p-l {
+  padding-left: 10px;
+}
+
+.p-r {
+  padding-right: 10px;
+}
+
+.p-b {
+  padding-bottom: 10px;
+}
+
+/*
+|---------------------------------------------------------------
+| Position utilities
+|---------------------------------------------------------------
+*/
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pos-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/*
+|---------------------------------------------------------------
+| cursor utilities
+|---------------------------------------------------------------
+*/
+.hand {
+  cursor: pointer;
 }
 
 .img-responsive {

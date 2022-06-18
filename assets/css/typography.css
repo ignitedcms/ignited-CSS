@@ -80,4 +80,8 @@ p {
 .text-primary {
   color: #c73b4d;
 }
+
+.text-muted {
+  color: #cccccc;
+}
 /*# sourceMappingURL=typography.css.map */
