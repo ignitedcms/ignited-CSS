@@ -1,5 +1,19 @@
 @import "variables";
 
 .menu{
-    background-color: pink;
+    position: sticky;
+    top:0;
+    &-container{
+        width: $container-width;
+        margin: 0 auto;
+    }
+
+    &-dark{
+        background-color: $tertiary;
+        color: #fff;
+    }
+    &-light{
+        background-color:#fff ;
+        color: $font-color;
+    }
 }

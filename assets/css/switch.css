@@ -18,7 +18,7 @@
   height: 26px;
   background-color: #e6e6e6;
   border-radius: 23px;
-  vertical-align: text-bottom;
+  v-a: text-bottom;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }

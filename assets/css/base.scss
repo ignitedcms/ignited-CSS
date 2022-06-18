@@ -257,6 +257,26 @@ ol {
     }
 }
 
+.b{
+    border:1px solid $grey;
+
+    &-t{
+        border-top:1px solid $grey;
+    }
+
+    &-l{
+        border-left:1px solid $grey;
+    }
+
+    &-r{
+        border-right:1px solid $grey;
+    }
+
+    &-b{
+        border-bottom:1px solid $grey;
+    }
+}
+
 /*
 |---------------------------------------------------------------
 | Position utilities
@@ -314,12 +334,12 @@ ol {
     min-height: 100vh;
 }
 
-.vertical-align {
+.v-a {
     display: flex;
     align-items: center;
 }
 
-.horizontal-align {
+.h-a {
     display: flex;
     justify-content: center;
 }
