@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAA;EACV,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "full-calendar.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "full-calendar.css"
+}
