@@ -1,6 +1,6 @@
 .blog-item {
   position: relative;
-  min-height: 400px;
+  max-height: 400px;
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid #cccccc;
@@ -12,7 +12,7 @@
 }
 .blog-item-img {
   position: relative;
-  height: 200px;
+  min-height: 200px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -50,4 +50,9 @@
   position: relative;
   padding: 50px;
   background-color: #c73b4d;
+}
+
+.rm-link-styles {
+  text-decoration: none;
+  color: #666666 !important;
 }/*# sourceMappingURL=blog.css.map */
