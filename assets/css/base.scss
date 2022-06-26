@@ -28,7 +28,6 @@ p{
 .small{
     position: relative;
     padding-top:10px;
-    padding-left:5px;
     font-size: 14px;
 }
 
@@ -230,7 +229,9 @@ ol {
 | Margins and paddings
 |---------------------------------------------------------------
 */
-
+.gap{
+    padding-top: $padding;
+}
 .m{
     margin: $margin;
 

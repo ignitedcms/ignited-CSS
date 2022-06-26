@@ -89,6 +89,14 @@ p {
   color: #fff;
 }
 
+.text-danger {
+  color: #c1292e;
+}
+
+.text-success {
+  color: #6ecf78;
+}
+
 .text-muted {
   color: #cccccc;
 }/*# sourceMappingURL=typography.css.map */
