@@ -1,0 +1,40 @@
+@import "variables";
+
+.alert {
+    position: relative;
+    padding: 10px;
+
+    &-success {
+        background-color: #ECFEEC;
+        position: relative;
+        padding: 20px;
+        color: #2b6739;
+        border-left: 8px solid #2b6739;
+    }
+
+    &-info {
+
+        background-color: #eaeef5;
+        position: relative;
+        padding: 20px;
+        color: #506e9e;
+        border-left: 8px solid #506e9e;
+    }
+
+    &-warning {
+
+        background-color: #fbfad8;
+        position: relative;
+        padding: 20px;
+        color: #bb8913;
+        border-left: 8px solid #a27919;
+    }
+    &-danger {
+
+        background-color: #FCEAEB;
+        position: relative;
+        padding: 20px;
+        color: #983538;
+        border-left: 8px solid #983538;
+    }
+}

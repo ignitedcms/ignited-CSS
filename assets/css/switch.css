@@ -14,7 +14,7 @@
   height: 26px;
   background-color: #e6e6e6;
   border-radius: 23px;
-  v-a: text-bottom;
+  vertical-align: text-bottom;
   transition: all 0.3s linear;
 }
 
