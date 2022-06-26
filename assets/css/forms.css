@@ -3,7 +3,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   width: 100%;
-  padding: .275rem .85rem;
+  padding: 0.275rem 0.85rem;
   border-radius: 5px;
   font-family: inherit;
   font-size: 1em;
@@ -12,10 +12,7 @@
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-control:focus {
@@ -23,8 +20,7 @@
   background-color: #fff;
   border-color: #5cbef7;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.3rem #d6eefd;
-          box-shadow: 0 0 0 0.3rem #d6eefd;
+  box-shadow: 0 0 0 0.3rem #d6eefd;
 }
 
 .form-control:disabled {
@@ -38,17 +34,16 @@
 }
 
 .form-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
+}
+@media (max-width: 900px) {
+  .form-row {
+    flex-direction: column;
+  }
 }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #cccccc;
-}
-/*# sourceMappingURL=forms.css.map */
+}/*# sourceMappingURL=forms.css.map */

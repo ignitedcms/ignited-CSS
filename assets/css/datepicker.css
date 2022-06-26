@@ -19,21 +19,11 @@
 }
 
 .date-buttons-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .year-box {
@@ -54,15 +44,13 @@
   overflow: auto;
   margin-top: 15px;
 }
-
 .date-years-row {
   padding: 10px;
-  background-color: #f3f3f3;
+  background-color: rgb(243, 243, 243);
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
-
 .date-years-row:hover {
   background-color: #dadada;
 }
@@ -74,19 +62,10 @@
   height: 40px;
   background-color: #ffffff;
   border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -96,58 +75,35 @@
 }
 
 .cal {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   color: gray;
   position: relative;
   float: left;
   width: 14.2857142857%;
   cursor: pointer;
 }
-
 .cal:hover {
   background-color: #c73b4d;
   border-radius: 4px;
   color: #ffffff;
 }
-
 .cal-no-hover:hover {
   background-color: #ffffff;
 }
 
 .cal-day {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   color: #222222;
   position: relative;
   float: left;
   width: 14.2857142857%;
   min-height: 50px;
-}
-/*# sourceMappingURL=datepicker.css.map */
+}/*# sourceMappingURL=datepicker.css.map */

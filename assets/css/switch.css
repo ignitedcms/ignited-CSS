@@ -1,11 +1,7 @@
 /*custom switch styling below*/
 .form-switch {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -19,7 +15,6 @@
   background-color: #e6e6e6;
   border-radius: 23px;
   v-a: text-bottom;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
@@ -31,21 +26,15 @@
   height: 22px;
   background-color: #fff;
   border-radius: 11px;
-  -webkit-transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
-          transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
-  -webkit-transition: all 0.25s linear;
+  transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
   transition: all 0.25s linear;
 }
 
 .switch-text {
   position: relative;
   height: 22px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding-left: 10px;
 }
 
@@ -57,23 +46,18 @@
   height: 22px;
   background-color: #fff;
   border-radius: 11px;
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
-  -webkit-transform: translate3d(2px, 2px, 0);
-          transform: translate3d(2px, 2px, 0);
-  -webkit-transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 0);
   transition: all 0.2s ease-in-out;
 }
 
 .form-switch:active i::after {
   width: 28px;
-  -webkit-transform: translate3d(2px, 2px, 0);
-          transform: translate3d(2px, 2px, 0);
+  transform: translate3d(2px, 2px, 0);
 }
 
 .form-switch:active input:checked + i::after {
-  -webkit-transform: translate3d(16px, 2px, 0);
-          transform: translate3d(16px, 2px, 0);
+  transform: translate3d(16px, 2px, 0);
 }
 
 .form-switch input {
@@ -85,12 +69,9 @@
 }
 
 .form-switch input:checked + i::before {
-  -webkit-transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
-          transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+  transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
 }
 
 .form-switch input:checked + i::after {
-  -webkit-transform: translate3d(22px, 2px, 0);
-          transform: translate3d(22px, 2px, 0);
-}
-/*# sourceMappingURL=switch.css.map */
+  transform: translate3d(22px, 2px, 0);
+}/*# sourceMappingURL=switch.css.map */

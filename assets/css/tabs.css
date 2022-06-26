@@ -1,19 +1,9 @@
 .tab-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .tab-header {
@@ -27,7 +17,6 @@
   cursor: pointer;
   border-bottom: 5px solid #F7FAFC;
 }
-
 .tab-header:hover {
   border-bottom: 5px solid #c73b4d;
 }
@@ -40,28 +29,21 @@
 
 @media (max-width: 500px) {
   .tab-container {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
+
   .tab-header {
     width: 100%;
   }
 }
-
 /*
-  |---------------------------------------------------------------
-  | remove later testing components
-  |---------------------------------------------------------------
-  |
-  */
+|---------------------------------------------------------------
+| remove later testing components
+|---------------------------------------------------------------
+|
+*/
 .tab__selected {
   background-color: red;
-}
-/*# sourceMappingURL=tabs.css.map */
+}/*# sourceMappingURL=tabs.css.map */

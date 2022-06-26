@@ -60,28 +60,35 @@ p {
   h1 {
     font-size: 33.311px;
   }
+
   h2 {
     font-size: 29.479px;
   }
+
   h3 {
     font-size: 26.088px;
   }
+
   h4 {
     font-size: 23.086px;
   }
+
   h5 {
     font-size: 20.43px;
   }
+
   h6 {
     font-size: 18.08px;
   }
 }
-
 .text-primary {
   color: #c73b4d;
 }
 
+.text-white {
+  color: #fff;
+}
+
 .text-muted {
   color: #cccccc;
-}
-/*# sourceMappingURL=typography.css.map */
+}/*# sourceMappingURL=typography.css.map */

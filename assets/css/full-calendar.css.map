@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,cAAc,CAAC;EACX,gBAAgB,EAAE,IAAI;CACzB;;AAED,AAAA,WAAW,CAAC;EACR,OAAO,EAAE,IAAI;CAChB;;AAED,AAAA,MAAM,CAAC;EAEH,MAAM,EAAE,cAAc;EACtB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,GAAG;EACZ,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,OAAO;EACzB,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,IAAI;EACjB,UAAU,EAAE,QAAQ;EACpB,MAAM,EAAE,OAAO;CAClB;;AAED,AAAA,MAAM,AAAA,MAAM,CAAC;EACT,UAAU,EChBD,OAAkB;CDiB9B",
-    "sources": [
-        "full-calendar.scss",
-        "_variables.scss"
-    ],
-    "names": [],
-    "file": "full-calendar.css"
-}
+{"version":3,"sources":["full-calendar.scss","full-calendar.css","_variables.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;ACDJ;;ADIA;EACI,aAAA;ACDJ;;ADIA;EAEI,sBAAA;EACA,aAAA;EACA,YAAA;EACA,YAAA;EACA,WAAA;EACA,yBAAA;EACA,gBAAA;EACA,iBAAA;EACA,oBAAA;EACA,eAAA;ACFJ;;ADKA;EACI,8BEhBS;ADcb","file":"full-calendar.css"}

@@ -16,7 +16,6 @@
   left: -10px;
   z-index: 1;
 }
-
 .tooltip-dark {
   background-color: #292F3E;
   border: 1px solid #292F3E;
@@ -30,5 +29,4 @@
 .tooltip-highlight {
   background-color: #c73b4d;
   color: #fff;
-}
-/*# sourceMappingURL=tooltips.css.map */
+}/*# sourceMappingURL=tooltips.css.map */

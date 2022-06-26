@@ -10,19 +10,14 @@
   border: 1px solid #ccc;
   z-index: 1;
 }
-
 .dropdown-item {
   padding: 15px;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-
 .dropdown-item a {
   text-decoration: none;
   color: #666666;
 }
-
 .dropdown-item:hover {
-  background-color: #f3f3f3;
-}
-/*# sourceMappingURL=drop-downs.css.map */
+  background-color: rgb(243, 243, 243);
+}/*# sourceMappingURL=drop-downs.css.map */

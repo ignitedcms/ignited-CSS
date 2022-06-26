@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAEA;;;;;EAKE;AAIG,AAAD,gBAAO,CAAA;EACH,OAAO,ECOL,IAAI;EDNN,gBAAgB,EAAE,IAAI;EACtB,aAAa,EAAE,cAAc;EAC7B,KAAK,EAAE,eAAe;EACtB,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,OAAO;EACf,UAAU,EAAE,QAAQ;CAMvB;;AAbA,AASG,gBATG,AASF,MAAM,CAAA;EACH,gBAAgB,ECpBlB,OAAO;EDqBL,KAAK,EAAC,IAAI;CACb;;AAGJ,AAAD,kBAAS,CAAA;EACL,OAAO,ECRL,IAAI;CDST",
-    "sources": [
-        "accordions.scss",
-        "_variables.scss"
-    ],
-    "names": [],
-    "file": "accordions.css"
-}
+{"version":3,"sources":["accordions.scss","_variables.scss","accordions.css"],"names":[],"mappings":"AAEA;;;;;CAAA;AASI;EACI,aCOE;EDNF,sBAAA;EACA,6BAAA;EACA,sBAAA;EACA,yBAAA;KAAA,sBAAA;MAAA,qBAAA;UAAA,iBAAA;EACA,eAAA;EACA,oBAAA;AEJR;AFMQ;EACI,yBCpBF;EDqBE,WAAA;AEJZ;AFQI;EACI,aCRE;ACEV","file":"accordions.css"}

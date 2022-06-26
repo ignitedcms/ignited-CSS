@@ -11,20 +11,15 @@
   z-index: 1;
   overflow: auto;
 }
-
 .search-item {
   padding: 15px;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   cursor: pointer;
 }
-
 .search-item a {
   text-decoration: none;
   color: #666666;
 }
-
 .search-item:hover {
-  background-color: #f3f3f3;
-}
-/*# sourceMappingURL=search.css.map */
+  background-color: rgb(243, 243, 243);
+}/*# sourceMappingURL=search.css.map */
