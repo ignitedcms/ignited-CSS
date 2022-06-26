@@ -1,6 +1,7 @@
 @import "variables";
 
 .pagination a {
+    position: relative;
     color: $font-color;
     float: left;
     padding: 8px 16px;
