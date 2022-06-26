@@ -1,0 +1,23 @@
+.progress {
+  background: rgb(243, 243, 243);
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  height: 10px;
+  width: 100%;
+}
+.progress:after {
+  content: "";
+  display: block;
+  background: #007bd9;
+  width: 20%;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+}
+.progress-success:after {
+  content: "";
+  display: block;
+  background: #6ecf78;
+  width: 20%;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+}/*# sourceMappingURL=progress-bars.css.map */

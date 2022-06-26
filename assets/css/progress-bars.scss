@@ -1,0 +1,28 @@
+@import "variables";
+
+.progress {
+    background: $light-grey;
+    border-radius: $border-radius; 
+    border:1px solid $grey;
+    height: 10px;
+    width: 100%; 
+
+    &:after{
+        content: '';
+        display: block;
+        background: $link-color;
+        width: 20%;
+        height: 100%;
+        border-radius:  $border-radius  0 0 $border-radius; 
+    }
+    
+    &-success:after{
+        content: '';
+        display: block;
+        background: $switch-on;
+        width: 20%;
+        height: 100%;
+        border-radius:  $border-radius  0 0 $border-radius; 
+    }
+
+}
