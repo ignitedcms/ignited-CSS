@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body class="full-screen">
+    <div class="container p-l p-r" id="app">
+
+        <div class="row">
+            <div class="col">
+                <h3>pricing</h3>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col">
+                <div class="panel br drop-shadow bg-light-grey pos-rel">
+                    <div class="badge badge-info pos-abs top-0 left-0 p">Most popular</div>
+                    <div class="row">
+                        <div class="col no-margin h-a">
+                            <h1 class="text-primary">Premium</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col v-a h-a">
+                            <div class="m-r"><h2>$12.99</h2></div>
+                            <span class="text-bold">/ month</span>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col h-a bg-light ">
+                            <i data-feather="x" class="bg-light  br-full b p icon "></i>
+                            <div class="m-l v-a text-muted">Unlimited user access</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col h-a  no-margin">
+
+                            <i data-feather="check" class="bg-primary br-full  p icon"></i>
+                            <div class="m-l v-a">Unlimited user access</div>
+
+                        </div>
+                    </div>
+                    <div class="gap"></div>
+                    <div class="row m-t">
+                        <button class="btn btn-primary col no-margin m-t">
+                            Buy now
+                        </button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-white col no-margin m-t">Buy later</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col v-a">
+                fdksl
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <!-- feather icons -->
+    <script src="assets/js/feather.js"></script>
+
+    <!-- Click out must go before all other scripts -->
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+
+    <script>
+        /*
+            |---------------------------------------------------------------
+            | Base entry for vue app
+            |---------------------------------------------------------------
+            |
+            |
+            */
+        var app = new Vue({
+            el: '#app',
+        })
+    </script>
+
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+
+</body>
+
+</html>

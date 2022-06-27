@@ -203,6 +203,9 @@ ol {
 .br {
   border-radius: 5px;
 }
+.br-full {
+  border-radius: 50%;
+}
 .br-tl {
   border-top-left-radius: 5px;
 }
@@ -214,6 +217,16 @@ ol {
 }
 .br-br {
   border-bottom-right-radius: 5px;
+}
+
+/*
+|---------------------------------------------------------------
+| Icon size
+|---------------------------------------------------------------
+*/
+.icon {
+  height: 40px;
+  width: 40px;
 }
 
 .no-select {
@@ -302,6 +315,14 @@ ol {
 .pos-sticky {
   position: -webkit-sticky;
   position: sticky;
+}
+
+.top-0 {
+  top: -15px;
+}
+
+.left-0 {
+  left: 20px;
 }
 
 /*
