@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body style="height:100vh;">
+
+    <div class=" full-screen">
+        <div class="gap"></div>
+        <div class="medium-container">
+            <div class="panel br drop-shadow">
+                <div class="alert alert-success">Logo goes here</div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary pull-right" type="submit">ok</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="v-a h-a m-t">
+                <div class="nothing m-t">
+                    <div class="text-muted text-center">
+                        <a href="">Go back</a>
+                    </div>
+                    <div class="text-muted text-center">
+                        <a href="">Register account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- feather icons -->
+    <script src="assets/js/feather.js"></script>
+
+    <!-- Click out must go before all other scripts -->
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+
+    <script>
+        /*
+            |---------------------------------------------------------------
+            | Base entry for vue app
+            |---------------------------------------------------------------
+            |
+            |
+            */
+        var app = new Vue({
+            el: '#app',
+        })
+    </script>
+
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+
+</body>
+
+</html>

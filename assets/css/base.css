@@ -38,6 +38,13 @@ a:hover {
   color: #007bd9;
 }
 
+label {
+  position: relative;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
 /*
 |---------------------------------------------------------------
 | Grid system
@@ -218,7 +225,7 @@ ol {
 |---------------------------------------------------------------
 */
 .gap {
-  padding-top: 30px;
+  padding-top: 80px;
 }
 
 .m {

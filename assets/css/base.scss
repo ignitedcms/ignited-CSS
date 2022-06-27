@@ -41,6 +41,12 @@ a:hover {
     color: $link-color;
 }
 
+label{
+    position: relative;
+    color: #333;
+    display: block;
+    margin-bottom: $margin; 
+}
 /*
 |---------------------------------------------------------------
 | Grid system
@@ -230,7 +236,7 @@ ol {
 |---------------------------------------------------------------
 */
 .gap{
-    padding-top: $padding;
+    padding-top: 80px;
 }
 .m{
     margin: $margin;
