@@ -202,7 +202,7 @@ ol {
     background-color: #ffffff;
 }
 
-.bg-gray{
+.bg-grey{
     background-color: $light-grey;
 }
 
@@ -217,7 +217,22 @@ ol {
 
 .br{
     border-radius: $border-radius;
+
+    &-tl{
+        border-top-left-radius: $border-radius;
+    }
+    &-tr{
+
+        border-top-right-radius: $border-radius;
+    }
+    &-bl{
+        border-bottom-left-radius: $border-radius;
+    }
+    &-br{
+        border-bottom-right-radius: $border-radius;
+    }
 }
+
 
 .no-select{
     user-select: none;

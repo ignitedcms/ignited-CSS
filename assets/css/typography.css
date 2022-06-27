@@ -99,4 +99,9 @@ p {
 
 .text-muted {
   color: #cccccc;
+}
+
+.text-bold {
+  color: #333333;
+  font-weight: bold;
 }/*# sourceMappingURL=typography.css.map */
