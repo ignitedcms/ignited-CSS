@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
-
 </head>
-
 <body>
 
     <h1 class="page-header">VueSortable Callback</h1>
-
-
     <div id="box">
         <h2>{{ title }}</h2>
-        <div id="items">
-            <template v-for="item in items">
+        <div id="things">
+            <div v-for="item in things">
                 <div class="item">{{ item.title }}</div>
-            </template>
+            </div>
         </div>
         <div><button v-on:click.stop.prevent="addItem">Add item</button></div>
 
         <h3>Sorted Data Source</h3>
 
-        <pre>{{ items }}</pre>
+        <pre>{{ things }}</pre>
     </div>
-
-
-
 
     <script type="text/javascript">
         new Vue({
             el: '#box',
             data: {
                 title: 'Sortable items',
-                items: [{
+                things: [   
+                    {
                         title: "Item 1"
                     },
                     {
@@ -48,7 +41,7 @@
             methods: {
                 addItem: function () {
                     var id = Math.floor((Math.random() * 100) + 4);
-                    this.items.push({
+                    this.things.push({
                         id: id,
                         title: 'Random item ' + id
                     });
@@ -57,16 +50,16 @@
             mounted: function () {
                 var self = this;
                 self.$nextTick(function () {
-                    var sortable = Sortable.create(document.getElementById('items'), {
+                    var sortable = Sortable.create(document.getElementById('things'), {
                         onEnd: function (e) {
-                            var clonedItems = self.items.filter(function (item) {
+                            var clonedItems = self.things.filter(function (item) {
                                 return item;
                             });
                             clonedItems.splice(e.newIndex, 0, clonedItems.splice(e
                                 .oldIndex, 1)[0]);
-                            self.items = [];
+                            self.things = [];
                             self.$nextTick(function () {
-                                self.items = clonedItems;
+                                self.things = clonedItems;
                             });
                         }
                     });
@@ -74,9 +67,5 @@
             }
         });
     </script>
-
-
-
 </body>
-
 </html>
