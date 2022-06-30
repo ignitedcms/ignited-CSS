@@ -1,18 +1,11 @@
 @import "variables";
 
-.full-calendar {
-    background-color: aqua;
-}
 
-.collection {
-    padding: 40px;
-}
 
-.child {
-
+.day {
     border: 1px solid #ccc;
-    height: 150px;
-    width: 150px;
+    height: 158px;
+    width: 158px;
     padding: 5px;
     float: left;
     background-color: #ffffff;
@@ -20,8 +13,13 @@
     margin-left: -1px;
     transition: all 0.4s;
     cursor: pointer;
+
+    &-disabled{
+        background-color: $background;
+        border: 1px solid $background;
+    }
 }
 
-.child:hover {
+.day:hover {
     background: $light-grey;
 }

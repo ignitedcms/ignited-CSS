@@ -1,15 +1,7 @@
-.full-calendar {
-  background-color: aqua;
-}
-
-.collection {
-  padding: 40px;
-}
-
-.child {
+.day {
   border: 1px solid #ccc;
-  height: 150px;
-  width: 150px;
+  height: 158px;
+  width: 158px;
   padding: 5px;
   float: left;
   background-color: #ffffff;
@@ -18,7 +10,11 @@
   transition: all 0.4s;
   cursor: pointer;
 }
+.day-disabled {
+  background-color: #F7FAFC;
+  border: 1px solid #F7FAFC;
+}
 
-.child:hover {
+.day:hover {
   background: rgb(243, 243, 243);
 }/*# sourceMappingURL=full-calendar.css.map */
