@@ -43,6 +43,11 @@
   }
 }
 
+.form-error {
+  background-color: #FCEAEB;
+  border: 1px solid #c23337;
+}
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #cccccc;

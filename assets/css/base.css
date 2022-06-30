@@ -272,6 +272,9 @@ ol {
 .p {
   padding: 10px;
 }
+.p-lg {
+  padding: 30px;
+}
 .p-t {
   padding-top: 10px;
 }

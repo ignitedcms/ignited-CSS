@@ -287,6 +287,9 @@ ol {
 
 .p{
     padding: $margin;
+    &-lg{
+        padding: 30px;
+    }
 
     &-t{
         padding-top:$margin;
