@@ -45,6 +45,13 @@ label {
   margin-bottom: 5px;
 }
 
+.code {
+  position: relative;
+  background-color: #292F3E;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+}
+
 /*
 |---------------------------------------------------------------
 | Grid system
@@ -302,6 +309,10 @@ ol {
 }
 .b-b {
   border-bottom: 1px solid #cccccc;
+}
+
+.border-fix {
+  margin-top: -1px;
 }
 
 /*

@@ -47,6 +47,16 @@ label{
     display: block;
     margin-bottom: 5px; 
 }
+
+// for showing code
+.code{
+    position: relative;
+    background-color: $tertiary;
+    color: #fff ;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
 /*
 |---------------------------------------------------------------
 | Grid system
@@ -328,6 +338,12 @@ ol {
     }
 }
 
+// border fix for calendar
+.border-fix{
+    margin-top: -1px;
+}
+
+
 /*
 |---------------------------------------------------------------
 | Position utilities
@@ -437,8 +453,6 @@ ol {
         display: none;
     }
 }
-
-
 
 
 @media screen and (max-width:$tablet) {

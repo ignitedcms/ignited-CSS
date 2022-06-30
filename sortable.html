@@ -1,71 +1,105 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
 </head>
+
 <body>
+    <div class="container p-l p-r" id="app">
+        <div class="row">
+            <div class="col">
 
-    <h1 class="page-header">VueSortable Callback</h1>
-    <div id="box">
-        <h2>{{ title }}</h2>
-        <div id="things">
-            <div v-for="item in things">
-                <div class="item">{{ item.title }}</div>
+                <h2>{{ title }}</h2>
+                <div id="things" class="m-t">
+                    <div v-for="item in things">
+                        <div class="row bg-light p-l p-r b border-fix hand">
+                            <div class="col">
+                                {{item.title}}
+                            </div>
+                            <div class="col right">
+                                <i data-feather="menu"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <button class="btn btn-white" v-on:click.stop.prevent="addItem">add</button>
+                    </div>
+                    <div class="form-group">
+                        <h3>Sorted Data Source</h3>
+                        <pre class="code">{{ things }}</pre>
+                    </div>
+
+                </div>
             </div>
+
         </div>
-        <div><button v-on:click.stop.prevent="addItem">Add item</button></div>
-
-        <h3>Sorted Data Source</h3>
-
-        <pre>{{ things }}</pre>
-    </div>
-
-    <script type="text/javascript">
-        new Vue({
-            el: '#box',
-            data: {
-                title: 'Sortable items',
-                things: [   
-                    {
-                        title: "Item 1"
-                    },
-                    {
-                        title: "Item 2"
-                    },
-                    {
-                        title: "Item 3"
+        <!-- feather icons -->
+        <script src="assets/js/feather.js"></script>
+        <script>
+            feather.replace({
+                class: "font-primary",
+            });
+        </script>
+        <script type="text/javascript">
+            new Vue({
+                el: '#app',
+                data: {
+                    title: 'Sortable items',
+                    things: [{
+                            title: "Item 1"
+                        },
+                        {
+                            title: "Item 2"
+                        },
+                        {
+                            title: "Item 3"
+                        }
+                    ]
+                },
+                methods: {
+                    addItem: function () {
+                        var id = Math.floor((Math.random() * 100) + 4);
+                        this.things.push({
+                            id: id,
+                            title: 'Random item ' + id
+                        });
                     }
-                ]
-            },
-            methods: {
-                addItem: function () {
-                    var id = Math.floor((Math.random() * 100) + 4);
-                    this.things.push({
-                        id: id,
-                        title: 'Random item ' + id
+                },
+                mounted: function () {
+                    var self = this;
+                    self.$nextTick(function () {
+                        var sortable = Sortable.create(document.getElementById('things'), {
+                            onEnd: function (e) {
+                                var clonedItems = self.things.filter(function (item) {
+                                    return item;
+                                });
+                                clonedItems.splice(e.newIndex, 0, clonedItems.splice(e
+                                    .oldIndex, 1)[0]);
+                                self.things = [];
+                                self.$nextTick(function () {
+                                    self.things = clonedItems;
+                                });
+                            }
+                        });
                     });
                 }
-            },
-            mounted: function () {
-                var self = this;
-                self.$nextTick(function () {
-                    var sortable = Sortable.create(document.getElementById('things'), {
-                        onEnd: function (e) {
-                            var clonedItems = self.things.filter(function (item) {
-                                return item;
-                            });
-                            clonedItems.splice(e.newIndex, 0, clonedItems.splice(e
-                                .oldIndex, 1)[0]);
-                            self.things = [];
-                            self.$nextTick(function () {
-                                self.things = clonedItems;
-                            });
-                        }
-                    });
-                });
-            }
-        });
-    </script>
+            });
+        </script>
 </body>
+
 </html>
