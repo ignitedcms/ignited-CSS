@@ -23,6 +23,14 @@ p {
   margin-top: 10px;
 }
 
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
 .small {
   position: relative;
   padding-top: 10px;
