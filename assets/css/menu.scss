@@ -6,6 +6,8 @@
     &-container{
         width: $container-width;
         margin: 0 auto;
+        padding-left: $margin;
+        padding-right: $margin;
     }
 
     &-dark{
