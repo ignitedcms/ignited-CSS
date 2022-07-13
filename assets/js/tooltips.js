@@ -10,10 +10,11 @@
 |
 */
 Vue.component('tooltip',{
+    props:['link'],
     template: 
     `
     <button class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
-     <span class="tooltip-highlight"> Click me </span>
+     <span class="tooltip-highlight"> {{link}} </span>
         <div v-if="show" class="tooltip  br drop-shadow fade-in" @click.stop>
             <slot></slot> 
         </div>
