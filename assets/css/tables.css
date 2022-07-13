@@ -32,7 +32,7 @@
   }
 }
 .table-row:first-child {
-  background-color: #cccccc;
+  background-color: rgb(243, 243, 243);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   cursor: pointer;

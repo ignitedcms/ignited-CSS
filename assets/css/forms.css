@@ -45,7 +45,14 @@
 
 .form-error {
   background-color: #FCEAEB;
+  color: #c23337;
   border: 1px solid #c23337;
+}
+
+.form-success {
+  background-color: #ECFEEC;
+  color: #2b6739;
+  border: 1px solid #2b6739;
 }
 
 ::-webkit-input-placeholder {
