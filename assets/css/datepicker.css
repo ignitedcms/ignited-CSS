@@ -1,3 +1,14 @@
+.date-today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  background-color: #c73b4d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .datepicker {
   background-color: #F7FAFC;
 }

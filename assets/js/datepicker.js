@@ -12,7 +12,7 @@
 Vue.component('datepicker', {
     template: `
 <div class="date-container" @click.stop v-click-outside="away">
-      <input class="form-control" v-model="message" v-on:click="show =!show"  readonly>
+      <input class="form-control hand" v-model="message" v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
         <div class="date-buttons-container">
             <button class="date-button rm-btn-styles" @click="previous()">
@@ -48,6 +48,9 @@ Vue.component('datepicker', {
             
         </div>
         <div class="date-years" v-if="!dateDays">
+            <div class="date-today">
+                <button class="rm-btn-styles" v-on:click="getToday">Today</button>
+            </div>
             <div class="date-chunk" v-for="year in years">
                 <button v-on:click="set_year(year)" class="rm-btn-styles date-years-row">{{year}}</button>
             </div>
@@ -118,6 +121,20 @@ Vue.component('datepicker', {
             this.currentYear = (this.currentMonth === 0) ? this.currentYear - 1 : this.currentYear;
             this.currentMonth = (this.currentMonth === 0) ? 11 : this.currentMonth - 1;
             this.showCalendar(this.currentMonth, this.currentYear);
+        },
+
+        getToday()
+        {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+
+            today = yyyy + '-' + mm + '-' + dd;
+            this.message = today;
+
+            this.currentMonth = new Date().getMonth(); 
+            this.set_year(yyyy);
         },
 
         showCalendar(month, year) {

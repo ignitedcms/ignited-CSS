@@ -1,5 +1,17 @@
 @import "variables";
 
+.date-today{
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-direction: row;
+      padding: 5px;
+      background-color: $primary;
+      color: #ffffff;
+      cursor: pointer;
+}
+
+
 .datepicker {
     background-color: $background;
 }
