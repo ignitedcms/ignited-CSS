@@ -7,6 +7,24 @@
 |
 */
 
-.table-container{
+.table-container {
     background-color: blue;
+}
+
+.table {
+
+    &-row {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    &-col {
+        background-color: red;
+        padding:5px;
+        flex:1;
+    }
 }
