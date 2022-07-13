@@ -1,5 +1,6 @@
 .dropdown {
   position: absolute;
+  overflow: hidden;
   font-family: inherit;
   font-size: inherit;
   top: 50px;
