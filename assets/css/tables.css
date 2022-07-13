@@ -48,4 +48,9 @@
 .table-col {
   padding: 20px;
   flex: 1;
+}
+@media (max-width: 900px) {
+  .table-col {
+    padding: 10px;
+  }
 }/*# sourceMappingURL=tables.css.map */
