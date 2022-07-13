@@ -3,7 +3,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -16,26 +16,26 @@ html {
 body {
     font-size: $font-size;
     font-family: $font;
-    color: $font-color ;
+    color: $font-color;
     line-height: $line-height;
     letter-spacing: .01em;
 }
 
-p{
+p {
     margin-top: 10px;
 }
 
-strong{
+strong {
     font-weight: bold;
 }
 
-em{
+em {
     font-style: italic;
 }
 
-.small{
+.small {
     position: relative;
-    padding-top:10px;
+    padding-top: 10px;
     font-size: 14px;
 }
 
@@ -48,17 +48,17 @@ a:hover {
     color: $link-color;
 }
 
-label{
+label {
     position: relative;
     color: #333;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
 // for showing code
-.code{
+.code {
     position: relative;
     background-color: $tertiary;
-    color: #fff ;
+    color: #fff;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -77,8 +77,8 @@ label{
     padding-right: $margin;
 }
 
-.medium-container{
-    
+.medium-container {
+
     position: relative;
     max-width: $medium-container-width;
     margin: 0 auto;
@@ -163,7 +163,7 @@ label{
 }
 
 ul {
-    list-style: circle inside;
+    list-style: square inside;
 }
 
 ol {
@@ -198,7 +198,7 @@ ol {
 |---------------------------------------------------------------
 */
 
-.panel{
+.panel {
     position: relative;
     background-color: #ffffff;
     padding: $padding;
@@ -213,45 +213,50 @@ ol {
 |---------------------------------------------------------------
 */
 
-.bg-primary{
+.bg-primary {
     background-color: $primary;
     color: #ffffff;
 }
 
-.bg-light{
+.bg-light {
     background-color: #ffffff;
 }
 
-.bg-grey{
+.bg-grey {
     background-color: $light-grey;
 }
 
-.bg-dark{
+.bg-dark {
     background-color: $tertiary;
     color: #ffffff;
 }
 
 .drop-shadow {
-    box-shadow: $shadow; 
-  }
+    box-shadow: $shadow;
+}
 
-.br{
+.br {
     border-radius: $border-radius;
 
-    &-full{
-        border-radius: 50%;;
+    &-full {
+        border-radius: 50%;
+        ;
     }
-    &-tl{
+
+    &-tl {
         border-top-left-radius: $border-radius;
     }
-    &-tr{
+
+    &-tr {
 
         border-top-right-radius: $border-radius;
     }
-    &-bl{
+
+    &-bl {
         border-bottom-left-radius: $border-radius;
     }
-    &-br{
+
+    &-br {
         border-bottom-right-radius: $border-radius;
     }
 }
@@ -261,95 +266,98 @@ ol {
 | Icon size
 |---------------------------------------------------------------
 */
-.icon{
-    height:40px;
-    width:40px;
+.icon {
+    height: 40px;
+    width: 40px;
 }
 
-.no-select{
+.no-select {
     user-select: none;
 }
 
-.no-margin{
+.no-margin {
     margin: 0;
 }
 
-.no-padding{
+.no-padding {
     padding: 0;
 }
+
 /*
 |---------------------------------------------------------------
 | Margins and paddings
 |---------------------------------------------------------------
 */
-.gap{
+.gap {
     padding-top: 80px;
 }
-.m{
+
+.m {
     margin: $margin;
 
-    &-t{
-        margin-top:$margin;
+    &-t {
+        margin-top: $margin;
     }
 
-    &-l{
-        margin-left:$margin;
+    &-l {
+        margin-left: $margin;
     }
 
-    &-r{
-        margin-right:$margin;
+    &-r {
+        margin-right: $margin;
     }
 
-    &-b{
-        margin-bottom:$margin;
+    &-b {
+        margin-bottom: $margin;
     }
 }
 
-.p{
+.p {
     padding: $margin;
-    &-lg{
+
+    &-lg {
         padding: 30px;
     }
 
-    &-t{
-        padding-top:$margin;
+    &-t {
+        padding-top: $margin;
     }
 
-    &-l{
-        padding-left:$margin;
+    &-l {
+        padding-left: $margin;
     }
 
-    &-r{
-        padding-right:$margin;
+    &-r {
+        padding-right: $margin;
     }
 
-    &-b{
-        padding-bottom:$margin;
+    &-b {
+        padding-bottom: $margin;
     }
 }
 
-.b{
-    border:1px solid $grey;
+.b {
+    border: 1px solid $grey;
 
-    &-t{
-        border-top:1px solid $grey;
+    &-t {
+        border-top: 1px solid $grey;
     }
 
-    &-l{
-        border-left:1px solid $grey;
+    &-l {
+        border-left: 1px solid $grey;
     }
 
-    &-r{
-        border-right:1px solid $grey;
+    &-r {
+        border-right: 1px solid $grey;
     }
 
-    &-b{
-        border-bottom:1px solid $grey;
+    &-b {
+        border-bottom: 1px solid $grey;
     }
 }
 
 // border fix for calendar
-.border-fix{
+.border-fix {
     margin-top: -1px;
     margin-left: -1px;
 }
@@ -360,27 +368,30 @@ ol {
 |---------------------------------------------------------------
 */
 
-.pos{
-    &-rel{
-        position: relative;;
+.pos {
+    &-rel {
+        position: relative;
+        ;
     }
-    &-abs{
+
+    &-abs {
         position: absolute;
     }
-    &-sticky{
+
+    &-sticky {
         position: sticky;
     }
 }
 
-.top{
-    &-0{
-        top:-15px;
+.top {
+    &-0 {
+        top: -15px;
     }
 }
 
-.left{
-    &-0{
-        left:20px;
+.left {
+    &-0 {
+        left: 20px;
     }
 }
 
@@ -390,12 +401,11 @@ ol {
 |---------------------------------------------------------------
 */
 
-.hand{
+.hand {
     cursor: pointer;
 }
 
-.img-responsive
-{
+.img-responsive {
     max-width: 100%;
     height: auto;
 }
@@ -404,7 +414,7 @@ ol {
     content: "";
     clear: both;
     display: table;
-  }
+}
 
 .pull-right {
     float: right;
@@ -470,5 +480,3 @@ ol {
         display: none;
     }
 }
-
-
