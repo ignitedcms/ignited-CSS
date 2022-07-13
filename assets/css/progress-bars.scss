@@ -1,28 +1,25 @@
 @import "variables";
 
 .progress {
-    background: $light-grey;
-    border-radius: $border-radius; 
-    border:1px solid $grey;
-    height: 10px;
-    width: 100%; 
-
-    &:after{
-        content: '';
-        display: block;
-        background: $link-color;
-        width: 20%;
-        height: 100%;
-        border-radius:  $border-radius  0 0 $border-radius; 
-    }
+    display: flex;
+    height: 9px; 
+    margin-top: $margin;
+    overflow: hidden;
+    background-color: $grey;
+    border-radius: 20px !important;
     
-    &-success:after{
-        content: '';
-        display: block;
-        background: $switch-on;
-        width: 20%;
-        height: 100%;
-        border-radius:  $border-radius  0 0 $border-radius; 
+    &-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        background-color: $link-color;
+        transition: width .6s ease;
+        
+        &-success{
+            background-color: $switch-on;
+        }
     }
 
 }

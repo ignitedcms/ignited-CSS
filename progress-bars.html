@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 
-<body style="height: 100vh;">
+<body class="full-screen">
     <div class="container" id="app">
 
         <div class="row">
@@ -24,8 +24,15 @@
                 <h3>Progress bars</h3>
                 <div class="form-group">
                     <div class="small">adjust with javascript</div>
-                    <div class="progress m-t"></div> 
-                    <div class="progress progress-success m-t"></div> 
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                        <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
                 </div>
 
 
