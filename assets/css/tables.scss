@@ -8,7 +8,7 @@
 */
 
 .table-container {
-    background-color: blue;
+    background-color: #ffffff; 
 }
 
 .table {
@@ -20,11 +20,43 @@
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
+        border: 1px solid $grey;
+        margin-top: -1px;
+
+
+        @media (max-width:$tablet){
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
+    /*
+    |---------------------------------------------------------------
+    | Target the first row which is the header
+    |---------------------------------------------------------------
+    */
+    &-row:first-child {
+        background-color: $grey;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        color: #333;
+    }
+
+    
+    &-row:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: $shadow;
+    }
+
+
+
     &-col {
-        background-color: red;
-        padding:5px;
+        // background-color: red;
+        padding: 20px; 
         flex:1;
     }
 }
