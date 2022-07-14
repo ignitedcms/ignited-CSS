@@ -23,13 +23,10 @@
                 <h3>Range sliders</h3>
 
                 <div class="form-group">
-                    <div class="slidecontainer">
-                        <input type="range" v-model="message" min="1" max="100" value="50" class="slider2" />
-                        <p>Value: <span id="demo">
-                            {{message}}
-                        </span></p>
-
-                    </div>
+                   <range-slider min="0" max="100"></range-slider> 
+                </div>
+                <div class="form-group">
+                   <range-slider min="50" max="200"></range-slider> 
                 </div>
             </div>
         </div>
