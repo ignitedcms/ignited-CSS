@@ -34,10 +34,26 @@
 
     <!-- toasts -->
     <div class="toasts">
-        <div id="snackbar" class="toast drop-shadow ">fds</div>
-        <div class="toast drop-shadow fade-in-bottom">a</div>
+        <div class="toast drop-shadow fade-in-bottom">
+            <div class="row">
+                <div class="col v-a">
+                    <i data-feather="x" class="bg-grey  br-full b p icon "></i>
+                    <div class="m-l v-a ">Failure</div>
+                </div>
+            </div>
+        </div>
+        <div class="toast drop-shadow fade-in-bottom">
+            <div class="row">
+                <div class="col v-a">
+                    <i data-feather="check" class="bg-grey  br-full b p icon "></i>
+                    <div class="m-l v-a ">Success</div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- feather icons -->
+    <script src="assets/js/feather.js"></script>
     <script src="assets/js/toasts.js"></script>
     <script src="assets/js/click-outside.js"></script>
     <script>
@@ -56,19 +72,16 @@
             methods: {
                 test()
                 {
-                    var x = document.getElementById("snackbar");
-
-                    x.className = "toast drop-shadow fade-in-bottom";
-
-                    // After 3 seconds, remove the show class from DIV
-                    setTimeout(function()
-                    { 
-                        x.className = x.className.replace("toast drop-shadow", "hide-toast fade-in");
-                     }, 1000);
+                 //nothing to see here
                 }
             }
 
         })
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
     </script>
 </body>
 
