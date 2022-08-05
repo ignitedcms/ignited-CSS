@@ -15,8 +15,8 @@
 .toast {
   position: relative;
   background-color: #fff;
-  margin: 8px;
-  padding: 10px;
+  margin: $margin;
+  padding: $margin;
   border: 1px solid #ccc;
   border-radius: $border-radius;
 }
@@ -25,12 +25,14 @@
   background-color: #FCEAEB;
   color: #983538;
   border: 1px solid #983538;
+  min-width: 40px;
 }
 
 .toast-success {
   background-color: #ECFEEC;
   color: #2b6739;
   border: 1px solid #2b6739;
+  min-width: 40px;
 }
 
 .hide-toast {
