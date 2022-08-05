@@ -10,15 +10,29 @@
 |
 */
 Vue.component('toast',{
+    props:['time'],
     template: 
     `
-        <div>
-            <slot></slot> 
+    <div class="toast drop-shadow fade-in-bottom" :style="{display:foo}">
+        <div class="row">
+            <slot></slot>
         </div>
+    </div>
     `,
     data:function(){
         return{
-            /*nothing to see*/
+            foo:''
         }
+    },
+    methods:
+    {
+        t()
+        {
+            this.foo = "none"
+        }
+    },
+    mounted()
+    {
+        setTimeout(this.t,this.time);
     }
 });
