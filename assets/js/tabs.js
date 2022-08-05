@@ -13,7 +13,7 @@
 Vue.component('tabs', {
   template: `
         <div class="tab-container">
-        <button v-for='(tab, index) in tabs'
+        <button type="button" v-for='(tab, index) in tabs'
         @click='selectTab(index)'
         class="rm-btn-styles tab-header">
          {{ tab.title }}

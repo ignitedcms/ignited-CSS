@@ -17,14 +17,14 @@ Vue.component('modal',{
     template: 
     `
     <div>
-    <button class="btn btn-white " v-on:click="open=true" v-click-outside="away">
+    <button type="button" class="btn btn-white " v-on:click="open=true" v-click-outside="away">
       {{buttonTitle}} 
     </button>
     <div class="modal" v-show="open">
       <div class="modal-content" @click.stop>
 
         <div class="modal-header">
-          <button class="rm-btn-styles close" v-on:click="open = false">&times;</button>
+          <button type="button" class="rm-btn-styles close" v-on:click="open = false">&times;</button>
           <h4>{{modalHeader}}</h4>
         </div>
         <div class="modal-body">
@@ -33,7 +33,7 @@ Vue.component('modal',{
         <div class="modal-footer">
           <div class="row">
             <div class="col-12 right">
-              <button class="btn btn-primary pull-right" v-on:click="open = false">Save</button>
+              <button type="button" class="btn btn-primary pull-right" v-on:click="open = false">Save</button>
             </div>
           </div>
         </div>

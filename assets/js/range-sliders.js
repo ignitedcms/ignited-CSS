@@ -10,11 +10,11 @@
 |
 */
 Vue.component('rangeSlider',{
-    props:['min','max'],
+    props:['name','min','max'],
     template: 
     `
     <div class="slidecontainer">
-        <input type="range" v-model="message" v-bind:min="min" v-bind:max="max" class="slider2" />
+        <input :name="name" type="range" v-model="message" v-bind:min="min" v-bind:max="max" class="slider2" />
         <p>Value: <span id="demo">
             {{message}}
         </span></p>

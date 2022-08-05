@@ -4,6 +4,8 @@
     position: relative;
     max-height: 400px;
     background-color: #ffffff;
+    // fix issue with img and border radius
+    overflow: hidden; 
     border-radius: 5px;
     border: 1px solid #cccccc;
     display: flex;

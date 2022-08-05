@@ -10,10 +10,12 @@
 |
 */
 Vue.component('search',{
+  props:['name'],
   template: 
   `
   <div>
-    <input type="text" v-model="message" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
+    <label for="title">{{name}}</label>
+    <input  type="text" :name="name" v-model="message" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
     <div v-if="show" class="search br drop-shadow fade-in">
       <div v-for='(search, index) in searches' @click="my_select(search.val)">
 
