@@ -10,18 +10,20 @@
 |
 */
 Vue.component('datepicker', {
-    template: `
+props:['name'],
+template: `
 <div class="date-container" @click.stop v-click-outside="away">
-      <input class="form-control hand" v-model="message" v-on:click="show =!show"  readonly>
+      <label for="date">{{name}}</label>
+      <input class="form-control hand" :name="name" v-model="message" v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
         <div class="date-buttons-container">
-            <button class="date-button rm-btn-styles" @click="previous()">
+            <button type="button" class="date-button rm-btn-styles" @click="previous()">
                 <i data-feather="chevron-left"></i>
             </button>
-            <button v-on:click="dateDays = !dateDays" class="year-box rm-btn-styles">
+            <button type="button" v-on:click="dateDays = !dateDays" class="year-box rm-btn-styles">
             {{months[currentMonth]}} {{currentYear}}
             </button>
-            <button  class="date-button rm-btn-styles" @click="next()">
+            <button type="button" class="date-button rm-btn-styles" @click="next()">
                 <i data-feather="chevron-right"></i>
             </button>
             
@@ -41,7 +43,7 @@ Vue.component('datepicker', {
                 </div>
                 <div v-else-if="i.value == ''" class="cal-no-hover cal-day">
                 </div>
-                <button v-else class="rm-btn-styles pull-left cal cal-day"> 
+                <button type="button" v-else class="rm-btn-styles pull-left cal cal-day"> 
                     {{i.value}} 
                 </button>
             </div>
@@ -49,10 +51,10 @@ Vue.component('datepicker', {
         </div>
         <div class="date-years" v-if="!dateDays">
             <div class="date-today">
-                <button class="rm-btn-styles" v-on:click="getToday">Today</button>
+                <button type="button" class="rm-btn-styles" v-on:click="getToday">Today</button>
             </div>
             <div class="date-chunk" v-for="year in years">
-                <button v-on:click="set_year(year)" class="rm-btn-styles date-years-row">{{year}}</button>
+                <button type="button" v-on:click="set_year(year)" class="rm-btn-styles date-years-row">{{year}}</button>
             </div>
             
         </div>
