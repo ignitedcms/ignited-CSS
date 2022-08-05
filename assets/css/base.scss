@@ -430,6 +430,11 @@ ol {
     height: auto;
 }
 
+.img-center{
+    margin: 0 auto;
+    display: block;
+}
+
 .clearfix::after {
     content: "";
     clear: both;
