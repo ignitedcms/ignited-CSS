@@ -1,28 +1,38 @@
 @import "variables";
 
 .toasts {
-    position: fixed;
-    z-index: 2;
-    width:400px;
-    bottom: 0px;
-    right: 0px;
+  position: fixed;
+  z-index: 2;
+  width: 400px;
+  bottom: 0px;
+  right: 0px;
 
-    @media (max-width:$tablet){
-        width: 100%; 
-    }
+  @media (max-width:$tablet) {
+    width: 100%;
   }
-  
-  .toast {
-    position: relative;
-    background-color: #fff;
-    min-height: 100px;
-    margin: 8px;
-    padding: 15px; 
-    border: 1px solid #ccc;
-    border-radius: $border-radius;
-    
-  }
-  
-.hide-toast{
+}
+
+.toast {
+  position: relative;
+  background-color: #fff;
+  margin: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+}
+
+.toast-danger {
+  background-color: #FCEAEB;
+  color: #983538;
+  border: 1px solid #983538;
+}
+
+.toast-success {
+  background-color: #ECFEEC;
+  color: #2b6739;
+  border: 1px solid #2b6739;
+}
+
+.hide-toast {
   display: none;
 }
