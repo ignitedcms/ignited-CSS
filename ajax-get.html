@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body style="height: 100vh;">
+    <div class="container" id="app">
+
+        <div class="row">
+            <div class="col">
+                <h3>Ajax</h3>
+                <div class="form-group">
+                    https://jsonplaceholder.typicode.com/guide/
+                </div>
+                <button type="button" class="btn btn-white m-t"  v-on:click="get">get data</button>
+                <div class="form-group">
+                    {{message1}}
+                </div>
+                <button type="button" class="btn btn-white m-t"  v-on:click="post">post</button>
+                <div class="form-group">
+                    {{message2}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/feather.js"></script>
+    <script>
+        var app = new Vue(
+        {
+           el: '#app',
+           data:
+           {
+              message1: '',
+              message2: '',
+           },
+           methods:
+           {
+              async get()
+              {
+                let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+                let data = await response.json();
+                this.message1 = data;
+                alert(response.status);
+              },
+              
+              async post()
+              {
+               let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+                  method: 'POST',
+                  body: JSON.stringify({
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                  }),
+                  headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                  },
+                })
+                let data = await response.json();
+                this.message2 = data;
+              }
+           },
+           mounted()
+           {
+              //do something
+           }
+        });    
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+</body>
+
+</html>
