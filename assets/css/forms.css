@@ -12,7 +12,10 @@
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
 .form-control:focus {
@@ -58,4 +61,6 @@
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #cccccc;
-}/*# sourceMappingURL=forms.css.map */
+}
+
+/*# sourceMappingURL=forms.css.map */

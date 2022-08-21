@@ -1,1 +1,1 @@
-{"version":3,"sources":["accordions.scss","_variables.scss","accordions.css"],"names":[],"mappings":"AAEA;;;;;CAAA;AASI;EACI,aCWE;EDVF,sBAAA;EACA,6BAAA;EACA,sBAAA;EACA,yBAAA;KAAA,sBAAA;MAAA,qBAAA;UAAA,iBAAA;EACA,eAAA;EACA,oBAAA;AEJR;AFMQ;EACI,yBCpBF;EDqBE,WAAA;AEJZ;AFQI;EACI,aCJE;ACFV","file":"accordions.css"}
+{"version":3,"sourceRoot":"","sources":["accordions.scss","_variables.scss"],"names":[],"mappings":"AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;AASI;EACI,SCWE;EDVF;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI,kBCpBF;EDqBE;;AAIR;EACI,SCJE","file":"accordions.css"}

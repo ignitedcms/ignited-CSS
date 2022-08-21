@@ -78,10 +78,7 @@
   align-items: center;
   flex-direction: row;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   border: 1px solid #cccccc;
 }
 
@@ -117,4 +114,6 @@
   float: left;
   width: 14.2857142857%;
   min-height: 50px;
-}/*# sourceMappingURL=datepicker.css.map */
+}
+
+/*# sourceMappingURL=datepicker.css.map */

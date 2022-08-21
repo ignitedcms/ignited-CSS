@@ -9,10 +9,7 @@
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   width: 100% !important;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   cursor: pointer;
   transition: all 0.4s;
 }
@@ -22,4 +19,6 @@
 }
 .accordion-content {
   padding: 30px;
-}/*# sourceMappingURL=accordions.css.map */
+}
+
+/*# sourceMappingURL=accordions.css.map */

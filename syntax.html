@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+   </head>
+   <body>
+      <div class="full-screen">
+         <div class="container">
+            <div class="gap"></div>
+            <h3>Syntax highlighting with shikijs</h3>
+            <div id="output" class="m-t code  br drop-shadow">
+/*================
+ *  hello
+ *================*/    
+class Blog extends Ignitedcms 
+{
+    public function index()
+    {
+        // Now use theme global data in view
+        $this.load.view('custom/name',$this.igsdata);
+    }
+} 
+            </div>
+         </div>
+      </div>
+      <script src="https://unpkg.com/shiki@0.10.1"></script>
+      <script>
+         shiki
+           .getHighlighter({
+             theme: 'github-light'
+           })
+           .then(highlighter => {
+             const g = document.getElementById('output').innerHTML;
+             const code = highlighter.codeToHtml(g.trim(), { lang: 'php' })
+             document.getElementById('output').innerHTML = code
+           })
+      </script>
+      <!-- feather icons -->
+      <script src="assets/js/feather.js"></script>
+      <!-- Click out must go before all other scripts -->
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/datepicker.js"></script>
+      <script>
+         /*
+             |---------------------------------------------------------------
+             | Base entry for vue app
+             |---------------------------------------------------------------
+             |
+             |
+             */
+         var app = new Vue({
+             el: '#app',
+         })
+      </script>
+      <script>
+         feather.replace({
+             class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

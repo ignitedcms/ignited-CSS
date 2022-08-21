@@ -54,9 +54,10 @@ label {
 
 .code {
   position: relative;
-  background-color: #292F3E;
-  color: #fff;
-  font-family: "Courier New", Courier, monospace;
+  padding: 30px;
+  background-color: #fff;
+  overflow-x: auto;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
 }
 
 /*
@@ -95,6 +96,10 @@ label {
 }
 
 .col {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -267,10 +272,7 @@ ol {
 }
 
 .no-select {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .no-margin {
@@ -358,7 +360,6 @@ ol {
   position: absolute;
 }
 .pos-sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -456,4 +457,6 @@ ol {
   .hide-tablet {
     display: none;
   }
-}/*# sourceMappingURL=base.css.map */
+}
+
+/*# sourceMappingURL=base.css.map */

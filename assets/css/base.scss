@@ -57,9 +57,10 @@ label {
 // for showing code
 .code {
     position: relative;
-    background-color: $tertiary;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    padding: $padding;
+    background-color: #fff;
+    overflow-x:auto;
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
 }
 
 
