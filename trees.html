@@ -15,6 +15,8 @@
 
     <!-- vue 2 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    
 </head>
 
 <body style="height: 100vh;">
@@ -24,11 +26,21 @@
             <div class="col">
                 <h3>Trees</h3>
 
-                <div class="gap"> </div>
 
-                <div class="trees p">foo</div>   
-
-
+                <ul id="" class="m-t">
+                    <li><span class="caret">Beverages</span>
+                        <ul class="nested">
+                            <li>Water</li>
+                            <li>Coffee</li>
+                            <li><span class="caret">Tea</span>
+                                <ul class="nested">
+                                    <li>Black Tea</li>
+                                    <li>White Tea</li>
+                                </ul>
+                            </li>  
+                        </ul>
+                    </li>
+                </ul>  
                 
             </div>
         </div>
@@ -47,6 +59,18 @@
         var app = new Vue({
             el: '#app',
         })
+    </script>
+    <script >
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+    }
+
     </script>
 </body>
 
