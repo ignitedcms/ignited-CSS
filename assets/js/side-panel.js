@@ -12,14 +12,15 @@ Vue.component('sidePanel',{
     props:['title'],
     template: 
     `
-    <div class="side-panel" v-bind:style="{width: menu_width}">
-        {{title}}
+     <div class="side-panel" v-bind:style="{width: menu_width}">
+         {{title}}
+
          <div v-on:click="test"> click </div>
      </div>
     `,
     data:function(){
-        return
-        {
+       
+        return{
             message: 'Hello',
             menu_width: '200px',
             show: false,
@@ -35,8 +36,8 @@ Vue.component('sidePanel',{
         */       
         test()
         {
-            this.menu_width = '0'
-            document.getElementById("main-panel").style.marginLeft= "0";
+            this.menu_width = '0';
+            alert('testing123');
         }
     }
 });
