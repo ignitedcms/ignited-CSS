@@ -4,3 +4,17 @@
     background-color:purple;
 }
 
+.side-panel{
+    height: 100vh;
+    width: 0;
+    background-color: $tertiary;
+    overflow-x: hidden;
+    transition: 0.5s;
+    float:left;
+}
+
+#main-panel{
+    background-color:blue;
+    height:100vh;
+}
+
