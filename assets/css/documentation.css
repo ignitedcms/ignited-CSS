@@ -1,10 +1,13 @@
 .sidebar-toggle {
   position: absolute;
-  right: -30px;
+  right: -40px;
   top: 0;
-  width: 30px;
-  height: 30px;
-  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: red;
 }
 
 /*# sourceMappingURL=documentation.css.map */

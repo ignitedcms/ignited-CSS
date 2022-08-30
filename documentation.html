@@ -5,7 +5,7 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Ignitedcms | docs</title>
+     <title>lightweight framework</title>
 
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,24 +22,51 @@
         <div class="" id="app">
             <div class="row full-screen">
                 <div class="col-2 no-margin bg-grey p pos-rel hide-tablet">
-                    <div class="sidebar-toggle"></div>
-                    a
-                    b
-                    c
+                    <div v-on:click="foo" class="sidebar-toggle hand">
+                        <i data-feather="menu"></i>
+                    </div>
+                    {{message}}
                 </div>
-                <div class="col-10 no-margin bg-secondary">
-                    <div class="foo">foo</div>
+                <div class="col-10 no-margin bg-light">
+                    <div class="foo p">hello there one two three</div>
                 </div>
             </div>
         </div>        
+    <!-- feather icons -->
+    <script src="assets/js/feather.js"></script>
 
-    <script src="assets/js/click-outside.js"></script>
-    <script src="assets/js/side-panel.js"></script>
 
     <script>
-        var app = new Vue({
-            el: '#app',
-        })
+        /*                                                                          
+        |---------------------------------------------------------------            
+        | Base entry point                                                
+        |---------------------------------------------------------------            
+        |                                                                           
+        */       
+        var app = new Vue(
+        {
+           el: '#app',
+           data:
+           {
+              message: 'Add Items. . . ',
+           },
+           methods:
+           {
+              foo()
+              {
+                 alert('foo');
+              },
+           },
+           mounted()
+           {
+              //do something
+           }
+        });    
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
     </script>
     </body>
 </html>
