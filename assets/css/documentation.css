@@ -1,19 +1,10 @@
-.docs {
+.sidebar-toggle {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  width: 30px;
+  height: 30px;
   background-color: purple;
-}
-
-.side-panel {
-  height: 100vh;
-  width: 0;
-  background-color: #292F3E;
-  overflow-x: hidden;
-  transition: 0.5s;
-  float: left;
-}
-
-#main-panel {
-  background-color: blue;
-  height: 100vh;
 }
 
 /*# sourceMappingURL=documentation.css.map */
