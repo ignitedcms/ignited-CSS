@@ -21,7 +21,8 @@
     <body class="full-screen">
         <div class="" id="app">
 
-            <div class="sidebar">a</div>
+            <div id="side_nav" class="sidebar">a</div>
+            <div class="sidebar-fixed">a</div>
             <div class="main-content">
                 <div v-on:click="foo" class="sidebar-toggle hand">
                     <i data-feather="menu"></i>
@@ -51,7 +52,6 @@
               foo()
               {
                 alert('foo');
-                document.getElementById("side_nav").style.display ="flex";
              },
            },
            mounted()

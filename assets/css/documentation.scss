@@ -27,6 +27,19 @@
     @media screen and (max-width:$tablet) {
         display:none;
     }
+    /*                                                                          
+    |---------------------------------------------------------------            
+    | This only displays on mobile                                                
+    |---------------------------------------------------------------            
+    */       
+    &-fixed{
+        position:fixed;
+        height:100vh;
+        top:0;
+        left:0;
+        background-color:green;
+        z-index:3;
+    }
 }
 
 .main-content{

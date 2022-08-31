@@ -21,11 +21,24 @@
   background-color: red;
   float: left;
   width: 15%;
+  /*                                                                          
+  |---------------------------------------------------------------            
+  | This only displays on mobile                                                
+  |---------------------------------------------------------------            
+  */
 }
 @media screen and (max-width: 900px) {
   .sidebar {
     display: none;
   }
+}
+.sidebar-fixed {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: green;
+  z-index: 3;
 }
 
 .main-content {
