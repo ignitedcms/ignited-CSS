@@ -4,9 +4,22 @@
 .sidebar-toggle{
     position:relative;
     display:flex;
+    visibility:hidden;
     justify-content:center;
     align-items:center;
     width:40px;
     height:40px;
     background-color: red;
+    
+    @media screen and (max-width:$tablet) {
+        visibility:visible;
+    }
 }
+
+.sidebar{
+    position:relative;
+    height:100vh;
+    overflow-y:auto;
+}
+
+
