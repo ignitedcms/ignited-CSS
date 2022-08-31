@@ -21,7 +21,7 @@
     <body class="full-screen">
         <div class="" id="app">
             <div class="row ">
-                <div  class="sidebar col-2 no-margin bg-grey p pos-rel hide-tablet sidebar">
+                <div id="side_nav"  class="sidebar col-2 no-margin bg-grey p pos-rel hide-tablet sidebar">
 
 
 
@@ -54,8 +54,9 @@
            {
               foo()
               {
-                 alert('foo');
-              },
+                alert('foo');
+                document.getElementById("side_nav").style.display ="flex";
+             },
            },
            mounted()
            {
