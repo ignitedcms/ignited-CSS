@@ -20,19 +20,15 @@
 
     <body class="full-screen">
         <div class="" id="app">
-            <div class="row ">
-                <div id="side_nav"  class="sidebar col-2 no-margin bg-grey p pos-rel hide-tablet sidebar">
 
-
-
+            <div class="sidebar">a</div>
+            <div class="main-content">
+                <div v-on:click="foo" class="sidebar-toggle hand">
+                    <i data-feather="menu"></i>
                 </div>
-                <div class="col-10 full-screen no-margin bg-light">
-                    <div v-on:click="foo" class="sidebar-toggle hand">
-                        <i data-feather="menu"></i>
-                    </div>
-                    <div class="foo p">hello there one two three</div>
-                </div>
+                <div>testing</div>
             </div>
+
         </div>        
     <!-- feather icons -->
     <script src="assets/js/feather.js"></script>
