@@ -22,9 +22,9 @@
         <div class="" id="app">
 
             <div id="side_nav" class="sidebar">a</div>
-            <div class="sidebar-fixed">a</div>
+            <div v-if="show" class="sidebar-fixed" @click.stop>a</div>
             <div class="main-content">
-                <div v-on:click="foo" class="sidebar-toggle hand">
+                <div v-on:click="show =! show" v-click-outside="away" class="sidebar-toggle hand">
                     <i data-feather="menu"></i>
                 </div>
                 <div>testing</div>
@@ -33,6 +33,7 @@
         </div>        
     <!-- feather icons -->
     <script src="assets/js/feather.js"></script>
+    <script src="assets/js/click-outside.js"></script>
     <script>
         /*                                                                          
         |---------------------------------------------------------------            
@@ -46,13 +47,18 @@
            data:
            {
               message: 'Add Items. . . ',
+              show: false,
            },
            methods:
            {
               foo()
               {
-                alert('foo');
-             },
+                 this.show = !this.show;
+              },
+              away()
+              {
+                 this.show = false;  
+              }
            },
            mounted()
            {

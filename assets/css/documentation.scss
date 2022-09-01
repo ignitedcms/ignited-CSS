@@ -41,6 +41,10 @@
         background-color:green;
         overflow-y:auto;
         z-index:2;
+
+        @media screen and (min-width:$tablet) {
+            display:none;
+        }
     }
 }
 

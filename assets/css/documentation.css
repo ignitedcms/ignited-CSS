@@ -42,6 +42,11 @@
   overflow-y: auto;
   z-index: 2;
 }
+@media screen and (min-width: 900px) {
+  .sidebar-fixed {
+    display: none;
+  }
+}
 
 .main-content {
   position: relative;
