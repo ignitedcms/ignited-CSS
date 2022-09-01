@@ -24,10 +24,26 @@
             <div id="side_nav" class="sidebar">a</div>
             <div v-if="show" class="sidebar-fixed" @click.stop>a</div>
             <div class="main-content">
-                <div v-on:click="show =! show" v-click-outside="away" class="sidebar-toggle hand">
-                    <i data-feather="menu"></i>
+                <div class="search-container">
+                    <div v-on:click="show =! show" v-click-outside="away" class="sidebar-toggle hand">
+                        <i data-feather="menu"></i>
+                    </div>
+                    <div style="width:70%;" class=" m-l">
+                        <input class="form-control"  name="a" placeholder="Search" />
+                    </div>
                 </div>
-                <div>testing</div>
+                
+                <div class="p">
+                    <div class="row">
+                        <div class="col">
+                            <h3>testing</h3>
+                            lorem ipsum blah blah blah blah baljfkdslfdjskjfdkslj fjds fdjsf dkslfjsd
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">lorem ipsum blah blah blah blah baljfkdslfdjskjfdkslj fjds fdjsf dkslfjsd</div>
+                    </div>
+                </div>
             </div>
 
         </div>        
