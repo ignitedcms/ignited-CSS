@@ -21,15 +21,30 @@
     <body class="full-screen">
         <div class="" id="app">
 
-            <div id="side_nav" class="sidebar">a</div>
-            <div v-if="show" class="sidebar-fixed" @click.stop>a</div>
+            <div id="side_nav" class="sidebar">
+                <h5 class="m-l">menu</h5>
+                <ul>
+                    <li> <a href="http://www.google.com">fjkdsfd</a></li>
+                    <li> <a href="#">fjkdsfd</a></li>
+                    <li> <a href="#">fjkdsfd</a></li>
+                </ul>
+            </div>
+            <div v-if="show" class="sidebar-fixed" @click.stop>
+                <h5 class="m-l">menu</h5>
+                <ul>
+                    <li> <a href="http://www.google.com">fjkdsfd</a></li>
+                    <li> <a href="#">fjkdsfd</a></li>
+                    <li> <a href="#">fjkdsfd</a></li>
+                </ul>
+
+            </div>
             <div class="main-content">
                 <div class="search-container">
                     <div v-on:click="show =! show" v-click-outside="away" class="sidebar-toggle hand">
                         <i data-feather="menu"></i>
                     </div>
                     <div style="width:70%;" class=" m-l">
-                        <input class="form-control"  name="a" placeholder="Search" />
+                        <input class="form-control"  name="a" placeholder="Search then hit enter" />
                     </div>
                 </div>
                 
