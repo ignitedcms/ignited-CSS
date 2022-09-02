@@ -29,8 +29,11 @@
         <div class="container">
             <div class="row">
                 <div class="col">
+                    {{dark}}
                     <h3>Dark mode</h3>
+                    <h2>Dark mode</h2>
                     <button type="button" v-on:click="dark_mode"  class="btn btn-white m-t">Enable dark mode</button>
+
                     <div class="form-group">
                         <label for="title">title</label>
                         <div class="small text-muted">title</div>
@@ -62,6 +65,19 @@
             dark_mode()
             {
                this.dark = ! this.dark
+               const nodeList = document.querySelectorAll("h1,h2,h3,h4,h5,label");
+               if(this.dark == true)
+               {
+                for (let i = 0; i < nodeList.length; i++) {
+                  nodeList[i].style.color = "white";
+                }
+               }
+               else
+               {
+                for (let i = 0; i < nodeList.length; i++) {
+                  nodeList[i].style.color = "black";
+                }
+               }
             }
        },
        mounted()
