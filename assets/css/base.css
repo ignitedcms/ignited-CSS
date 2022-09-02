@@ -268,6 +268,14 @@ ol {
   height: 40px;
   width: 40px;
 }
+.icon-inside {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 1;
+}
 
 .no-select {
   user-select: none;
