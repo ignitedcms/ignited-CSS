@@ -293,6 +293,38 @@ ol {
 .m {
   margin: 10px;
 }
+.m-2 {
+  margin: 20px;
+}
+@media screen and (max-width: 900px) {
+  .m-2 {
+    margin: 10px;
+  }
+}
+.m-3 {
+  margin: 30px;
+}
+@media screen and (max-width: 900px) {
+  .m-3 {
+    margin: 10px;
+  }
+}
+.m-4 {
+  margin: 40px;
+}
+@media screen and (max-width: 900px) {
+  .m-4 {
+    margin: 10px;
+  }
+}
+.m-5 {
+  mrgin: 50px;
+}
+@media screen and (max-width: 900px) {
+  .m-5 {
+    margin: 10px;
+  }
+}
 .m-t {
   margin-top: 10px;
 }
@@ -308,6 +340,38 @@ ol {
 
 .p {
   padding: 10px;
+}
+.p-2 {
+  padding: 20px;
+}
+@media screen and (max-width: 900px) {
+  .p-2 {
+    padding: 10px;
+  }
+}
+.p-3 {
+  padding: 30px;
+}
+@media screen and (max-width: 900px) {
+  .p-3 {
+    padding: 10px;
+  }
+}
+.p-4 {
+  padding: 40px;
+}
+@media screen and (max-width: 900px) {
+  .p-4 {
+    padding: 10px;
+  }
+}
+.p-5 {
+  padding: 50px;
+}
+@media screen and (max-width: 900px) {
+  .p-5 {
+    padding: 10px;
+  }
 }
 .p-lg {
   padding: 30px;

@@ -316,6 +316,32 @@ ol {
 .m {
     margin: $margin;
 
+    &-2{
+        margin:calc($margin*2);
+        @media screen and (max-width:$tablet) {
+            margin: $margin;
+        }
+
+    }
+    &-3{
+        margin:calc($margin*3);
+        @media screen and (max-width:$tablet) {
+            margin: $margin;
+        }
+    }
+    &-4{
+        margin:calc($margin*4);
+        @media screen and (max-width:$tablet) {
+            margin: $margin;
+        }
+    }
+    &-5{
+        mrgin:calc($margin*5);
+        @media screen and (max-width:$tablet) {
+            margin: $margin;
+        }
+    }
+
     &-t {
         margin-top: $margin;
     }
@@ -335,6 +361,32 @@ ol {
 
 .p {
     padding: $margin;
+    
+    &-2{
+        padding:calc($margin*2);
+
+        @media screen and (max-width:$tablet) {
+            padding: $margin;
+        }
+    }
+    &-3{
+        padding:calc($margin*3);
+        @media screen and (max-width:$tablet) {
+            padding: $margin;
+        }
+    }
+    &-4{
+        padding:calc($margin*4);
+        @media screen and (max-width:$tablet) {
+            padding: $margin;
+        }
+    }
+    &-5{
+        padding:calc($margin*5);
+        @media screen and (max-width:$tablet) {
+            padding: $margin;
+        }
+    }
 
     &-lg {
         padding: 30px;
@@ -506,3 +558,7 @@ ol {
         display: none;
     }
 }
+
+
+
+
