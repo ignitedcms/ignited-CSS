@@ -66,13 +66,13 @@
             </div>
             <div class="main-content" id="main-content">
                 <div class="search-container">
-                    <div v-on:click="toggle_sidemenu" v-click-outside="away" class="sidebar-toggle hand">
+                    <div v-on:click="toggle_sidemenu" :style={backgroundColor:foo} v-click-outside="away" class="sidebar-toggle hand">
                         <i data-feather="menu"></i>
                     </div>
                     <div style="width:40%;" class=" m-l">
                         <input class="form-control"  name="a" placeholder="Search then hit enter" />
                     </div>
-                    <label class="form-switch">
+                    <label class="form-switch v-a" style="height:40px;">
                         <input type="checkbox" @click="dark_mode" />
                         <i ></i> 
                     </label>
@@ -172,6 +172,7 @@ int main()
               },
               away()
               {
+                 this.show = false;
                  this.bar = 'none'
               }
            },
