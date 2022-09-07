@@ -27,11 +27,10 @@
     <body class="full-screen">
         <div v-bind:class="{'dark-mode full-screen': dark}"  id="app">
             
-            <button type="button" v-on:click="dark_mode"  class="btn btn-white m-t">Enable dark mode</button>
 
             <div id="side_nav" class="sidebar">
                 <div class="logo pull-left m-l">i</div>  
-                <div class="v-a text-bold" style="height:40px;">IgnitedCMS</div>
+                <div class="v-a text-bold" style="height:40px;" id="logo-text">IgnitedCMS</div>
                 <div class="clearfix"></div>
                 <h5 class="m-l m-t-2">Introduction</h5>
                 <ul>
@@ -66,6 +65,7 @@
 
             </div>
             <div class="main-content" id="main-content">
+            <button type="button" v-on:click="dark_mode"  class="btn btn-white m-t">Enable dark mode</button>
                 <div class="search-container">
                     <div v-on:click="show =! show" v-click-outside="away" class="sidebar-toggle hand">
                         <i data-feather="menu"></i>
@@ -129,9 +129,8 @@ int main()
              dark_mode()
              {
                  this.dark = ! this.dark
-                 const nodeList = document.querySelectorAll("h1,h2,h3,h4,h5,label");
+                 const nodeList = document.querySelectorAll("h1,h2,h3,h4,h5,label,#logo-text");
                  sidebar = document.getElementById("side_nav");
-                 sidebar_fixed = document.getElementById("sidebar-fixed");
                  main_content = document.getElementById("main-content");
                  if(this.dark == true)
                  {
