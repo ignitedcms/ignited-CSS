@@ -28,7 +28,7 @@
         <div v-bind:class="{'dark-mode full-screen': dark}"  id="app">
             
 
-            <div id="side_nav" class="sidebar">
+            <div id="side_nav" class="sidebar" >
                 <div class="logo pull-left m-l">i</div>  
                 <div class="v-a text-bold" style="height:40px;" id="logo-text">IgnitedCMS</div>
                 <div class="clearfix"></div>
@@ -45,7 +45,7 @@
                     <li>Email settings</li>
                 </ul>
             </div>
-            <div v-if="show" class="sidebar-fixed" id="sidebar-fixed" @click.stop>
+            <div v-if="show" class="sidebar-fixed" :style={backgroundColor:foo}  id="sidebar-fixed" @click.stop>
 
                 <div class="logo pull-left m-l">i</div>  
                 <div class="v-a text-bold" style="height:40px;">IgnitedCMS</div>
@@ -65,14 +65,18 @@
 
             </div>
             <div class="main-content" id="main-content">
-            <button type="button" v-on:click="dark_mode"  class="btn btn-white m-t">Enable dark mode</button>
                 <div class="search-container">
                     <div v-on:click="show =! show" v-click-outside="away" class="sidebar-toggle hand">
                         <i data-feather="menu"></i>
                     </div>
-                    <div style="width:70%;" class=" m-l">
+                    <div style="width:40%;" class=" m-l">
                         <input class="form-control"  name="a" placeholder="Search then hit enter" />
                     </div>
+                    <label class="form-switch">
+                        <input type="checkbox" @click="dark_mode" />
+                        <i ></i> 
+                    </label>
+
                 </div>
                 
                 <div class="p-3">
@@ -121,7 +125,8 @@ int main()
            {
               message: 'Add Items. . . ',
               show: false,
-              dark:false
+              dark:false,
+              foo:'#F7FAFC'
            },
            methods:
            {
@@ -139,6 +144,9 @@ int main()
                   }
                   sidebar.style.backgroundColor = "#222222";
                   main_content.style.backgroundColor = "#292F3E";
+
+
+                  this.foo = "#000000";
                  }
                  else
                  {
@@ -147,6 +155,7 @@ int main()
                   }
                   sidebar.style.backgroundColor = "#F7FAFC";
                   main_content.style.backgroundColor = "#FFFFFF";
+                  this.foo = "#ffffff";
                  }
               },
               foo()
@@ -160,7 +169,7 @@ int main()
            },
            mounted()
            {
-              //do something
+              //
            }
         });    
     </script>
