@@ -344,7 +344,7 @@ ol {
         }
     }
     &-5{
-        mrgin:calc($margin*5);
+        margin:calc($margin*5);
         @media screen and (max-width:$tablet) {
             margin: $margin;
         }
@@ -352,18 +352,118 @@ ol {
 
     &-t {
         margin-top: $margin;
+        &-2{
+            margin-top:calc($margin*2);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+
+        }
+        &-3{
+            margin-top:calc($margin*3);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-4{
+            margin-top:calc($margin*4);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-5{
+            margin-top:calc($margin*5);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
     }
 
     &-l {
         margin-left: $margin;
+        &-2{
+            margin-left:calc($margin*2);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+
+        }
+        &-3{
+            margin-left:calc($margin*3);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-4{
+            margin-left:calc($margin*4);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-5{
+            margin-left:calc($margin*5);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
     }
 
     &-r {
         margin-right: $margin;
+        &-2{
+            margin-right:calc($margin*2);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+
+        }
+        &-3{
+            margin-right:calc($margin*3);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-4{
+            margin-right:calc($margin*4);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-5{
+            margin-right:calc($margin*5);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
     }
 
     &-b {
         margin-bottom: $margin;
+        &-2{
+            margin-bottom:calc($margin*2);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+
+        }
+        &-3{
+            margin-bottom:calc($margin*3);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-4{
+            margin-bottom:calc($margin*4);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
+        &-5{
+            margin-bottom:calc($margin*5);
+            @media screen and (max-width:$tablet) {
+                margin: $margin;
+            }
+        }
     }
 }
 
@@ -394,10 +494,6 @@ ol {
         @media screen and (max-width:$tablet) {
             padding: $margin;
         }
-    }
-
-    &-lg {
-        padding: 30px;
     }
 
     &-t {

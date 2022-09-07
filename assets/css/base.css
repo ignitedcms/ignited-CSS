@@ -326,7 +326,7 @@ ol {
   }
 }
 .m-5 {
-  mrgin: 50px;
+  margin: 50px;
 }
 @media screen and (max-width: 900px) {
   .m-5 {
@@ -336,14 +336,142 @@ ol {
 .m-t {
   margin-top: 10px;
 }
+.m-t-2 {
+  margin-top: 20px;
+}
+@media screen and (max-width: 900px) {
+  .m-t-2 {
+    margin: 10px;
+  }
+}
+.m-t-3 {
+  margin-top: 30px;
+}
+@media screen and (max-width: 900px) {
+  .m-t-3 {
+    margin: 10px;
+  }
+}
+.m-t-4 {
+  margin-top: 40px;
+}
+@media screen and (max-width: 900px) {
+  .m-t-4 {
+    margin: 10px;
+  }
+}
+.m-t-5 {
+  margin-top: 50px;
+}
+@media screen and (max-width: 900px) {
+  .m-t-5 {
+    margin: 10px;
+  }
+}
 .m-l {
   margin-left: 10px;
+}
+.m-l-2 {
+  margin-left: 20px;
+}
+@media screen and (max-width: 900px) {
+  .m-l-2 {
+    margin: 10px;
+  }
+}
+.m-l-3 {
+  margin-left: 30px;
+}
+@media screen and (max-width: 900px) {
+  .m-l-3 {
+    margin: 10px;
+  }
+}
+.m-l-4 {
+  margin-left: 40px;
+}
+@media screen and (max-width: 900px) {
+  .m-l-4 {
+    margin: 10px;
+  }
+}
+.m-l-5 {
+  margin-left: 50px;
+}
+@media screen and (max-width: 900px) {
+  .m-l-5 {
+    margin: 10px;
+  }
 }
 .m-r {
   margin-right: 10px;
 }
+.m-r-2 {
+  margin-right: 20px;
+}
+@media screen and (max-width: 900px) {
+  .m-r-2 {
+    margin: 10px;
+  }
+}
+.m-r-3 {
+  margin-right: 30px;
+}
+@media screen and (max-width: 900px) {
+  .m-r-3 {
+    margin: 10px;
+  }
+}
+.m-r-4 {
+  margin-right: 40px;
+}
+@media screen and (max-width: 900px) {
+  .m-r-4 {
+    margin: 10px;
+  }
+}
+.m-r-5 {
+  margin-right: 50px;
+}
+@media screen and (max-width: 900px) {
+  .m-r-5 {
+    margin: 10px;
+  }
+}
 .m-b {
   margin-bottom: 10px;
+}
+.m-b-2 {
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .m-b-2 {
+    margin: 10px;
+  }
+}
+.m-b-3 {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 900px) {
+  .m-b-3 {
+    margin: 10px;
+  }
+}
+.m-b-4 {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 900px) {
+  .m-b-4 {
+    margin: 10px;
+  }
+}
+.m-b-5 {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 900px) {
+  .m-b-5 {
+    margin: 10px;
+  }
 }
 
 .p {
@@ -380,9 +508,6 @@ ol {
   .p-5 {
     padding: 10px;
   }
-}
-.p-lg {
-  padding: 30px;
 }
 .p-t {
   padding-top: 10px;

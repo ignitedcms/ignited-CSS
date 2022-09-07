@@ -1,3 +1,18 @@
+.logo {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #c73b4d;
+  padding: 20px;
+  margin-right: 10px;
+}
+
 .sidebar-toggle {
   position: relative;
   display: flex;
@@ -16,11 +31,16 @@
 
 .search-container {
   display: flex;
+  margin-top: 30px;
   padding: 10px;
   background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
   flex-direction: row;
   justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .search-container {
+    margin-top: 10px;
+  }
 }
 
 .sidebar {
@@ -28,7 +48,7 @@
   padding: 20px;
   height: 100vh;
   overflow-y: scroll;
-  background-color: #ffffff;
+  background-color: #F7FAFC;
   border-right: 1px solid #cccccc;
   float: left;
   width: 15%;
@@ -50,7 +70,8 @@
   width: 200px;
   top: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: #F7FAFC;
+  border-right: 1px solid #cccccc;
   overflow-y: scroll;
   z-index: 2;
 }
