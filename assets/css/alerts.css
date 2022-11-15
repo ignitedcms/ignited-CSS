@@ -1,6 +1,7 @@
 .alert {
   position: relative;
   padding: 10px;
+  border: 1px solid #cccccc;
 }
 .alert-success {
   background-color: #FFFFFF;

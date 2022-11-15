@@ -3,6 +3,7 @@
 .alert {
     position: relative;
     padding: 10px;
+    border:1px solid $grey;
 
     &-success {
         background-color: #FFFFFF;
