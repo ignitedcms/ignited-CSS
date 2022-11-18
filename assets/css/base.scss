@@ -87,6 +87,15 @@
     padding-right: $margin;
 }
 
+.small-container {
+
+    position: relative;
+    max-width: $small-container-width;
+    margin: 0 auto;
+    padding-left: $margin;
+    padding-right: $margin;
+}
+
 .row {
     display: flex;
     flex-flow: row wrap;

@@ -79,6 +79,14 @@ label {
   padding-right: 10px;
 }
 
+.small-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .row {
   display: flex;
   flex-flow: row wrap;
