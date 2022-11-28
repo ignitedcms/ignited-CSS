@@ -1,5 +1,24 @@
 @import "variables";
 
 .menu{
-   background-color: $tertiary;
+   background-color: #ffffff;
+   border-bottom:1px solid $grey;
+   min-height: 70px;
+   display:flex;
+   flex-direction:row;
+   justify-content:space-between;
+   align-items:center;
+   padding:20px;
+   position:sticky;
+
+   &-logo{
+      max-width: 30px; 
+      height: 30px; 
+   }
+
+   &-item-container{
+     position:relative;  
+     display:flex;
+     flex-direction:row;
+   }
 }

@@ -18,7 +18,34 @@
 
 <body class="full-screen">
    <div id="app">
-      <div class="menu"></div>
+      <div class="menu">
+         <div class="menu-logo">
+            <img src="assets/images/flatfile.svg"></img>
+         </div>
+         <div class="menu-item-container">
+            <div class="m-l-2 hand v-a">
+               Products
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+            </div>
+            <div class="m-l-2 hand v-a">
+               Developers
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+            </div>
+            <div class="m-l-2 hand v-a">
+               Company
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+            </div>
+         </div>
+         <div class="login-button">
+           <button type="button" class="btn btn-primary">Login</button>
+         </div>
+      </div>
       <div class="container">
          <div class="gap"></div>
          <div class="row">
@@ -32,7 +59,9 @@
       </div>
    </div>
 
-    <script src="assets/js/toasts.js"></script>
+   <!-- feather icons -->
+   <script src="assets/js/feather.js"></script>
+
     <script src="assets/js/click-outside.js"></script>
     <script>
         /*
@@ -52,6 +81,13 @@
             }
         })
     </script>
+   
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+
 </body>
 
 </html>
