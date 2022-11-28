@@ -304,7 +304,12 @@ ol {
 |---------------------------------------------------------------
  */
 .gap {
-  padding-top: 80px;
+  padding-top: 60px;
+}
+@media (max-width: 900px) {
+  .gap {
+    padding-top: 20px;
+  }
 }
 
 .m {

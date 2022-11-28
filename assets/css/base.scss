@@ -327,7 +327,11 @@ ol {
 |---------------------------------------------------------------
  */
 .gap {
-   padding-top: 80px;
+   padding-top: 60px;
+   @media (max-width: $tablet) 
+   {
+      padding-top: 20px;
+   }
 }
 
 .m {

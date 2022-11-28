@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["menu.scss"],"names":[],"mappings":"AAEA;EACG","file":"menu.css"}
+{"version":3,"sourceRoot":"","sources":["menu.scss","_variables.scss"],"names":[],"mappings":"AAEA;EACG,kBCIQ","file":"menu.css"}
