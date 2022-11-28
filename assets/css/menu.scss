@@ -10,6 +10,7 @@
    align-items:center;
    padding:20px;
    position:sticky;
+   z-index:1;
 
    &-logo{
       max-width: 30px; 
@@ -17,8 +18,23 @@
    }
 
    &-item-container{
-     position:relative;  
-     display:flex;
-     flex-direction:row;
+      position:relative;  
+      display:flex;
+      flex-direction:row;
    }
+
+   &-dropdown{
+      position:absolute;
+      top:40px;
+      left:10px;
+      min-width:600px; 
+      height:300px; 
+      background-color:#ffffff;
+      padding:20px;
+      border:1px solid $grey;
+      border-radius:$border-radius;
+      box-shadow:$shadow;   
+      z-index:2;
+
+   } 
 }

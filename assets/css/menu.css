@@ -8,6 +8,7 @@
   align-items: center;
   padding: 20px;
   position: sticky;
+  z-index: 1;
 }
 .menu-logo {
   max-width: 30px;
@@ -17,6 +18,19 @@
   position: relative;
   display: flex;
   flex-direction: row;
+}
+.menu-dropdown {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  min-width: 600px;
+  height: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 /*# sourceMappingURL=menu.css.map */
