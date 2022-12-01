@@ -16,7 +16,7 @@ Vue.component('mega-menu',{
     props:['button-title'],
     template: 
     `
-    <div>
+    <div style="top:0; position:sticky; z-index:2; ">
     <div class="menu">
          <div class="menu-logo">
             <img src="assets/images/flatfile.svg"></img>
@@ -68,7 +68,31 @@ Vue.component('mega-menu',{
 
       </div>
 
-      <div class="small-menu">foo</div>      
+       <div class="menu-bar ">
+         <div class="menu-logo">
+            <img src="assets/images/flatfile.svg"></img>
+         </div> 
+        <div >
+        <span v-on:click="foo = !foo">
+         <i data-feather="menu" class="icon hand" ></i>
+        </span>
+        </div>
+    </div>
+
+    <div class="menu-overlay" v-if="foo">
+        <div class="menu-item">
+            <a href="" class="">Documentation</a>
+        </div>
+        <div class="menu-item">
+            <a href="" class="">CSS</a>
+        </div>
+        <div class="menu-item">
+            <a href="" class="">Blog</a>
+        </div>
+        <div class="menu-item">
+            <a href="" class="">Contact</a>
+        </div>
+    </div>
 
       </div>
     
@@ -77,6 +101,7 @@ Vue.component('mega-menu',{
         return {
             message: 'Hello',
             show: false,
+            foo: false, /*for mobile menu*/
         }
     },
     methods: {
