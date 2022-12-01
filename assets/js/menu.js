@@ -79,7 +79,7 @@ Vue.component('mega-menu',{
         </div>
     </div>
 
-    <div class="menu-overlay" v-if="foo">
+    <div class="menu-overlay fade-in-bottom" v-if="foo">
         <div class="menu-item">
             <a href="" class="">Documentation</a>
         </div>

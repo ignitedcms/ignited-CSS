@@ -7,9 +7,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  top: 0; /*important*/
-  position: sticky; /*important*/
-  z-index: 1; /*important*/
 }
 @media (max-width: 900px) {
   .menu {
@@ -46,8 +43,6 @@
 |                                                                           
 */
 .menu-bar {
-  position: sticky;
-  top: 0;
   background-color: #ffffff;
   border-bottom: 1px solid #cccccc;
   color: #666666;
