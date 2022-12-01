@@ -16,25 +16,67 @@ Vue.component('mega-menu',{
     //props:['button-title','menu-header'],
     template: 
     `
-    <div>
-       <div>
-         <button v-on:click="open=true" v-click-outside="away"  type="button" class="btn btn-white">title</button>
-       </div>
-       <div v-show="open" @click.stop>
-         <slot>
-         </slot>
-       </div>
-    </div>
+    <div class="menu">
+         <div class="menu-logo">
+            <img src="assets/images/flatfile.svg"></img>
+         </div>
+         <div class="menu-item-container">
+            <div class="m-l-2 hand v-a" v-on:click="show =!show" v-click-outside="away">
+               Products
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+
+               <div v-if="show" class="menu-dropdown fade-in-bottom">
+                  <div class="row">
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/portal.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/portal.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                  </div>
+                  <div class="row m-t">
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/workspaces.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/workspaces.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="m-l-2 hand v-a">
+               Developers
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+            </div>
+            <div class="m-l-2 hand v-a">
+               Company
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+            </div>
+         </div>
+          <button type="button" class="btn btn-white">Login</button>
+
+      </div>
+    
     `,
     data:function(){
         return {
             message: 'Hello',
-            open: false,
+            show: false,
         }
     },
     methods: {
       away: function () {
-        this.open = false;
+        this.show = false;
       },
     }
 });
