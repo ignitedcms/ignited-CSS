@@ -13,9 +13,10 @@
 | @since: 1.0
 */
 Vue.component('mega-menu',{
-    //props:['button-title','menu-header'],
+    props:['button-title'],
     template: 
     `
+    <div>
     <div class="menu">
          <div class="menu-logo">
             <img src="assets/images/flatfile.svg"></img>
@@ -63,7 +64,11 @@ Vue.component('mega-menu',{
                </span>
             </div>
          </div>
-          <button type="button" class="btn btn-white">Login</button>
+          <button type="button" class="btn btn-white">{{buttonTitle}}</button>
+
+      </div>
+
+      <div class="small-menu">foo</div>      
 
       </div>
     

@@ -9,8 +9,14 @@
    justify-content:space-between;
    align-items:center;
    padding:20px;
+   top:0; /*important*/ 
    position:sticky; /*important*/
    z-index:1; /*important*/
+
+   @media (max-width: $tablet ) 
+   {
+      display:none;
+   }
 
    &-logo{
       max-width: 30px; 
@@ -37,4 +43,13 @@
       z-index:2;
 
    } 
+}
+
+.small-menu{
+   background-color:red;
+   display:none;
+   @media (max-width: $tablet) 
+   {
+      display:block;
+   }
 }

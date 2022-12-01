@@ -202,59 +202,5 @@ p{
    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
 }
 
-.menu-bar{
-
-   position: sticky;
-   top:0;
-   background-color: #292F3E;
-   color:#fff;
-   height: 95px;
-   padding:10px;
-   display: none;
-   justify-content: space-between;
-   align-items: center;
-   flex-direction: row;
-   z-index: 4;
-}
-
-.menu-overlay{
-   top:95px;
-   left:0;
-   position: fixed;
-   height: 100%;
-   width: 100%;
-   background-color: #292F3E;
-   color:#fff;
-   display: none;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   z-index: 4;
-}
-
-.menu-item{
-   position: relative;
-   margin-top:20px;
-   font-size: 28px;
-
-}
-.menu-item:hover{
-   text-decoration: none;
-   color:inherit;
-}
-
-
-@media (max-width:900px){
-   .menu{
-      display: none;
-   }
-   .menu-bar{
-      display: flex;
-   }
-   .menu-overlay{
-      display: flex;
-   }
-}
-
 
 /* End */
