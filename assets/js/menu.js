@@ -28,7 +28,7 @@ Vue.component('mega-menu',{
                   <i data-feather="chevron-down" class=""></i>
                </span>
 
-               <div v-if="show" class="menu-dropdown fade-in-bottom">
+               <div v-if="show" class="menu-dropdown fade-in-bottom" @click.stop>
                   <div class="row">
                      <div class="col-6 v-a no-margin">
                         <img src="assets/images/portal.svg"></img>
@@ -68,31 +68,31 @@ Vue.component('mega-menu',{
 
       </div>
 
-       <div class="menu-bar ">
+      <div class="menu-bar ">
          <div class="menu-logo">
             <img src="assets/images/flatfile.svg"></img>
          </div> 
-        <div >
-        <span v-on:click="foo = !foo">
-         <i data-feather="menu" class="icon hand" ></i>
-        </span>
-        </div>
-    </div>
+         <div >
+            <span v-on:click="foo = !foo">
+               <i data-feather="menu" class="icon hand" ></i>
+            </span>
+         </div>
+      </div>
 
-    <div class="menu-overlay fade-in-bottom" v-if="foo">
-        <div class="menu-item">
+      <div class="menu-overlay fade-in-bottom" v-if="foo">
+         <div class="menu-item">
             <a href="" class="">Documentation</a>
-        </div>
-        <div class="menu-item">
+         </div>
+         <div class="menu-item">
             <a href="" class="">CSS</a>
-        </div>
-        <div class="menu-item">
+         </div>
+         <div class="menu-item">
             <a href="" class="">Blog</a>
-        </div>
-        <div class="menu-item">
+         </div>
+         <div class="menu-item">
             <a href="" class="">Contact</a>
-        </div>
-    </div>
+         </div>
+      </div>
 
       </div>
     
@@ -112,7 +112,7 @@ Vue.component('mega-menu',{
 });
 
 
-Vue.component('itemb',{
+Vue.component('menu-item',{
     template: 
     `
      <div class="bg-dark hand p-4 br">
