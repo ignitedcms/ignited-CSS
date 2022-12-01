@@ -17,54 +17,23 @@ Vue.component('mega-menu',{
     template: 
     `
     <div style="top:0; position:sticky; z-index:2; ">
-    <div class="menu">
-         <div class="menu-logo">
-            <img src="assets/images/flatfile.svg"></img>
-         </div>
-         <div class="menu-item-container">
-            <slot>
-            </slot>
-            
-            
-            
-         </div>
+       <div class="menu">
+          <div class="menu-logo">
+             <img src="assets/images/flatfile.svg"></img>
+          </div>
+          <div class="menu-item-container">
+             <slot>
+             </slot>
+          </div>
           <button type="button" class="btn btn-white">{{buttonTitle}}</button>
+       </div>
 
-      </div>
-
-      <div class="menu-bar ">
-         <div class="menu-logo">
-            <img src="assets/images/flatfile.svg"></img>
-         </div> 
-         <div >
-            <span v-on:click="foo = !foo">
-               <i data-feather="menu" class="icon hand" ></i>
-            </span>
-         </div>
-      </div>
-
-      <div class="menu-overlay fade-in-bottom" v-if="foo">
-         <div class="menu-item">
-            <a href="" class="rm-link-styles">Documentation</a>
-         </div>
-         <div class="menu-item">
-            <a href="" class="rm-link-styles">CSS</a>
-         </div>
-         <div class="menu-item">
-            <a href="" class="rm-link-styles">Blog</a>
-         </div>
-         <div class="menu-item">
-            <a href="" class="rm-link-styles">Contact</a>
-         </div>
-      </div>
-
-      </div>
+    </div>
     
     `,
     data:function(){
         return {
             message: 'Hello',
-            foo: false, /*for mobile menu*/
         }
     },
     methods: {
@@ -83,7 +52,7 @@ Vue.component('menu-item',{
                   <i data-feather="chevron-down" class=""></i>
                </span>
 
-               <div v-if="show" class="menu-dropdown fade-in-bottom" >
+               <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
                   <div class="row">
                      <div class="col-6 v-a no-margin">
                         <img src="assets/images/portal.svg"></img>
