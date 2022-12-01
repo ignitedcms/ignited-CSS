@@ -22,47 +22,11 @@ Vue.component('mega-menu',{
             <img src="assets/images/flatfile.svg"></img>
          </div>
          <div class="menu-item-container">
-            <div class="m-l-2 hand v-a" v-on:click="show =!show" v-click-outside="away">
-               Products
-               <span class="m-l v-a">
-                  <i data-feather="chevron-down" class=""></i>
-               </span>
-
-               <div v-if="show" class="menu-dropdown fade-in-bottom" @click.stop>
-                  <div class="row">
-                     <div class="col-6 v-a no-margin">
-                        <img src="assets/images/portal.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </div>
-                     <div class="col-6 v-a no-margin">
-                        <img src="assets/images/portal.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </div>
-                  </div>
-                  <div class="row m-t">
-                     <div class="col-6 v-a no-margin">
-                        <img src="assets/images/workspaces.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </div>
-                     <div class="col-6 v-a no-margin">
-                        <img src="assets/images/workspaces.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="m-l-2 hand v-a">
-               Developers
-               <span class="m-l v-a">
-                  <i data-feather="chevron-down" class=""></i>
-               </span>
-            </div>
-            <div class="m-l-2 hand v-a">
-               Company
-               <span class="m-l v-a">
-                  <i data-feather="chevron-down" class=""></i>
-               </span>
-            </div>
+            <slot>
+            </slot>
+            
+            
+            
          </div>
           <button type="button" class="btn btn-white">{{buttonTitle}}</button>
 
@@ -100,32 +64,61 @@ Vue.component('mega-menu',{
     data:function(){
         return {
             message: 'Hello',
-            show: false,
             foo: false, /*for mobile menu*/
         }
     },
     methods: {
-      away: function () {
-        this.show = false;
-      },
+
     }
 });
 
 
 Vue.component('menu-item',{
+    props:['menu-title'],
     template: 
     `
-     <div class="bg-dark hand p-4 br">
-         <div class="">
-            hi there
-         </div> 
-     </div>
+         <div class="m-l-2 hand v-a" v-on:click="show = !show" v-click-outside="away">
+               {{menuTitle}}
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
+
+               <div v-if="show" class="menu-dropdown fade-in-bottom" >
+                  <div class="row">
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/portal.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/portal.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                  </div>
+                  <div class="row m-t">
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/workspaces.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                     <div class="col-6 v-a no-margin">
+                        <img src="assets/images/workspaces.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </div>
+                  </div>
+               </div>
+            </div> 
+     
     `,
-    // data:function(){
+     data:function(){
 
-    //     return{
-
-    //     }
-    // }
+         return{
+           show:false
+         }
+     },
+     methods: {
+      away: function () {
+        this.show = false;
+      },
+    }
+  
 });
 
