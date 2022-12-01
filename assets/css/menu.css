@@ -56,7 +56,7 @@
 }
 
 .menu-overlay {
-  top: 85px;
+  top: 89px;
   left: 0;
   position: fixed;
   height: 100%;
@@ -64,19 +64,23 @@
   background-color: #ffffff;
   color: #666666;
   display: none;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   z-index: 4;
 }
 
 .menu-item {
   position: relative;
-  margin-top: 20px;
-  font-size: 28px;
+  padding: 20px;
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
 }
 
 .menu-item:hover {
+  background-color: rgb(243, 243, 243);
   text-decoration: none;
   color: inherit;
 }
