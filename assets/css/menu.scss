@@ -21,6 +21,7 @@
    }
 
    &-large-items{
+      position:relative;
       transition: 0.4s all;
       margin-right:10px;
       &:hover{
@@ -39,9 +40,9 @@
    &-dropdown{
       position:absolute;
       top:40px;
-      left:10px;
-      min-width:600px; 
-      height:200px; 
+      left:-40px;
+      min-width:200px; 
+      min-height:100px; 
       background-color:#ffffff;
       padding:20px;
       border:1px solid $grey;

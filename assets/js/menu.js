@@ -46,7 +46,7 @@ Vue.component('menu-item',{
     props:['menu-title'],
     template: 
     `
-      <div class="m-l-2 hand v-a" v-on:click="show = !show" v-click-outside="away">
+      <div class="m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
             {{menuTitle}}
             <span class="m-l v-a">
                <i data-feather="chevron-down" class=""></i>
@@ -54,21 +54,13 @@ Vue.component('menu-item',{
 
             <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
                <div class="row">
-                     <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
-                        <img src="assets/images/portal.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </a>
-                     <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
+                     <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
                         <img src="assets/images/portal.svg"></img>
                         <div class="m-l-2">testing</div>
                      </a>
                </div>
                <div class="row m-t">
-                  <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
-                        <img src="assets/images/workspaces.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </a>
-                     <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
+                     <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
                         <img src="assets/images/workspaces.svg"></img>
                         <div class="m-l-2">testing</div>
                      </a>
