@@ -17,6 +17,14 @@
   max-width: 30px;
   height: 30px;
 }
+.menu-large-items {
+  transition: 0.4s all;
+  margin-right: 10px;
+}
+.menu-large-items:hover {
+  color: #007bd9 !important;
+  text-decoration: underline;
+}
 .menu-item-container {
   position: relative;
   display: flex;

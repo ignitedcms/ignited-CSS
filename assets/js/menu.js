@@ -46,35 +46,35 @@ Vue.component('menu-item',{
     props:['menu-title'],
     template: 
     `
-         <div class="m-l-2 hand v-a" v-on:click="show = !show" v-click-outside="away">
-               {{menuTitle}}
-               <span class="m-l v-a">
-                  <i data-feather="chevron-down" class=""></i>
-               </span>
+      <div class="m-l-2 hand v-a" v-on:click="show = !show" v-click-outside="away">
+            {{menuTitle}}
+            <span class="m-l v-a">
+               <i data-feather="chevron-down" class=""></i>
+            </span>
 
-               <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
-                  <div class="row">
-                     <div class="col-6 v-a no-margin">
+            <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
+               <div class="row">
+                     <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
                         <img src="assets/images/portal.svg"></img>
                         <div class="m-l-2">testing</div>
-                     </div>
-                     <div class="col-6 v-a no-margin">
+                     </a>
+                     <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
                         <img src="assets/images/portal.svg"></img>
                         <div class="m-l-2">testing</div>
-                     </div>
-                  </div>
-                  <div class="row m-t">
-                     <div class="col-6 v-a no-margin">
-                        <img src="assets/images/workspaces.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </div>
-                     <div class="col-6 v-a no-margin">
-                        <img src="assets/images/workspaces.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </div>
-                  </div>
+                     </a>
                </div>
-            </div> 
+               <div class="row m-t">
+                  <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
+                        <img src="assets/images/workspaces.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </a>
+                     <a href="http://www.google.com" class="rm-link-styles col-6 v-a no-margin menu-large-items">
+                        <img src="assets/images/workspaces.svg"></img>
+                        <div class="m-l-2">testing</div>
+                     </a>
+               </div>
+            </div>
+      </div> 
      
     `,
      data:function(){

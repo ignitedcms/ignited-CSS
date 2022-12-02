@@ -20,6 +20,16 @@
       height: 30px; 
    }
 
+   &-large-items{
+      transition: 0.4s all;
+      margin-right:10px;
+      &:hover{
+         color:$link-color !important;
+         text-decoration:underline;
+      }
+
+   }
+
    &-item-container{
       position:relative;  
       display:flex;
