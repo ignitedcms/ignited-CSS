@@ -53,18 +53,8 @@ Vue.component('menu-item',{
             </span>
 
             <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
-               <div class="row">
-                     <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
-                        <img src="assets/images/portal.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </a>
-               </div>
-               <div class="row m-t">
-                     <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
-                        <img src="assets/images/workspaces.svg"></img>
-                        <div class="m-l-2">testing</div>
-                     </a>
-               </div>
+               <slot>
+               </slot>
             </div>
       </div> 
      
@@ -83,3 +73,26 @@ Vue.component('menu-item',{
   
 });
 
+
+Vue.component('menu-item-single',{
+    props:['xyz'],
+    template: 
+    `
+       <div class="row m-t">
+         <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
+            <img src="assets/images/portal.svg"></img>
+            <div class="m-l-2">{{xyz}}</div>
+         </a>
+      </div>
+     
+    `,
+     data:function(){
+
+         return{
+           //nothing
+         }
+     },
+     methods: {
+    }
+  
+});
