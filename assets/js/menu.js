@@ -46,12 +46,12 @@ Vue.component('menu-items',{
     template: 
     `
       <div>
-         <div v-if="!children">
+         <div v-if="children !== 'yes'">
             <a href="#" class="rm-link-styles m-l-2">
                {{menuTitle}}
             </a>
          </div>
-         <div v-if="children" class="m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
+         <div v-if="children === 'yes'" class="m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
                <button class="rm-btn-styles">
                   {{menuTitle}}
                </button>
@@ -81,14 +81,13 @@ Vue.component('menu-items',{
   
 });
 
-
 Vue.component('menu-item',{
-    props:['item-title'],
+    props:['item-title','icon'],
     template: 
     `
        <div class="row m-t">
          <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
-            <img src="assets/images/portal.svg"></img>
+            <img v-bind:src="icon"></img>
             <div class="m-l-2">{{itemTitle}}</div>
          </a>
       </div>
