@@ -50,12 +50,12 @@ Vue.component('mobile-menu',{
 
 
 Vue.component('mobile-menu-items',{
-    props:['title'],
+    props:['title','url'],
     template: 
     `
-    <div class="menu-item">
-         <a href="" class="rm-link-styles">{{title}}</a>
-    </div>
+    <a v-bind:href="url" class="menu-item rm-link-styles">
+         <div  class="rm-link-styles">{{title}}</div>
+    </a>
     `,
      data:function(){
 
