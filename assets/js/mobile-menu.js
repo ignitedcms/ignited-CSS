@@ -13,7 +13,7 @@
 | @since: 1.0
 */
 Vue.component('mobile-menu',{
-    props:['mobile-button-title'],
+    props:['title'],
     template: 
     `
     <div style="top:0; position:sticky; z-index:2; ">
@@ -50,11 +50,11 @@ Vue.component('mobile-menu',{
 
 
 Vue.component('mobile-menu-items',{
-    props:['mobile-menu-title'],
+    props:['title'],
     template: 
     `
     <div class="menu-item">
-         <a href="" class="rm-link-styles">{{mobileMenuTitle}}</a>
+         <a href="" class="rm-link-styles">{{title}}</a>
     </div>
     `,
      data:function(){
