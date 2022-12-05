@@ -27,7 +27,6 @@ Vue.component('mega-menu',{
           </div>
           <button type="button" class="btn btn-white">{{buttonTitle}}</button>
        </div>
-
     </div>
     
     `,
@@ -43,20 +42,29 @@ Vue.component('mega-menu',{
 
 
 Vue.component('menu-items',{
-    props:['menu-title'],
+    props:['menu-title','children'],
     template: 
     `
-      <div class="m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
-            {{menuTitle}}
-            <span class="m-l v-a">
-               <i data-feather="chevron-down" class=""></i>
-            </span>
+      <div>
+         <div v-if="!children">
+            <a href="#" class="rm-link-styles m-l-2">
+               {{menuTitle}}
+            </a>
+         </div>
+         <div v-if="children" class="m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
+               <button class="rm-btn-styles">
+                  {{menuTitle}}
+               </button>
+               <span class="m-l v-a">
+                  <i data-feather="chevron-down" class=""></i>
+               </span>
 
-            <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
-               <slot>
-               </slot>
-            </div>
-      </div> 
+               <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
+                  <slot>
+                  </slot>
+               </div>
+         </div> 
+      </div>
      
     `,
      data:function(){
@@ -75,13 +83,13 @@ Vue.component('menu-items',{
 
 
 Vue.component('menu-item',{
-    props:['xyz'],
+    props:['item-title'],
     template: 
     `
        <div class="row m-t">
          <a href="http://www.google.com" class="rm-link-styles col v-a no-margin menu-large-items">
             <img src="assets/images/portal.svg"></img>
-            <div class="m-l-2">{{xyz}}</div>
+            <div class="m-l-2">{{itemTitle}}</div>
          </a>
       </div>
      
