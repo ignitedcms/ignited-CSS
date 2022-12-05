@@ -12,14 +12,18 @@
 | @version: 1.0
 | @since: 1.0
 */
+
+
 Vue.component('mega-menu',{
-    props:['title'],
+    props:['title','logo','url'],
     template: 
     `
     <div style="top:0; position:sticky; z-index:2; ">
        <div class="menu">
           <div class="menu-logo">
-             <img src="assets/images/flatfile.svg"></img>
+             <a v-bind:href="url" class="rm-link-styles">
+               <img v-bind:src="logo"></img>
+             </a>
           </div>
           <div class="menu-item-container">
              <slot>

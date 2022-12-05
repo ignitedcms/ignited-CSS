@@ -23,13 +23,13 @@ Vue.component('mobile-menu',{
              <img src="assets/images/flatfile.svg"></img>
           </div> 
           <div >
-             <span v-on:click="foo = !foo">
+             <span v-on:click="isShown =!isShown">
                 <i data-feather="menu" class="icon hand" ></i>
              </span>
           </div>
        </div>
 
-       <div class="menu-overlay fade-in-bottom" v-if="foo">
+       <div class="menu-overlay fade-in-bottom" v-if="isShown">
          <slot>
          </slot>
        </div>
@@ -40,7 +40,7 @@ Vue.component('mobile-menu',{
     data:function(){
         return {
             message: 'Hello',
-            foo: false, /*for mobile menu*/
+            isShown: false, /*for mobile menu*/
         }
     },
     methods: {
