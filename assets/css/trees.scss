@@ -1,10 +1,13 @@
 @import "variables";
 
-ul{
+.trees{
   list-style-type: none;
 }
-li{
-    margin-left:$margin;
+
+/*target the descendants*/
+.trees ul > li{
+    list-style-type: none;
+    margin-left:4 * $margin;
     position:relative;
 }
 

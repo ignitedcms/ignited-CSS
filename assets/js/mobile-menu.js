@@ -13,14 +13,15 @@
 | @since: 1.0
 */
 Vue.component('mobile-menu',{
-    props:['title'],
+    props:['title','logo','url'],
     template: 
     `
-    <div style="top:0; position:sticky; z-index:2; ">
-       
+    <div style="top:0; position:sticky; z-index:2;">
        <div class="menu-bar ">
           <div class="menu-logo">
-             <img src="assets/images/flatfile.svg"></img>
+             <a v-bind:href="url">
+                <img v-bind:src="logo"></img>
+             </a>
           </div> 
           <div >
              <span v-on:click="isShown =!isShown">
@@ -30,10 +31,8 @@ Vue.component('mobile-menu',{
        </div>
 
        <div class="menu-overlay fade-in-bottom" v-if="isShown">
-         <slot>
-         </slot>
+          <slot></slot>
        </div>
-
     </div>
     
     `,
@@ -54,7 +53,10 @@ Vue.component('mobile-menu-items',{
     template: 
     `
     <a v-bind:href="url" class="menu-item rm-link-styles">
-         <div  class="rm-link-styles">{{title}}</div>
+       <div class="rm-link-styles">
+          {{title}}
+          <slot></slot>
+       </div>
     </a>
     `,
      data:function(){

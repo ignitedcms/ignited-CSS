@@ -1,10 +1,12 @@
 @charset "UTF-8";
-ul {
+.trees {
   list-style-type: none;
 }
 
-li {
-  margin-left: 10px;
+/*target the descendants*/
+.trees ul > li {
+  list-style-type: none;
+  margin-left: 40px;
   position: relative;
 }
 
