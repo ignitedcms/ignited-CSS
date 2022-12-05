@@ -93,6 +93,15 @@
   color: inherit;
 }
 
+.item-content {
+  position: relative;
+  margin-top: 10px;
+}
+.item-content > ul {
+  list-style-type: none;
+  margin-left: 10px;
+}
+
 @media (max-width: 900px) {
   .menu {
     display: none;

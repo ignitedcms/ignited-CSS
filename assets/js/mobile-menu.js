@@ -53,15 +53,15 @@ Vue.component('mobile-menu-items',{
     template: 
     `
     <div style="width:100%;"> 
-       <a v-bind:href="url" class="rm-link-styles">
-          <div v-if="children !== 'yes'" class="menu-item ">
+       <a v-bind:href="url"  class="rm-link-styles">
+          <div  v-if="children !== 'yes'" class="menu-item ">
              {{title}}
           </div>
        </a>
        
-       <div v-if="children === 'yes'" class="menu-item ">
+       <div v-on:click="show = !show" v-if="children === 'yes'" class="menu-item ">
           {{title}}
-          <div class="item-content">
+          <div v-if="show" class="item-content no-select">
              <slot></slot>
           </div>
        </div>
