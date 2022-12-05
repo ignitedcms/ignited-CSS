@@ -49,15 +49,24 @@ Vue.component('mobile-menu',{
 
 
 Vue.component('mobile-menu-items',{
-    props:['title','url'],
+    props:['title','url','children'],
     template: 
     `
-    <a v-bind:href="url" class="menu-item rm-link-styles">
-       <div class="rm-link-styles">
+    <div style="width:100%;"> 
+       <a v-bind:href="url" class="rm-link-styles">
+          <div v-if="children !== 'yes'" class="menu-item ">
+             {{title}}
+          </div>
+       </a>
+       
+       <div v-if="children === 'yes'" class="menu-item ">
           {{title}}
-          <slot></slot>
+          <div class="item-content">
+             <slot></slot>
+          </div>
        </div>
-    </a>
+       
+    </div> 
     `,
      data:function(){
 
