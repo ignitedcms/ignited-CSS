@@ -42,7 +42,7 @@ Vue.component('mega-menu',{
 });
 
 
-Vue.component('menu-item',{
+Vue.component('menu-items',{
     props:['menu-title'],
     template: 
     `
@@ -74,7 +74,7 @@ Vue.component('menu-item',{
 });
 
 
-Vue.component('menu-item-single',{
+Vue.component('menu-item',{
     props:['xyz'],
     template: 
     `

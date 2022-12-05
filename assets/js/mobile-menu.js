@@ -49,12 +49,12 @@ Vue.component('mobile-menu',{
 });
 
 
-Vue.component('mobile-menu-item',{
+Vue.component('mobile-menu-items',{
     props:['mobile-menu-title'],
     template: 
     `
     <div class="menu-item">
-            <a href="" class="rm-link-styles">{{mobileMenuTitle}}</a>
+         <a href="" class="rm-link-styles">{{mobileMenuTitle}}</a>
     </div>
     `,
      data:function(){
