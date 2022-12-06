@@ -89,6 +89,13 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.menu-item-block {
+  background-color: #ffffff;
+  padding: 20px;
+}
+.menu-item-block > ul > li {
+  list-style-type: none;
+}
 
 .menu-item:hover {
   background-color: rgb(243, 243, 243);
@@ -98,9 +105,8 @@
 
 .item-content {
   position: relative;
-  margin-top: 10px;
 }
-.item-content > ul {
+.item-content > ul > li {
   list-style-type: none;
   margin-left: 10px;
 }

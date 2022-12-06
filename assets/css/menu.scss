@@ -105,6 +105,15 @@
    justify-content:space-between;
    //align-items: flex-start;
 
+   &-block{
+      background-color: #ffffff;
+      padding: 2 * $margin;
+
+      & > ul > li {
+         list-style-type: none;
+      }
+   }
+
 }
 .menu-item:hover{
    background-color:$light-grey;
@@ -114,9 +123,8 @@
 
 .item-content{
    position:relative;
-   margin-top:10px;
 
-   & > ul 
+   & > ul > li
    {
       list-style-type: none;
       margin-left:10px;
