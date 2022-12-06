@@ -20,13 +20,20 @@
       //height: 30px; 
    }
 
+   &-main{
+     &:hover{
+
+         color:$link-color !important;
+     }
+   }
+
    &-large-items{
       position:relative;
       transition: 0.4s all;
       margin-right:10px;
       &:hover{
          color:$link-color !important;
-         text-decoration:underline;
+         //text-decoration:underline;
       }
 
    }

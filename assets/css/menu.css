@@ -16,6 +16,9 @@
 .menu-logo {
   max-width: 30px;
 }
+.menu-main:hover {
+  color: #007bd9 !important;
+}
 .menu-large-items {
   position: relative;
   transition: 0.4s all;
@@ -23,7 +26,6 @@
 }
 .menu-large-items:hover {
   color: #007bd9 !important;
-  text-decoration: underline;
 }
 .menu-item-container {
   position: relative;

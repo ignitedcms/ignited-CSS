@@ -51,11 +51,11 @@ Vue.component('menu-items',{
     `
       <div>
          <div v-if="children !== 'yes'">
-            <a v-bind:href="url" class="rm-link-styles m-l-2">
+            <a v-bind:href="url" class="menu-main rm-link-styles m-l-2">
                {{title}}
             </a>
          </div>
-         <div v-if="children === 'yes'" class="m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
+         <div v-if="children === 'yes'" class="menu-main m-l-2 hand v-a pos-rel" v-on:click="show = !show" v-click-outside="away">
                <button class="rm-btn-styles">
                   {{title}}
                </button>
