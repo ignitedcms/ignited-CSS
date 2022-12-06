@@ -32,6 +32,13 @@ Vue.component('mobile-menu',{
 
        <div class="menu-overlay fade-in-bottom" v-if="isShown">
           <slot></slot>
+          
+          <a href="#" style="width:100%;" class="rm-link-styles">
+            <div class="menu-item">
+             {{title}}
+            </div>
+          </a>
+          
        </div>
     </div>
     
