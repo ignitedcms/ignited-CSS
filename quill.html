@@ -9,8 +9,11 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
       <!-- vue 2 -->
-      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+      <script src="assets/js/vue2.js"></script>
+
+
       <!-- Include Quill stylesheet -->
       <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
    </head>
@@ -48,30 +51,30 @@
       <!-- Initialize Quill editor -->
       <script>
          (function () {
-           quilljs_textarea('.quilljs-textarea', {
-             modules: {
-               toolbar: [
-                 ['bold', 'italic', 'underline'], // toggled buttons
-                 [{
-                   'list': 'ordered'
-                 }, {
-                   'list': 'bullet'
-                 }],
-                 [{
-                   'header': [1, 2, 3, 4, 5, 6, false]
-                 }],
-                 [{
-                   'color': []
-                 }], // dropdown with defaults from theme
-                 [{
-                   'align': []
-                 }],
-                 ['clean'],
-                 ['link']
-               ]
-             },
-             theme: 'snow',
-           });
+            quilljs_textarea('.quilljs-textarea', {
+               modules: {
+                  toolbar: [
+                     ['bold', 'italic', 'underline'], // toggled buttons
+                     [{
+                        'list': 'ordered'
+                     }, {
+                        'list': 'bullet'
+                     }],
+                     [{
+                        'header': [1, 2, 3, 4, 5, 6, false]
+                     }],
+                     [{
+                        'color': []
+                     }], // dropdown with defaults from theme
+                     [{
+                        'align': []
+                     }],
+                     ['clean'],
+                     ['link']
+                  ]
+               },
+               theme: 'snow',
+            });
          })();
       </script>
    </body>
