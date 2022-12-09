@@ -15,6 +15,7 @@ Vue.component('search',{
   `
   <div>
     <label for="title">{{name}}</label>
+    <div class="small text-muted">efjdksl</div>
     <input  type="text" :name="name" v-model="message" class="form-control" placeholder="type here" v-on:click="show =!show" v-click-outside="away">
     <div v-if="show" class="search br drop-shadow fade-in">
       <div v-for='(search, index) in searches' @click="my_select(search.val)">
