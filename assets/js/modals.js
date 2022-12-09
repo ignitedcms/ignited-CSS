@@ -21,7 +21,7 @@ Vue.component('modal',{
       {{buttonTitle}} 
     </button>
     <div class="modal" v-show="open">
-      <div class="modal-content" @click.stop>
+      <div class="modal-content fade-in-bottom" @click.stop>
 
         <div class="modal-header">
           <button type="button" class="rm-btn-styles close" v-on:click="open = false">&times;</button>
