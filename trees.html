@@ -2,78 +2,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light weight framework</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
 
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
 
 
-    
-</head>
 
-<body class="full-screen">
-    <div class="container" id="app">
+   </head>
 
-        <div class="row">
+   <body class="full-screen">
+      <div class="container" id="app">
+
+         <div class="row">
             <div class="col">
-                <h3>Trees</h3>
-               
-                <tree> 
-                </tree> 
-                <ul id="" class="trees">
-                    <li><span class="caret">Beverages</span>
-                        <ul class="nested">
-                            <li>Water</li>
-                            <li>Coffee</li>
-                            <li><span class="caret">Tea</span>
-                                <ul class="nested">
-                                    <li>Black Tea</li>
-                                    <li>White Tea</li>
-                                </ul>
-                            </li>  
-                        </ul>
-                    </li>
-                </ul>  
-                
-            </div>
-        </div>
-    </div>
+               <h3>Trees</h3>
 
-    <script src="assets/js/trees.js"></script>
-    <script src="assets/js/click-outside.js"></script>
-    <script>
-        /*
+               <tree> 
+                  <ul class="trees">
+                     <li>
+                        <span class="caret no-select">Beverages</span>
+                        <ul class="nested">
+                           <li>Water</li>
+                           <li>Coffee</li>
+                           <li>
+                              <span class="caret">Tea</span>
+                              <ul class="nested">
+                                 <li>Black Tea</li>
+                                 <li>White Tea</li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </tree> 
+
+            </div>
+         </div>
+      </div>
+
+      <script src="assets/js/trees.js"></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script>
+       /*
         |---------------------------------------------------------------
         | Base entry for vue app
         |---------------------------------------------------------------
         |
         */
 
-        var app = new Vue({
+         var app = new Vue({
             el: '#app',
-        })
-    </script>
-    <script>
-    var toggler = document.getElementsByClassName("caret");
-    var i;
-
-    for (i = 0; i < toggler.length; i++) {
-      toggler[i].addEventListener("click", function() {
-        this.parentElement.querySelector(".nested").classList.toggle("active");
-        this.classList.toggle("caret-down");
-      });
-    }
-
-    </script>
-</body>
-
+         })
+      </script>
+   </body>
 </html>

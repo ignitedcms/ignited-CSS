@@ -6,6 +6,7 @@
 | Use slots to repeat child components
 | Use props to pass in data MUST use kebab case eg postTitle => post-title 
 | 
+| IMPORTANT not fully complete at the moment 
 |---------------------------------------------------------------
 | @author: IgnitedCMS
 | @license: MIT
@@ -15,34 +16,34 @@
 
 
 Vue.component('tree',{
-    props:['title','logo','url'],
+    //props:['title','logo','url'],
     template: 
     `
     <div>
-       <ul id="" class="trees">
-          <li><span class="caret">Beverages</span>
-             <ul class="nested">
-                <li>Water</li>
-                <li>Coffee</li>
-                <li><span class="caret">Tea</span>
-                   <ul class="nested">
-                      <li>Black Tea</li>
-                      <li>White Tea</li>
-                   </ul>
-                </li>
-             </ul>
-          </li>
-       </ul>
+      <slot> 
+      </slot> 
     </div>
     
     `,
     data:function(){
         return {
-            message: 'Hello',
+            //message: 'Hello',
         }
     },
-    methods: {
+    mounted(){
+       var toggler = document.getElementsByClassName("caret");
+       var i;
 
+       for (i = 0; i < toggler.length; i++) {
+         toggler[i].addEventListener("click", function() {
+           this.parentElement.querySelector(".nested").classList.toggle("active");
+           this.classList.toggle("caret-down");
+         });
+       }
+
+    },
+    methods: {
+         //methods go here
     }
 });
 
