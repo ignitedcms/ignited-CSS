@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="assets/js/vue2.js"></script>
+
+</head>
+
+<body>
+    <div class="full-screen">
+        <div class="page full-screen v-a h-a" id="app">
+            
+            <h2>Landing page</h2>
+        </div>
+    </div>
+
+
+    <script src="assets/js/feather.js"></script>
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script>
+        /*
+        |---------------------------------------------------------------
+        | Base entry for vue app
+        |---------------------------------------------------------------
+        |
+        */
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+               test()
+               {
+                  alert('going to login');
+               }
+            }
+        })
+    </script>
+   
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+    
+
+</body>
+
+</html>
