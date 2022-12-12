@@ -338,26 +338,26 @@ ol {
    margin: $margin;
 
    &-2{
-      margin:calc($margin*2);
+      margin:($margin*2);
       @media screen and (max-width:$tablet) {
          margin: $margin;
       }
 
    }
    &-3{
-      margin:calc($margin*3);
+      margin:($margin*3);
       @media screen and (max-width:$tablet) {
          margin: $margin;
       }
    }
    &-4{
-      margin:calc($margin*4);
+      margin:($margin*4);
       @media screen and (max-width:$tablet) {
          margin: $margin;
       }
    }
    &-5{
-      margin:calc($margin*5);
+      margin:($margin*5);
       @media screen and (max-width:$tablet) {
          margin: $margin;
       }
@@ -366,26 +366,26 @@ ol {
    &-t {
       margin-top: $margin;
       &-2{
-         margin-top:calc($margin*2);
+         margin-top:($margin*2);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
 
       }
       &-3{
-         margin-top:calc($margin*3);
+         margin-top:($margin*3);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-4{
-         margin-top:calc($margin*4);
+         margin-top:($margin*4);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-5{
-         margin-top:calc($margin*5);
+         margin-top:($margin*5);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
@@ -395,26 +395,26 @@ ol {
    &-l {
       margin-left: $margin;
       &-2{
-         margin-left:calc($margin*2);
+         margin-left:($margin*2);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
 
       }
       &-3{
-         margin-left:calc($margin*3);
+         margin-left:($margin*3);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-4{
-         margin-left:calc($margin*4);
+         margin-left:($margin*4);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-5{
-         margin-left:calc($margin*5);
+         margin-left:($margin*5);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
@@ -424,26 +424,26 @@ ol {
    &-r {
       margin-right: $margin;
       &-2{
-         margin-right:calc($margin*2);
+         margin-right:($margin*2);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
 
       }
       &-3{
-         margin-right:calc($margin*3);
+         margin-right:($margin*3);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-4{
-         margin-right:calc($margin*4);
+         margin-right:($margin*4);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-5{
-         margin-right:calc($margin*5);
+         margin-right:($margin*5);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
@@ -453,26 +453,26 @@ ol {
    &-b {
       margin-bottom: $margin;
       &-2{
-         margin-bottom:calc($margin*2);
+         margin-bottom:($margin*2);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
 
       }
       &-3{
-         margin-bottom:calc($margin*3);
+         margin-bottom:($margin*3);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-4{
-         margin-bottom:calc($margin*4);
+         margin-bottom:($margin*4);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
       }
       &-5{
-         margin-bottom:calc($margin*5);
+         margin-bottom:($margin*5);
          @media screen and (max-width:$tablet) {
             margin: $margin;
          }
@@ -484,26 +484,26 @@ ol {
    padding: $margin;
 
    &-2{
-      padding:calc($margin*2);
+      padding:($margin*2);
 
       @media screen and (max-width:$tablet) {
          padding: $margin;
       }
    }
    &-3{
-      padding:calc($margin*3);
+      padding:($margin*3);
       @media screen and (max-width:$tablet) {
          padding: $margin;
       }
    }
    &-4{
-      padding:calc($margin*4);
+      padding:($margin*4);
       @media screen and (max-width:$tablet) {
          padding: $margin;
       }
    }
    &-5{
-      padding:calc($margin*5);
+      padding:($margin*5);
       @media screen and (max-width:$tablet) {
          padding: $margin;
       }
@@ -513,26 +513,26 @@ ol {
    &-t {
       padding-top: $margin;
       &-2{
-         padding-top:calc($margin*2);
+         padding-top:($margin*2);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
 
       }
       &-3{
-         padding-top:calc($margin*3);
+         padding-top:($margin*3);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-4{
-         padding-top:calc($margin*4);
+         padding-top:($margin*4);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-5{
-         padding-top:calc($margin*5);
+         padding-top:($margin*5);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
@@ -542,26 +542,26 @@ ol {
    &-l {
       padding-left: $margin;
       &-2{
-         padding-left:calc($margin*2);
+         padding-left:($margin*2);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
 
       }
       &-3{
-         padding-left:calc($margin*3);
+         padding-left:($margin*3);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-4{
-         padding-left:calc($margin*4);
+         padding-left:($margin*4);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-5{
-         padding-left:calc($margin*5);
+         padding-left:($margin*5);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
@@ -571,26 +571,26 @@ ol {
    &-r {
       padding-right: $margin;
       &-2{
-         padding-right:calc($margin*2);
+         padding-right:($margin*2);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
 
       }
       &-3{
-         padding-right:calc($margin*3);
+         padding-right:($margin*3);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-4{
-         padding-right:calc($margin*4);
+         padding-right:($margin*4);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-5{
-         padding-right:calc($margin*5);
+         padding-right:($margin*5);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
@@ -600,26 +600,26 @@ ol {
    &-b {
       padding-bottom: $margin;
       &-2{
-         padding-bottom:calc($margin*2);
+         padding-bottom:($margin*2);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
 
       }
       &-3{
-         padding-bottom:calc($margin*3);
+         padding-bottom:($margin*3);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-4{
-         padding-bottom:calc($margin*4);
+         padding-bottom:($margin*4);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
       }
       &-5{
-         padding-bottom:calc($margin*5);
+         padding-bottom:($margin*5);
          @media screen and (max-width:$tablet) {
             padding: $margin;
          }
