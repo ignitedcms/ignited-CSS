@@ -13,8 +13,16 @@
     font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
     font-size: 14px;
     background-color:$tertiary;
-    border-radius: $border-radius;
+
+    border-bottom-left-radius:$border-radius;
+    border-bottom-right-radius:$border-radius;
+
     padding: $padding;
+
+    @media (max-width: $desktop ) 
+    {
+      width:100%;
+    }
 
     &-light{
       position:relative;
@@ -22,11 +30,21 @@
       height:$console-width;
       font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
       font-size: 14px;
-      border-radius: $border-radius;
+
+      border-bottom-left-radius:$border-radius;
+      border-bottom-right-radius:$border-radius;
+
+
       padding: $padding;
       background-color:#ffffff;
       border:1px solid $grey;
       color:#333333;
+
+      @media (max-width: $desktop )
+      {
+        width:100%;
+      }
+
     }
 }
 
@@ -34,7 +52,7 @@
     position:absolute;
     padding:10px;
     left:0px;
-    top:-10px;
+    top:-20px;
     width:$console-width;
     height:40px;
     border-top-left-radius:7px;
@@ -45,13 +63,19 @@
     flex-direction:row;
     justify-content:flex-start;
     align-items: center;
+
+    @media (max-width:$desktop )
+    {
+      width:100%;
+    }
+
     
     &-light{
 
        position:absolute;
        padding:10px;
-       left:-1px;
-       top:-10px;
+       left:0px;
+       top:-20px;
        width:$console-width;
        height:40px;
        border-top-left-radius:7px;
@@ -63,6 +87,11 @@
        justify-content:flex-start;
        align-items: center;
 
+      @media (max-width: $desktop )
+      {
+        left:0px;
+        width:100%;
+      }
     }
 
     &-green{
