@@ -182,8 +182,8 @@ ol {
 
 @media screen and (max-width: 900px) {
   .col,
-[class*=" col-"],
-[class^=col-] {
+  [class*=" col-"],
+  [class^=col-] {
     margin-top: 10px;
     margin-bottom: 0;
     margin-left: 0;
