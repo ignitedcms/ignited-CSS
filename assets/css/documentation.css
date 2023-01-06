@@ -48,6 +48,7 @@
   left: 0;
   padding: 20px;
   height: 100vh;
+  overflow-y: auto;
   background-color: #F7FAFC;
   border-right: 1px solid #cccccc;
   float: left;
@@ -85,6 +86,7 @@
   position: relative;
   margin-left: 250px;
   float: left;
+  max-width: 800px;
   height: 100vh;
 }
 @media screen and (max-width: 900px) {

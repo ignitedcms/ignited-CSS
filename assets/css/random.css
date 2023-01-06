@@ -132,7 +132,6 @@ p{
 
 @media (max-width: 900px) {
    .igs-code {
-      font-size: 12px;
       padding:10px;
       white-space: pre-wrap;
       word-wrap: break-word;

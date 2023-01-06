@@ -50,7 +50,7 @@
     left:0;
     padding:20px;
     height:100vh;
-    //overflow-y:scroll;
+    overflow-y:auto;
     background-color:$background;
     border-right:1px solid $grey;
     float:left;
@@ -86,6 +86,7 @@
     position:relative;
     margin-left:250px;
     float:left;
+    max-width: 800px;
     height:100vh;
 
     @media screen and (max-width:$tablet) {
