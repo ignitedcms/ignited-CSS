@@ -17,7 +17,7 @@
 }
 @media (max-width: 1200px) {
   .console {
-    width: 100%;
+    min-width: 100%;
     min-height: 200px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -38,7 +38,7 @@
 }
 @media (max-width: 1200px) {
   .console-light {
-    width: 100%;
+    min-width: 100%;
     min-height: 200px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

@@ -21,7 +21,7 @@
 
    @media (max-width: $desktop ) 
    {
-      width:100%;
+      min-width:100%;
       min-height: 200px;
       border-top-left-radius:$border-radius;
       border-top-right-radius:$border-radius;
@@ -46,7 +46,7 @@
 
       @media (max-width: $desktop )
       {
-         width:100%;
+         min-width:100%;
          min-height: 200px;
          border-top-left-radius:$border-radius;
          border-top-right-radius:$border-radius;
