@@ -30,13 +30,13 @@
   border: 1px solid #c73b4d;
 }
 .btn-secondary {
-  background-color: #F26520;
+  background-color: #377E68;
   color: #ffffff;
 }
 .btn-secondary-outline {
   background-color: #ffffff;
-  color: #F26520;
-  border: 1px solid #F26520;
+  color: #377E68;
+  border: 1px solid #377E68;
 }
 .btn-dark {
   background-color: #292F3E;
