@@ -13,7 +13,7 @@ Vue.component('tooltip',{
     props:['link'],
     template: 
     `
-    <button type="button" class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
+    <button v-on:keyup.escape="escapePressed()"  type="button" class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
      <span class="tooltip-highlight"> {{link}} </span>
         <div v-if="show" class="tooltip  fade-in" @click.stop>
             <slot></slot> 
@@ -31,5 +31,10 @@ Vue.component('tooltip',{
         away: function () {
             this.show = false;
         },
+
+       escapePressed()
+       {
+            this.show = false;
+       }
     } 
 });

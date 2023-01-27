@@ -7,7 +7,6 @@
 html {
   box-sizing: border-box;
   margin: 0;
-  background-color: #F7FAFC;
   padding: 0;
 }
 
@@ -53,10 +52,46 @@ label {
 
 .code {
   position: relative;
+  font-size: 15px;
   padding: 30px;
-  background-color: #fff;
+  color: #FFFFFF;
+  background-color: #292F3E;
   overflow-x: auto;
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.code-class {
+  position: relative;
+  color: #333333;
+  border-left: 4px solid #292F3E;
+  background-color: rgb(243, 243, 243);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/*                                                                          
+|---------------------------------------------------------------            
+| cross hatch grid styles                                                
+|---------------------------------------------------------------            
+*/
+.cross-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #f2f2f2 1px, transparent 1px), linear-gradient(to bottom, #f2f2f2 1px, transparent 1px);
+}
+
+/*                                                                          
+|---------------------------------------------------------------            
+| Divider content for dashboard                                                
+|---------------------------------------------------------------            
+| Draws a thin grey line
+|
+*/
+.divider {
+  border-bottom: 1px solid #cccccc;
+  padding-top: 30px;
+  margin-left: -30px;
+  margin-right: -30px;
 }
 
 /*
@@ -209,7 +244,7 @@ ol {
 |---------------------------------------------------------------
  */
 .bg-primary {
-  background-color: #c73b4d;
+  background-color: #292F3E;
   color: #ffffff;
 }
 
@@ -230,6 +265,10 @@ ol {
 
 .bg-light {
   background-color: #ffffff;
+}
+
+.bg-light-grey {
+  background-color: #F7FAFC;
 }
 
 .bg-white {
@@ -296,6 +335,14 @@ ol {
 
 .no-padding {
   padding: 0;
+}
+
+.scroll-y {
+  overflow-y: auto;
+}
+
+.scroll-x {
+  overflow-x: auto;
 }
 
 /*
@@ -687,6 +734,16 @@ ol {
 
 /*
 |---------------------------------------------------------------
+| remove link and button styles
+|---------------------------------------------------------------
+*/
+.rm-link-styles {
+  text-decoration: none;
+  color: #666666 !important;
+}
+
+/*
+|---------------------------------------------------------------
 | Position utilities
 |---------------------------------------------------------------
  */
@@ -792,6 +849,16 @@ ol {
 }
 @media screen and (max-width: 900px) {
   .hide-tablet {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .show-tablet {
+    display: block;
+  }
+}
+@media screen and (min-width: 900px) {
+  .show-tablet {
     display: none;
   }
 }

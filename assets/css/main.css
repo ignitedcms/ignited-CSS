@@ -6,6 +6,7 @@
 @import url("checkbox.css");
 @import url("buttons.css");
 @import url("drop-downs.css");
+@import url("dashboard.css");
 @import url("animations.css");
 @import url("tabs.css");
 @import url("switch.css");
@@ -15,6 +16,7 @@
 @import url("search.css");
 @import url("datepicker.css");
 @import url("documentation.css");
+@import url("gallery.css");
 @import url("toasts.css");
 @import url("range-sliders.css");
 @import url("menu.css");

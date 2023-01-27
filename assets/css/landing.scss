@@ -7,7 +7,7 @@
 
 .console{
    position:relative;
-   min-width:$console-width;
+   width:$console-width;
    min-height:$console-width;
    color:#ffffff;
    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
@@ -21,7 +21,8 @@
 
    @media (max-width: $desktop ) 
    {
-      min-width:100%;
+      width:100%;
+      padding: 10px;
       min-height: 200px;
       border-top-left-radius:$border-radius;
       border-top-right-radius:$border-radius;
@@ -30,7 +31,7 @@
 
    &-light{
       position:relative;
-      min-width:$console-width;
+      width:$console-width;
       min-height:$console-width;
       font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
       font-size: 14px;
@@ -44,9 +45,11 @@
       border:1px solid $grey;
       color:#333333;
 
+
       @media (max-width: $desktop )
       {
-         min-width:100%;
+         width:100%;
+         padding: 20px;
          min-height: 200px;
          border-top-left-radius:$border-radius;
          border-top-right-radius:$border-radius;
@@ -83,7 +86,7 @@
 
       position:absolute;
       padding:10px;
-      left:-1px;
+      left:0px;
       top:-20px;
       width:$console-width;
       height:40px;

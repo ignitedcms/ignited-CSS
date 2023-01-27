@@ -17,12 +17,7 @@
     <!-- vue 2 -->
     <script src="assets/js/vue2.js"></script>
 
-    <style>
-        .dark-mode{
-            background-color:#1F2330;
-            color:#ffffff;
-        }
-    </style>
+    
 </head>
 
     <body class="full-screen">
@@ -31,7 +26,7 @@
 
             <div id="side_nav" class="sidebar" >
                <a href="https://www.ignitedcms.com/">
-                <img src="assets/images/ignitedcms-logo.svg" style="width:150px;"></img>
+                <img src="assets/images/zoan-logo-line.svg" style="width:150px;"></img>
                </a>
                 <h5 class="m-l m-t-2">Introduction</h5>
                 <ul>
@@ -46,10 +41,11 @@
                     <li><a href="#">Email settings</a></li>
                 </ul>
             </div>
-            <div  class="sidebar-fixed fade-in" :style={display:bar}   id="sidebar-fixed" @click.stop>
+
+            <div  class="sidebar-fixed fade-in" :style={display:styles}   id="sidebar-fixed" @click.stop>
 
                <a href="https://www.ignitedcms.com/">
-                <img src="assets/images/ignitedcms-logo.svg" style="width:150px;"></img>
+                <img src="assets/images/zoan-logo-line.svg" style="width:150px;"></img>
                </a>
                 <h5 class="m-l m-t-2">Introduction</h5>
                 <ul>
@@ -71,13 +67,16 @@
                     <div @click="toggle_sidemenu"  v-click-outside="away" class="sidebar-toggle hand drop-shadow br">
                         <i data-feather="menu"></i>
                     </div>
-                    <div style="width:40%;" class=" m-l">
+                    <div style="width:60%;" class=" m-l">
                         <input class="form-control"  name="a" placeholder="Search then hit enter" />
                     </div>
+
+                    <!--
                     <label class="form-switch v-a" style="height:40px;">
                         <input type="checkbox"  />
                         <i ></i> 
                     </label>
+                    -->
 
                 </div>
                 
@@ -85,7 +84,7 @@
                     <div class="row">
                         <div class="col">
                             <h3>Documentation</h3>
-                            <div class="code bg-dark panel br m-t">
+                            <div class="code">
 <pre>
 #include iostream
 int main()
@@ -97,15 +96,41 @@ int main()
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">lorem ipsum blah blah blah blah baljfkdsl
-                            fdjskjfdkslj fjds fdjsf dkslfjsd
-                            fdjskjfdkslj fjds fdjsf dkslfjsd
-                            fdjskjfdkslj fjds fdjsf dkslfjsd
-                            fdjskjfdkslj fjds fdjsf dkslfjsd
-                            fdjskjfdkslj fjds fdjsf dkslfjsd
-
+                        <div class="col">
+                           <p class="text-muted">
+                           To start getting acquainted with how content modeling works in ZoanCMS,
+                           read Entries and Fields. Before installing, check out the Server 
+                           Requirements and Installation Instructions.
+                           </p>
                         </div>
                     </div>
+
+                     <div class="row">
+                        <div class="col">
+                           <img src="assets/images/component-headers.jpg" class="img-responsive b br drop-shadow"></img>
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col-12">
+                           <h5>Content</h5>
+                           <p class="text-muted">
+                              Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                              Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                           </p>
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col">
+
+                        <div class="code-class">length</div>
+                        <h4>Length</h4>
+                        <p>None - returns the length of the current str object</p>
+
+                        </div>
+                     </div>
+
                 </div>
             </div>
 
@@ -125,11 +150,9 @@ int main()
            el: '#app',
            data:
            {
-              message: 'Add Items. . . ',
               show: false,
-              dark:false,
-              foo:'#F7FAFC',
-              bar: 'none'
+              dark:false, //dark or light mode
+              styles: 'none'
            },
            methods:
            {
@@ -138,17 +161,17 @@ int main()
                 this.show = !this.show;
                 if (this.show) 
                 {
-                    this.bar = 'block'
+                    this.styles = 'block'
                 }
                 else
                 {
-                    this.bar = 'none'
+                    this.styles = 'none'
                 }
              },
               away()
               {
                  this.show = false;
-                 this.bar = 'none'
+                 this.styles = 'none'
               }
            },
            mounted()

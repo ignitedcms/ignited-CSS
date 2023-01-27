@@ -11,40 +11,27 @@
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
       <!-- vue 2 -->
       <script src="assets/js/vue2.js"></script>
-
-    <style>
-        .cross-grid{
-            background-size: 40px 40px;
-            background-image:
-            linear-gradient(to right, #f2f2f2 1px, transparent 1px),
-            linear-gradient(to bottom,#f2f2f2  1px, transparent 1px);
-        }
-    </style>
+      
    </head>
    <body>
       <div class="full-screen">
          <div class="page" id="app">
-            <mega-menu title="Login" logo="assets/images/ignitedcms-logo.svg" 
+            <mega-menu title="Login" logo="assets/images/zoan-logo-line.svg" 
                url="http://www.google.com">
                <menu-items title="Resources" children="yes">
                   <menu-item 
                      title="Documentation" 
-                     icon="assets/images/portal.svg" 
+                     icon="assets/images/book.svg" 
                      url="s">
                   </menu-item>
                   <menu-item
                      title="LeafPHP"
-                     icon="assets/images/workspaces.svg"
+                     icon="assets/images/book.svg"
                      url="d">
                   </menu-item>
                   <menu-item 
-                     title="CSS" 
-                     icon="assets/images/workspaces.svg" 
-                     url="d">
-                  </menu-item>
-                  <menu-item
-                     title="IgnitedJS"
-                     icon="assets/images/portal.svg"
+                     title="CSS and JS" 
+                     icon="assets/images/book.svg" 
                      url="d">
                   </menu-item>
                </menu-items>
@@ -57,7 +44,7 @@
                   url="sss">
                </menu-items>
             </mega-menu>
-            <mobile-menu title="Login" logo="assets/images/ignitedcms-logo.svg" 
+            <mobile-menu title="Login" logo="assets/images/zoan-logo-line.svg" 
                url="http://www.google.com">
                <mobile-menu-items 
                   title="One" 
@@ -83,51 +70,50 @@
                   url="http://www.google.com">
                </mobile-menu-items>
             </mobile-menu>
-
-            
-            
             <!--main above the fold-->
             <div class="bg-primary">
-               <div style="max-width:1400px; margin: 0 auto;" class="p-l p-r">
+               <div style="max-width:1000px; margin: 0 auto;" class="p-l p-r">
                   <div class="row" style="min-height:600px;">
-                     <div class="col-5  h-a v-a">
+                     <div class="col-12  h-a v-a">
                         <div class="nothing">
-                           <h1 class="text-white m-t-3">
-                              Supercharge your content management needs
+                           <h1 class="text-white text-center m-t-3">
+                              Order from chaos
                            </h1>
-                           <p>We've built an ecosystem that 'sparks joy'and <br/> we're giving it away for free!</p>
-
+                           <div class="small-container">
+                              <h4 class="text-white">
+                                 Forget what you've been taught. 
+                                 We're wiping the slate clean. 
+                                 Build apps easily and with confidence. 
+                              </h4>
+                           </div>
                         </div>
-
                      </div>
-                     <div class="col-7 v-a h-a pos-rel">
-                        <img src="assets/images/dash.png" class="img-responsive img-center drop-shadow" ></img>
+                     <div class="m-t-3">
+                        <img src="assets/images/dash.jpg" class="img-responsive img-center"/ >
                      </div>
                   </div>
                </div>
             </div>
-           
             <!--logos-->
-            <div class="row bg-dark p-b p-t-5">
+            <div class="row bg-light p-b p-t-5">
                <div class="col-12 h-a v-a">
                   <div class="nothing">
                      <div class="small-container">
-                        <h3 class="text-center text-white">Download <strong>FREE</strong> with no catches</h3>
+                        <h3 class="text-center ">Download <strong>FREE</strong> with no catches</h3>
                         <p class="text-center">It's our treat to you</p>
                         <div class="text-center m-t">
                            <a href="<?= site_url('documentation') ?>">
-                              <button class="btn btn-white m-r m-t">Documentation</button>
+                           <button class="btn btn-white m-r m-t">Documentation</button>
                            </a>
                            <a href="<?= site_url('contact') ?>">
-                              <button class="btn btn-primary m-t">Download</button>
+                           <button class="btn btn-primary m-t">Download</button>
                            </a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-
-            <div class="bg-dark p-b-4">
+            <div class="bg-light-grey p-b-4">
                <div class="medium-container">
                   <div class="row p-b p-t">
                      <div class="col-3 m-t h-a">
@@ -143,199 +129,180 @@
                </div>
             </div>
             <!--logos-->
-
-
             <div class="bg-light">
                <div class="container">
                   <div class="row" style="min-height:600px;">
                      <div class="col-6 v-a">
                         <div class="nothing">
                            <h3>Standing on the shoulders of giants</h3>
-                           <p>
-                           An all in one system for bootstrapping clean, simple, performant PHP apps that doesn't make any assumptions about knowing specific data patterns.
-
+                           <p>We've based our core on the work of giants such as Laravel and LeafPHP. Except we've
+                              trimmed all the fat, to make it as simple as possible to get started.
                            </p>
-
-                           <p class="m-t">
-                           You can use composer or our one click web installer, whatever your needs we have you covered, enabling you write software for the modern web.
+                           <p class="m-t">A lot of frameworks expect you to know a lot of abstract OOP practices. We 
+                              don't. Functional mode allows you to use most methods without needing to worry
+                              about importing long namespaces. Of course, if there are conflicts you can always
+                              go in to the class and change it to avoid namespace collisions. 
                            </p>
-
-
+                           <p class="m-t">This really allows you to write shorter, and much easier to understand code.</p>
                         </div>
-
                      </div>
                      <div class="col-6 v-a h-a m-t">
-                        <img src="assets/images/giants.svg" class="img-responsive"></img>
+                        <img src="assets/images/giants.svg" class="img-responsive hide-tablet"></img>
                      </div>
                   </div>
                </div>
             </div>
-
-
-
-
-
-<!-- feature go here -->
-<div class="bg-primary p-t-4 p-b-4">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3 class="text-center text-white">Jam packed with features</h3>
+            <!-- feature go here -->
+            <div class="bg-primary p-t-4 p-b-4">
+               <div class="container">
+                  <div class="row">
+                     <div class="col">
+                        <h3 class="text-center text-white">Jam packed with features</h3>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="mail" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Email</h4>
+                              <p>Full email SMTP control so that you can easily send email templates. Setup includes
+                                 'Sendgrid' API
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="lock" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Authentication</h4>
+                              <p>Full baked authentication out of the box with password hashing and optional JWT
+                                 settings. Includes email password reseting.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="sliders" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Page builders</h4>
+                              <p>Rapidly prototype your pages and easily add content inside your backend</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="shield" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Secure</h4>
+                              <p>Never suffer the headache of a Wordpress exploit again, our content management
+                                 system is engineered for security
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="feather" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Lightweight</h4>
+                              <p>Built with Viewi and a PHP core our CMS is superlight and a breeze to use
+                                 and easy to extend.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="users" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">User Access</h4>
+                              <p>Easily set and customize permissions so users only have access to the parts they need
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row p-b">
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="github" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Github</h4>
+                              <p>Download the latest source code from Github for FREE and stay up to date</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="tablet" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">Mobile Ready</h4>
+                              <p>Our CMS is mobile ready and beautiful to use on all tablets and devices</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col m-t">
+                        <div class="row">
+                           <div class="col h-a">
+                              <i data-feather="shopping-cart" class="icon"></i>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col">
+                              <h4 class="text-center text-white">E-commerce</h4>
+                              <p>Easily configure Stripe and Paypal e-Commerce settings out of the box</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="mail" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Email</h4>
-                        <p>Full email SMTP control so that you can easily send email templates. Setup includes
-                            'Sendgrid' API</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="lock" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Authentication</h4>
-                        <p>Full baked authentication out of the box with password hashing and optional JWT
-                            settings. Includes email password reseting.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="sliders" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Page builders</h4>
-                        <p>Rapidly prototype your pages and easily add content inside your backend</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="shield" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Secure</h4>
-                        <p>Never suffer the headache of a Wordpress exploit again, our content management
-                            system is engineered for security
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="feather" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Lightweight</h4>
-                        <p>Built with Vue and a PHP core our CMS is superlight and a breeze to use
-                            and easy to extend.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="users" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">User Access</h4>
-                        <p>Easily set and customize permissions so users only have access to the parts they need
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    <div class="row p-b">
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="github" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Github</h4>
-                        <p>Download the latest source code from Github for FREE and stay up to date</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="tablet" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">Mobile Ready</h4>
-                        <p>Our CMS is mobile ready and beautiful to use on all tablets and devices</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m-t">
-                <div class="row">
-                    <div class="col h-a">
-                        <i data-feather="shopping-cart" class="icon"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h4 class="text-center text-white">E-commerce</h4>
-                        <p>Easily configure Stripe and Paypal e-Commerce settings out of the box</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- end features -->
-
-
-
-
-
+            <!-- end features -->
             <!--testimonials-->
             <div class="bg-light-grey cross-grid">
                <div class="container">
-
-
                   <!--templates-->
                   <div class="row">
-                     <div class="col-12"><h3 class="text-center m-t-3">Testimonials</h3></div>
+                     <div class="col-12">
+                        <h3 class="text-center m-t-3">Testimonials</h3>
+                     </div>
                   </div>
                   <div class="row p-2">
                      <div class="col-6">
@@ -354,14 +321,14 @@
                      <div class="col-6">
                         <div class="row">
                            <div class="col-2">
-                              <img src="assets/images/lady.png" class="testimonial-pic drop-shadow"></img>
+                              <img src="assets/images/man.jpg" class="testimonial-pic drop-shadow"></img>
                            </div>
                            <div class="col-10">
-                              <h6>testing</h6>
+                              <h6>John Bolton</h6>
                               <p class="text-muted">
-                              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-                              doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo 
-                              inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+                                 doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo 
+                                 inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
                               </p>
                            </div>
                         </div>
@@ -369,8 +336,6 @@
                   </div>
                </div>
             </div>
-
-
             <div class="bg-light">
                <div class="container">
                   <div class="row" style="min-height:600px;">
@@ -378,14 +343,10 @@
                         <div class="nothing">
                            <h3>A beautiful syntax</h3>
                            <p>Functional mode allows you to write beautiful, clean code without letting long winded namespaces or classes get in your way.</p>
-
                            <p class="m-t">
                               Our simple to use content management UX allows you to rapidly build your front end, or create bespoke MVC modules with a few clicks of a button. 
                            </p>
-
-
                         </div>
-
                      </div>
                      <div class="col-6 v-a h-a m-t">
                         <div class="console drop-shadow">
@@ -404,12 +365,9 @@ app()->post('/name/add', function () {
                   </div>
                </div>
             </div>
-
-
             <div class="bg-light-grey">
                <div class="container">
                   <div class="row" style="min-height:600px;">
-
                      <div class="col-6 v-a h-a m-t">
                         <div class="console drop-shadow">
                            <div class="console-bar">
@@ -429,23 +387,19 @@ $user = db()
                         <div class="nothing">
                            <h3>Lean and Fast</h3>
                            <p>
-                           Using a less opinionated approach, we don't force you to use SOLID principles or ORMs, instead
-                           focusing on a much simpler way to write software that doesn't get in your way. It really is
-                           just about productivity, with a clean coherent structure.
+                              Using a less opinionated approach, we don't force you to use SOLID principles or ORMs, instead
+                              focusing on a much simpler way to write software that doesn't get in your way. It really is
+                              just about productivity, with a clean coherent structure.
                            </p>
-
                            <p class="m-t">Optionally, you can use our SQL graphical builder to build queries
-                           even faster that is optimized for speed, escaped for security and visually much easier to 
-                           understand when you come back to it at a later point in time.</p>
-
-
+                              even faster that is optimized for speed, escaped for security and visually much easier to 
+                              understand when you come back to it at a later point in time.
+                           </p>
                         </div>
-
                      </div>
                   </div>
                </div>
             </div>
-            
             <!--testimonials-->
             <!--latency section -->
             <div class="bg-primary p-4">
@@ -477,16 +431,14 @@ $user = db()
                         <div class=" hand  p-2 br m-t-2">
                            <h5 class="text-white">Unit testing suite</h5>
                            <p class="text-white">
-                           We have first class support for unit testing and everything a modern app needs out of the box.
-                           Running concurrently building a pretty web based or console based report.
-
-
+                              We have first class support for unit testing and everything a modern app needs out of the box.
+                              Running concurrently building a pretty web based or console based report.
                            </p>
                         </div>
                      </div>
-                     <div class="col-6 h-a v-a">
-                        <div class="console drop-shadow m-t-3">
-                           <div class="console-bar">
+                     <div class="col-6 v-a h-a">
+                        <div class="console-light drop-shadow m-t-3 hide-tablet">
+                           <div class="console-bar-light">
                               <div class="console-bar-red"></div>
                               <div class="console-bar-yellow"></div>
                               <div class="console-bar-green"></div>
@@ -495,33 +447,28 @@ $user = db()
 app()->post('/validate', function () {
    response()->json(["username" => $user]);
 });
-                     </pre>
+</pre>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
             <!--latency section -->
-
-            
-
-            
-
-            <div class="bg-light-grey">
-                <div class="medium-container">
-                    <div class="row p-t-3 p-b-3">
-                        <div class="col v-a h-a">
-                            <img src="assets/images/graph.svg" class="img-responsive" ></img>
-                        </div>
-                        
-
-                    </div>
-                </div>
+            <div class="row">
+               <div class="col-12 v-a h-a m-t-5">
+                  <h3>It is wicked fast</h3>
+               </div>
             </div>
-
-
-
-
+            <div class="bg-light-grey">
+               <div class="medium-container">
+                  <div class="row p-t-3 p-b-3">
+                     <div class="col v-a h-a">
+                        <img src="assets/images/graph.svg" class="img-responsive" ></img>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
          </div>
       </div>
       <script src="assets/js/feather.js"></script>

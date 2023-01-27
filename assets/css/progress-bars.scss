@@ -5,7 +5,7 @@
     height: 9px; 
     margin-top: $margin;
     overflow: hidden;
-    background-color: $grey;
+    background-color: #111111;
     border-radius: 20px !important;
     
     &-bar{
@@ -14,7 +14,7 @@
         justify-content: center;
         color: #fff;
         text-align: center;
-        background-color: $link-color;
+        background-color: #FFFFFF;
         transition: width .6s ease;
         
         &-success{

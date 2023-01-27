@@ -49,7 +49,7 @@ Vue.component('menu-items',{
     props:['title','children','url'],
     template: 
     `
-      <div>
+      <div v-on:keyup.escape="escapePressed()">
          <div v-if="children !== 'yes'">
             <a v-bind:href="url" class="menu-main rm-link-styles m-l-2">
                {{title}}
@@ -81,6 +81,11 @@ Vue.component('menu-items',{
       away: function () {
         this.show = false;
       },
+
+      escapePressed()
+      {
+        this.show = false;
+      }
     }
   
 });
@@ -91,7 +96,7 @@ Vue.component('menu-item',{
     `
        <div class="row m-t">
          <a v-bind:href="url" class="rm-link-styles col v-a no-margin menu-large-items">
-            <img v-bind:src="icon"></img>
+            <img v-bind:src="icon" style="width:40px; height:auto; "></img>
             <div class="m-l-2">{{title}}</div>
          </a>
       </div>

@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: row;
   padding: 5px;
-  background-color: #c73b4d;
+  background-color: #292F3E;
   color: #ffffff;
   cursor: pointer;
 }
@@ -95,7 +95,7 @@
   cursor: pointer;
 }
 .cal:hover {
-  background-color: #c73b4d;
+  background-color: #292F3E;
   border-radius: 4px;
   color: #ffffff;
 }

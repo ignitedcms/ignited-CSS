@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Landing page</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+      
+   </head>
+   <body>
+      <div class="full-screen">
+         <div class="page" id="app">
+            <mega-menu title="Login" logo="assets/images/zoan-logo-line.svg" 
+               url="http://www.google.com">
+               <menu-items title="Resources" children="yes">
+                  <menu-item 
+                     title="Documentation" 
+                     icon="assets/images/book.svg" 
+                     url="s">
+                  </menu-item>
+                  <menu-item
+                     title="LeafPHP"
+                     icon="assets/images/book.svg"
+                     url="d">
+                  </menu-item>
+                  <menu-item 
+                     title="CSS and JS" 
+                     icon="assets/images/book.svg" 
+                     url="d">
+                  </menu-item>
+               </menu-items>
+               <menu-items 
+                  title="Blog" 
+                  url="http://www.google.com">
+               </menu-items>
+               <menu-items 
+                  title="Contact" 
+                  url="sss">
+               </menu-items>
+            </mega-menu>
+            <mobile-menu title="Login" logo="assets/images/zoan-logo-line.svg" 
+               url="http://www.google.com">
+               <mobile-menu-items 
+                  title="One" 
+                  url="http://www.google.com" 
+                  children="yes">
+                  <div class="menu-item-block" style="border-bottom:1px solid #ccc;">
+                     <ul>
+                        <li>
+                           <a href="#">foo</a>
+                        </li>
+                        <li>
+                           <a href="#">bar</a>
+                        </li>
+                     </ul>
+                  </div>
+               </mobile-menu-items>
+               <mobile-menu-items 
+                  title="Two"
+                  url="http://www.google.com">
+               </mobile-menu-items>
+               <mobile-menu-items 
+                  title="Three"
+                  url="http://www.google.com">
+               </mobile-menu-items>
+            </mobile-menu>
+            <!--main above the fold-->
+            <div class="bg-primary">
+               <div class="container" style="min-height: 400px;">
+                  <div class="row p-t-5">
+                     <h2 class="text-white m-t-4">
+                      Are you interested in a simple CSS and JS framework for 
+                      all your needs, with minimal fuss and no build steps?
+
+                     </h2>
+                  </div>
+                  <div class="row">
+                     <div class="col">
+                        <h3 class="text-white pull-right">Ok I'm listening. . .</h3>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col">
+                        <a href="https://www.ignitedcms.com/ignited-js/quickstart">
+                           <div class="text-center"><button type="button" class="btn btn-white m-b-5">Documentation</button></div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--viewi circles-->
+            <div class="bg-light">
+               <div class="container">
+                  <div class="row p-t-3 p-b-3">
+                     <div class="col-6 v-a h-a">
+                        <div class="nothing">
+                           <h3>Another typical JS framework? No</h3>
+                           <div>
+                              Let's face it. Javascript and CSS have become
+                              overly complicated in recent years, making
+                              web development more difficult and time-consuming.
+                              <br/>
+                              <br/>
+                              The constant introduction of new features and technologies
+                              such as single-page applications and CSS pre processors, has
+                              led to the development of complex code that can be difficult
+                              to understand and maintain.
+                           
+                              <br/>
+                              <br/>
+
+                              ZoanCMS has kept the way you write CSS and javascript as simple 
+                              as possible with no build steps. Keep reading to find out more . . .
+
+
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-6 v-a h-a"><img src="assets/images/rings.svg  " class="img-responsive"></div>
+                  </div>
+               </div>
+            </div>
+            <!--viewi circles-->
+            <div class="bg-light-grey">
+               <div class="container">
+                  <div class="row" style="min-height:600px;">
+                     <div class="col-6 h-a v-a">
+                        <div class="console drop-shadow m-t-3">
+                           <div class="console-bar">
+                              <div class="console-bar-red"></div>
+                              <div class="console-bar-yellow"></div>
+                              <div class="console-bar-green"></div>
+                           </div>
+                           <pre class="m-t-3"><p class="p1">class Counter extends BaseComponent&nbsp;</p><p class="p1">{&nbsp;</p><p class="p1">&nbsp; &nbsp;public $count = 1;&nbsp;</p><p class="p1">&nbsp; &nbsp;public function increment()&nbsp;</p><p class="p1">&nbsp; &nbsp;{&nbsp;</p><p class="p1">&nbsp; &nbsp; &nbsp;$this-&gt;count++;&nbsp;</p><p class="p1">&nbsp; &nbsp;}&nbsp;</p><p class="p1">}&nbsp;</p><p class="p1">.....&nbsp;</p><p class="p1">&lt;button (click)="increment()"&gt;&nbsp;</p><p class="p1">&nbsp;Clicked $count times.&nbsp;</p><p class="p1">&lt;/button&gt;<br></p>
+                     </pre>
+                        </div>
+                     </div>
+                     <div class="col-6 v-a">
+                        <div class="nothing">
+                           <div class="row">
+                              <div class="col-2"><img src="assets/images/waving-hand.png" class="img-responsive" style="width: 60px; height: auto;"></div>
+                              <div class="col-10">
+                                 <h3>Say hello to Zoan</h3>
+                                 <p class="text-muted">We use Vuejs under the hood</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bg-light-grey cross-grid">
+               <div class="container">
+                  <h3 class="text-center m-t-5">Premium server side components</h3>
+                  <div class="panel b br drop-shadow m-t-3">
+                     <div class="row">
+                        <div class="col-4">
+                           <img src="assets/images/component-headers.jpg" class="img-responsive b br"> 
+                           <h6 class="m-t-2">Headers</h6>
+                           <p class="text-muted"> 5 components</p>
+                        </div>
+                        <div class="col-4">
+                           <img src="assets/images/component-banners.jpg" class="img-responsive b br"> 
+                           <h6 class="m-t-2">Banners</h6>
+                           <p class="text-muted"> 4 components</p>
+                        </div>
+                        <div class="col-4">
+                           <img src="assets/images/component-menus.jpg" class="img-responsive b br"> 
+                           <h6 class="m-t-2">Flyout Menus</h6>
+                           <p class="text-muted"> 6 components</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row p-2">
+                     <div class="col-6">
+                        <div class="row">
+                           <div class="col-2"><img src="assets/images/lady.png" class="testimonial-pic drop-shadow"></div>
+                           <div class="col-10">
+                              <h6>Helen Spiby</h6>
+                              <p class="text-muted">Yet again viewi are dramatically speeding up my frontend work. At this point this is hands-down the highest ROI digital asset I’ve ever used.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-6">
+                        <div class="row">
+                           <div class="col-2"><img src="assets/images/man.jpg" class="testimonial-pic drop-shadow"></div>
+                           <div class="col-10">
+                              <h6>Alan Bolton</h6>
+                              <p class="text-muted">I was struggling to manage the complexity and costs of frontend and backend technology. 
+                                 That honestly is no longer an issue anymore thanks to IgnitedJS. 
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--testimonials-->
+            
+            <!--latency section -->
+            <div class="bg-primary p-4">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-12 m-b-4">
+                        <h3 class="text-white text-center">Shallow learning curve</h3>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-6">
+                        <div class="hand b p-2 br">
+                           <h5 class="text-white">Step one</h5>
+                           <p class="text-white">
+                           If you're familiar with bootstrap's grid system and tailwind,
+                           you will be right at home with our CSS framework. Simply include
+                           'main.css' in your app and you can start using it right away.
+
+
+                           </p>
+                        </div>
+                        <div class="hand p-2 br m-t-2">
+                           <h5 class="text-white">Step two</h5>
+                           <p class="text-white">
+                           For the sake of sanity, we've created only a
+                           limited number of Vuejs components. These do
+                           NOT require a build step. Just include the
+                           relevant script tags wherever you need them.
+
+
+                           </p>
+                        </div>
+                        <div class="hand p-2 br m-t-2">
+                           <h5 class="text-white">Step three</h5>
+                           <p class="text-white">
+                           You're done! That's all there is to it in a nutshell.
+                           With this workflow you can create dynamic websites.
+                           You might not have the fancy single page application
+                           work, but the small page refreshes required compensates
+                           for the complicated client side routing setup.
+
+
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-6 h-a v-a">
+                        <div class="console-light drop-shadow m-t-3">
+                           <div class="console-bar-light">
+                              <div class="console-bar-red"></div>
+                              <div class="console-bar-yellow"></div>
+                              <div class="console-bar-green"></div>
+                           </div>
+                           <pre class="m-t-3">
+app()-&gt;post('/validate', function () {
+  echo 'Validating...';
+  // Call db
+  // Or validate using our utility helpers
+});
+
+
+                           </pre>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--latency section -->
+            <div class="row">
+               <div class="col-12 v-a h-a m-t-5">
+                  <h3>First class unit testing with alchemy</h3>
+               </div>
+            </div>
+            <div class="bg-light-grey">
+               <div class="medium-container">
+                  <div class="row p-t-3 p-b-3">
+                     <div class="col v-a h-a">
+                        <img src="assets/images/graph.svg" class="img-responsive" ></img>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="assets/js/feather.js"></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/menu.js"></script>
+      <script src="assets/js/mobile-menu.js"></script>
+      <script>
+         /*
+         |---------------------------------------------------------------
+         | Base entry for vue app
+         |---------------------------------------------------------------
+         |
+         */
+         
+         var app = new Vue({
+             el: '#app',
+             data: {
+                 name: 'Vue.js'
+             },
+             methods: {
+                test()
+                {
+                   alert('going to login');
+                }
+             }
+         })
+      </script>
+      <script>
+         feather.replace({
+             class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

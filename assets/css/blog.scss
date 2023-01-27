@@ -14,6 +14,11 @@
     cursor: pointer;
     transition: all 0.4s;
 
+    @media (max-width: $desktop) 
+    {
+       margin-top:20px;
+    }
+
     &-img {
         position: relative;
         min-height: 500px;
@@ -49,6 +54,13 @@
         transform: translateY(-10px);
         -webkit-box-shadow: -1px 25px 10px -8px rgba(0, 0, 0, 0.28);
         box-shadow: -1px 25px 10px -8px rgba(0, 0, 0, 0.28);
+
+         @media (max-width: $desktop) 
+         {
+            transform: none;
+            box-shadow:none;
+         }
+
     }
 
 }
@@ -65,7 +77,4 @@
     background-color: $primary;
 }
 
-.rm-link-styles{
-    text-decoration: none;
-    color: $font-color !important;
-}
+

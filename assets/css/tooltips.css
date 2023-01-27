@@ -67,7 +67,9 @@
 }
 
 .tooltip-highlight {
-  background-color: #c73b4d;
+  background-color: #007bd9;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #fff;
 }
 

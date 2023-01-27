@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Zoan CMS</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body style="full-screen">
+      <div class="full-screen" id="app">
+         <div class="gap"></div>
+         <div class="medium-container">
+            <div class="panel br drop-shadow fade-in-bottom">
+               <div class="row">
+                  <div class="col">
+                     <h3>Database details</h3>
+                  </div>
+               </div>
+               <form action="database-validation" method="post" enctype="multipart/form-data">
+                  <div class="row">
+                     <div class="col-4">
+                        <label for="Driver">Driver</label> 
+                        <div class="small text-muted">Database Driver</div>
+                        <select name="driver" aria-label="Default select example" class="form-select">
+                           <option value="mysql"> MySql</option>
+                           <option value="postgres"> Postgres</option>
+                        </select>
+                     </div>
+                     <div class="col-4">
+                        <label for="Server">Server</label> 
+                        <div class="small text-muted">Server</div>
+                        <input name="server" type="input" value="localhost" placeholder="server" class="form-control"> 
+                        <div class="small text-danger"></div>
+                     </div>
+                     <div class="col-4">
+                        <label for="Port">Port</label> 
+                        <div class="small text-muted">Database port</div>
+                        <input name="port" type="input" value="8889" placeholder="8889" class="form-control"> 
+                        <div class="small text-danger"></div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-6">
+                        <label for="Username">Username</label> 
+                        <div class="small text-muted">username</div>
+                        <input name="root" type="input" value="root" placeholder="placeholder" class="form-control"> 
+                        <div class="small text-danger"></div>
+                     </div>
+                     <div class="col-6">
+                        <label for="Password">Password</label> 
+                        <div class="small text-muted">password</div>
+                        <div class="pos-rel">
+                           <span v-on:click='eyeball()'>
+                              <i data-feather='eye'  class='icon-inside hand'></i>
+                           </span>
+                           <input name="password" type="password" value="root" placeholder="placeholder" class="form-control">
+                        </div>
+                        <div class="small text-danger"></div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-6">
+                        <label for="Database">Database</label> 
+                        <div class="small text-muted">Please make sure this exists first</div>
+                        <input name="database" type="input" value="zoandb" placeholder="placeholder" class="form-control"> 
+                        <div class="small text-danger"></div>
+                     </div>
+                     <div class="col-6">
+                        <label for="Database prefix">Database prefix</label> 
+                        <div class="small text-muted">prefix</div>
+                        <input name="prefix" type="input" value="zn_" placeholder="Please make sure it has an underscore at the end" class="form-control"> 
+                        <div class="small text-danger"></div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col">
+                        <a href="animation.html">
+                           <button type="button" class="btn btn-block btn-primary">Next</button>
+                        </a>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!-- Click out must go before all other scripts -->
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/tabs.js"></script>
+      <script src="assets/js/tooltips.js"></script>
+      <script src="assets/js/modals.js"></script>
+      <script src="assets/js/search.js"></script>
+      <script src="assets/js/dropdown.js"></script>
+      <script src="assets/js/datepicker.js"></script>
+      <script src="assets/js/accordions.js"></script>
+      <script src="assets/js/switch.js"></script>
+      <script src="assets/js/range-sliders.js"></script>
+      <script src="assets/js/toasts.js"></script>
+      <script src="assets/js/menu.js"></script>
+      <script src="assets/js/mobile-menu.js"></script>
+      <script src="assets/js/trees.js"></script>
+      <!-- Include the Quill library -->
+      <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
+      <script src="assets/js/quill-textarea.js"></script>
+      <!-- feather icons -->
+      <script src="assets/js/feather.js"></script>
+      <script>
+            /*
+             |---------------------------------------------------------------
+             | Base entry for vue app
+             |---------------------------------------------------------------
+             |
+             |
+             */
+         var app = new Vue({
+             el: '#app',
+         })
+      </script>
+      <script>
+         feather.replace({
+             class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

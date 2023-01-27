@@ -9,7 +9,7 @@
    html {
       box-sizing: border-box;
       margin: 0;
-      background-color: $background;
+      //background-color: $background;
       padding: 0;
    }
 
@@ -57,11 +57,53 @@
    // for showing code
    .code {
       position: relative;
+      font-size: 15px;
       padding: $padding;
-      background-color: #fff;
+      color:#FFFFFF;
+      background-color: $tertiary;
       overflow-x:auto;
       font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+      box-shadow: $shadow;
+      border-radius: $border-radius;
+
+
+      &-class{
+         position:relative;
+         color: #333333;
+         border-left:4px solid $primary;
+         background-color:$light-grey;
+         padding: $margin;
+         margin-bottom:$margin;
+      }
    }
+   
+   /*                                                                          
+   |---------------------------------------------------------------            
+   | cross hatch grid styles                                                
+   |---------------------------------------------------------------            
+   */       
+   .cross-grid{
+      background-size: 40px 40px;
+      background-image:
+      linear-gradient(to right, #f2f2f2 1px, transparent 1px),
+      linear-gradient(to bottom,#f2f2f2  1px, transparent 1px);
+   }
+
+
+   /*                                                                          
+   |---------------------------------------------------------------            
+   | Divider content for dashboard                                                
+   |---------------------------------------------------------------            
+   | Draws a thin grey line
+   |
+   */       
+   .divider{
+      border-bottom:1px solid $grey;
+      padding-top:30px;
+      margin-left: -30px;
+      margin-right: -30px;
+   }
+
 
 
    /*
@@ -248,6 +290,10 @@ ol {
    background-color: #ffffff;
 }
 
+.bg-light-grey{
+   background-color:$background;
+}
+
 .bg-white {
    background-color: #ffffff;
 }
@@ -319,6 +365,14 @@ ol {
 
 .no-padding {
    padding: 0;
+}
+
+.scroll-y{
+   overflow-y : auto;
+}
+
+.scroll-x{
+   overflow-x : auto;
 }
 
 /*
@@ -656,6 +710,17 @@ ol {
 
 /*
 |---------------------------------------------------------------
+| remove link and button styles
+|---------------------------------------------------------------
+*/
+.rm-link-styles{
+    text-decoration: none;
+    color: $font-color !important;
+}
+
+
+/*
+|---------------------------------------------------------------
 | Position utilities
 |---------------------------------------------------------------
  */
@@ -774,6 +839,19 @@ ol {
 
 @media screen and (max-width:$tablet) {
    .hide-tablet {
+      display: none;
+   }
+}
+
+
+@media screen and (max-width:$tablet) {
+   .show-tablet {
+      display: block;
+   }
+}
+
+@media screen and (min-width:$tablet) {
+   .show-tablet {
       display: none;
    }
 }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+      <style>
+         .items {
+         width: 150px;
+         }
+         .items li {
+         list-style: none;
+         padding: 10px;
+         border: 1px solid rgba(0, 0, 0, 0.125);
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container p-l p-r" id="app">
+         <div class="row">
+            <div class="col-6">
+               <ul id="list1" class="items">
+                  <li>item 1</li>
+                  <li>item 2</li>
+                  <li>item 3</li>
+               </ul>
+            </div>
+            <div class="col-6">
+               <ul id="list2" class="items">
+                  <li>item 4</li>
+                  <li>item 5</li>
+                  <li>item 6</li>
+               </ul>
+            </div>
+
+            
+         </div>
+
+         <div class="row">
+            <div class="col right">
+               <button @click="onClicking"  type="button" class="btn btn-white">save</button>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col">{{items}}</div>
+         </div>
+      </div>
+      <!-- feather icons -->
+      <script src="assets/js/feather.js"></script>
+      <script>
+         feather.replace({
+             class: "font-primary",
+         });
+      </script>
+      <script></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/accordions.js"></script>
+      <script>
+         /*
+         |---------------------------------------------------------------
+         | Base entry for vue app
+         |---------------------------------------------------------------
+         |
+         |
+          */
+
+         var app = new Vue({
+            el: '#app',
+            data: {
+               items: []
+            },
+            methods:{
+               onClicking()
+               {         
+                  var ids = [];
+                  this.items = [];
+                  //get container element children.
+                  var children = document.getElementById("list1").children; 
+                  for (var i = 0, len = children.length ; i < len; i++) {
+
+                     this.items.push(children[i].innerHTML); 
+                  }
+               }
+
+            },
+            mounted()
+            {
+               var list1 = document.getElementById('list1');
+               var list2 = document.getElementById('list2');
+
+
+               new Sortable(list1, {
+                  group: 'shared', // set both lists to same group
+                  animation: 150
+               });
+
+               new Sortable(list2, {
+                  group: 'shared',
+                  animation: 150
+               });
+
+            }
+         })
+      </script>
+   </body>
+</html>
