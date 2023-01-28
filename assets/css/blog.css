@@ -1,6 +1,6 @@
 .blog-item {
   position: relative;
-  min-height: 650px;
+  min-height: 150px;
   background-color: #ffffff;
   overflow: hidden;
   border-radius: 5px;
