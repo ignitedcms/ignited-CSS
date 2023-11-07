@@ -23,7 +23,7 @@ Vue.component('switchIos',{
     data:function(){
 
         return{
-            message: 'Yes',
+            message: 'Yes/no',
             show: false,
         }
     }
