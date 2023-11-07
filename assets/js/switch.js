@@ -10,20 +10,19 @@
 |
 */
 Vue.component('switchIos',{
-    props:['title'],
+    props:['title','value'],
     template: 
     `
     <label class="form-switch">
-    {{show}}
-    <input :name="title" type="checkbox" v-model="show" />
-    <i ></i> <div class="switch-text">{{title}}</div>
+    <input :name="title" type="checkbox" value:="value" :checked="value" />
+    <i ></i> <div class="switch-text">{{message}}</div>
     </label>
     `,
     data:function(){
 
         return{
             message: 'Hello',
-            show: false,
+            show: this.value,
         }
     }
 });
