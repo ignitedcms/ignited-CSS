@@ -1,107 +1,49 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light weight framework</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+    <title>SortableJS with Vue.js 2 Example</title>
+    <!-- Include Vue.js 2 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Include SortableJS from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
-
 <body>
-    <div class="container p-l p-r" id="app">
-        <div class="row">
-            <div class="col">
-
-                <h2>{{ title }}</h2>
-                <div id="things" class="m-t drop-shadow">
-                    <div v-for="item in things">
-                        <div class="row bg-light p-l p-r b border-fix hand">
-                            <div class="col left">
-                                {{item.title}}
-                            </div>
-                            <div class="col right">
-                                <i data-feather="menu"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="form-group">
-                        <button class="btn btn-white" v-on:click.stop.prevent="addItem">add</button>
-                    </div>
-                    <div class="form-group">
-                        <h3>Sorted Data Source</h3>
-                        <pre class="code">{{ things }}</pre>
-                    </div>
-
-                </div>
-            </div>
-
+    <div id="app">
+        <h1>Sortable List</h1>
+        <ul id="sortable-list">
+            <li v-for="(item, index) in items" :key="item.id" class="sortable-item">{{ item.text }}</li>
+        </ul>
+        <div>
+            {{items}}
         </div>
-        <!-- feather icons -->
-        <script src="assets/js/feather.js"></script>
-        <script>
-            feather.replace({
-                class: "font-primary",
-            });
-        </script>
-        <script type="text/javascript">
-            new Vue({
-                el: '#app',
-                data: {
-                    title: 'Sortable items',
-                    things: [{
-                            title: "Item 1"
-                        },
-                        {
-                            title: "Item 2"
-                        },
-                        {
-                            title: "Item 3"
-                        }
-                    ]
-                },
-                methods: {
-                    addItem: function () {
-                        var id = Math.floor((Math.random() * 100) + 4);
-                        this.things.push({
-                            id: id,
-                            title: 'Random item ' + id
-                        });
-                    }
-                },
-                mounted: function () {
-                    var self = this;
-                    self.$nextTick(function () {
-                        var sortable = Sortable.create(document.getElementById('things'), {
-                            onEnd: function (e) {
-                                var clonedItems = self.things.filter(function (item) {
-                                    return item;
-                                });
-                                clonedItems.splice(e.newIndex, 0, clonedItems.splice(e
-                                    .oldIndex, 1)[0]);
-                                self.things = [];
-                                self.$nextTick(function () {
-                                    self.things = clonedItems;
-                                });
-                            }
-                        });
-                    });
-                }
-            });
-        </script>
-</body>
+    </div>
 
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    { id: 1, text: 'Item 1' },
+                    { id: 2, text: 'Item 2' },
+                    { id: 3, text: 'Item 3' },
+                    { id: 4, text: 'Item 4' },
+                    { id: 5, text: 'Item 5' }
+                ]
+            },
+            mounted() {
+                // Initialize SortableJS on the list
+                new Sortable(document.getElementById('sortable-list'), {
+                    animation: 150,
+                    onEnd: evt => {
+                        // Update the data array after sorting
+                        const movedItem = this.items.splice(evt.oldIndex, 1)[0];
+                        this.items.splice(evt.newIndex, 0, movedItem);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
 </html>
