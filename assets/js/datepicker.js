@@ -10,11 +10,11 @@
 |
 */
 Vue.component('datepicker', {
-props:['name','value'],
+props:['value'],
 template: `
 <div class="date-container" @click.stop v-click-outside="away">
       <label for="date">{{name}}</label>
-      <input class="form-control hand" :name="name" :value="value" v-model="message" v-on:click="show =!show"  readonly>
+      <input class="form-control hand" :value="value" @input="updateDate($event.target.value)"  v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
         <div class="date-buttons-container">
             <button type="button" class="date-button rm-btn-styles" @click="previous()">
@@ -64,7 +64,7 @@ template: `
     data: function () {
 
         return {
-            message: this.value,
+            //message: this.value,
             today: new Date(),
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -103,6 +103,10 @@ template: `
         away: function () {
             this.show = false;
         },
+        updateDate(newValue)
+        {
+          this.$emit('input',newValue);
+        },
         set_year(year) {
             this.dateDays = true;
             this.currentYear = year;
@@ -111,7 +115,8 @@ template: `
         getIndex(str) {
             //This is where the full datestamp
             //comes from
-            this.message = str.stamp
+            this.updateDate(str.stamp);
+            //this.message = str.stamp
         },
         next() {
             this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;

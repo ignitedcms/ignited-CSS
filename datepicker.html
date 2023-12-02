@@ -24,9 +24,9 @@
             <div class="col">
                 <h3>Datepicker</h3>
 
-
+                {{foo}}
                 <div class="form-group">
-                    <datepicker name="foo" value="3333"></datepicker>
+                    <datepicker v-model="foo" value="25" ></datepicker>
                 </div>
                 
                 
@@ -72,6 +72,10 @@
             */
             var app = new Vue({
                 el: '#app',
+                data:
+                {
+                  foo: ''
+                }
             })
         </script>
 
