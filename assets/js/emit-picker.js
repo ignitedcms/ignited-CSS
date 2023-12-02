@@ -9,20 +9,23 @@
 |
 |
 */
-Vue.component('emitter',{
+Vue.component('emitpicker',{
     props:['value'],
     template: 
     `
-    <input
-     class="form-control"
-    :value="value"
-    @input="$emit('input', $event.target.value)"
-    /> 
+    <div class="date-picker">
+     <input type="text" :value="value" @input="updateDate($event.target.value)" />
+    </div>
     `,
     data:function(){
 
-        return{
-            // content: this.value
+        return {
+            content: this.value
         }
     },
+    methods: {
+        updateDate(newValue) {
+            this.$emit('input', 'bar'); // Emit the updated value using v-model
+        }
+    }
 });
