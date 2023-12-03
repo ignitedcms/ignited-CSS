@@ -10,7 +10,14 @@
 .accordion{
 
     &-title{
-        padding: $padding;
+       display:flex;
+       flex-direction:row;
+       justify-content:space-between;
+       align-items: flex-start;
+        padding-top:15px;
+        padding-left:10px;
+        padding-right:10px;
+        padding-bottom:15px;
         background-color: #fff;
         border-bottom: 1px solid #ccc;
         width: 100% !important;
@@ -19,12 +26,11 @@
         transition: all 0.4s;
     
         &:hover{
-            background-color: $primary;
-            color:#fff;
+           text-decoration: underline;
         }
     }
 
     &-content{
-        padding:$padding;
+        padding:$margin;
     }
 }
