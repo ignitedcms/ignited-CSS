@@ -32,6 +32,9 @@
     align-items: flex-start;
   }
 }
+.table-row:nth-child(even) {
+  background-color: #F7FAFC;
+}
 .table-row:first-child {
   border-bottom: 1px solid #ccc;
   cursor: pointer;
