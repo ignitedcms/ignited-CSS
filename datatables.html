@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
 
+    <!-- datatables -->
+    <link rel="stylesheet" href="assets/datatables/datatables.css">
+
     <!-- vue 2 -->
     <script src="assets/js/vue2.js"></script>
 
@@ -21,21 +24,58 @@
     <div class="container" id="app">
        <div class="gap"></div>
         <div class="row">
-            <div class="col">
+            <div class="col panel br">
                 <h3>Datatables</h3>
 
                 
+               <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>handle</th>
+                            <th>type</th>
+                            <th>action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
 
+                    </tbody>
 
-                
-
-
+                </table>
                 
             </div>
         </div>
     </div>
+
+    <!--load jquery first-->
+    <script src="assets/datatables/jquery.min.js"></script>
+     <!-- datatables -->
+     <script src="assets/datatables/jquery.dataTables.min.js"></script>
 
     <script src="assets/js/feather.js"></script>
     <script>
@@ -55,6 +95,12 @@
             class: "font-primary",
         });
     </script>
+
+      <script>
+            $('#example').dataTable({
+                "iDisplayLength": 10
+            });
+        </script>
 </body>
 
 </html>
