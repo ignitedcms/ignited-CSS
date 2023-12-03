@@ -1,0 +1,44 @@
+@import "variables";
+
+.filemenu{
+   //background-color:red;
+
+   &-text{
+      padding:5px;
+      border-radius: $border-radius;
+      &:hover{
+         background-color:#f2f2f2;
+      }
+   }
+   &-item{
+      position:absolute;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: $border-radius;
+      box-shadow: $shadow;
+      top:55px;
+      left:-10px;
+      width:200px;
+      min-height:100px;
+      z-index:2;
+      background-color:#fff;
+      display:hidden;
+
+
+
+      &-line{
+         display:flex;
+         flex-direction:row;
+         justify-content:space-between;
+         padding-left:5px;
+         padding-right:5px;
+         border-radius:5px;
+         height:40px;
+         align-items: center;
+
+         &:hover{
+            background-color:#f2f2f2;
+         }
+      }
+   }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="assets/js/vue2.js"></script>
+
+</head>
+
+<body class="full-screen bg-light-grey">
+    <div class="container" id="app">
+
+        <div class="row">
+            <div class="col">
+                <h3>File menu</h3>
+                <p>Currently in beta</p>
+
+                <div class="gap"> </div>
+
+                <div class="filemenu pos-rel">
+                   <div class="bg-white p left br b drop-shadow" style="max-width:300px;">
+                      <div class="hand pos-rel filemenu-text" @click="link =!link" v-click-outside="away">
+                         File
+                         <div class="filemenu-item fade-in-bottom" v-if="link">
+                            <div  class="filemenu-item-line">
+                               <div class="text-muted" >New tab</div>
+                               <i data-feather="chevron-right" style="height:20px; width:20px;"></i>    
+                            </div>
+                            <div  class="filemenu-item-line">
+                               <div class="text-muted">New window</div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="hand pos-rel filemenu-text" @click="link1 =!link1" v-click-outside="away1">
+                         Edit
+                         <div class="filemenu-item fade-in-bottom" v-if="link1">
+                            <div  class="filemenu-item-line">
+                               <div class="text-muted" >Undo</div>
+                               <i data-feather="chevron-right" style="height:20px; width:20px;"></i>    
+                            </div>
+                            <div  class="filemenu-item-line">
+                               <div class="text-muted">Redo</div>
+                            </div>
+                            <div  class="filemenu-item-line">
+                               <div class="text-muted">Find</div>
+                            </div>
+                         </div>
+                      </div>
+
+
+                   </div>
+                </div>                
+
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="type here">
+                    <div class="small">Some message goes here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/feather.js"></script>
+
+    <script>
+       feather.replace({
+          class: "font-primary",
+       });
+    </script>
+
+    <script>
+       /*
+       |---------------------------------------------------------------
+        | Base entry for vue app
+        |---------------------------------------------------------------
+        |
+        */
+
+       var app = new Vue({
+          el: '#app',
+          data:
+          {
+             link: false,
+             link1: false
+          },
+          methods:
+          {
+             away()
+             {
+               this.link = false
+             },
+             away1()
+             {
+               this.link1 = false
+             },
+
+          }
+       })
+    </script>
+
+    
+    
+    
+</body>
+
+</html>
+
