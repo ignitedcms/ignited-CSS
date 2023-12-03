@@ -39,6 +39,22 @@
          &:hover{
             background-color:#f2f2f2;
          }
+
+         &-child{
+               position:absolute;
+               padding: 10px;
+               border: 1px solid #ccc;
+               border-radius: $border-radius;
+               min-height:40px;
+               box-shadow: $shadow;
+               top:10px;
+               left:190px;
+               width:200px;
+               min-height:100px;
+               z-index:2;
+               background-color:#fff;
+
+         }
       }
    }
 }

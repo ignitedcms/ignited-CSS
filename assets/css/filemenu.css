@@ -32,5 +32,19 @@
 .filemenu-item-line:hover {
   background-color: #f2f2f2;
 }
+.filemenu-item-line-child {
+  position: absolute;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 40px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  top: 10px;
+  left: 190px;
+  width: 200px;
+  min-height: 100px;
+  z-index: 2;
+  background-color: #fff;
+}
 
 /*# sourceMappingURL=filemenu.css.map */
