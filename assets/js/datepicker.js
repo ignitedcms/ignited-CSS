@@ -14,7 +14,11 @@ props:['value','name'],
 template: `
 <div v-on:keyup.escape="escapePressed" class="date-container" @click.stop v-click-outside="away">
       <label for="date">{{name}}</label>
-      <input class="form-control hand" :name="name" :value="value" @input="updateDate($event.target.value)"  v-on:click="show =!show" readonly>
+      <br>
+      <button class="form-control left" style="width:330px; height:40px; " :name="name" :value="value" 
+         @input="updateDate($event.target.value)"  v-on:click="show =!show">
+         {{message}}
+      </button>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
         <div class="date-buttons-container">
             <button type="button" class="date-button rm-btn-styles" @click="previous()">
@@ -64,7 +68,7 @@ template: `
     data: function () {
 
         return {
-            //message: this.value,
+            message: this.value,
             today: new Date(),
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -119,7 +123,7 @@ template: `
             //This is where the full datestamp
             //comes from
             this.updateDate(str.stamp);
-            //this.message = str.stamp
+            this.message = str.stamp
         },
         next() {
             this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;
