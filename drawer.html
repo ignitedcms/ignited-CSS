@@ -21,27 +21,26 @@
         <div class="gap"></div>
         <div class="row">
             <div class="col">
-                <h3>Drawer</h3>
-                <button  @click="drawer = !drawer" 
-                 v-click-outside="away"
-                 v-on:keyup.escape="escapePressed()"
-                 type="submit" 
-                   class="btn btn-white">Toggle drawer</button>
-                <div v-if="drawer" @click.stop class="drawer fade-in b-l">
-                   <div class="row">
-                      <div class="col">
-                         <h3>Drawer</h3>
-                         <div class="form-group">
-                            <label for="title">Project <span class="text-danger">*</span></label>
-                            <div class="small text-muted">Project name</div>
-                            <input class="form-control" 
-                                  name="testing" 
-                                  value="" 
-                                  placeholder="Start typing" />
-                         </div>
-                      </div>
-                   </div>
-                </div>                     
+                
+                <drawer title="Toggle drawer">
+                  <div class="p-3">
+
+                     <p>This is just some arbitary content!!</p>
+                  </div>
+                </drawer>                     
+
+                <drawer title="Toggle second drawer">
+                  <div class="p-3">
+
+                     <p>Some more content</p>
+                  </div>
+                </drawer>                     
+                <drawer title="Toggle third drawer">
+                  <div class="p-3">
+
+                     <p>And some more content</p>
+                  </div>
+                </drawer>                     
                 
             </div>
         </div>
@@ -49,32 +48,12 @@
 
         <!-- Click out must go before all other scripts -->
         <script src="assets/js/click-outside.js"></script>
-        <script src="assets/js/accordions.js"></script>
+        <script src="assets/js/drawer.js"></script>
     
         <script>
-           /*
-           |---------------------------------------------------------------
-            | Base entry for vue app
-            |---------------------------------------------------------------
-            |
-            |
-            */
 
            var app = new Vue({
               el: '#app',
-              data:{
-                 drawer:false
-              },
-              methods:{
-                 away: function () {
-                    this.drawer = false;
-                 },
-
-                 escapePressed()
-                 {
-                    this.drawer = false;
-                 }
-              }
 
            })
         </script>
