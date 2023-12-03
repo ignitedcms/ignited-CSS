@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SortableJS with Vue.js 2 Example</title>
     <!-- Include Vue.js 2 from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <!-- Include SortableJS from CDN -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="assets/js/vue2.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
-<body>
+<body class="full-screen bg-light-grey">
     <div id="app">
-        <h1>Sortable List</h1>
+       <div class="gap"></div>
+       <div class="container">
+          <h3>Sortable</h3>
         <ul id="sortable-list">
-            <li v-for="(item, index) in items" :key="item.id" class="sortable-item">{{ item.text }}</li>
+            <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">{{ item.text }}</li>
         </ul>
-        <div>
+        <div class="code m-t-3">
             {{items}}
         </div>
+       </div>
     </div>
+
+    <script src="assets/js/feather.js"></script>
+
+    <script>
+       feather.replace({
+          class: "font-primary",
+       });
+    </script>
 
     <script>
         new Vue({
