@@ -10,45 +10,35 @@
 |
 */
 Vue.component('sidebar',{
-    props:['time'],
+    props:['theme'],
     template: 
     `
     <div>
-    <div id="side_nav" class="sidebar-dark" >
-       <a href="https://www.ignitedcms.com/">
-       </a>
-       <h5 class="m-l m-t-2">Dashboard</h5>
-       <ul>
+       <div id="side_nav" class="sidebar-dark" >
+          <a href="https://www.ignitedcms.com/">
+          </a>
+          <h5 class="m-l m-t-2">Dashboard</h5>
           <slot name="header"></slot>
-          <li class="m-t-3"><a href="#">Profile</a></li>
-          <li class="m-t"><a href="#">Permissions</a></li>
-          <li class="m-t"><a href="#">Log out</a></li>
-       </ul>
-    </div>
-         <div  class="sidebar-fixed-dark fade-in" :style={display:styles}   id="sidebar-fixed" @click.stop>
-            <a href="https://www.ignitedcms.com/">
-            </a>
-            <h5 class="m-l m-t-2">Dashboard</h5>
-            <ul>
-               <slot name="header"></slot>
-               <li class="m-t-3"><a href="#" >Profile</a></li>
-               <li class="m-t"><a href="#" >Permissions</a></li>
-               <li class="m-t"><a href="#" >Log out</a></li>
-            </ul>
-         </div>
-         <div class="main-content" id="main-content">
-            <div class="search-container">
-               <div @click="toggle_sidemenu"  v-click-outside="away" class="sidebar-toggle hand drop-shadow br">
-                  <i data-feather="menu"></i>
-               </div>
-               <div style="width:60%;" class="m-l-2">
-                  <input class="form-control"  name="a" placeholder="Search then hit enter" />
-               </div>
-            </div>
-          <div class="p-3">
-            <slot></slot> 
+       </div>
+       <div  class="sidebar-fixed-dark fade-in" :style={display:styles} id="sidebar-fixed" @click.stop>
+          <a href="https://www.ignitedcms.com/">
+          </a>
+          <h5 class="m-l m-t-2">Dashboard</h5>
+          <slot name="header"></slot>
+       </div>
+       <div class="main-content" id="main-content">
+          <div class="search-container">
+             <div @click="toggle_sidemenu"  v-click-outside="away" class="sidebar-toggle hand drop-shadow br">
+                <i data-feather="menu"></i>
+             </div>
+             <div style="width:60%;" class="m-l-2">
+                <input class="form-control"  name="a" placeholder="Search then hit enter" />
+             </div>
           </div>
-         </div>
+          <div class="p-3">
+             <slot></slot> 
+          </div>
+       </div>
     </div>
     `,
     data:function() {
