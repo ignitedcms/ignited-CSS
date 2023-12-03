@@ -5,7 +5,7 @@
       justify-content: center; 
       align-items: center;
       flex-direction: row;
-      padding: 5px;
+      padding: 3px;
       background-color: $primary;
       color: #ffffff;
       cursor: pointer;
@@ -17,16 +17,16 @@
 }
 
 .date-container {
-    max-width: 350px;
+    max-width: 330px;
     // margin: 0 auto;
 }
 
 .date-flyout{
     position: relative;
-    min-height: 425px;
-    min-width: 350px;
+    min-height: 380px;
+    min-width: 330px;
     margin-top:10px;
-    padding: 15px;
+    padding: 10px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: $border-radius;
@@ -122,10 +122,10 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    color: #222222;
+    color: #666;
     position: relative;
     float: left;
     width: 14.2857142857%;
-    min-height: 50px;
+    min-height: 40px;
 
 }
