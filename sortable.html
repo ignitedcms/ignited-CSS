@@ -14,7 +14,7 @@
     <!-- vue 2 -->
     <script src="assets/js/vue2.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="assets/js/sortable.js"></script>
 </head>
 <body class="full-screen bg-light-grey">
     <div id="app">
@@ -22,7 +22,9 @@
        <div class="container">
           <h3>Sortable</h3>
         <ul id="sortable-list">
-            <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">{{ item.text }}</li>
+            <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
+               {{ item.text }}
+            </li>
         </ul>
         <div class="code m-t-3">
             {{items}}
