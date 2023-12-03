@@ -28,7 +28,19 @@
                  type="submit" 
                    class="btn btn-white">Toggle drawer</button>
                 <div v-if="drawer" @click.stop class="drawer fade-in b-l">
-                   foo
+                   <div class="row">
+                      <div class="col">
+                         <h3>Title</h3>
+                         <div class="form-group">
+                            <label for="title">Title</label>
+                            <div class="small text-muted">A short description</div>
+                            <input class="form-control" 
+                                  name="testing" 
+                                  value="" 
+                                  placeholder="Start typing" />
+                         </div>
+                      </div>
+                   </div>
                 </div>                     
                 
             </div>
