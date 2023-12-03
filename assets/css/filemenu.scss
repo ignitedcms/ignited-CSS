@@ -1,5 +1,35 @@
 @import "variables";
 
-.filemenu{
+ /* CSS styles */
+ nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+ }
 
-}
+ nav ul li {
+   position: relative;
+   display: inline-block;
+ }
+
+ nav ul ul {
+   display: none;
+   flex-direction:column;
+   justify-content:space-between;
+   align-items: flex-start;
+   position: absolute;
+   width:200px;
+   //top: 100%;
+   left: 0;
+ }
+
+ nav ul li:hover > ul {
+   display: flex;
+ }
+
+ /* Adjust dropdown levels */
+ nav ul ul ul {
+   top: 0;
+   left: 100px;
+ }
+
