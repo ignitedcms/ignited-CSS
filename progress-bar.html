@@ -19,43 +19,38 @@
 
 <body class="full-screen bg-light-grey">
     <div class="container" id="app">
-       <div class="gap"></div>
+      <div class="gap"></div>
         <div class="row">
             <div class="col">
-                <h3>Dropdowns</h3>
+                <h3>Progress bars</h3>
 
-                <div class="form-group">
-                    <drop-down button-title="hey">
-                        <item title="hello" url="bob"></item>
-                        <item title="hello" url="bob"></item>
-                        <item title="hello" url="bob"></item>
-                    </drop-down>
+                <div class="form-group ">
+
+                   <div class="small">You can adjust width with javascript</div>
+                   <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                   </div>
+                   <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                   </div>
+                   <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                   </div>
+
+
                 </div>
 
-                <div class="form-group">
-                    <drop-down button-title="developer">
-                        <item title="there" url="bob"></item>
-                    </drop-down>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="type here">
-                    <div class="small">Some message goes here</div>
-                </div>
+                
             </div>
         </div>
     </div>
 
-    <!-- Click out must go before all other scripts -->
-    <script src="assets/js/click-outside.js"></script>
-    <script src="assets/js/dropdown.js"></script>
-
+    <script src="assets/js/feather.js"></script>
     <script>
         /*
         |---------------------------------------------------------------
         | Base entry for vue app
         |---------------------------------------------------------------
-        |
         |
         */
 
@@ -63,7 +58,12 @@
             el: '#app',
         })
     </script>
-
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
 </body>
 
 </html>
+
