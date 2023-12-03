@@ -10,11 +10,11 @@
 |
 */
 Vue.component('datepicker', {
-props:['value'],
+props:['value','name'],
 template: `
 <div class="date-container" @click.stop v-click-outside="away">
       <label for="date">{{name}}</label>
-      <input class="form-control hand" :value="value" @input="updateDate($event.target.value)"  v-on:click="show =!show"  readonly>
+      <input class="form-control hand" :name="name" :value="value" @input="updateDate($event.target.value)"  v-on:click="show =!show"  readonly>
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
         <div class="date-buttons-container">
             <button type="button" class="date-button rm-btn-styles" @click="previous()">
