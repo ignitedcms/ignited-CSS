@@ -43,6 +43,7 @@ nav ul li ul li {
   align-items: flex-start;
   padding: 10px;
   min-width: 200px;
+  transition: all 0.4s;
 }
 nav ul ul {
   display: none;

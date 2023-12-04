@@ -50,6 +50,7 @@
     align-items: flex-start;
     padding:10px;
     min-width:200px;
+    transition: all 0.4s;
     &:hover{
        //background-color:$background;
     }
