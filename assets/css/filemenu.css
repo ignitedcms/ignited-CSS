@@ -5,7 +5,7 @@
   transition: all 0.5s;
 }
 .m1:hover {
-  background-color: red;
+  background-color: rgb(243, 243, 243);
 }
 
 .m2 {
