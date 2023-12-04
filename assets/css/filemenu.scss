@@ -5,20 +5,21 @@
 
 .m1{
    background-color:white;
-   //border-left:1px solid #333333;
+   padding:10px;
+   //border:1px solid #333333;
 }
 
 
 .m2{
    background-color:white;
-   border:1px solid #333333;
+   border:1px solid #ccc;
    border-radius:5px;
    min-height: 100px;
 }
 
 .m3{
    background-color:white;
-   border:1px solid #333333;
+   border:1px solid #ccc;
    border-radius:5px;
    min-height: 100px;
 }
@@ -52,7 +53,7 @@
    align-items: flex-start;
    position: absolute;
    width:200px;
-   top: 100%;
+   top: 45px;
    left: 0;
  }
 
@@ -63,6 +64,6 @@
  /* Adjust dropdown levels */
  nav ul ul ul {
    top: 0;
-   left: 210px;
+   left: 190px;
  }
 
