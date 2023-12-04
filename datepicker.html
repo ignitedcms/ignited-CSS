@@ -25,6 +25,8 @@
                 <h3>Datepicker</h3>
                 <p>A demostration of a datepicker with v-model binding.</p>
                 Date 1: {{foo}} <br>Date 2: {{bar}}
+
+
                 <div class="form-group">
                     <datepicker v-model="foo" name="a" ></datepicker>
                 </div>
@@ -76,7 +78,7 @@
                 el: '#app',
                 data:
                 {
-                  foo: '',
+                  foo: '2000-01-01',
                   bar:''
                 }
             })

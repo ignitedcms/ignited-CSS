@@ -13,6 +13,11 @@ Vue.component('datepicker', {
 props:['value','name'],
 template: `
 <div v-on:keyup.escape="escapePressed" class="date-container" @click.stop v-click-outside="away">
+      <input class="form-control"  style="display:none;"
+            :name="name" 
+            :value="message" 
+            />
+
       <label for="date">{{name}}</label>
       <br>
       <button class="form-control left" style="width:330px; height:40px; " :name="name" :value="value" 
