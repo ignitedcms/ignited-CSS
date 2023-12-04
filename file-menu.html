@@ -23,10 +23,13 @@
       <h4>File menu</h4>
       <nav>
          <!-- HTML structure -->
-         <ul >
+         <ul>
             <li class="m1">menu1
                <ul class="m2 fade-in-bottom">
-                  <li>sub1.1f
+                  <li> <div>a</div> <div>
+                        <span>
+                           <i data-feather="chevron-right"></i>    
+                        </span></div>
                      <ul class="fade-in-bottom m3">
                         <li>1.1.1</li>
                         <li>1.1.2</li>
@@ -38,7 +41,8 @@
                </ul>
             </li>
             <li  class="m1">menu 2
-               <ul>
+               <ul class="m2">
+                  <li>1.3</li>
                   <!-- Add items for the first level -->
                </ul>
             </li>
@@ -49,6 +53,7 @@
 
     <script src="assets/js/click-outside.js"></script>
     <script src="assets/js/tooltips.js"></script>
+    <script src="assets/js/feather.js"></script>
     <script>
         /*
         |---------------------------------------------------------------
@@ -62,6 +67,11 @@
         })
     </script>
 
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
 </body>
 </html>
 

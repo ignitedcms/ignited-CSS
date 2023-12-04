@@ -2,19 +2,21 @@
 
  /* CSS styles */
 
-
 .m1{
    background-color:white;
    padding:10px;
-   //border:1px solid #333333;
-}
+   transition: all 0.5s;
 
+   &:hover{
+      background-color:red;
+   }
+}
 
 .m2{
    background-color:white;
    border:1px solid #ccc;
    border-radius:5px;
-   min-height: 100px;
+   min-height: 60px;
 }
 
 .m3{
@@ -35,7 +37,6 @@
  nav ul li {
    position: relative;
    float:left;
-   //background-color:#fff;
    min-width:80px;
    padding:8px;
    cursor:pointer;
@@ -43,7 +44,15 @@
 
  nav ul li ul li
  {
-    width:200px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items: flex-start;
+    padding:10px;
+    min-width:200px;
+    &:hover{
+       //background-color:$background;
+    }
  }
 
  nav ul ul {
@@ -63,7 +72,8 @@
 
  /* Adjust dropdown levels */
  nav ul ul ul {
-   top: 0;
-   left: 190px;
+   top: 10px;
+   left: 195px;
+   box-shadow: $shadow;
  }
 
