@@ -1,4 +1,22 @@
 /* CSS styles */
+.m1 {
+  background-color: white;
+}
+
+.m2 {
+  background-color: white;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  min-height: 100px;
+}
+
+.m3 {
+  background-color: white;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  min-height: 100px;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -8,7 +26,6 @@ nav ul {
 nav ul li {
   position: relative;
   float: left;
-  background-color: #fff;
   min-width: 80px;
   padding: 8px;
   cursor: pointer;
@@ -21,7 +38,7 @@ nav ul li ul li {
 nav ul ul {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   position: absolute;
   width: 200px;
@@ -36,7 +53,7 @@ nav ul li:hover > ul {
 /* Adjust dropdown levels */
 nav ul ul ul {
   top: 0;
-  left: 200px;
+  left: 210px;
 }
 
 /*# sourceMappingURL=filemenu.css.map */
