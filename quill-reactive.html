@@ -25,6 +25,7 @@
             <div class="col">
                 <h3>Quill reactive</h3>
 
+                <p>Configure with v-model or just value</p>
                 <div class="form-group code">
                    {{foo}}
                 </div>
@@ -33,6 +34,7 @@
                    <quill-editor  
                      ref="quillEditor"
                      class="editor"
+                     name="testing"
                      v-model="foo"
                      :options="editorOption"
                      @blur="onEditorBlur($event)"
