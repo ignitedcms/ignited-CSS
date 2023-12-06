@@ -33,7 +33,7 @@ Vue.component('modal',{
 
         <div class="modal-header">
           <button type="button" class="rm-btn-styles close m-t" v-on:click="open = false">&times;</button>
-          <h4 class="m-t">{{modalHeader}}</h4>
+          <h5 class="m-t">{{modalHeader}}</h5>
         </div>
         <div class="modal-body">
           <slot></slot>
