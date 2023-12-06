@@ -5,7 +5,7 @@
     overflow: hidden;
     font-family: inherit;
     font-size: inherit;
-    top:50px;
+    top:55px;
     left:0;
     background-color: #ffffff;
     min-width: 200px;
@@ -15,6 +15,8 @@
     &-item{
         padding:15px;
         transition: all 0.5s;
+        margin:5px;  
+        border-radius:5px;
         a {
             text-decoration: none;
             color: $font-color;

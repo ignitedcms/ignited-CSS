@@ -16,7 +16,7 @@
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   width: 100% !important;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 24px;
   user-select: none;
   cursor: pointer;
@@ -26,7 +26,6 @@
   text-decoration: underline;
 }
 .accordion-content {
-  margin-top: 20px;
   padding: 10px;
 }
 
