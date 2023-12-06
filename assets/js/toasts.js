@@ -14,9 +14,7 @@ Vue.component('toast',{
     template: 
     `
     <div class="toast drop-shadow fade-in-bottom" :style="{display:foo}">
-        <div class="row">
-            <slot></slot>
-        </div>
+         <slot></slot>
     </div>
     `,
     data:function(){
