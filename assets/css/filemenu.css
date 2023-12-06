@@ -31,7 +31,7 @@ nav ul {
 nav ul li {
   position: relative;
   float: left;
-  min-width: 190px;
+  min-width: 90px;
   cursor: pointer;
 }
 
