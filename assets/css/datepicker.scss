@@ -6,8 +6,8 @@
       align-items: center;
       flex-direction: row;
       padding: 3px;
-      background-color: $primary;
-      color: #ffffff;
+      background-color: $grey;
+      color: #222;
       cursor: pointer;
 }
 
@@ -17,14 +17,14 @@
 }
 
 .date-container {
-    max-width: 330px;
+    max-width: 280px;
     // margin: 0 auto;
 }
 
 .date-flyout{
     position: relative;
     min-height: 360px;
-    min-width: 330px;
+    min-width: 280px;
     margin-top:10px;
     padding: 10px;
     background-color: #ffffff;

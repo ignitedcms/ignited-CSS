@@ -20,7 +20,7 @@ template: `
 
       <label for="date">{{name}}</label>
       <br>
-      <button class="form-control left" style="width:330px; height:40px; " :name="name" :value="value" 
+      <button class="form-control left" style="width:280px; height:40px; " :name="name" :value="value" 
          @input="updateDate($event.target.value)"  v-on:click="show =!show">
          {{message}}
       </button>
@@ -39,13 +39,13 @@ template: `
         </div>
         <div class="date-holder" v-show="dateDays">
             <div class="date-days">
-                <div class="cal-no-hover cal-day">Sun</div>
-                <div class="cal-no-hover cal-day">Mon</div>
-                <div class="cal-no-hover cal-day">Tue</div>
-                <div class="cal-no-hover cal-day">Wed</div>
-                <div class="cal-no-hover cal-day">Thu</div>
-                <div class="cal-no-hover cal-day">Fri</div>
-                <div class="cal-no-hover cal-day">Sat</div>
+                <div class="cal-no-hover cal-day">Su</div>
+                <div class="cal-no-hover cal-day">Mo</div>
+                <div class="cal-no-hover cal-day">Tu</div>
+                <div class="cal-no-hover cal-day">We</div>
+                <div class="cal-no-hover cal-day">Th</div>
+                <div class="cal-no-hover cal-day">Fr</div>
+                <div class="cal-no-hover cal-day">Sa</div>
             </div>
             <div v-for="i in this.arr" @click="getIndex(i)" >
                 <div v-if="i.type == 'tr'" class="clearfix">
@@ -78,7 +78,7 @@ template: `
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            days: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
             arr: [],
             show: false,
             dateDays: true,
