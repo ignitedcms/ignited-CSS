@@ -20,24 +20,31 @@
 
 <body class="full-screen bg-light-grey">
     <div class="container" id="app">
+       <div class="gap"></div>
         <div class="row">
             <div class="col">
                 <h3>Focus trap</h3>
-
-               <button @click="mountTrap">mount trap</button>
-               <focus-trap v-if="isTrapVisible" :active="isTrapActive">
-                 <p>Here is a focus trap <a href='#!'>with</a> <a href='#!'>some</a> <a href='#!'>focusable</a> parts.</p>
-                 <button @click="toggleTrap">toggle trap</button>
-               </focus-trap>
+                <p>Tab through to see it in action</p>
+               
+                <div class="form-group bg-dark p-2 ">
+                   <focus-trap  :active="isTrapActive">
+                      <p>Here is a focus trap <a href='#!'>with</a>
+                      <a href='#!'>some</a>
+                      <a href='#!'>focusable</a> parts.</p>
+                      <button @click="isTrapActive = !isTrapActive">toggle trap</button>
+                   </focus-trap>
+                </div>
     
-             
+                <div class="form-group">
+                   <input class="form-control" 
+                         name="a" 
+                         placeholder="test" />
+                </div>
+                <div class="form-group">
+                   <button type="submit" class="btn btn-white">title</button>
+                </div>
 
 
-             <button type="submit" class="btn btn-white">title</button>
-             <input class="form-control" 
-                   name="a" 
-                   value="foo" 
-                   placeholder="testing" />
                 
             </div>
 
@@ -59,16 +66,7 @@
        var app = new Vue({
           el: '#app',
           data:{
-             isTrapVisible: false,
              isTrapActive: true
-          },
-          methods: {
-             mountTrap () {
-                this.isTrapVisible = true;
-             },
-             toggleTrap () {
-                this.isTrapActive = !this.isTrapActive;
-             },
           },
           components: {
              FocusTrap
