@@ -28,17 +28,20 @@ Vue.component('modal',{
     <button type="button" class="btn btn-white " v-on:click="open=true" v-click-outside="away">
       {{buttonTitle}} 
     </button>
+    
     <div class="modal" v-show="open" v-on:keyup.escape="escapePressed">
        <div class="modal-content fade-in-bottom" @click.stop>
 
-          <div class="modal-header">
-             <button type="button" class="rm-btn-styles close m-t" v-on:click="open = false">&times;</button>
-             <h5 class="m-t">{{modalHeader}}</h5>
-          </div>
-          <div class="modal-body">
-             <slot></slot>
-          </div>
-          <!-- footer if needed -->
+          <focus-trap  :active="open">
+             <div class="modal-header">
+                <button type="button" class="rm-btn-styles close m-t" v-on:click="open = false">&times;</button>
+                <h5 class="m-t">{{modalHeader}}</h5>
+             </div>
+             <div class="modal-body">
+                <slot></slot>
+             </div>
+          </focus-trap>        
+
        </div>
     </div>
   </div>
@@ -57,7 +60,6 @@ Vue.component('modal',{
       
       escapePressed()
       {
-         //alert('escape pressed');
         this.open = false;
       },
     }

@@ -27,7 +27,7 @@
                 <p>Tab through to see it in action</p>
                
                 <div class="form-group bg-dark p-2 ">
-                   <focus-trap  :active="isTrapActive">
+                   <focus-trap  :active="isTrapActive" deactivateOnOutsideClick="true">
                       <p>Here is a focus trap <a href='#!'>with</a>
                       <a href='#!'>some</a>
                       <a href='#!'>focusable</a> parts.</p>
@@ -40,7 +40,7 @@
                          placeholder="test" />
                 </div>
                 <div class="form-group">
-                   <button type="submit" class="btn btn-white">title</button>
+                   <button @click="alert('hi')" type="submit" class="btn btn-white">title</button>
                 </div>
 
 
