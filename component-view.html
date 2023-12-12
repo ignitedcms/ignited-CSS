@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light weight framework</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+   <!-- vue 2 -->
+   <script src="assets/js/vue2.js"></script>
+
+</head>
+
+<body class="full-screen bg-light-grey">
+  <div class="container" id="app">
+   <div class="gap"></div>
+    <div class="row">
+      <div class="col panel br drop-shadow">
+         <h3>Component view</h3>
+
+        <tabs>
+          <tab-item title="Preview">
+             <div class="v-a h-a bg-light-grey" style="min-height:300px;">
+                <drawer title="Toggle drawer">
+                  <div class="p-3">
+
+                     <p>This is just some arbitary content!!</p>
+                  </div>
+                </drawer>
+             
+             </div>
+
+          </tab-item>
+          <tab-item title="Code">
+             <pre class="code scroll-y" style="height:300px;">
+             
+"use client"
+
+import * as React from "react"
+
+import { Progress } from "@/components/ui/progress"
+
+export function ProgressDemo() {
+  const [progress, setProgress] = React.useState(13)
+
+     React.useEffect(() => {
+       const timer = setTimeout(() => setProgress(66), 500)
+       return () => clearTimeout(timer)
+     }, [])
+
+  return
+}
+
+             </pre>
+          </tab-item>
+        </tabs>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script src="assets/js/click-outside.js"></script>
+  <script src="assets/js/tabs.js"></script>
+   <script src="assets/js/drawer.js"></script>
+
+  <script>
+  /*
+  |---------------------------------------------------------------
+  | Base entry for vue app
+  |---------------------------------------------------------------
+  |
+  */
+
+  var app = new Vue({
+      el: '#app',
+  })
+  </script>
+
+</body>
+
+
+</html>
+
