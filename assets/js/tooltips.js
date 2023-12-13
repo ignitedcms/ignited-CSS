@@ -13,7 +13,8 @@ Vue.component('tooltip',{
     props:['link','width'],
     template: 
     `
-    <button v-on:keyup.escape="escapePressed()"  type="button" class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
+    <button v-on:keyup.escape="escapePressed()"  type="button" 
+       class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
      <span class="tooltip-highlight"> {{link}} </span>
         <div v-if="show" class="tooltip fade-in" @click.stop  :style="{width: width}">
 
