@@ -21,11 +21,35 @@
         <div class="gap"></div>
         <div class="row">
             <div class="col">
-                
+                <h4>Drawers</h4>
+                <p class="m-b-3">With focus trapping keep tabbing
+                 to see it in action
+                </p>
                 <drawer title="Toggle drawer">
                   <div class="p-3">
+                     <div class="form-group">
+                        <label for="title">Name</label>
+                        <div class="small text-muted">Enter your full name</div>
+                        <input class="form-control" 
+                              value="" 
+                              placeholder="Start typing" />
+                     </div>
+                     <div class="form-group">
+                        <label for="title">Email</label>
+                        <div class="small text-muted">Enter a valid
+                           email address
+                        </div>
+                        <input class="form-control" 
+                              name="a" 
+                              value="" 
+                              placeholder="Start typing" />
+                     </div>
+                     <div class="form-group">
+                        <button type="submit" 
+                           class="btn btn-block btn-white">Save
+                        </button>
+                     </div>
 
-                     <p>This is just some arbitary content!!</p>
                   </div>
                 </drawer>                     
 
@@ -48,6 +72,7 @@
 
         <!-- Click out must go before all other scripts -->
         <script src="assets/js/click-outside.js"></script>
+        <script src="assets/js/focus-trap.js"></script>
         <script src="assets/js/drawer.js"></script>
     
         <script>

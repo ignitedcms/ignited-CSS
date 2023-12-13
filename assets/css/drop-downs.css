@@ -14,7 +14,7 @@
 .dropdown-item {
   padding: 15px;
   transition: all 0.5s;
-  margin: 5px;
+  margin: 8px;
   border-radius: 5px;
 }
 .dropdown-item a {
