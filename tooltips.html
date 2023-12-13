@@ -23,29 +23,32 @@
         <div class="row">
             <div class="col">
                 <h3>Tooltips</h3>
+                <p>With focus trapping for accessibilty</p>
 
                 <div class="gap"> </div>
                 <div class="gap"> </div>
                 <div class="gap"> </div>
 
                 <div class="form-group v-a h-a" >
-                    <tooltip link="well hello" width="350px" class="m-r">
+                    <tooltip link="One" width="350px" class="m-r">
                        <div class="p">
                           <div class="row">
                              <div class="col no-margin">
                                 <div class="nothing">
-                                   <label for="title">title</label>
-                                   <div class="small text-muted">title</div>
+                                   <label for="title">Dimensions</label>
+                                   <div class="small text-muted">Set the 
+                                      dimensions for the layer.
+                                   </div>
                                    <input class="form-control" 
                                          name="a" 
                                          value="" 
-                                         placeholder="test" />
+                                         placeholder="Width" />
                                 </div>
                                 <div class="form-group">
                                    <input class="form-control" 
                                          name="a" 
                                          value="" 
-                                         placeholder="test" />
+                                         placeholder="Height" />
                                 </div>
                                 <div class="form-group ">
                                    <button type="submit" class="btn btn-block btn-dark">Save</button>
@@ -57,15 +60,17 @@
 
                     </tooltip> 
 
-                    <tooltip link="two" class="m-r">Another useful tip</tooltip>
-                    <tooltip link="three">Setting up.</tooltip>
+                    <tooltip link="two" class="m-r">
+                      <p class="center">Another tooltip</p>
+                    
+                    </tooltip>
+                    <tooltip link="three">
+                     <p class="center">Need help?</p>
+                    </tooltip>
                 </div>
 
 
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="type here">
-                    <div class="small">Some message goes here</div>
-                </div>
+                
             </div>
         </div>
     </div>
