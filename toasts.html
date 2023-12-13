@@ -34,22 +34,22 @@
     <div class="toasts">
         
         <toast time="3000">
-         <div class="row">
-            <div class="col v-a">
-                <i data-feather="x" class="toast-danger br-full p icon "></i>
-                <div class="m-l v-a ">The file was deleted</div>
-            </div>
-         </div>
+          <div class="p-2">
+            <strong>
+               Scheduled meetup
+            </strong>
+             <p class="text-muted">Friday 2nd February, 2023 3:00pm</p>
+          </div>
             
         </toast>
         
         <toast time="4000">
-            <div class="row">
-                <div class="col v-a">
-                    <i data-feather="check" class="toast-success  br-full  p icon "></i>
-                    <div class="m-l v-a ">Congratulations you may proceed as normal to the next screen</div>
-                </div>
-            </div> 
+        <div class="p-2">
+           <strong>
+              Meeting cancelled
+           </strong>
+           <p class="text-muted">Monday 9th October, 2023 8:00pm</p>
+        </div>
         </toast>
         
     </div>
@@ -74,15 +74,6 @@
 
         var app = new Vue({
             el: '#app',
-            data: {
-                name: 'Vue.js'
-            },
-            methods: {
-                test()
-                {
-                 //nothing to see here
-                }
-            }
 
         })
     </script>

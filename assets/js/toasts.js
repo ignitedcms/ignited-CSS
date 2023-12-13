@@ -13,7 +13,7 @@ Vue.component('toast',{
     props:['time'],
     template: 
     `
-    <div class="toast drop-shadow fade-in-bottom" :style="{display:foo}">
+    <div class="toast fade-in-bottom" :style="{display:foo}">
          <slot></slot>
     </div>
     `,
