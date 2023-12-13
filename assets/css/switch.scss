@@ -75,7 +75,15 @@
   white-space: nowrap;
   border-width: 0;
 
-  //display: none;
+}
+
+input:focus + i {
+
+  color: #495057;
+  background-color: #fff;
+  border-color: $form-focus-color;
+  outline: 0;
+  box-shadow: 0 0 0 0.3rem lighten($form-focus-color, 20);
 }
 
 

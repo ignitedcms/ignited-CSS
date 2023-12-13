@@ -72,6 +72,14 @@
   border-width: 0;
 }
 
+input:focus + i {
+  color: #495057;
+  background-color: #fff;
+  border-color: #5cbef7;
+  outline: 0;
+  box-shadow: 0 0 0 0.3rem #bde5fc;
+}
+
 .form-switch input:checked + i {
   background-color: #6ecf78;
 }
