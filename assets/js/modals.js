@@ -25,16 +25,16 @@ Vue.component('modal',{
     template: 
     `
   <div v-on:keyup.escape="escapePressed()">
-    <button type="button" class="btn btn-white " v-on:click="open=true" v-click-outside="away">
+    <button type="button" class="btn btn-white " v-on:click="open=true; arr='false'" v-click-outside="away">
       {{buttonTitle}} 
     </button>
     
-    <div class="modal" v-show="open" v-on:keyup.escape="escapePressed">
+    <div class="modal" role="dialog" :aria-hidden="arr" v-show="open" v-on:keyup.escape="escapePressed">
        <div class="modal-content fade-in-bottom" @click.stop>
 
           <focus-trap  :active="open">
              <div class="modal-header">
-                <button type="button" class="rm-btn-styles close m-t" v-on:click="open = false">&times;</button>
+                <button type="button" aria-label="Close" class="rm-btn-styles close m-t" v-on:click="open = false; arr='true'">&times;</button>
                 <h5 class="m-t">{{modalHeader}}</h5>
              </div>
              <div class="modal-body">
@@ -51,16 +51,19 @@ Vue.component('modal',{
         return{
             message: 'Hello',
             open: false,
+            arr: 'true'
         }
     },
     methods: {
       away: function () {
         this.open = false;
+         this.arr = 'true';
       },
       
       escapePressed()
       {
         this.open = false;
+         this.arr = 'true';
       },
     }
 });
