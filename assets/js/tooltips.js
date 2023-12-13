@@ -14,7 +14,8 @@ Vue.component('tooltip',{
     template: 
     `
     <button v-on:keyup.escape="escapePressed()"  type="button" 
-       class="btn rm-btn-styles tooltip-rel" v-on:click="show =!show" v-click-outside="away">
+         aria-haspopup="dialog"  :aria-expanded="arr"  class="btn rm-btn-styles tooltip-rel" 
+         v-on:click="tmp" v-click-outside="away">
      <span class="tooltip-highlight"> {{link}} </span>
         <div v-if="show" class="tooltip fade-in" @click.stop  :style="{width: width}">
 
@@ -29,16 +30,28 @@ Vue.component('tooltip',{
         return{
             message: 'Hello',
             show: false,
+            arr: 'false',
         }
     },
     methods:{
         away: function () {
             this.show = false;
+            this.arr = 'false';
         },
+       tmp(){
+         this.show = !this.show;
+          if(this.arr == 'false')
+          {
+            this.arr = 'true';
+          }
+          else
+             this.arr = 'false';
+      },
 
        escapePressed()
        {
             this.show = false;
+            this.arr = 'false';
        }
     } 
 });
