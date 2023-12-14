@@ -31,6 +31,8 @@ Vue.component('combobox',{
                     :name="name" 
                     v-model="message"
                     autocomplete="off" 
+                    @keyup.enter="onEnter"
+                    @keyup="listn"
                     placeholder="Search Framework" />
 
              <div class="b-t"></div>
@@ -44,6 +46,8 @@ Vue.component('combobox',{
           </div>
 
           <slot></slot>
+
+          {{matches}}
        </div>
    </div>
 
@@ -55,6 +59,7 @@ Vue.component('combobox',{
           message: '',
           message2: 'Select item',
           show: false,
+          matches: [],
           searches: []
       }
   },
@@ -66,6 +71,18 @@ Vue.component('combobox',{
       away: function () {
           this.show = false;
       },
+     listn(e){
+        console.log(this.searches[1].val);
+        for (let i = 0; i < this.searches.length; i++) {
+           if(e.key.include(this.searches[i]))
+            console.log(e.key);
+           //console.log( this.searches[i]);
+         }
+     },
+     onEnter()
+     {
+       alert('enter pressed');
+     },
      escapePressed(){
         this.show = false;
 
