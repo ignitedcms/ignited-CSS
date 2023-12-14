@@ -13,8 +13,8 @@ Vue.component('drop-down',{
     props:['button-title'],
     template: 
     `
-    <button v-on:keyup.escape="escapePressed()" aria-haspopup="dialog" :aria-expanded="arr" type="button" 
-      class="btn btn-white drop-shadow pos-rel" v-on:click="tmp" v-click-outside="away">
+    <button @keyup.escape="escapePressed()" aria-haspopup="dialog" :aria-expanded="arr" type="button" 
+      class="btn btn-white drop-shadow pos-rel" @click="tmp" v-click-outside="away">
         {{buttonTitle}}
         <div v-if="show" class="dropdown br drop-shadow fade-in" @click.stop>
           <focus-trap :active="show">

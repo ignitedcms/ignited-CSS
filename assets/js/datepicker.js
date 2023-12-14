@@ -22,7 +22,7 @@ template: `
       <label for="date">{{name}}</label>
       <br>
       <button class="form-control left" style="width:280px; height:40px; " :name="name" :value="value" 
-         @input="updateDate($event.target.value)"  v-on:click="show =!show">
+         @input="updateDate($event.target.value)"  @click="show =!show">
          {{message}}
       </button>
 
@@ -33,7 +33,7 @@ template: `
             <button type="button" class="date-button rm-btn-styles" @click="previous()">
                 <i data-feather="chevron-left"></i>
             </button>
-            <button type="button" v-on:click="dateDays = !dateDays" class="year-box rm-btn-styles">
+            <button type="button" @click="dateDays = !dateDays" class="year-box rm-btn-styles">
             {{months[currentMonth]}} {{currentYear}}
             </button>
             <button type="button" class="date-button rm-btn-styles" @click="next()">
@@ -65,10 +65,10 @@ template: `
 
         <div class="date-years" v-if="!dateDays">
             <div class="date-today">
-                <button type="button" class="rm-btn-styles" v-on:click="getToday">Today</button>
+                <button type="button" class="rm-btn-styles" @click="getToday">Today</button>
             </div>
             <div class="date-chunk" v-for="year in years">
-                <button type="button" v-on:click="set_year(year)" class="rm-btn-styles date-years-row">{{year}}</button>
+                <button type="button" @click="set_year(year)" class="rm-btn-styles date-years-row">{{year}}</button>
             </div>
             
         </div>

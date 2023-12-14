@@ -33,8 +33,7 @@ Vue.component('accordion-item',{
                <div>
                 {{title}} 
                </div>
-
-                  <span >
+                  <span>
                      <i data-feather="chevron-down"></i>    
                   </span>
             </button>

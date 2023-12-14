@@ -16,7 +16,7 @@ Vue.component('drawer',{
     <div>
        <button  @click="drawer = !drawer"
           v-click-outside="away"
-          v-on:keyup.escape="escapePressed()"
+          @keyup.escape="escapePressed()"
           type="submit"
           class="btn btn-white m-b-2">{{title}}</button>
        <div v-if="drawer" @click.stop class="drawer fade-in b-l">
