@@ -23,14 +23,14 @@
         <div class="row">
             <div class="col">
                 <h3>Combobox</h3>
-                <button class="form-control hand left pos-rel" style="width:280px; height:40px;">
+                <button @click="show =!show" class="form-control hand left pos-rel" style="width:280px; height:40px;">
                    <span>
                       <i data-feather='chevron-down'  class='icon-inside hand'></i>
                    </span>
                    testing
                 </button>
              
-                <div class="combobox-container">
+                <div v-if="show" class="combobox-container fade-in">
                    <div class="pos-rel " style="width:280px; height:40px;">
                       <span>
                          <i data-feather='search'  class='icon-inside hand'></i>
@@ -38,10 +38,12 @@
                       <input class="rm-input-styles" 
                              name="a" 
                              placeholder="Search Framework" />
-
-                      <div class="combobox-container-item">React</div>
-                      <div class="combobox-container-item">Nuxt</div>
-                      <div class="combobox-container-item">Astro</div>
+                      
+                         <div class="b-t"></div>
+                         <div class="combobox-container-item">React</div>
+                         <div class="combobox-container-item">Nuxt</div>
+                         <div class="combobox-container-item">Astro</div>
+                      
                       <!--<div class="combobox-container-item">Turbo</div>-->
                       <!--<div class="combobox-container-item">Next</div>-->
                    </div>
@@ -62,6 +64,11 @@
     <!-- feather icons -->
     <script src="assets/js/feather.js"></script>
     <script src="assets/js/toasts.js"></script>
+<script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
     <script>
         /*
         |---------------------------------------------------------------
@@ -72,14 +79,13 @@
 
         var app = new Vue({
             el: '#app',
+           data:{
+              show:false
+           }
 
         })
     </script>
-    <script>
-        feather.replace({
-            class: "font-primary",
-        });
-    </script>
+    
 </body>
 
 </html>
