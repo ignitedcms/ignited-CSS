@@ -13,13 +13,13 @@ Vue.component('combobox',{
   props:['name'],
   template: 
   `
-  <div>
-       <button @click="show =!show" class="form-control hand 
+  <div @keyup.escape="escapePressed">
+       <button @click="show =!show; message=''" class="form-control hand 
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
              <i data-feather='chevron-down'  class='icon-inside hand'></i>
           </span>
-          {{message}}
+          {{message2}}
        </button>
     
        <div v-if="show" class="combobox-container fade-in" @click.stop>
@@ -53,6 +53,7 @@ Vue.component('combobox',{
 
       return{
           message: '',
+          message2: 'Select item',
           show: false,
           searches: []
       }
@@ -65,9 +66,15 @@ Vue.component('combobox',{
       away: function () {
           this.show = false;
       },
+     escapePressed(){
+        this.show = false;
+
+     },
       my_select(str)
       {
         this.message = str;
+        this.message2 = str;
+        this.show = false;
       },
       searchFunc(param) {
         if (param.toLowerCase().includes(this.message.toLowerCase())) {
