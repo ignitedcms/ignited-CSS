@@ -20,7 +20,7 @@ Vue.component('drawer',{
           type="submit"
           class="btn btn-white m-b-2">{{title}}</button>
        <div v-if="drawer" @click.stop class="drawer fade-in b-l">
-          <focus-trap :acitve="drawer">
+          <focus-trap :active="drawer">
             <slot></slot>
           </focus-trap>
        </div>
