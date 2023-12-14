@@ -29,7 +29,7 @@ Vue.component('modal',{
       {{buttonTitle}} 
     </button>
     
-    <div class="modal" role="dialog" :aria-hidden="arr" v-show="open" @keyup.escape="escapePressed">
+    <div class="modal" role="dialog" aria-modal="true" :aria-hidden="arr" v-show="open" @keyup.escape="escapePressed">
        <div class="modal-content fade-in-bottom" @click.stop>
 
           <focus-trap  :active="open">

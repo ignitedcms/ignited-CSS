@@ -26,7 +26,8 @@ template: `
          {{message}}
       </button>
 
-      <div class="date-flyout drop-shadow fade-in" v-show="show" >
+      <div class="date-flyout drop-shadow fade-in" v-show="show" role="dialog" 
+        aria-model="true"  >
        
       <focus-trap :active="show">
         <div class="date-buttons-container">
