@@ -14,7 +14,7 @@ Vue.component('combobox',{
   template: 
   `
   <div>
-       <button @click="show =!show" class="form-control hand 
+       <button @click="show =!show; message=''" class="form-control hand 
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
              <i data-feather='chevron-down'  class='icon-inside hand'></i>
@@ -22,7 +22,7 @@ Vue.component('combobox',{
           {{message}}
        </button>
     
-       <div v-if="show" class="combobox-container fade-in">
+       <div v-if="show" class="combobox-container fade-in" @click.stop>
           <div class="pos-rel " style="width:280px; height:40px;">
              <span>
                 <i data-feather='search'  class='icon-inside hand' style="right:25px"></i>
@@ -57,7 +57,8 @@ Vue.component('combobox',{
       }
   },
   mounted() {
-    this.searches = this.$children
+    this.searches = this.$children;
+
   },
   methods:{
       away: function () {
@@ -87,6 +88,10 @@ Vue.component('combo-item', {
     return {
     //nothing
     }
-  }
+  },
+   mounted()
+   {
+      feather.replace();
+   }
 });
 
