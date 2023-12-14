@@ -14,7 +14,7 @@ Vue.component('toast',{
     template: 
     `
     <div class="toast fade-in-bottom" role="alert" aria-atomic="true" 
-          aria-live="assertive"  :style="{display:foo}">
+          aria-live="assertive" :style="{display:foo}">
          <slot></slot>
     </div>
     `,

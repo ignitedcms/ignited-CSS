@@ -17,7 +17,7 @@ Vue.component('password',{
          <label for="Password">Password</label>
          <div class="small text-muted m-b">password</div>
          <div class="pos-rel">
-            <span v-on:click='eyeball()'>
+            <span @click='eyeball()'>
                <i data-feather='eye'  class='icon-inside hand'></i>
             </span>
             <input name="password" :type="foo" :value="value" placeholder="placeholder" class="form-control">
