@@ -14,7 +14,7 @@ Vue.component('combobox',{
   template: 
   `
   <div>
-       <button @click="show =!show; message=''" class="form-control hand 
+       <button @click="show =!show" class="form-control hand 
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
              <i data-feather='chevron-down'  class='icon-inside hand'></i>
@@ -42,6 +42,7 @@ Vue.component('combobox',{
 
              </div>
           </div>
+
           <slot></slot>
        </div>
    </div>
