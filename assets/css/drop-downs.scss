@@ -5,7 +5,7 @@
     overflow: hidden;
     font-family: inherit;
     font-size: inherit;
-    top:55px;
+    top:45px;
     left:0;
     background-color: #ffffff;
     min-width: 200px;
@@ -13,9 +13,9 @@
     border: 1px solid #ccc;
     z-index: 1;
     &-item{
-        padding:15px;
+        padding:10px;
         transition: all 0.5s;
-        margin:8px;  
+        margin:5px;  
         border-radius:5px;
         a {
             text-decoration: none;
