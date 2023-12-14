@@ -13,6 +13,7 @@ Vue.component('datepicker', {
 props:['value','name'],
 template: `
 <div v-on:keyup.escape="escapePressed" class="date-container" @click.stop v-click-outside="away">
+
       <input class="form-control"  style="display:none;"
             :name="name" 
             :value="message" 
@@ -24,7 +25,10 @@ template: `
          @input="updateDate($event.target.value)"  v-on:click="show =!show">
          {{message}}
       </button>
+
       <div class="date-flyout drop-shadow fade-in" v-show="show" >
+       
+      <focus-trap :active="show">
         <div class="date-buttons-container">
             <button type="button" class="date-button rm-btn-styles" @click="previous()">
                 <i data-feather="chevron-left"></i>
@@ -58,6 +62,7 @@ template: `
             </div>
             
         </div>
+
         <div class="date-years" v-if="!dateDays">
             <div class="date-today">
                 <button type="button" class="rm-btn-styles" v-on:click="getToday">Today</button>
@@ -67,6 +72,7 @@ template: `
             </div>
             
         </div>
+        </focus-trap>
     </div>
 </div>
     `,
