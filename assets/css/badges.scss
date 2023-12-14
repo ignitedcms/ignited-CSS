@@ -48,3 +48,22 @@
         color: #ffffff;
     }
 }
+
+@media (max-width: $tablet) 
+{
+   .badge {
+      float:left;
+      border:0 !important;
+      font-size:0;
+      margin-top:4px;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      padding:0px;
+      min-width:8px !important;
+      min-height:8px !important;
+      background-color:$grey;
+
+   }
+}
+

@@ -23,3 +23,11 @@
 .day:hover {
     background: $light-grey;
 }
+
+@media (max-width: $tablet) 
+{
+   .day{
+      height:80px;
+   }
+
+}

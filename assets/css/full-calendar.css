@@ -19,4 +19,10 @@
   background: rgb(243, 243, 243);
 }
 
+@media (max-width: 900px) {
+  .day {
+    height: 80px;
+  }
+}
+
 /*# sourceMappingURL=full-calendar.css.map */
