@@ -27,7 +27,7 @@
                 <p>Tab through to see it in action</p>
                
                 <div class="form-group bg-dark p-2 ">
-                   <focus-trap  :active="isTrapActive" deactivateOnOutsideClick="true">
+                   <focus-trap  :active="isTrapActive" >
                       <p>Here is a focus trap <a href='#!'>with</a>
                       <a href='#!'>some</a>
                       <a href='#!'>focusable</a> parts.</p>
@@ -60,16 +60,13 @@
         |---------------------------------------------------------------
         |
         */
-       Vue.component('focus-trap', FocusTrap);
+       //Vue.component('focus-trap', FocusTrap);
 
        var app = new Vue({
           el: '#app',
           data:{
              isTrapActive: true
-          },
-          components: {
-             FocusTrap
-          },
+          }
 
        })
     </script>
