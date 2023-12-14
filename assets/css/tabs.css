@@ -12,12 +12,8 @@
   user-select: none;
   padding: 20px;
   cursor: pointer;
-  border-bottom: 5px solid #F7FAFC;
+  border-bottom: 5px solid #fff;
 }
-.tab-header:hover {
-  border-bottom: 5px solid #C73B4D;
-}
-
 .tab-content {
   width: 100%;
   border-top: 1px solid #cccccc;
@@ -40,7 +36,9 @@
 |
 */
 .tab__selected {
-  background-color: red;
+  font-weight: bold !important;
+  color: #000;
+  border-bottom: 5px solid #C73B4D;
 }
 
 /*# sourceMappingURL=tabs.css.map */

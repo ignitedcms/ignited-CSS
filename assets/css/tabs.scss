@@ -14,9 +14,9 @@
     user-select: none;
     padding: 20px;
     cursor: pointer;
-    border-bottom: 5px solid $background;
+    border-bottom: 5px solid #fff;
     &:hover{
-      border-bottom: 5px solid $primary;
+      //border-bottom: 5px solid $primary;
     }
   }
   
@@ -43,5 +43,7 @@
   |
   */
   .tab__selected{
-    background-color:red;
+     font-weight: bold !important;
+     color:#000;
+      border-bottom: 5px solid $primary;
   }
