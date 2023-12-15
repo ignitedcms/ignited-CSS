@@ -38,7 +38,7 @@ Vue.component('combobox',{
                     placeholder="Search Framework" />
 
              <div class="b-t"></div>
-             <div v-for="(item, index) in matches" :key="index" :ref="'idx_'+index" 
+             <div v-for="(item, index) in matches" :key="index" :id="name+'_'+index" 
                  class="combobox-container-item"  @click="my_select(item.val)">
                         {{ item.val }}
              </div>
@@ -112,7 +112,9 @@ Vue.component('combobox',{
         }
         else if (event.key == 'ArrowDown') {
             //array[0] is necessary!!
-            this.$refs['idx_2'][0].focus();
+            //this.$refs['idx_2'][0].focus();
+           var t = this.name + '_1';
+           document.getElementById(t).classList.add('bg-dark');
 
         }
         else if (event.key == 'ArrowUp') {
