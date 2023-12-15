@@ -82,9 +82,9 @@ Vue.component('combobox',{
       lod(){
 
 
-         var t = this.name + '_' + this.focusedIndex;
-         document.getElementById(t).classList.remove('combobox-container-item');
-         document.getElementById(t).classList.add('combobox-container-item-highlighted');
+         //var t = this.name + '_' + this.focusedIndex;
+         //document.getElementById(t).classList.remove('combobox-container-item');
+         //document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
          this.focusedIndex = 0;
 
