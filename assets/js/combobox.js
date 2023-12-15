@@ -40,8 +40,14 @@ Vue.component('combobox',{
              <div class="b-t"></div>
              <div v-for="(item, index) in matches" :key="index" 
                  class="combobox-container-item" @click="my_select(item.val)">
-              {{ item.val }}
+
+                     {{ item.val }}
              </div>
+
+               <div v-if="matches.length === 0" class="combobox-container-item">
+                 No searches found. . .
+               </div>
+
           </div>
 
           <slot></slot>
