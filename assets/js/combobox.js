@@ -35,7 +35,7 @@ Vue.component('combobox',{
                     autocomplete="off" 
                     ref="searchInput"
                     @keydown="onKeys"
-                    placeholder="Search Framework" />
+                    placeholder="Search list" />
 
              <div class="b-t"></div>
              <div v-for="(item, index) in matches" :key="index" :id="name+'_'+index" 
