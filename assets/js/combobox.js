@@ -14,7 +14,7 @@ Vue.component('combobox',{
   template: 
   `
   <div @keyup.escape="escapePressed">
-       <button @click="show =!show; message=''" class="form-control hand 
+       <button @click="lod" class="form-control hand 
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
              <i data-feather='chevron-down'  class='icon-inside hand'></i>
@@ -36,7 +36,7 @@ Vue.component('combobox',{
 
              <div class="b-t"></div>
              <div v-for="(item, index) in matches" :key="index" 
-                 class="combobox-container-item" @click="my_select(search)">
+                 class="combobox-container-item" @click="my_select(item.val)">
               {{ item.val }}
              </div>
           </div>
@@ -59,6 +59,7 @@ Vue.component('combobox',{
   },
   mounted() {
     this.items = this.$children;
+    this.matches = this.$children;
 
   },
    watch: {
@@ -67,6 +68,10 @@ Vue.component('combobox',{
         }
       },
   methods:{
+     lod(){
+        this.show =!this.show; 
+        this.matches = this.items;
+     },
      findMatches(text) {
           this.matches = this.items.filter(item =>
             item.val.toLowerCase().includes(text.toLowerCase())
