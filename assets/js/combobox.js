@@ -51,9 +51,9 @@ Vue.component('combobox',{
 
           <slot></slot>
        </div>
-       {{focusedIndex}}
-
-       {{len}}
+      f {{focusedIndex}}
+      <br>
+      l {{len}}
    </div>
 
   
@@ -89,6 +89,8 @@ Vue.component('combobox',{
         document.getElementById(t).classList.remove('combobox-container-item');
         document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
+        this.focusedIndex = 0;
+
         this.show =!this.show; 
         this.matches = this.items;
         this.message = '';
@@ -107,20 +109,32 @@ Vue.component('combobox',{
       away: function () {
           this.show = false;
       },
+     nonFocus()
+     {
+        this.len = this.matches.length;
+        var s = '';
+        for(var i=0; i < this.len; i++)
+        {
+           s = s + i.toString();
+        }
+        alert(s + this.focusedIndex.toString())
+     },
      focusNext(){
         //remember arrays start at 0
         this.len = this.matches.length -1;
 
+
         if(this.focusedIndex < this.len)
         {
 
-         this.focusedIndex = this.focusedIndex + 1;
+         this.focusedIndex = this.focusedIndex +1;
 
            var t = this.name + '_' + this.focusedIndex;
            document.getElementById(t).classList.remove('combobox-container-item');
            document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
         }
+         this.nonFocus();
 
      },
      focusPrevious(){
@@ -130,12 +144,16 @@ Vue.component('combobox',{
 
         if(this.focusedIndex > 0)
         {
+
          this.focusedIndex = this.focusedIndex - 1;
 
            var t = this.name + '_' + this.focusedIndex;
            document.getElementById(t).classList.remove('combobox-container-item');
            document.getElementById(t).classList.add('combobox-container-item-highlighted');
+
         }
+
+         this.nonFocus();
      },
      onKeys(event)
      {
