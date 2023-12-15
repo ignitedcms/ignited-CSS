@@ -112,12 +112,19 @@ Vue.component('combobox',{
      nonFocus()
      {
         this.len = this.matches.length;
-        var s = '';
         for(var i=0; i < this.len; i++)
         {
-           s = s + i.toString();
+           if(i == this.focusedIndex)
+           {
+               
+           }
+           else{
+
+           var t = this.name + '_' + i.toString();
+           document.getElementById(t).classList.remove('combobox-container-item-highlighted');
+           document.getElementById(t).classList.add('combobox-container-item');
+           }
         }
-        alert(s + this.focusedIndex.toString())
      },
      focusNext(){
         //remember arrays start at 0
