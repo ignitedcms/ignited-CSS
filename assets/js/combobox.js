@@ -70,6 +70,7 @@ Vue.component('combobox',{
    mounted() {
       this.items = this.$children;
       this.matches = this.$children;
+      this.focusedIndex = 0;
 
 
    },
