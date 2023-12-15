@@ -88,7 +88,6 @@ Vue.component('combobox',{
          //document.getElementById(t).classList.remove('combobox-container-item');
          document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
-         this.focusedIndex = 0;
 
          this.show =!this.show; 
          this.matches = this.items;
