@@ -35,17 +35,13 @@ Vue.component('combobox',{
                     placeholder="Search Framework" />
 
              <div class="b-t"></div>
-             <div v-for='(search, index) in searches' @click="my_select(search.val)">
-
-                <div v-show="searchFunc(search.val)" class="combobox-container-item">
-                   {{search.val}}
-                </div>
-
+             <div v-for="(search, index) in matches" :key="index" 
+                 class="combobox-container-item" @click="my_select(search)">
+              {{ item }}
              </div>
           </div>
 
           <slot></slot>
-
           {{matches}}
        </div>
    </div>
@@ -59,14 +55,24 @@ Vue.component('combobox',{
           message2: 'Select item',
           show: false,
           matches: [],
-          searches: []
+          items: []
       }
   },
   mounted() {
-    this.searches = this.$children;
+    this.items = this.$children;
 
   },
+   watch: {
+        message: function(newText) {
+          this.findMatches(newText);
+        }
+      },
   methods:{
+     findMatches(text) {
+          this.matches = this.items.val.filter(item =>
+            item.toLowerCase().includes(text.toLowerCase())
+          );
+        },
       away: function () {
           this.show = false;
       },
@@ -83,13 +89,6 @@ Vue.component('combobox',{
         this.message = str;
         this.message2 = str;
         this.show = false;
-      },
-      searchFunc(param) {
-        if (param.toLowerCase().includes(this.message.toLowerCase())) {
-          return true;
-        } else {
-          return false;
-        }
       },
   } 
 });
