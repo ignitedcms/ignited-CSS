@@ -82,7 +82,14 @@ Vue.component('combobox',{
       },
      onEnter()
      {
-        alert(this.matches[0].val);
+         if (this.matches === undefined || this.matches.length == 0) {
+
+         }
+        else{
+            this.message =(this.matches[0].val);
+            this.message2 =(this.matches[0].val);
+           this.show = false;
+        }
      },
      escapePressed(){
         this.show = false;
