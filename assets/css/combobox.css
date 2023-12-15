@@ -29,7 +29,16 @@
 .combobox-container-item:hover {
   background-color: rgb(243, 243, 243);
 }
-.combobox-container-item:focus {
+.combobox-container-item-highlighted {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+  margin: 8px;
+  border-radius: 5px;
+  cursor: pointer;
   background-color: rgb(243, 243, 243);
 }
 

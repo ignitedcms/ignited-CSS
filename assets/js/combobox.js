@@ -114,7 +114,8 @@ Vue.component('combobox',{
             //array[0] is necessary!!
             //this.$refs['idx_2'][0].focus();
            var t = this.name + '_1';
-           document.getElementById(t).classList.add('bg-dark');
+           document.getElementById(t).classList.remove('combobox-container-item');
+           document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
         }
         else if (event.key == 'ArrowUp') {
