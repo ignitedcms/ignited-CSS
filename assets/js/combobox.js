@@ -83,6 +83,14 @@ Vue.component('combobox',{
       },
   methods:{
      lod(){
+
+
+         //this.focusedIndex = this.focusedIndex + 1;
+
+           var t = this.name + '_' + this.focusedIndex;
+           document.getElementById(t).classList.remove('combobox-container-item');
+           document.getElementById(t).classList.add('combobox-container-item-highlighted');
+
         this.show =!this.show; 
         this.matches = this.items;
         this.message = '';
@@ -102,17 +110,25 @@ Vue.component('combobox',{
           this.show = false;
       },
      focusNext(){
-         this.len = this.matches.length -1;
+        //remember arrays start at 0
+        this.len = this.matches.length -1;
 
         if(this.focusedIndex < this.len)
         {
+
          this.focusedIndex = this.focusedIndex + 1;
+
+           var t = this.name + '_' + this.focusedIndex;
+           document.getElementById(t).classList.remove('combobox-container-item');
+           document.getElementById(t).classList.add('combobox-container-item-highlighted');
+
         }
 
      },
      focusPrevious(){
 
-         this.len = this.matches.length -1;
+        //remember arrays start at 0
+        this.len = this.matches.length -1;
 
         if(this.focusedIndex > 0)
         {
