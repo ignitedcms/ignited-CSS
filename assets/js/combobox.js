@@ -83,9 +83,10 @@ Vue.component('combobox',{
       lod(){
 
 
-         //var t = this.name + '_' + this.focusedIndex;
+         this.focusedIndex = 0;
+         var t = this.name + '_' + this.focusedIndex;
          //document.getElementById(t).classList.remove('combobox-container-item');
-         //document.getElementById(t).classList.add('combobox-container-item-highlighted');
+         document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
          this.focusedIndex = 0;
 
@@ -169,10 +170,11 @@ Vue.component('combobox',{
             else{
                this.message =(this.matches[0].val);
                this.message2 =(this.matches[0].val);
-               this.show = false;
 
                this.message =(this.matches[this.focusedIndex].val);
                this.message2 =(this.matches[this.focusedIndex].val);
+
+               this.show = false;
             }
          }
          else if (event.key == 'ArrowDown') {
