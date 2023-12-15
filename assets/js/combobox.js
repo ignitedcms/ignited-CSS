@@ -51,6 +51,9 @@ Vue.component('combobox',{
 
           <slot></slot>
        </div>
+       {{focusedIndex}}
+
+       {{len}}
    </div>
 
   
@@ -62,7 +65,9 @@ Vue.component('combobox',{
           message2: 'Select item',
           show: false,
           matches: [],
-          items: []
+          items: [],
+          focusedIndex:0,
+          len:0
       }
   },
   mounted() {
@@ -82,10 +87,11 @@ Vue.component('combobox',{
         this.matches = this.items;
         this.message = '';
 
+        //needed after show/hide
       this.$nextTick(() => {
              this.$refs.searchInput.focus();
       });
-        //needed after show/hide
+
      },
      findMatches(text) {
           this.matches = this.items.filter(item =>
@@ -95,6 +101,24 @@ Vue.component('combobox',{
       away: function () {
           this.show = false;
       },
+     focusNext(){
+         this.len = this.matches.length;
+
+        if(this.focusedIndex < this.len)
+        {
+         this.focusedIndex = this.focusedIndex + 1;
+        }
+
+     },
+     focusPrevious(){
+
+         this.len = this.matches.length;
+
+        if(this.focusedIndex > 0)
+        {
+         this.focusedIndex = this.focusedIndex - 1;
+        }
+     },
      onKeys(event)
      {
         if (event.key === 'Enter')
@@ -106,20 +130,21 @@ Vue.component('combobox',{
                this.message =(this.matches[0].val);
                this.message2 =(this.matches[0].val);
                this.show = false;
-
-
            }
         }
         else if (event.key == 'ArrowDown') {
             //array[0] is necessary!!
             //this.$refs['idx_2'][0].focus();
-           var t = this.name + '_1';
-           document.getElementById(t).classList.remove('combobox-container-item');
-           document.getElementById(t).classList.add('combobox-container-item-highlighted');
+
+          this.focusNext();
+           //var t = this.name + '_1';
+           //document.getElementById(t).classList.remove('combobox-container-item');
+           //document.getElementById(t).classList.add('combobox-container-item-highlighted');
 
         }
         else if (event.key == 'ArrowUp') {
-           alert('up');
+           
+          this.focusPrevious();
         }
            
      },
