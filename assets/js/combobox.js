@@ -22,7 +22,7 @@ Vue.component('combobox',{
           {{message2}}
        </button>
     
-       <div v-if="show" class="combobox-container fade-in" @click.stop>
+       <div v-show="show" class="combobox-container fade-in" @click.stop>
           <div class="pos-rel " style="width:280px; height:40px;">
              <span>
                 <i data-feather='search'  class='icon-inside hand' style="right:25px"></i>
@@ -31,6 +31,7 @@ Vue.component('combobox',{
                     :name="name" 
                     v-model="message"
                     autocomplete="off" 
+                    ref="searchInput"
                     @keyup.enter="onEnter"
                     placeholder="Search Framework" />
 
@@ -61,6 +62,7 @@ Vue.component('combobox',{
     this.items = this.$children;
     this.matches = this.$children;
 
+
   },
    watch: {
         message: function(newText) {
@@ -71,6 +73,9 @@ Vue.component('combobox',{
      lod(){
         this.show =!this.show; 
         this.matches = this.items;
+        this.message = '';
+
+        //needed after show/hide
      },
      findMatches(text) {
           this.matches = this.items.filter(item =>
