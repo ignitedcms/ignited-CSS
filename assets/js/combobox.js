@@ -32,7 +32,7 @@ Vue.component('combobox',{
                     v-model="message"
                     autocomplete="off" 
                     ref="searchInput"
-                    @keyup.enter="onEnter"
+                    @keydown="onKeys"
                     placeholder="Search Framework" />
 
              <div class="b-t"></div>
@@ -88,16 +88,27 @@ Vue.component('combobox',{
       away: function () {
           this.show = false;
       },
-     onEnter()
+     onKeys(event)
      {
-         if (this.matches === undefined || this.matches.length == 0) {
-            this.show  = false;
-         }
-        else{
-            this.message =(this.matches[0].val);
-            this.message2 =(this.matches[0].val);
-           this.show = false;
+        if (event.key === 'Enter')
+        {
+            if (this.matches === undefined || this.matches.length == 0) {
+               this.show  = false;
+            }
+           else{
+               this.message =(this.matches[0].val);
+               this.message2 =(this.matches[0].val);
+              this.show = false;
+           }
         }
+        else if (event.key == 'ArrowDown') {
+           alert('down');
+
+        }
+        else if (event.key == 'ArrowUp') {
+           alert('up');
+        }
+           
      },
      escapePressed(){
         this.show = false;
