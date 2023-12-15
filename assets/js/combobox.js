@@ -169,6 +169,9 @@ Vue.component('combobox',{
                this.message =(this.matches[0].val);
                this.message2 =(this.matches[0].val);
                this.show = false;
+
+               this.message =(this.matches[this.focusedIndex].val);
+               this.message2 =(this.matches[this.focusedIndex].val);
             }
          }
          else if (event.key == 'ArrowDown') {
