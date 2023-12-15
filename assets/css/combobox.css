@@ -29,6 +29,9 @@
 .combobox-container-item:hover {
   background-color: rgb(243, 243, 243);
 }
+.combobox-container-item:focus {
+  background-color: rgb(243, 243, 243);
+}
 
 .rm-input-styles {
   position: relative;

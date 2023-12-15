@@ -38,10 +38,10 @@ Vue.component('combobox',{
                     placeholder="Search Framework" />
 
              <div class="b-t"></div>
-             <button v-for="(item, index) in matches" :key="index" :ref="'idx_'+index" 
-                 class="combobox-container-item rm-btn-styles" tabindex='-1' @click="my_select(item.val)">
+             <div v-for="(item, index) in matches" :key="index" :ref="'idx_'+index" 
+                 class="combobox-container-item"  @click="my_select(item.val)">
                         {{ item.val }}
-             </button>
+             </div>
 
                <div v-if="matches.length === 0" class="combobox-container-item">
                  No searches found. . .
@@ -112,7 +112,7 @@ Vue.component('combobox',{
         }
         else if (event.key == 'ArrowDown') {
             //array[0] is necessary!!
-            this.$refs['idx_3'][0].focus();
+            this.$refs['idx_2'][0].focus();
 
         }
         else if (event.key == 'ArrowUp') {
