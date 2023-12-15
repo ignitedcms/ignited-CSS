@@ -100,6 +100,10 @@ Vue.component('combobox',{
 
       },
       findMatches(text) {
+         if(this.message.length == 0)
+         {
+            this.focusedIndex = 0;
+         }
          this.matches = this.items.filter(item =>
             item.val.toLowerCase().includes(text.toLowerCase())
          );
