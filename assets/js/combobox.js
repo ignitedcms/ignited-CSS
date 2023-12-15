@@ -102,7 +102,7 @@ Vue.component('combobox',{
           this.show = false;
       },
      focusNext(){
-         this.len = this.matches.length;
+         this.len = this.matches.length -1;
 
         if(this.focusedIndex < this.len)
         {
@@ -112,7 +112,7 @@ Vue.component('combobox',{
      },
      focusPrevious(){
 
-         this.len = this.matches.length;
+         this.len = this.matches.length -1;
 
         if(this.focusedIndex > 0)
         {
