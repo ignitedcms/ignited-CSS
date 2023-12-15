@@ -14,7 +14,7 @@ Vue.component('combobox',{
   template: 
   `
   <div @keyup.escape="escapePressed">
-       <button @click="lod" @keydown.enter.prevent class="form-control hand  
+       <button @click="lod" @keydown.enter.prevent ref="button" class="form-control hand  
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
              <i data-feather='chevron-down'  class='icon-inside hand'></i>
@@ -28,7 +28,9 @@ Vue.component('combobox',{
                 <i data-feather='search'  class='icon-inside hand' style="right:25px"></i>
              </span>
              <input class="rm-input-styles" 
+
                     :name="name" 
+                    @keydown.tab.prevent
                     v-model="message"
                     autocomplete="off" 
                     ref="searchInput"
@@ -98,7 +100,9 @@ Vue.component('combobox',{
            else{
                this.message =(this.matches[0].val);
                this.message2 =(this.matches[0].val);
-              this.show = false;
+               this.show = false;
+
+
            }
         }
         else if (event.key == 'ArrowDown') {
@@ -119,6 +123,7 @@ Vue.component('combobox',{
         this.message = str;
         this.message2 = str;
         this.show = false;
+        this.$refs.button.focus();
       },
   } 
 });
