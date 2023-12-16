@@ -112,6 +112,7 @@ Vue.component('combobox',{
       onClick(item) {
            this.selectedItem = item;
            this.show = false;
+           this.highlightedIndex = 0;
       },
       highlightNext() {
         if (this.highlightedIndex < this.filteredItems.length - 1) {
@@ -129,9 +130,11 @@ Vue.component('combobox',{
           //console.log('Enter pressed on:', selectedItem); 
            this.selectedItem = selectedItem;
            this.show = false;
+           this.highlightedIndex = 0;
         } else {
           console.log('Enter pressed without selection');
            this.show = false;
+           this.highlightedIndex = 0;
         }
       },
       away: function () {
