@@ -44,7 +44,7 @@ Vue.component('combobox',{
                  class="combobox-container-item"  
                  @mouseover="setHighlighted(index)"
                  @click="onClick(item)"
-                 :class="{ 'highlight': index === highlightedIndex }"
+                 :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
 
                >
                   {{ item }}
