@@ -32,10 +32,11 @@ Vue.component('combobox',{
                     :name="name" 
                     @keydown.tab.prevent
                     v-model="searchQuery"
+                    @keydown.enter="onEnter"
                     autocomplete="off" 
                     ref="start"
-                    @keyup.down="highlightNext"
-                    @keyup.up="highlightPrev"
+                    @keydown.down="highlightNext"
+                    @keydown.up="highlightPrev"
                     placeholder="Search list" />
 
              <div class="b-t"></div>
@@ -121,6 +122,7 @@ Vue.component('combobox',{
         }
       },
       onEnter() {
+         alert('foo');
         if (this.filteredItems.length > 0 && this.highlightedIndex !== -1) {
           const selectedItem = this.filteredItems[this.highlightedIndex];
           console.log('Enter pressed on:', selectedItem); // Replace this with your desired action
