@@ -25,7 +25,10 @@
 
 <div id="app">
   <div class="search-container">
-    <input type="text" v-model="searchQuery" @keyup.down="highlightNext" @keyup.up="highlightPrev">
+    <input type="text" 
+     v-model="searchQuery" 
+     @keyup.down="highlightNext" 
+     @keyup.up="highlightPrev">
     <div v-if="searchQuery.length > 0">
       <div
         v-for="(item, index) in filteredItems"

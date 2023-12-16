@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Vue Search Component</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="assets/js/vue2.js"></script>
   <style>
     /* Just some basic styling for demonstration */
     .search-container {
@@ -14,7 +14,7 @@
       cursor: pointer;
     }
     .search-item:hover {
-      background-color: lightgray;
+      background-color: lightblue;
     }
     .highlight {
       background-color: lightblue;
@@ -25,7 +25,13 @@
 
 <div id="app">
   <div class="search-container">
-    <input type="text" v-model="searchQuery" @keyup.enter="onEnter">
+     {{selectedItem}}
+     <br>
+    <input type="text" 
+     v-model="searchQuery" 
+     @keyup.enter="onEnter"
+     @keyup.down="highlightNext" 
+     @keyup.up="highlightPrev">
     <div v-if="searchQuery.length > 0">
       <div
         v-for="(item, index) in filteredItems"
@@ -48,6 +54,7 @@
       searchQuery: '',
       items: ['Apple', 'Banana', 'Orange', 'Grapes', 'Pineapple'],
       highlightedIndex: -1,
+      selectedItem: ''
     },
     computed: {
       filteredItems() {
@@ -62,11 +69,23 @@
       },
       onClick(item) {
         console.log('Clicked:', item); // Replace this with your desired action
+           this.selectedItem = item;
+      },
+      highlightNext() {
+        if (this.highlightedIndex < this.filteredItems.length - 1) {
+          this.highlightedIndex++;
+        }
+      },
+      highlightPrev() {
+        if (this.highlightedIndex > 0) {
+          this.highlightedIndex--;
+        }
       },
       onEnter() {
         if (this.filteredItems.length > 0 && this.highlightedIndex !== -1) {
           const selectedItem = this.filteredItems[this.highlightedIndex];
           console.log('Enter pressed on:', selectedItem); // Replace this with your desired action
+           this.selectedItem = selectedItem;
         } else {
           console.log('Enter pressed without selection');
         }
