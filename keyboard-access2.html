@@ -26,13 +26,14 @@
 <div id="app">
   <div class="search-container">
      {{selectedItem}}
+
      <br>
     <input type="text" 
      v-model="searchQuery" 
      @keyup.enter="onEnter"
      @keyup.down="highlightNext" 
      @keyup.up="highlightPrev">
-    <div v-if="searchQuery.length > 0">
+    <div >
       <div
         v-for="(item, index) in filteredItems"
         :key="index"
@@ -57,10 +58,14 @@
       selectedItem: ''
     },
     computed: {
-      filteredItems() {
-        return this.items.filter(item =>
-          item.toLowerCase().includes(this.searchQuery.toLowerCase())
-        );
+       filteredItems() {
+        if (this.searchQuery.trim().length === 0) {
+          return this.items;
+        } else {
+          return this.items.filter(item =>
+            item.toLowerCase().includes(this.searchQuery.toLowerCase())
+          );
+        }
       },
     },
     methods: {
