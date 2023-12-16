@@ -3,12 +3,8 @@
 .combobox-container{
    position:relative;
    margin-top:5px;
-   display:flex;
-   flex-direction:column;
-   justify-content:space-between;
-   align-items: flex-start;
    height:300px;
-   width: 280px;
+   width: 300px;
    //overflow-y:auto;
    overflow-x:hidden;
    border:1px solid $grey;
@@ -16,8 +12,14 @@
    background-color:#fff; 
    box-shadow: 2px 5px 9px 0px rgba(99,99,99,0.29);
 
+   @media (max-width: $tablet) 
+   {
+      width:100%;
+   }
+
    &-item{
       height:40px;
+      width: 280px;
       background-color:#fff; 
       display:flex;
       flex-direction:row;
@@ -28,22 +30,31 @@
       border-radius:$border-radius;
       cursor:pointer;
 
+      @media (max-width: $tablet) 
+      {
+         width:100%;
+      }
+
+
       &:hover{
          background-color:$light-grey;
+
+         @media (max-width: $tablet)
+         {
+            width:97%;
+         }
+
       }
 
       &-highlighted{
 
-         height:40px;
-         display:flex;
-         flex-direction:row;
-         justify-content:flex-start;
-         align-items: center;
-         padding-left:15px;
-         margin:8px;
-         border-radius:$border-radius;
-         cursor:pointer;
          background-color:$light-grey;
+
+         @media (max-width: $tablet)
+         {
+            width:97%;
+         }
+
       }
    }
 

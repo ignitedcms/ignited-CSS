@@ -15,15 +15,15 @@ Vue.component('combobox',{
    `
   <div @keyup.escape="escapePressed">
        <button @click="load"  ref="button" class="form-control hand  
-       left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
+       left pos-rel"  v-click-outside="away">
           <span>
              <i data-feather='chevron-down' class='icon-inside hand'></i>
           </span>
           {{selectedItem}}
        </button>
 
-       <div v-show="show" class="combobox-container fade-in" @click.stop>
-          <div class="pos-rel" style="width:280px; height:40px;">
+       <div v-if="show" class="combobox-container fade-in" @click.stop>
+          <div class="pos-rel">
              <span>
                 <i data-feather='search'
                  class='icon-inside hand' 
