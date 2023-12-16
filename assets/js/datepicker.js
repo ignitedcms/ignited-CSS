@@ -21,7 +21,7 @@ template: `
 
       <label for="date">{{name}}</label>
       <br>
-      <button class="form-control left" style="width:280px; height:40px; " :name="name" :value="value" 
+      <button class="form-control left hand" style="height:40px;"  :name="name" :value="value" 
          @input="updateDate($event.target.value)"  @click="show =!show">
          {{message}}
       </button>
