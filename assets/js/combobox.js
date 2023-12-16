@@ -14,12 +14,12 @@ Vue.component('combobox',{
    template: 
    `
   <div @keyup.escape="escapePressed">
-       <button @click="lod"  ref="button" class="form-control hand  
+       <button @click="load"  ref="button" class="form-control hand  
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
              <i data-feather='chevron-down'  class='icon-inside hand'></i>
           </span>
-          {{message2}}
+          {{selectedItem}}
        </button>
 
        <div v-show="show" class="combobox-container fade-in" @click.stop>
@@ -31,19 +31,28 @@ Vue.component('combobox',{
 
                     :name="name" 
                     @keydown.tab.prevent
-                    v-model="message"
+                    v-model="searchQuery"
                     autocomplete="off" 
-                    ref="searchInput"
-                    @keydown="onKeys"
+                    ref="start"
+                    @keyup.down="highlightNext"
+                    @keyup.up="highlightPrev"
                     placeholder="Search list" />
 
              <div class="b-t"></div>
-             <div v-for="(item, index) in matches" :key="index" :id="name+'_'+index" 
-                 class="combobox-container-item"  @click="my_select(item.val)">
-                        {{ item.val }}
+             <div v-for="(item, index) in filteredItems"
+                  :key="index" 
+                 class="combobox-container-item"  
+                 @mouseover="setHighlighted(index)"
+                 @click="onClick(item)"
+                 :class="{ 'highlight': index === highlightedIndex }"
+
+               >
+                  {{ item.val }}
              </div>
 
-               <div v-if="matches.length === 0" class="combobox-container-item">
+               <div v-if="filteredItems.length === 0
+                 && searchQuery.trim() !== ''"
+               class="combobox-container-item">
                  No searches found. . .
                </div>
 
@@ -58,151 +67,67 @@ Vue.component('combobox',{
    data:function(){
 
       return{
-         message: '',
-         message2: 'Select item',
-         show: false,
-         matches: [],
+         searchQuery: '',
          items: [],
-         focusedIndex:0,
-         len:0
+         highlightedIndex:0,
+         selectedItem:'',
+         show: false
+
       }
    },
    mounted() {
       this.items = this.$children;
-      this.matches = this.$children;
-      this.focusedIndex = 0;
-
+      //this.$refs.start.focus();
 
    },
-   watch: {
-      message: function(newText) {
-         this.findMatches(newText);
-      }
+   computed: {
+
+       filteredItems() {
+        if (this.searchQuery.trim().length === 0) {
+          return this.items;
+        } else {
+          return this.items.filter(item =>
+            item.toLowerCase().includes(this.searchQuery.toLowerCase())
+          );
+        }
+      },
    },
    methods:{
-      lod(){
+      load(){
 
-
-         this.focusedIndex = 0;
-         var t = this.name + '_' + this.focusedIndex;
-         //document.getElementById(t).classList.remove('combobox-container-item');
-         //document.getElementById(t).classList.add('combobox-container-item-highlighted');
-
-
-         this.show =!this.show; 
-         this.matches = this.items;
-         this.message = '';
-
-         //needed after show/hide
-         this.$nextTick(() => {
-            this.$refs.searchInput.focus();
-         });
-
+         this.show = true;
       },
-      findMatches(text) {
-         if(this.message.length == 0)
-         {
-            this.focusedIndex = 0;
-         }
-         this.matches = this.items.filter(item =>
-            item.val.toLowerCase().includes(text.toLowerCase())
-         );
+      setHighlighted(index) {
+        this.highlightedIndex = index;
+      },
+      onClick(item) {
+        console.log('Clicked:', item); // Replace this with your desired action
+           this.selectedItem = item;
+      },
+      highlightNext() {
+        if (this.highlightedIndex < this.filteredItems.length - 1) {
+          this.highlightedIndex++;
+        }
+      },
+      highlightPrev() {
+        if (this.highlightedIndex > 0) {
+          this.highlightedIndex--;
+        }
+      },
+      onEnter() {
+        if (this.filteredItems.length > 0 && this.highlightedIndex !== -1) {
+          const selectedItem = this.filteredItems[this.highlightedIndex];
+          console.log('Enter pressed on:', selectedItem); // Replace this with your desired action
+           this.selectedItem = selectedItem;
+        } else {
+          console.log('Enter pressed without selection');
+        }
       },
       away: function () {
          this.show = false;
       },
-      nonFocus()
-      {
-         this.len = this.matches.length;
-         for(var i=0; i < this.len; i++)
-         {
-            if(i == this.focusedIndex)
-            {
-
-            }
-            else{
-
-               var t = this.name + '_' + i.toString();
-               document.getElementById(t).classList.remove('combobox-container-item-highlighted');
-               document.getElementById(t).classList.add('combobox-container-item');
-            }
-         }
-      },
-      focusNext(){
-         //remember arrays start at 0
-         this.len = this.matches.length -1;
-
-
-         if(this.focusedIndex < this.len)
-         {
-
-            this.focusedIndex = this.focusedIndex + 1;
-
-            var t = this.name + '_' + this.focusedIndex;
-            document.getElementById(t).classList.remove('combobox-container-item');
-            document.getElementById(t).classList.add('combobox-container-item-highlighted');
-
-         }
-         this.nonFocus();
-
-      },
-      focusPrevious(){
-
-         //remember arrays start at 0
-         this.len = this.matches.length -1;
-
-         if(this.focusedIndex > 0)
-         {
-
-            this.focusedIndex = this.focusedIndex - 1;
-
-            var t = this.name + '_' + this.focusedIndex;
-            document.getElementById(t).classList.remove('combobox-container-item');
-            document.getElementById(t).classList.add('combobox-container-item-highlighted');
-
-         }
-         this.nonFocus();
-      },
-      onKeys(event)
-      {
-         if (event.key === 'Enter')
-         {
-            if (this.matches === undefined || this.matches.length == 0) {
-               this.show  = false;
-            }
-            else{
-               this.message =(this.matches[0].val);
-               this.message2 =(this.matches[0].val);
-
-               this.message =(this.matches[this.focusedIndex].val);
-               this.message2 =(this.matches[this.focusedIndex].val);
-
-               this.show = false;
-            }
-         }
-         else if (event.key == 'ArrowDown') {
-            //array[0] is necessary!!
-            //this.$refs['idx_2'][0].focus();
-
-            this.focusNext();
-
-         }
-         else if (event.key == 'ArrowUp') {
-
-            this.focusPrevious();
-         }
-
-      },
       escapePressed(){
          this.show = false;
-
-      },
-      my_select(str)
-      {
-         this.message = str;
-         this.message2 = str;
-         this.show = false;
-         this.$refs.button.focus();
       },
    } 
 });
