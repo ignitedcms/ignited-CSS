@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Vue Keyboard Navigation Example</title>
+  <title>Vue Search Component</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <style>
-    .active {
+    /* Just some basic styling for demonstration */
+    .search-container {
+      margin: 20px;
+    }
+    .search-item {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .search-item:hover {
+      background-color: lightgray;
+    }
+    .highlight {
       background-color: lightblue;
     }
   </style>
 </head>
-
 <body>
 
-  <div id="app">
-    <keyboard-nav :items="items"></keyboard-nav>
+<div id="app">
+  <div class="search-container">
+    <input type="text" v-model="searchQuery" @keyup.down="highlightNext" @keyup.up="highlightPrev">
+    <div v-if="searchQuery.length > 0">
+      <div
+        v-for="(item, index) in filteredItems"
+        :key="index"
+        class="search-item"
+        @mouseover="setHighlighted(index)"
+        :class="{ 'highlight': index === highlightedIndex }"
+      >
+        {{ item }}
+      </div>
+    </div>
   </div>
+</div>
 
-  <script>
-    Vue.component('keyboard-nav', {
-      props: {
-        items: Array
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      searchQuery: '',
+      items: ['Apple', 'Banana', 'Orange', 'Grapes', 'Pineapple'],
+      highlightedIndex: -1,
+    },
+    computed: {
+      filteredItems() {
+        return this.items.filter(item =>
+          item.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
       },
-      data() {
-        return {
-          activeIndex: 0
-        };
+    },
+    methods: {
+      setHighlighted(index) {
+        this.highlightedIndex = index;
       },
-      mounted() {
-        window.addEventListener('keydown', this.handleKeyDown);
-      },
-      destroyed() {
-        window.removeEventListener('keydown', this.handleKeyDown);
-      },
-      methods: {
-        handleKeyDown(event) {
-          if (event.key === 'ArrowUp' && this.activeIndex > 0) {
-            this.activeIndex--;
-          } else if (event.key === 'ArrowDown' && this.activeIndex < this.items.length - 1) {
-            this.activeIndex++;
-          }
-          this.$nextTick(() => {
-            const itemList = this.$refs.itemList;
-            const activeElement = itemList.querySelector('.active');
-            if (activeElement) {
-              activeElement.focus();
-            }
-          });
+      highlightNext() {
+        if (this.highlightedIndex < this.filteredItems.length - 1) {
+          this.highlightedIndex++;
         }
       },
-      template: `
-        <ul ref="itemList">
-          <li v-for="(item, index) in items" :key="index" 
-              :class="{ active: index === activeIndex }"
-              tabindex="-1"
-              @focus="$event.target.blur()">
-            {{ item }}
-          </li>
-        </ul>
-      `
-    });
-
-    new Vue({
-      el: '#app',
-      data: {
-        items: ['Item 1', 'Item 2', 'Item 3', 'Item 4']
-      }
-    });
-  </script>
+      highlightPrev() {
+        if (this.highlightedIndex > 0) {
+          this.highlightedIndex--;
+        }
+      },
+    },
+  });
+</script>
 
 </body>
-
 </html>
+
