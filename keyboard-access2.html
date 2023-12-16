@@ -45,6 +45,9 @@
       >
         {{ item }}
       </div>
+         <div v-if="filteredItems.length === 0 && searchQuery.trim() !== ''" class="no-items">
+            No items found
+         </div>
     </div>
   </div>
 </div>
