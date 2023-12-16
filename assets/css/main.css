@@ -1,3 +1,12 @@
+/*                                                                          
+|---------------------------------------------------------------            
+| Order is important
+|---------------------------------------------------------------            
+|
+| Reset, typography base and forms must come first 
+|
+*/       
+
 @import url("reset.css");
 @import url("typography.css");
 @import url("base.css");
@@ -17,7 +26,6 @@
 @import url("modals.css");
 @import url("accordions.css");
 @import url("tooltips.css");
-@import url("search.css");
 @import url("datepicker.css");
 @import url("documentation.css");
 @import url("gallery.css");
