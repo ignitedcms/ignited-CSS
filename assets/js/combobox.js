@@ -46,10 +46,10 @@ Vue.component('combobox',{
                   :key="index" 
                  class="combobox-container-item"  
                  @mouseover="setHighlighted(index)"
-                 @click="onClick(item)"
+                 @click="onClick(item.val)"
                  :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
                >
-                  {{ item }}
+                  {{ item.val }}
              </div>
 
                <div v-if="filteredItems.length === 0
@@ -71,7 +71,7 @@ Vue.component('combobox',{
 
       return{
          searchQuery: '',
-         items: ['Apple', 'Banana', 'Orange', 'Grapes', 'Pineapple'],
+         items: [],
          highlightedIndex:0,
          selectedItem:'',
          show: false
@@ -79,11 +79,11 @@ Vue.component('combobox',{
       }
    },
    mounted() {
-      //this.items = this.$children;
+      this.items = this.$children;
 
-         this.$nextTick(() => {
-            this.$refs.start.focus();
-         });
+      this.$nextTick(() => {
+         this.$refs.start.focus();
+      });
 
    },
    computed: {
@@ -93,7 +93,7 @@ Vue.component('combobox',{
           return this.items;
         } else {
           return this.items.filter(item =>
-            item.toLowerCase().includes(this.searchQuery.toLowerCase())
+            item.val.toLowerCase().includes(this.searchQuery.toLowerCase())
           );
         }
       },
@@ -126,8 +126,7 @@ Vue.component('combobox',{
       },
       onEnter() {
         if (this.filteredItems.length > 0 && this.highlightedIndex !== -1) {
-          const selectedItem = this.filteredItems[this.highlightedIndex];
-          //console.log('Enter pressed on:', selectedItem); 
+          const selectedItem = this.filteredItems[this.highlightedIndex].val;
            this.selectedItem = selectedItem;
            this.show = false;
            this.highlightedIndex = 0;
