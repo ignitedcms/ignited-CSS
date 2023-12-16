@@ -1,3 +1,13 @@
+.combo-btn-container {
+  position: relative;
+  width: 300px;
+}
+@media (max-width: 900px) {
+  .combo-btn-container {
+    width: 100%;
+  }
+}
+
 .combobox-container {
   position: relative;
   margin-top: 5px;

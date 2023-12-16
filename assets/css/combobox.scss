@@ -1,5 +1,16 @@
 @import "variables";
 
+.combo-btn-container{
+   position:relative;
+   width:300px;
+   
+   @media (max-width: $tablet) 
+   {
+      width:100%;
+   }
+}
+
+
 .combobox-container{
    position:relative;
    margin-top:5px;

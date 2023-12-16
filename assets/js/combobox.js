@@ -15,7 +15,7 @@ Vue.component('combobox',{
    `
   <div @keyup.escape="escapePressed">
        <button @click="load"  ref="button" class="form-control hand  
-       left pos-rel"  v-click-outside="away">
+       left combo-btn-container"  v-click-outside="away">
           <span>
              <i data-feather='chevron-down' class='icon-inside hand'></i>
           </span>
