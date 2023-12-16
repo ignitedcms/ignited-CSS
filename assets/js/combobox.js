@@ -47,7 +47,7 @@ Vue.component('combobox',{
                  :class="{ 'highlight': index === highlightedIndex }"
 
                >
-                  {{ item.val }}
+                  {{ item }}
              </div>
 
                <div v-if="filteredItems.length === 0
@@ -68,7 +68,7 @@ Vue.component('combobox',{
 
       return{
          searchQuery: '',
-         items: [],
+         items: ['Apple', 'Banana', 'Orange', 'Grapes', 'Pineapple'],
          highlightedIndex:0,
          selectedItem:'',
          show: false
@@ -76,8 +76,11 @@ Vue.component('combobox',{
       }
    },
    mounted() {
-      this.items = this.$children;
-      //this.$refs.start.focus();
+      //this.items = this.$children;
+
+         this.$nextTick(() => {
+            this.$refs.start.focus();
+         });
 
    },
    computed: {
@@ -96,6 +99,9 @@ Vue.component('combobox',{
       load(){
 
          this.show = true;
+         this.$nextTick(() => {
+            this.$refs.start.focus();
+         });
       },
       setHighlighted(index) {
         this.highlightedIndex = index;
