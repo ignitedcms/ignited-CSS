@@ -17,18 +17,20 @@ Vue.component('combobox',{
        <button @click="load"  ref="button" class="form-control hand  
        left pos-rel" style="width:280px; height:40px;" v-click-outside="away">
           <span>
-             <i data-feather='chevron-down'  class='icon-inside hand'></i>
+             <i data-feather='chevron-down' class='icon-inside hand'></i>
           </span>
           {{selectedItem}}
        </button>
 
        <div v-show="show" class="combobox-container fade-in" @click.stop>
-          <div class="pos-rel " style="width:280px; height:40px;">
+          <div class="pos-rel" style="width:280px; height:40px;">
              <span>
-                <i data-feather='search'  class='icon-inside hand' style="right:25px"></i>
+                <i data-feather='search'
+                 class='icon-inside hand' 
+                 style="right:25px">
+                 </i>
              </span>
              <input class="rm-input-styles" 
-
                     :name="name" 
                     @keydown.tab.prevent
                     v-model="searchQuery"
@@ -46,14 +48,14 @@ Vue.component('combobox',{
                  @mouseover="setHighlighted(index)"
                  @click="onClick(item)"
                  :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
-
                >
                   {{ item }}
              </div>
 
                <div v-if="filteredItems.length === 0
                  && searchQuery.trim() !== ''"
-               class="combobox-container-item">
+                 class="combobox-container-item"
+               >
                  No searches found. . .
                </div>
 
@@ -98,8 +100,8 @@ Vue.component('combobox',{
    },
    methods:{
       load(){
-
          this.show = true;
+         //Next tick needed to work
          this.$nextTick(() => {
             this.$refs.start.focus();
          });
@@ -108,8 +110,8 @@ Vue.component('combobox',{
         this.highlightedIndex = index;
       },
       onClick(item) {
-        console.log('Clicked:', item); // Replace this with your desired action
            this.selectedItem = item;
+           this.show = false;
       },
       highlightNext() {
         if (this.highlightedIndex < this.filteredItems.length - 1) {
@@ -122,13 +124,14 @@ Vue.component('combobox',{
         }
       },
       onEnter() {
-         alert('foo');
         if (this.filteredItems.length > 0 && this.highlightedIndex !== -1) {
           const selectedItem = this.filteredItems[this.highlightedIndex];
-          console.log('Enter pressed on:', selectedItem); // Replace this with your desired action
+          //console.log('Enter pressed on:', selectedItem); 
            this.selectedItem = selectedItem;
+           this.show = false;
         } else {
           console.log('Enter pressed without selection');
+           this.show = false;
         }
       },
       away: function () {
@@ -144,7 +147,7 @@ Vue.component('combo-item', {
    props:['val'],
    template: 
    `
-    `,
+   `,
    data: function () {
 
       return {
@@ -153,6 +156,7 @@ Vue.component('combo-item', {
    },
    mounted()
    {
+      //Must mount feather here to work
       feather.replace();
    }
 });
