@@ -73,7 +73,7 @@ Vue.component('combobox',{
          searchQuery: '',
          items: [],
          highlightedIndex:0,
-         selectedItem:'',
+         selectedItem:'Select Item',
          show: false
 
       }
@@ -113,6 +113,7 @@ Vue.component('combobox',{
            this.selectedItem = item;
            this.show = false;
            this.highlightedIndex = 0;
+           this.searchQuery = '';
       },
       highlightNext() {
         if (this.highlightedIndex < this.filteredItems.length - 1) {
@@ -130,10 +131,12 @@ Vue.component('combobox',{
            this.selectedItem = selectedItem;
            this.show = false;
            this.highlightedIndex = 0;
+           this.searchQuery = '';
         } else {
-          console.log('Enter pressed without selection');
+          //console.log('Enter pressed without selection');
            this.show = false;
            this.highlightedIndex = 0;
+           this.searchQuery = '';
         }
       },
       away: function () {
