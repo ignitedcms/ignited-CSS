@@ -32,6 +32,7 @@
      v-model="searchQuery" 
      @keyup.enter="onEnter"
      @keyup.down="highlightNext" 
+     ref="start"
      @keyup.up="highlightPrev">
     <div >
       <div
@@ -57,6 +58,9 @@
       highlightedIndex: -1,
       selectedItem: ''
     },
+     mounted(){
+         this.$refs.start.focus();
+     },
     computed: {
        filteredItems() {
         if (this.searchQuery.trim().length === 0) {
