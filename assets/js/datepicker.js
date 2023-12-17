@@ -13,10 +13,10 @@ Vue.component('datepicker', {
 props:['value','name'],
 template: 
 `
-<div>
-   <input type="text" v-model="foo" >
+<div @keyup.escape="escapePressed" @click.stop v-click-outside="away">
+   <input type="text" v-model="foo" @click="show =!show">
   <input type="text" v-model="selectedDate" readonly style="display:none;">
-  <div class="datepicker" tabindex="-1" @keydown="handleKeyDown" ref="datepicker">
+  <div v-show="show" class="datepicker" tabindex="-1" @keydown="handleKeyDown" ref="datepicker">
     <table>
       <tr>
         <td @click="showPreviousMonth" tabindex="0" @keydown.enter.prevent> &lt; </td>
@@ -42,6 +42,7 @@ template:
     data: function () {
 
         return {
+           show:false,
             today: new Date(),
             currentMonth: 0,
             currentYear: 0,
@@ -90,6 +91,12 @@ template:
     },
 
     methods: {
+       away(){
+          this.show = false;
+       },
+       escapePressed() {
+          this.show = false;
+       },
 
         formatDate(date) {
              var d = new Date(date),

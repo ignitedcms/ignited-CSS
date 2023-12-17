@@ -14,7 +14,43 @@
 
     <!-- vue 2 -->
     <script src="assets/js/vue2.js"></script>
+<style>
+    /* Some basic styling */
+    .datepicker {
+      font-family: Arial, sans-serif;
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: inline-block;
+    }
 
+    .datepicker:focus{
+       outline:none;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+      width: 30px;
+      height: 30px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .current-date {
+      background-color: #c5e1a5;
+      font-weight: bold;
+    }
+    .focused {
+      outline: 2px solid red;
+    }
+  </style>
 </head>
 
 <body class="full-screen bg-light-grey">
