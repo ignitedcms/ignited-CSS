@@ -111,7 +111,7 @@
     mounted() {
       this.currentMonth = this.today.getMonth();
       this.currentYear = this.today.getFullYear();
-      this.selectedDate = this.today.toISOString().slice(0, 10);
+      this.selectedDate = this.today.toLocaleDateString();
     },
     methods: {
       showPreviousMonth() {
@@ -134,7 +134,7 @@
       },
       selectDate(cell) {
         const selectedDate = new Date(cell.year, cell.month, cell.date);
-        this.selectedDate = selectedDate.toISOString().slice(0, 10);
+        this.selectedDate = selectedDate.toLocaleDateString();
         console.log('Selected Date:', this.selectedDate);
       },
       isCurrentDate(cell) {
