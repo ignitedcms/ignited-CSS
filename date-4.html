@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Datepicker - Vue 4</title>
+  <title>Datepicker - Vue 2</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
   <style>
     /* Some basic styling */
@@ -111,7 +111,7 @@
     mounted() {
       this.currentMonth = this.today.getMonth();
       this.currentYear = this.today.getFullYear();
-      this.selectedDate = this.today.toLocaleDateString();
+      this.selectedDate = this.today.toISOString().slice(0, 10);
     },
     methods: {
       showPreviousMonth() {
@@ -134,7 +134,7 @@
       },
       selectDate(cell) {
         const selectedDate = new Date(cell.year, cell.month, cell.date);
-        this.selectedDate = selectedDate.toLocaleDateString();
+        this.selectedDate = selectedDate.toISOString().slice(0, 10);
         console.log('Selected Date:', this.selectedDate);
       },
       isCurrentDate(cell) {
@@ -154,13 +154,11 @@
         }
       },
       moveFocus(rowChange, colChange) {
-        const newRow = this.focusedRow + rowChange;
-        const newCell = this.focusedCell + colChange;
+        let date = new Date(this.selectedDate);
+        date.setDate(date.getDate() + (rowChange * 7) + colChange);
 
-        if (newRow >= 0 && newRow < this.calendar.length && newCell >= 0 && newCell < this.calendar[newRow].length) {
-          this.focusedRow = newRow;
-          this.focusedCell = newCell;
-        }
+        this.selectedDate = date.toISOString().slice(0, 10);
+        this.focusOnSelectedDate();
       },
       isFocused(rowIndex, cellIndex) {
         return rowIndex === this.focusedRow && cellIndex === this.focusedCell;
@@ -168,6 +166,15 @@
       setFocus(rowIndex, cellIndex) {
         this.focusedRow = rowIndex;
         this.focusedCell = cellIndex;
+        this.focusOnSelectedDate();
+      },
+      focusOnSelectedDate() {
+        const date = new Date(this.selectedDate);
+        const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+        const startingDay = firstDay.getDay();
+        const selectedCell = date.getDate() + startingDay - 1;
+        this.focusedRow = Math.floor(selectedCell / 7);
+        this.focusedCell = selectedCell % 7;
       },
     }
   });
@@ -175,5 +182,4 @@
 
 </body>
 </html>
-
 
