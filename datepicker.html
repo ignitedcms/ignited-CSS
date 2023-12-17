@@ -17,10 +17,13 @@
 <style>
     /* Some basic styling */
     .datepicker {
-      font-family: Arial, sans-serif;
+      position:relative;
+      top:0px;
+      left:0;
       border: 1px solid #ccc;
       padding: 10px;
       display: inline-block;
+      z-index:2;
     }
 
     .datepicker:focus{
@@ -31,24 +34,26 @@
     }
     th, td {
       border: 1px solid #ccc;
+      background-color: #fff;
       padding: 5px;
       text-align: center;
       width: 30px;
       height: 30px;
     }
     th {
-      background-color: #f2f2f2;
+      background-color: #fff;
     }
     td:hover {
       background-color: #f0f0f0;
       cursor: pointer;
     }
     .current-date {
-      background-color: #c5e1a5;
+      background-color: red;
       font-weight: bold;
+      color: #fff;
     }
     .focused {
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
   </style>
 </head>

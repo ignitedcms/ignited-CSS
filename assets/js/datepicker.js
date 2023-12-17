@@ -13,10 +13,10 @@ Vue.component('datepicker', {
 props:['value','name'],
 template: 
 `
-<div @keyup.escape="escapePressed" @click.stop v-click-outside="away">
+<div style="max-width:400px;" @keyup.escape="escapePressed" @click.stop v-click-outside="away">
    <input class="form-control" type="text" v-model="foo" @click="open">
   <input type="text" v-model="selectedDate" readonly style="display:none;">
-  <div v-show="show" class="datepicker" tabindex="-1" @keydown="handleKeyDown" ref="datepicker">
+  <div v-show="show"  class="datepicker fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
     <table>
       <tr>
         <td @click="showPreviousMonth" tabindex="0" @keydown.enter.prevent> &lt; </td>
@@ -138,14 +138,21 @@ template:
         return months[monthIndex];
       },
       selectDate(cell) {
-        const selectedDate = new Date(cell.year, cell.month, cell.date);
-        this.selectedDate = selectedDate;
+         if(cell.date == '')
+         {
+            //empty nothing to do
+         }
+         else{
 
-         this.moveFocus(0,0);
+           const selectedDate = new Date(cell.year, cell.month, cell.date);
+           this.selectedDate = selectedDate;
 
-         this.$refs.datepicker.focus();
+            this.moveFocus(0,0);
 
-         this.foo = this.formatDate(selectedDate);
+            this.$refs.datepicker.focus();
+
+            this.foo = this.formatDate(selectedDate);
+         }
       },
       isCurrentDate(cell) {
         return cell.date === this.today.getDate() &&
