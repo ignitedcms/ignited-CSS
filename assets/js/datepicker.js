@@ -120,7 +120,7 @@ data: function () {
       updateDate(newValue)
         {
           this.$emit('input',newValue);
-          this.show = false;
+          //this.show = false;
         },
 
       open() {
