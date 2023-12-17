@@ -14,7 +14,7 @@ props:['value','name'],
 template: 
 `
 <div @keyup.escape="escapePressed" @click.stop v-click-outside="away">
-   <input type="text" v-model="foo" @click="show =!show">
+   <input class="form-control" type="text" v-model="foo" @click="open">
   <input type="text" v-model="selectedDate" readonly style="display:none;">
   <div v-show="show" class="datepicker" tabindex="-1" @keydown="handleKeyDown" ref="datepicker">
     <table>
@@ -91,6 +91,13 @@ template:
     },
 
     methods: {
+       open(){
+          this.show =! this.show;
+
+         this.$nextTick(() => {
+            this.$refs.datepicker.focus();
+         });
+       },
        away(){
           this.show = false;
        },
@@ -139,7 +146,6 @@ template:
          this.$refs.datepicker.focus();
 
          this.foo = this.formatDate(selectedDate);
-        console.log('Selected Date:', this.foo);
       },
       isCurrentDate(cell) {
         return cell.date === this.today.getDate() &&
