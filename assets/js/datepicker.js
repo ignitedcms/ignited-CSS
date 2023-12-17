@@ -38,19 +38,29 @@ template:
          tabindex="0" @keydown.enter.prevent>
             <i data-feather="chevron-right"></i>
          </button>
-      
-      <tr>
-        <th v-for="day in weekdays" :key="day">{{ day }}</th>
-      </tr>
-      <tr v-for="(row, rowIndex) in calendar" :key="rowIndex">
-        <td v-for="(cell, cellIndex) in row" :key="cell.date"
+   </div>
+   <div class="date-holder">
+     <div class="date-days">
+       <div class="cal-no-hover cal-day">Su</div>
+       <div class="cal-no-hover cal-day">Mo</div>
+       <div class="cal-no-hover cal-day">Tu</div>
+       <div class="cal-no-hover cal-day">We</div>
+       <div class="cal-no-hover cal-day">Th</div>
+       <div class="cal-no-hover cal-day">Fr</div>
+       <div class="cal-no-hover cal-day">Sa</div>
+     </div>
+      <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
+        <button v-for="(cell, cellIndex) in row" :key="cell.date"
             @click="selectDate(cell)"
+            class="rm-btn-styles pull-left cal cal-day"
             :class="{ 'current-date': isCurrentDate(cell), focused: isFocused(rowIndex, cellIndex) }"
             tabindex="-1"
             @focus="setFocus(rowIndex, cellIndex)"
-        >{{ cell.date }}</td>
-      </tr>
-    </table>
+        >{{ cell.date }}
+      </div>
+      </button>
+   </div>   
+
     </focus-trap>
   </div>
 </div>
