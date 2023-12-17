@@ -45,7 +45,8 @@
 <body>
 
 <div id="app">
-  <input type="text" v-model="selectedDate" readonly>
+   <input type="text" v-model="foo" >
+  <input type="text" v-model="selectedDate" readonly style="display:none;">
   <div class="datepicker" tabindex="-1" @keydown="handleKeyDown" ref="datepicker">
     <table>
       <tr>
@@ -77,6 +78,7 @@
       currentMonth: 0,
       currentYear: 0,
       selectedDate: '',
+      foo: '',
       focusedRow: -1,
       focusedCell: -1,
     },
@@ -118,6 +120,19 @@
       this.selectedDate = this.today;
     },
     methods: {
+        formatDate(date) {
+             var d = new Date(date),
+                 month = '' + (d.getMonth() + 1),
+                 day = '' + d.getDate(),
+                 year = d.getFullYear();
+
+             if (month.length < 2)
+                 month = '0' + month;
+             if (day.length < 2)
+                 day = '0' + day;
+
+           return (year.toString()+"-"+month.toString()+"-"+day.toString());
+      },
       showPreviousMonth() {
         this.currentMonth--;
         if (this.currentMonth < 0) {
@@ -143,7 +158,9 @@
          this.moveFocus(0,0);
 
          this.$refs.datepicker.focus();
-        console.log('Selected Date:', this.selectedDate);
+
+         this.foo = this.formatDate(selectedDate);
+        console.log('Selected Date:', this.foo);
       },
       isCurrentDate(cell) {
         return cell.date === this.today.getDate() &&
