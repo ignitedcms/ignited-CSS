@@ -13,16 +13,19 @@ Vue.component('datepicker', {
 props:['value','name'],
 template: 
 `
-<div style="max-width:400px;" @keyup.escape="escapePressed" @click.stop v-click-outside="away">
+<div class="date-container" @keyup.escape="escapePressed" @click.stop v-click-outside="away">
    <input class="form-control" type="text" :name="name" :value="foo" style="display:none;">
 
-      <button class="form-control left hand" style="height:40px;"  :name="name" :value="value" 
+      <button class="pos-rel form-control left hand" style="height:40px;"  :name="name" :value="value" 
          @input="updateDate($event.target.value)"  @click="open">
+         <span >
+               <i data-feather='calendar'  class='icon-inside hand'></i>
+            </span>
          {{foo}}
       </button>
 
   <input type="text" v-model="selectedDate" readonly style="display:none;">
-  <div v-show="show"  class="datepicker fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
+  <div v-show="show"  class="date-flyout fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
   <focus-trap :active="show">
     <table>
       <tr>
