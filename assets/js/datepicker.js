@@ -17,6 +17,7 @@ template:
    <input class="form-control" type="text" v-model="foo" @click="open">
   <input type="text" v-model="selectedDate" readonly style="display:none;">
   <div v-show="show"  class="datepicker fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
+  <focus-trap :active="show">
     <table>
       <tr>
         <td @click="showPreviousMonth" tabindex="0" @keydown.enter.prevent> &lt; </td>
@@ -35,172 +36,159 @@ template:
         >{{ cell.date }}</td>
       </tr>
     </table>
+    </focus-trap>
   </div>
 </div>
 
 `,
-    data: function () {
-
-        return {
-           show:false,
-            today: new Date(),
-            currentMonth: 0,
-            currentYear: 0,
-            selectedDate: '',
-            foo: '',
-            focusedRow: -1,
-            focusedCell: -1,
-        }
-    },
+data: function () {
+      return {
+         show: false,
+         today: new Date(),
+         currentMonth: 0,
+         currentYear: 0,
+         selectedDate: '',
+         foo: '',
+         focusedRow: -1,
+         focusedCell: -1,
+      }
+   },
    computed: {
       weekdays() {
-        return ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+         return ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
       },
       calendar() {
-        const firstDay = new Date(this.currentYear, this.currentMonth, 1);
-        const startingDay = firstDay.getDay();
-        const totalDays = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
-
-        let date = 1;
-        const calendar = [];
-        for (let i = 0; i < 6; i++) {
-          const row = [];
-          for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < startingDay) {
-              row.push({ date: '' });
-            } else if (date > totalDays) {
-              break;
-            } else {
-              row.push({
-                date: date,
-                month: this.currentMonth,
-                year: this.currentYear
-              });
-              date++;
+         const firstDay = new Date(this.currentYear, this.currentMonth, 1);
+         const startingDay = firstDay.getDay();
+         const totalDays = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
+         let date = 1;
+         const calendar = [];
+         for (let i = 0; i < 6; i++) {
+            const row = [];
+            for (let j = 0; j < 7; j++) {
+               if (i === 0 && j < startingDay) {
+                  row.push({
+                     date: ''
+                  });
+               } else if (date > totalDays) {
+                  break;
+               } else {
+                  row.push({
+                     date: date,
+                     month: this.currentMonth,
+                     year: this.currentYear
+                  });
+                  date++;
+               }
             }
-          }
-          calendar.push(row);
-        }
-        return calendar;
+            calendar.push(row);
+         }
+         return calendar;
       }
-    },
-    mounted() {
+   },
+   mounted() {
       this.currentMonth = this.today.getMonth();
       this.currentYear = this.today.getFullYear();
       this.selectedDate = this.today;
-    },
-
-    methods: {
-       open(){
-          this.show =! this.show;
-
+   },
+   methods: {
+      open() {
+         this.show = !this.show;
          this.$nextTick(() => {
             this.$refs.datepicker.focus();
          });
-       },
-       away(){
-          this.show = false;
-       },
-       escapePressed() {
-          this.show = false;
-       },
-
-        formatDate(date) {
-             var d = new Date(date),
-                 month = '' + (d.getMonth() + 1),
-                 day = '' + d.getDate(),
-                 year = d.getFullYear();
-
-             if (month.length < 2)
-                 month = '0' + month;
-             if (day.length < 2)
-                 day = '0' + day;
-
-           return (year.toString()+"-"+month.toString()+"-"+day.toString());
+      },
+      away() {
+         this.show = false;
+      },
+      escapePressed() {
+         this.show = false;
+      },
+      formatDate(date) {
+         var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+         if (month.length < 2)
+            month = '0' + month;
+         if (day.length < 2)
+            day = '0' + day;
+         return (year.toString() + "-" + month.toString() + "-" + day.toString());
       },
       showPreviousMonth() {
-        this.currentMonth--;
-        if (this.currentMonth < 0) {
-          this.currentMonth = 11;
-          this.currentYear--;
-        }
+         this.currentMonth--;
+         if (this.currentMonth < 0) {
+            this.currentMonth = 11;
+            this.currentYear--;
+         }
       },
       showNextMonth() {
-        this.currentMonth++;
-        if (this.currentMonth > 11) {
-          this.currentMonth = 0;
-          this.currentYear++;
-        }
+         this.currentMonth++;
+         if (this.currentMonth > 11) {
+            this.currentMonth = 0;
+            this.currentYear++;
+         }
       },
       getMonthName(monthIndex) {
-        const months = ['January', 'February', 'March', 'April', 'May',
-      'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return months[monthIndex];
+         const months = ['January', 'February', 'March', 'April', 'May',
+            'June', 'July', 'August', 'September', 'October', 'November', 'December'
+         ];
+         return months[monthIndex];
       },
       selectDate(cell) {
-         if(cell.date == '')
-         {
+         if (cell.date == '') {
             //empty nothing to do
-         }
-         else{
-
-           const selectedDate = new Date(cell.year, cell.month, cell.date);
-           this.selectedDate = selectedDate;
-
-            this.moveFocus(0,0);
-
+         } else {
+            const selectedDate = new Date(cell.year, cell.month, cell.date);
+            this.selectedDate = selectedDate;
+            this.moveFocus(0, 0);
             this.$refs.datepicker.focus();
-
             this.foo = this.formatDate(selectedDate);
          }
       },
       isCurrentDate(cell) {
-        return cell.date === this.today.getDate() &&
-               cell.month === this.today.getMonth() &&
-               cell.year === this.today.getFullYear();
+         return cell.date === this.today.getDate() &&
+            cell.month === this.today.getMonth() &&
+            cell.year === this.today.getFullYear();
       },
       handleKeyDown(event) {
-        if (event.key === 'ArrowLeft') {
-          this.moveFocus(0, -1);
-        } else if (event.key === 'ArrowRight') {
-          this.moveFocus(0, 1);
-        } else if (event.key === 'ArrowUp') {
-          this.moveFocus(-1, 0);
-        } else if (event.key === 'ArrowDown') {
-          this.moveFocus(1, 0);
-        } else if(event.key === 'Enter'){
-
-         this.foo = this.formatDate(this.selectedDate);
-        }
-
+         if (event.key === 'ArrowLeft') {
+            this.moveFocus(0, -1);
+         } else if (event.key === 'ArrowRight') {
+            this.moveFocus(0, 1);
+         } else if (event.key === 'ArrowUp') {
+            this.moveFocus(-1, 0);
+         } else if (event.key === 'ArrowDown') {
+            this.moveFocus(1, 0);
+         } else if (event.key === 'Enter') {
+            this.foo = this.formatDate(this.selectedDate);
+         }
       },
       moveFocus(rowChange, colChange) {
-        let date = new Date(this.selectedDate);
-        date.setDate(date.getDate() + (rowChange * 7) + colChange);
-
-        if (date.getMonth() !== this.currentMonth) {
-          this.currentMonth = date.getMonth();
-          this.currentYear = date.getFullYear();
-        }
-
-        this.selectedDate = date;
-        this.focusOnSelectedDate();
+         let date = new Date(this.selectedDate);
+         date.setDate(date.getDate() + (rowChange * 7) + colChange);
+         if (date.getMonth() !== this.currentMonth) {
+            this.currentMonth = date.getMonth();
+            this.currentYear = date.getFullYear();
+         }
+         this.selectedDate = date;
+         this.focusOnSelectedDate();
       },
       isFocused(rowIndex, cellIndex) {
-        return rowIndex === this.focusedRow && cellIndex === this.focusedCell;
+         return rowIndex === this.focusedRow && cellIndex === this.focusedCell;
       },
       setFocus(rowIndex, cellIndex) {
-        this.focusedRow = rowIndex;
-        this.focusedCell = cellIndex;
-        this.focusOnSelectedDate();
+         this.focusedRow = rowIndex;
+         this.focusedCell = cellIndex;
+         this.focusOnSelectedDate();
       },
       focusOnSelectedDate() {
-        const date = new Date(this.selectedDate);
-        const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-        const startingDay = firstDay.getDay();
-        const selectedCell = date.getDate() + startingDay - 1;
-        this.focusedRow = Math.floor(selectedCell / 7);
-        this.focusedCell = selectedCell % 7;
+         const date = new Date(this.selectedDate);
+         const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+         const startingDay = firstDay.getDay();
+         const selectedCell = date.getDate() + startingDay - 1;
+         this.focusedRow = Math.floor(selectedCell / 7);
+         this.focusedCell = selectedCell % 7;
       },
-    }
+   }
 });
