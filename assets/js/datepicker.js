@@ -14,15 +14,27 @@ props:['value','name'],
 template: 
 `
 <div style="max-width:400px;" @keyup.escape="escapePressed" @click.stop v-click-outside="away">
-   <input class="form-control" type="text" v-model="foo" @click="open">
+   <input class="form-control" type="text" :name="name" :value="foo" style="display:none;">
+
+      <button class="form-control left hand" style="height:40px;"  :name="name" :value="value" 
+         @input="updateDate($event.target.value)"  @click="open">
+         {{foo}}
+      </button>
+
   <input type="text" v-model="selectedDate" readonly style="display:none;">
   <div v-show="show"  class="datepicker fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
   <focus-trap :active="show">
     <table>
       <tr>
-        <td @click="showPreviousMonth" tabindex="0" @keydown.enter.prevent> &lt; </td>
+        <button class="date-button rm-btn-styles" @click="showPreviousMonth" 
+        tabindex="0" @keydown.enter.prevent>
+            <i data-feather="chevron-left"></i>
+        </button>
         <td colspan="5">{{ getMonthName(currentMonth) }} {{ currentYear }}</td>
-        <td @click="showNextMonth" tabindex="0" @keydown.enter.prevent> &gt; </td>
+        <button class="date-button rm-btn-styles" @click="showNextMonth" 
+         tabindex="0" @keydown.enter.prevent>
+            <i data-feather="chevron-right"></i>
+         </button>
       </tr>
       <tr>
         <th v-for="day in weekdays" :key="day">{{ day }}</th>
