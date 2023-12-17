@@ -1,132 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
-
+  <meta charset="UTF-8">
+  <title>Datepicker</title>
+  <style>
+    /* Some basic styling */
+    .datepicker {
+      font-family: Arial, sans-serif;
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: inline-block;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .current-date {
+      background-color: #c5e1a5;
+      font-weight: bold;
+    }
+  </style>
 </head>
+<body>
 
-<body class="full-screen bg-light-grey">
+<input type="text" id="selectedDate" readonly>
+<div class="datepicker"></div>
 
-    <div class="full-screen" id="app">
-    <div class="gap"></div>
-    <div class="container">
-       <h3>Gallery</h3>
-       <div class="form-group">
-          <modal button-title="gallery grid" modal-header="Uploads">
-          <div class="p-3">
-             
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
+<script>
+  var today = new Date();
+  var currentMonth = today.getMonth();
+  var currentYear = today.getFullYear();
 
-          </div>
+  function renderDatePicker() {
+    var datePicker = document.querySelector('.datepicker');
+    datePicker.innerHTML = '';
 
-          <div class="clearfix"></div>
-          <!--add this if you need a footer-->
-          <div class="modal-footer m-t-2">
-             <div class="row">
-                <div class="col-12 right">
-                   <button type="button" class="m-r btn btn-primary-outline pull-right">Upload</button>
-                   <button type="button" class="btn btn-primary pull-right">Select</button>
-                </div>
-             </div>
-          </div>
-          </modal>
-       </div>       
+    var table = document.createElement('table');
 
-       <div class="form-group">
-          <modal button-title="gallery" modal-header="Uploads">
-          <div class="p-3">
-             
-            <img src="assets/images/css.jpg" class="gallery-img"></img>
+    var headerRow = table.insertRow();
+    var previousCell = headerRow.insertCell();
+    var monthYearCell = headerRow.insertCell();
+    var nextCell = headerRow.insertCell();
 
-          </div>
+    previousCell.textContent = '<';
+    monthYearCell.colSpan = 5;
+    monthYearCell.textContent = getMonthName(currentMonth) + ' ' + currentYear;
+    nextCell.textContent = '>';
 
-          <div class="clearfix"></div>
-          <!--add this if you need a footer-->
-          <div class="modal-footer m-t-2">
-             <div class="row">
-                <div class="col-12 right">
-                   <button type="button" class="m-r btn btn-primary-outline pull-right">Upload</button>
-                   <button type="button" class="btn btn-primary pull-right">Select</button>
-                </div>
-             </div>
-          </div>
-          </modal>
-       </div>       
+    previousCell.addEventListener('click', showPreviousMonth);
+    nextCell.addEventListener('click', showNextMonth);
 
-    </div>
-</div>
+    var weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var weekdaysRow = table.insertRow();
+    weekdays.forEach(function(day) {
+      var th = document.createElement('th');
+      th.textContent = day;
+      weekdaysRow.appendChild(th);
+    });
 
+    var firstDay = new Date(currentYear, currentMonth, 1);
+    var startingDay = firstDay.getDay();
 
-<!-- Click out must go before all other scripts -->
-<script src="assets/js/click-outside.js"></script>
-<script src="assets/js/tabs.js"></script>
-<script src="assets/js/tooltips.js"></script>
-<script src="assets/js/modals.js"></script>
-<script src="assets/js/search.js"></script>
-<script src="assets/js/dropdown.js"></script>
-<script src="assets/js/datepicker.js"></script>
-<script src="assets/js/accordions.js"></script>
-<script src="assets/js/switch.js"></script>
-<script src="assets/js/range-sliders.js"></script>
-<script src="assets/js/toasts.js"></script>
-<script src="assets/js/menu.js"></script>
-<script src="assets/js/mobile-menu.js"></script>
-<script src="assets/js/trees.js"></script>
+    var totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
 
- <!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
-<script src="assets/js/quill-textarea.js"></script>
+    var date = 1;
+    for (var i = 0; i < 6; i++) {
+      var row = table.insertRow();
 
+      for (var j = 0; j < 7; j++) {
+        if (i === 0 && j < startingDay) {
+          var cell = row.insertCell();
+          cell.textContent = '';
+        } else if (date > totalDays) {
+          break;
+        } else {
+          var cell = row.insertCell();
+          cell.textContent = date;
+          cell.setAttribute('data-date', date);
+          cell.setAttribute('data-month', currentMonth);
+          cell.setAttribute('data-year', currentYear);
+          cell.addEventListener('click', function() {
+            var selectedDate = new Date(this.getAttribute('data-year'), this.getAttribute('data-month'), this.getAttribute('data-date'));
+            var formattedDate = selectedDate.getFullYear() + '-' + ('0' + (selectedDate.getMonth() + 1)).slice(-2) + '-' + ('0' + selectedDate.getDate()).slice(-2);
+            document.getElementById('selectedDate').value = formattedDate;
+            console.log('Selected Date:', formattedDate);
+          });
+          if (currentYear === today.getFullYear() && currentMonth === today.getMonth() && date === today.getDate()) {
+            cell.classList.add('current-date');
+          }
+          date++;
+        }
+      }
+    }
 
+    datePicker.appendChild(table);
+  }
 
+  function showPreviousMonth() {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    renderDatePicker();
+  }
 
-    <!-- feather icons -->
-    <script src="assets/js/feather.js"></script>
+  function showNextMonth() {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    renderDatePicker();
+  }
 
-    <script>
-        /*
-            |---------------------------------------------------------------
-            | Base entry for vue app
-            |---------------------------------------------------------------
-            |
-            |
-            */
-        var app = new Vue({
-            el: '#app',
-        })
-    </script>
+  function getMonthName(monthIndex) {
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return months[monthIndex];
+  }
 
-    <script>
-        feather.replace({
-            class: "font-primary",
-        });
-    </script>
+  renderDatePicker();
+</script>
 
 </body>
-
 </html>
+
