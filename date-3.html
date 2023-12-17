@@ -133,9 +133,11 @@
         return months[monthIndex];
       },
       selectDate(cell) {
-       // const selectedDate = new Date(cell.year, cell.month, cell.date);
-       // this.selectedDate = selectedDate;
-       // console.log('Selected Date:', this.selectedDate);
+        const selectedDate = new Date(cell.year, cell.month, cell.date);
+        this.selectedDate = selectedDate;
+
+         this.moveFocus(0,0);
+        console.log('Selected Date:', this.selectedDate);
       },
       isCurrentDate(cell) {
         return cell.date === this.today.getDate() &&
