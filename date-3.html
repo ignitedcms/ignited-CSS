@@ -42,7 +42,7 @@
 
 <div id="app">
   <input type="text" v-model="selectedDate" readonly>
-  <div class="datepicker" tabindex="0" @keydown="handleKeyDown" ref="datepicker">
+  <div class="datepicker" tabindex="-1" @keydown="handleKeyDown" ref="datepicker">
     <table>
       <tr>
         <td @click="showPreviousMonth" tabindex="0" @keydown.enter.prevent> &lt; </td>
@@ -137,6 +137,8 @@
         this.selectedDate = selectedDate;
 
          this.moveFocus(0,0);
+
+         this.$refs.datepicker.focus();
         console.log('Selected Date:', this.selectedDate);
       },
       isCurrentDate(cell) {
