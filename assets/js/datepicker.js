@@ -73,7 +73,7 @@ data: function () {
          currentMonth: 0,
          currentYear: 0,
          selectedDate: '',
-         foo: '',
+         foo: this.value,
          focusedRow: -1,
          focusedCell: -1,
       }
@@ -117,6 +117,12 @@ data: function () {
       this.selectedDate = this.today;
    },
    methods: {
+      updateDate(newValue)
+        {
+          this.$emit('input',newValue);
+          this.show = false;
+        },
+
       open() {
          this.show = !this.show;
          this.$nextTick(() => {
@@ -169,6 +175,7 @@ data: function () {
             this.moveFocus(0, 0);
             this.$refs.datepicker.focus();
             this.foo = this.formatDate(selectedDate);
+            this.updateDate(this.foo);
          }
       },
       isCurrentDate(cell) {
@@ -187,6 +194,7 @@ data: function () {
             this.moveFocus(1, 0);
          } else if (event.key === 'Enter') {
             this.foo = this.formatDate(this.selectedDate);
+            this.updateDate(this.foo);
          }
       },
       moveFocus(rowChange, colChange) {
