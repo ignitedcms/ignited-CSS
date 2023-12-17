@@ -27,18 +27,18 @@ template:
   <input type="text" v-model="selectedDate" readonly style="display:none;">
   <div v-show="show"  class="date-flyout fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
   <focus-trap :active="show">
-    <table>
-      <tr>
+    <div class="date-buttons-container">
+      
         <button class="date-button rm-btn-styles" @click="showPreviousMonth" 
         tabindex="0" @keydown.enter.prevent>
             <i data-feather="chevron-left"></i>
         </button>
-        <td colspan="5">{{ getMonthName(currentMonth) }} {{ currentYear }}</td>
+        <button class="year-box rm-btn-styles">{{ getMonthName(currentMonth) }} {{ currentYear }}</button>
         <button class="date-button rm-btn-styles" @click="showNextMonth" 
          tabindex="0" @keydown.enter.prevent>
             <i data-feather="chevron-right"></i>
          </button>
-      </tr>
+      
       <tr>
         <th v-for="day in weekdays" :key="day">{{ day }}</th>
       </tr>
