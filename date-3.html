@@ -62,7 +62,6 @@
             @click="selectDate(cell)"
             :class="{ 'current-date': isCurrentDate(cell), focused: isFocused(rowIndex, cellIndex) }"
             tabindex="-1"
-            @keydown.enter.prevent
             @focus="setFocus(rowIndex, cellIndex)"
         >{{ cell.date }}</td>
       </tr>
@@ -148,7 +147,8 @@
         }
       },
       getMonthName(monthIndex) {
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const months = ['January', 'February', 'March', 'April', 'May',
+      'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         return months[monthIndex];
       },
       selectDate(cell) {
@@ -176,7 +176,11 @@
           this.moveFocus(-1, 0);
         } else if (event.key === 'ArrowDown') {
           this.moveFocus(1, 0);
+        } else if(event.key === 'Enter'){
+
+         this.foo = this.formatDate(this.selectedDate);
         }
+
       },
       moveFocus(rowChange, colChange) {
         let date = new Date(this.selectedDate);
