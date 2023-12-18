@@ -13,19 +13,23 @@ Vue.component('datepicker', {
 props:['value','name'],
 template: 
 `
-<div class="date-container" @keyup.escape="escapePressed" @click.stop v-click-outside="away">
-   <input class="form-control" type="text" :name="name" :value="foo" style="display:none;">
+<div class="date-container" @keyup.escape="escapePressed" @click.stop 
+   v-click-outside="away">
+   <input class="form-control" type="text" :name="name" :value="foo" 
+      style="display:none;">
 
-      <button class="pos-rel form-control left hand" style="height:40px;"  :name="name" :value="value" 
+      <button class="pos-rel form-control left hand" style="height:40px;"
+        :name="name" :value="value" 
          @input="updateDate($event.target.value)"  @click="open">
-         <span >
+         <span>
                <i data-feather='calendar'  class='icon-inside hand'></i>
             </span>
          {{foo}}
       </button>
 
   <input type="text" v-model="selectedDate" readonly style="display:none;">
-  <div v-show="show"  class="date-flyout fade-in" tabindex="-1"   @keydown="handleKeyDown" ref="datepicker">
+  <div v-show="show" role="dialog" aria-model="true"  class="date-flyout fade-in" tabindex="-1"   
+    @keydown="handleKeyDown" ref="datepicker">
   <focus-trap :active="show">
     <div class="date-buttons-container">
       
@@ -33,7 +37,8 @@ template:
         tabindex="0" @keydown.enter.prevent>
             <i data-feather="chevron-left"></i>
         </button>
-        <button class="year-box rm-btn-styles">{{ getMonthName(currentMonth) }} {{ currentYear }}</button>
+        <button class="year-box rm-btn-styles">
+         {{ getMonthName(currentMonth) }} {{ currentYear }}</button>
         <button class="date-button rm-btn-styles" @click="showNextMonth" 
          tabindex="0" @keydown.enter.prevent>
             <i data-feather="chevron-right"></i>
@@ -53,7 +58,8 @@ template:
         <button v-for="(cell, cellIndex) in row" :key="cell.date"
             @click="selectDate(cell)"
             class="rm-btn-styles pull-left cal cal-day"
-            :class="{ 'current-date': isCurrentDate(cell), focused: isFocused(rowIndex, cellIndex) }"
+            :class="{ 'current-date': isCurrentDate(cell), 
+              focused: isFocused(rowIndex, cellIndex) }"
             tabindex="-1"
             @focus="setFocus(rowIndex, cellIndex)"
         >{{ cell.date }}
