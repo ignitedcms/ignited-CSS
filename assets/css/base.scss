@@ -105,7 +105,6 @@
    }
 
 
-
    /*
    |---------------------------------------------------------------
    | Grid system
@@ -827,6 +826,24 @@ ol {
 .fixed {
    position: fixed;
    width: 100%;
+}
+
+.fancy-hover{
+
+    transition: all 0.4s;
+
+    &:hover{
+
+        transform: translateY(-10px);
+        -webkit-box-shadow: -1px 25px 10px -8px rgba(0, 0, 0, 0.28);
+        box-shadow: -1px 25px 10px -8px rgba(0, 0, 0, 0.28);
+
+         @media (max-width: $desktop) 
+         {
+            transform: none;
+            box-shadow:none;
+         }
+    }
 }
 
 @media screen and (max-width:$mobile) {
