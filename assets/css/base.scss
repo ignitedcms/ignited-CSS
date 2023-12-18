@@ -368,10 +368,12 @@ ol {
 
 .scroll-y{
    overflow-y : auto;
+   -webkit-overflow-scrolling: touch;
 }
 
 .scroll-x{
    overflow-x : auto;
+   -webkit-overflow-scrolling: touch;
 }
 
 /*
