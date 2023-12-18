@@ -10,6 +10,9 @@
   transition: all 0.4s;
   cursor: pointer;
 }
+.day-week {
+  height: 98px;
+}
 .day-disabled {
   background-color: #F7FAFC;
   border: 1px solid #ccc;
