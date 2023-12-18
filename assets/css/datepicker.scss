@@ -1,16 +1,16 @@
 @import "variables";
 
-.date-today{
-      display: flex;
-      justify-content: center; 
-      align-items: center;
-      flex-direction: row;
-      padding: 3px;
-      background-color: $grey;
-      color: #222;
-      cursor: pointer;
+.current-date{
+
+   background-color: $primary;
+   color:#fff !important;
+   border-radius: $border-radius;
 }
 
+.focused {
+   outline: 2px solid #ccc;
+   border-radius: $border-radius;
+}
 
 .datepicker {
     background-color: $background;

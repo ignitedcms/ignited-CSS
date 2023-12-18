@@ -1,12 +1,12 @@
-.date-today {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  padding: 3px;
-  background-color: #cccccc;
-  color: #222;
-  cursor: pointer;
+.current-date {
+  background-color: #C73B4D;
+  color: #fff !important;
+  border-radius: 5px;
+}
+
+.focused {
+  outline: 2px solid #ccc;
+  border-radius: 5px;
 }
 
 .datepicker {
