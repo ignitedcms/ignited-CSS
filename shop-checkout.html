@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="assets/js/vue2.js"></script>
+
+</head>
+
+<body class="full-screen bg-light-grey">
+    <div class="container" id="app">
+      <div class="gap"></div>
+        <div class="row bg-white" style="min-height:200px;">
+           <div class="col v-a h-a">
+              <h2>Checkout</h2>
+           </div>
+        </div>
+        <div class="row m-t-3">
+           <div class="col">
+              <div class="alert alert-info">
+                Already have an account? Sign in for faster checkout experience.
+             </div>
+           </div>
+        </div>
+       <div class="row ">
+          <div class="col">
+             
+
+             <div class="row">
+                <div class="col">
+                   <h4>Billing address</h4>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                   <label for="title">First name</label>
+                   <div class="small text-muted">info</div>
+                   <input class="form-control" 
+                         placeholder="Start typing" />
+                </div>
+                <div class="col">
+                   <label for="title">Last name</label>
+                   <div class="small text-muted">info</div>
+                   <input class="form-control"
+                         placeholder="Start typing" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                   <label for="title">Email</label>
+                   <div class="small text-muted">info</div>
+                   <input class="form-control"
+                         placeholder="Start typing" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                   <label for="title">Address</label>
+                   <div class="small text-muted">info</div>
+                   <input class="form-control"
+                         placeholder="Start typing" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                   <label for="title">Address 2</label>
+                   <div class="small text-muted">info</div>
+                   <input class="form-control"
+                         placeholder="Start typing" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                   <label for="title">Country</label>
+                   <div class="small text-muted">info</div>
+                   <select class="form-select"  aria-label="Default select example">
+                      <option selected></option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                   </select>
+                </div>
+                <div class="col">
+                   <label for="title">State</label>
+                   <div class="small text-muted">info</div>
+                   <select class="form-select" aria-label="Default select example">
+                      <option selected></option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                   </select>
+                </div>
+                <div class="col">
+                   <label for="title">Zip code</label>
+                   <div class="small text-muted">info</div>
+                   <input class="form-control"
+                         placeholder="Start typing" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                   <div>
+                     <input type="checkbox" name="" class="form-check-input">
+                     <label for="the label">Shipping address is same as
+                     billing address</label>
+                   </div>
+                   
+                </div>
+             </div>
+             <div class="divider"></div>
+             
+             <div class="row">
+                <div class="col">
+                  <h4>Payment</h4>
+                   <div class="m-t-2">
+                      <input type="radio" class="form-check-input" name="a" >
+                      <label for="radio a">Credit card</label>
+                   </div>
+                   <div>
+                      <input type="radio" class="form-check-input" name="a" >
+                      <label for="radio b">Paypal</label>
+                   </div>
+                </div>
+             </div>
+
+          </div>
+          <!--right column-->
+          <div class="col">
+             <div class="row">
+                <div class="col">
+                   <h4>Order summary</h4>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-2 v-a">
+                   <img src="assets/images/house.jpg" 
+                   class="img-responsive br b" style="max-width:100px;"></img>
+                </div>
+                <div class="col-10 ">
+                   <div class=""><h5>Nike sneakers</h5></div>
+                   <div class="">Description</div>
+                   <div class="">Price $39.99</div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-2 v-a">
+                   <img src="assets/images/house.jpg" 
+                   class="img-responsive br b" style="max-width:100px;"></img>
+                </div>
+                <div class="col-10 ">
+                   <div class=""><h5>Nike sneakers</h5></div>
+                   <div class="">Description</div>
+                   <div class="">Price $39.99</div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-2 v-a">
+                   <img src="assets/images/house.jpg" 
+                   class="img-responsive br b" style="max-width:100px;"></img>
+                </div>
+                <div class="col-10 ">
+                   <div class=""><h5>Nike sneakers</h5></div>
+                   <div class="">Description</div>
+                   <div class="">Price $39.99</div>
+                </div>
+             </div>
+             <div class="row b-b">
+                <div class="col"><strong>
+                      Subtotal
+                </strong></div>
+                <div class="col right">$39.99</div>
+             </div>
+             <div class="row b-b">
+                <div class="col">
+                   <strong>
+                      Total
+                   </strong>
+                </div>
+                <div class="col right">$39.99</div>
+             </div>
+             <div class="row m-t-2">
+                <div class="col">
+                   <button type="submit" class="btn btn-block btn-primary">Place order</button>
+                </div>
+             </div>
+          </div>
+       </div>
+
+        
+        
+      <div class="gap"></div>
+    </div>
+
+   <!-- Click out must go before all other scripts -->
+   <script src="assets/js/click-outside.js"></script>
+   <script src="assets/js/focus-trap.js"></script>
+   <script src="assets/js/dropdown.js"></script>
+
+    <!-- feather icons -->
+    <script src="assets/js/feather.js"></script>
+
+    
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data:{
+                }
+            })
+        </script>
+
+      <script>
+      feather.replace({
+        class: "font-primary",
+      });
+    </script>
+
+</body>
+
+</html>
+
+
