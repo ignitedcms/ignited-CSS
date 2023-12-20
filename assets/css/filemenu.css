@@ -69,7 +69,7 @@ nav ul li:hover > ul {
 nav ul ul ul {
   top: 10px;
   left: 195px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 5px 9px 0px rgba(99, 99, 99, 0.29);
 }
 
 /*# sourceMappingURL=filemenu.css.map */
