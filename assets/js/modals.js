@@ -30,7 +30,7 @@ Vue.component('modal',{
     </button>
     
     <div class="modal" role="dialog" aria-modal="true" :aria-hidden="arr" v-show="open" @keyup.escape="escapePressed">
-       <div class="modal-content fade-in-bottom" @click.stop>
+       <div class="modal-content fade-in" @click.stop>
 
           <focus-trap  :active="open">
              <div class="modal-header">
