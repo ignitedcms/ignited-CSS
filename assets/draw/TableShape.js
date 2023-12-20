@@ -11,7 +11,8 @@ TableShape = draw2d.shape.layout.VerticalLayout.extend({
         this.classLabel = new draw2d.shape.basic.Label({
             text:"ClassName", 
             stroke:1,
-            fontColor:"#5856d6",  
+            fontColor:"#333",  
+            fontSize:'14px',
             bgColor:"#f7f7f7", 
             radius: this.getRadius(), 
             padding:10,
@@ -37,6 +38,7 @@ TableShape = draw2d.shape.layout.VerticalLayout.extend({
 	   	     text:txt,
 	   	     stroke:0,
 	   	     radius:0,
+              fontSize:'14px',
 	   	     bgColor:null,
 	   	     padding:{left:10, top:3, right:10, bottom:5},
 	   	     fontColor:"#4a4a4a",
