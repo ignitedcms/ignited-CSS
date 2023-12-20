@@ -24,89 +24,94 @@
 
 </head>
 
-<body class="full-screen bg-ligxht-grey">
-   <div class="container bg-dark" id="app">
-
+<body class="full-screen bg-light-grey">
+   <div class="container" id="app">
       <div class="gap"></div>
-      <div   id="gfx_holder" class="b" style="width:800px; height:800px;">
+      <div class="row">
+         <div class="col center">
+         </div>
+      </div>
+      <div  id="gfx_holder" class="bg-white b" style="width:800px; height:800px; margin:0 auto;">
       </div>
 
-      <pre id="json" style="overflow:auto;position:relative; top:10px;
-          right:10px; background:black;border:1px solid gray">
+      <pre id="json" class="code">
       </pre>
+
+      <button @click="foo" class="btn btn-white">title</button>
+      <div class="gap"></div>
    </div>
-<script type="text/javascript">
+   <script type="text/javascript">
 
-// the document to load....in this case a simple JSON Object
-var jsonDocument =
-    [
-      {
-        "type": "draw2d.shape.node.Start",
-        "id": "354fa3b9-a834-0221-2009-abc2d6bd852a",
-        "x": 25,
-        "y": 97,
-        "width": 50,
-        "height": 50,
-        "radius": 2
-      },
-      {
-        "type": "draw2d.shape.node.End",
-        "id": "ebfb35bb-5767-8155-c804-14bda7759dc2",
-        "x": 272,
-        "y": 45,
-        "width": 50,
-        "height": 50,
-        "radius": 2
-      },
-      {
-        "type": "draw2d.Connection",
-        "id": "74ce9e7e-5f0e-8642-6bec-4ff9c54b3f0a",
-        "source": {
-          "node": "354fa3b9-a834-0221-2009-abc2d6bd852a",
-          "port": "output0"
-        },
-        "target": {
-          "node": "ebfb35bb-5767-8155-c804-14bda7759dc2",
-          "port": "input0"
-        },
-        "vertex": []
+      // the document to load....in this case a simple JSON Object
+      var jsonDocument =
+         [
+            {
+               "type": "draw2d.shape.node.Start",
+               "id": "354fa3b9-a834-0221-2009-abc2d6bd852a",
+               "x": 25,
+               "y": 97,
+               "width": 50,
+               "height": 50,
+               "radius": 2
+            },
+            {
+               "type": "draw2d.shape.node.End",
+               "id": "ebfb35bb-5767-8155-c804-14bda7759dc2",
+               "x": 272,
+               "y": 45,
+               "width": 50,
+               "height": 50,
+               "radius": 2
+            },
+            {
+               "type": "draw2d.Connection",
+               "id": "74ce9e7e-5f0e-8642-6bec-4ff9c54b3f0a",
+               "source": {
+                  "node": "354fa3b9-a834-0221-2009-abc2d6bd852a",
+                  "port": "output0"
+               },
+               "target": {
+                  "node": "ebfb35bb-5767-8155-c804-14bda7759dc2",
+                  "port": "input0"
+               },
+               "vertex": []
+            }
+         ];
+
+      document.addEventListener("DOMContentLoaded",function () {
+
+
+         // create the canvas for the user interaction
+         //
+         var canvas = new draw2d.Canvas("gfx_holder");
+
+         // unmarshal the JSON document into the canvas
+         // (load)
+         var reader = new draw2d.io.json.Reader();
+         reader.unmarshal(canvas, jsonDocument);
+
+         // display the JSON document in the preview DIV
+         //
+         displayJSON(canvas);
+
+         // add an event listener to the Canvas for change notifications.
+         // We just dump the current canvas document into the DIV
+         //
+         canvas.getCommandStack().addEventListener(function(e){
+            if(e.isPostChangeEvent()){
+               displayJSON(canvas);
+            }
+         });
+      });
+
+      function displayJSON(canvas){
+         var writer = new draw2d.io.json.Writer();
+         writer.marshal(canvas, function(json){
+            $("#json").text(JSON.stringify(json,null,2));
+         });
       }
-    ];
 
-document.addEventListener("DOMContentLoaded",function () {
-
-
-	  // create the canvas for the user interaction
-	  //
-	  var canvas = new draw2d.Canvas("gfx_holder");
-
-	  // unmarshal the JSON document into the canvas
-	  // (load)
-	  var reader = new draw2d.io.json.Reader();
-	  reader.unmarshal(canvas, jsonDocument);
-
-	  // display the JSON document in the preview DIV
-	  //
-	  displayJSON(canvas);
-
-	  // add an event listener to the Canvas for change notifications.
-	  // We just dump the current canvas document into the DIV
-	  //
-	  canvas.getCommandStack().addEventListener(function(e){
-	      if(e.isPostChangeEvent()){
-	          displayJSON(canvas);
-	      }
-	  });
-});
-
-function displayJSON(canvas){
-    var writer = new draw2d.io.json.Writer();
-    writer.marshal(canvas, function(json){
-        $("#json").text(JSON.stringify(json,null,2));
-    });
-}
-
-</script>
+   </script>
     <script src="assets/js/click-outside.js"></script>
     <script src="assets/js/focus-trap.js"></script>
     <script src="assets/js/tooltips.js"></script>
@@ -120,6 +125,14 @@ function displayJSON(canvas){
 
         var app = new Vue({
             el: '#app',
+           data:{
+            t:''
+           },
+           methods:{
+              foo(){
+                 alert('hi');
+              }
+           }
         })
     </script>
 
