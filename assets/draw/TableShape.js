@@ -16,7 +16,7 @@ TableShape = draw2d.shape.layout.VerticalLayout.extend({
             radius: this.getRadius(), 
             padding:10,
             resizeable:true,
-            editor:new draw2d.ui.LabelInplaceEditor()
+            //editor:new draw2d.ui.LabelInplaceEditor()
         });
        
         
@@ -41,10 +41,9 @@ TableShape = draw2d.shape.layout.VerticalLayout.extend({
 	   	     padding:{left:10, top:3, right:10, bottom:5},
 	   	     fontColor:"#4a4a4a",
 	   	     resizeable:true,
-             editor:new draw2d.ui.LabelEditor()
+             //editor:new draw2d.ui.LabelEditor()
 	   	 });
 
-//        label.installEditor(new draw2d.ui.LabelEditor());
 	     var input = label.createPort("input");
 	     var output= label.createPort("output");
 	     
