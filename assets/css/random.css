@@ -87,9 +87,9 @@ p {
 
 .igs-code {
   border-radius: 5px;
-  color: #c73b4d;
+  color: #fff;
   border: 1px solid #b1b1b1;
-  background-color: #ffffff;
+  background-color: #292F3E;
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
   font-size: 16px;
   /* white-space: pre-wrap; */
@@ -160,7 +160,7 @@ p {
 }
 
 .ql-font-monospace {
-  color: #c73b4d !important;
+  color: #292F3E !important;
   border: 1px solid #f2f2f2 !important;
   background-color: #ffffff !important;
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;

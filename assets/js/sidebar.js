@@ -30,7 +30,7 @@ Vue.component('sidebar',{
        <div class="main-content" id="main-content">
           <div class="search-container">
              <div @click="toggle_sidemenu"  v-click-outside="away" 
-               class="sidebar-toggle hand drop-shadow br">
+               class="sidebar-toggle hand b br">
                 <i data-feather="menu"></i>
              </div>
              <div style="width:60%;" class="m-l-2">
