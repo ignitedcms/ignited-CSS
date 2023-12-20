@@ -63,7 +63,7 @@ Vue.component('menu-items',{
                   <i data-feather="chevron-down" class=""></i>
                </span>
 
-               <div v-if="show" @click.stop class="menu-dropdown fade-in-bottom" >
+               <div v-if="show" @click.stop class="menu-dropdown fade-in" >
                   <slot>
                   </slot>
                </div>
