@@ -30,7 +30,7 @@ Vue.component('accordion-item',{
     <div class="row">
         <div class="col no-margin">
             <button type="button" :aria-expanded="arr" class="accordion-title rm-btn-styles" @click="toggle">
-               <div>
+               <div class="text-black">
                 {{title}} 
                </div>
                   <span>
