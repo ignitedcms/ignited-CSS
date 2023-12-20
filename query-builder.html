@@ -24,14 +24,15 @@
 
 </head>
 
-<body class="full-screen bg-light-grey">
-   <div class="container">
+<body class="full-screen bg-ligxht-grey">
+   <div class="container bg-dark" id="app">
 
       <div class="gap"></div>
       <div   id="gfx_holder" class="b" style="width:800px; height:800px;">
       </div>
 
-      <pre id="json" style="overflow:auto;position:absolute; top:10px; right:10px; width:350; height:500;background:white;border:1px solid gray">
+      <pre id="json" style="overflow:auto;position:relative; top:10px;
+          right:10px; background:black;border:1px solid gray">
       </pre>
    </div>
 <script type="text/javascript">
@@ -106,6 +107,21 @@ function displayJSON(canvas){
 }
 
 </script>
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/focus-trap.js"></script>
+    <script src="assets/js/tooltips.js"></script>
+    <script>
+        /*
+        |---------------------------------------------------------------
+        | Base entry for vue app
+        |---------------------------------------------------------------
+        |
+        */
+
+        var app = new Vue({
+            el: '#app',
+        })
+    </script>
 
 </body>
 </html>
