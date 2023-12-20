@@ -14,14 +14,14 @@ var jsonDocument =
        "stroke": 1,
        "alpha": 1,
        "radius": 3,
-       "name": "Group",
+       "name": "users",
        "entities": [
          {
            "text": "id",
            "id": "49be7d78-4dcf-38ab-3733-b4108701f1"
          },
          {
-           "text": "employee_fkf",
+           "text": "user_name",
            "id": "49be7d78-4dcf-38ab-3733-b4108701fce4"
          }
        ]
@@ -40,22 +40,22 @@ var jsonDocument =
        "stroke": 1,
        "alpha": 1,
        "radius": 3,
-       "name": "Employee",
+       "name": "email",
        "entities": [
          {
            "text": "id",
            "id": "e97f6f8a-4306-0667-3a95-0a5310a2c15c"
          },
          {
-           "text": "firstName",
+           "text": "user_id",
            "id": "357e132c-aa47-978f-a1fa-d13da6736989"
          },
          {
-           "text": "lastName",
+           "text": "email",
            "id": "a2156a71-f868-1f8f-e9a1-b185dbdfc3de"
          },
          {
-           "text": "company_fk",
+           "text": "created_at",
            "id": "8d410fef-5c6e-286d-c9c3-c152d5bd9c52"
          }
        ]
@@ -74,12 +74,17 @@ var jsonDocument =
        "stroke": 1,
        "alpha": 1,
        "radius": 3,
-       "name": "Compaffds",
+       "name": "company",
        "entities": [
          {
            "text": "id",
            "id": "e04ebb27-43c9-1afa-a7d0-e55bf2aa62d5"
+         },
+         {
+           "text": "company_name",
+           "id": "e04ebb27-43c9-1afa-a7d0-e55bf2a433a62d5"
          }
+
        ]
      },
      {
