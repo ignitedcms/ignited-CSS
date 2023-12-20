@@ -21,13 +21,13 @@
   width: 100%;
 }
 .btn-primary {
-  background-color: #C73B4D;
+  background-color: #292F3E;
   color: #ffffff;
 }
 .btn-primary-outline {
   background-color: #ffffff;
-  color: #C73B4D;
-  border: 1px solid #C73B4D;
+  color: #292F3E;
+  border: 1px solid #292F3E;
 }
 .btn-secondary {
   background-color: #377E68;

@@ -34,8 +34,8 @@
     }
 
     &:checked {
-        background-color: $link-color;
-        border-color: $link-color;
+        background-color: $primary;
+        border-color: $primary;
 
         &[type="checkbox"] {
 

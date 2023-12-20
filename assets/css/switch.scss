@@ -88,7 +88,7 @@ input:focus + i {
 
 
 .form-switch input:checked+i {
-    background-color: $switch-on;
+    background-color: $primary;
 }
 
 .form-switch input:checked+i::before {

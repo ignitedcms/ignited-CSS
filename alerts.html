@@ -25,10 +25,20 @@
                 <h3>Alerts</h3>
 
                 <div class="form-group">
-                    <div class="alert alert-success m-t">Information</div>
-                    <div class="alert alert-info m-t">Information</div>
-                    <div class="alert alert-danger m-t">Information</div>
-                    <div class="alert alert-warning m-t">Information</div>
+                    <div class="alert alert-success m-t ">
+                       <div class="text-black">
+                          Heads up
+                       </div>
+                       <span class="text-muted small">
+                      You can add components to the app using the cli
+                       </span>
+                    </div>
+                    <div class="alert alert-danger  m-t">
+                       Error <br>
+                       <span class="small">
+                       Your session has expired please try again
+                       </span>
+                    </div>
                 </div>
 
 
@@ -37,6 +47,7 @@
         </div>
     </div>
 
+    <script src="assets/js/feather.js"></script>
     <script>
         /*
         |---------------------------------------------------------------
@@ -48,6 +59,11 @@
         var app = new Vue({
             el: '#app',
         })
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
     </script>
 </body>
 
