@@ -21,7 +21,7 @@ var jsonDocument =
            "id": "49be7d78-4dcf-38ab-3733-b4108701f1"
          },
          {
-           "text": "employee_fk",
+           "text": "employee_fkf",
            "id": "49be7d78-4dcf-38ab-3733-b4108701fce4"
          }
        ]
@@ -65,7 +65,7 @@ var jsonDocument =
        "id": "2810494b-931f-da59-fd9d-6deba4385fe0",
        "x": 460,
        "y": 79,
-       "width": 99,
+       "width": 199,
        "height": 83,
        "userData": {},
        "cssClass": "TableShape",
@@ -74,7 +74,7 @@ var jsonDocument =
        "stroke": 1,
        "alpha": 1,
        "radius": 3,
-       "name": "Company",
+       "name": "Compaffds",
        "entities": [
          {
            "text": "id",

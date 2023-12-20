@@ -13,9 +13,10 @@ TableShape = draw2d.shape.layout.VerticalLayout.extend({
             stroke:1,
             fontColor:"#333",  
             fontSize:'14px',
+            //fontFamily:'Plus Jakarta Sans',
             bgColor:"#f7f7f7", 
             radius: this.getRadius(), 
-            padding:10,
+            padding:20,
             resizeable:true,
             //editor:new draw2d.ui.LabelInplaceEditor()
         });
@@ -39,8 +40,9 @@ TableShape = draw2d.shape.layout.VerticalLayout.extend({
 	   	     stroke:0,
 	   	     radius:0,
               fontSize:'14px',
+              //fontFamily:'Plus Jakarta Sans',
 	   	     bgColor:null,
-	   	     padding:{left:10, top:3, right:10, bottom:5},
+	   	     padding:{left:10, top:10, right:30, bottom:10},
 	   	     fontColor:"#4a4a4a",
 	   	     resizeable:true,
              //editor:new draw2d.ui.LabelEditor()
