@@ -77,7 +77,7 @@ input:focus + i {
   background-color: #fff;
   border-color: #7f7f7f;
   outline: 0;
-  box-shadow: 0 0 0 0.3rem #b2b2b2;
+  box-shadow: 0 0 0 0.2rem #b2b2b2;
 }
 
 .form-switch input:checked + i {
