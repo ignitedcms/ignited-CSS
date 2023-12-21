@@ -859,6 +859,14 @@ ol {
   }
 }
 
+.grey-hover {
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.grey-hover:hover {
+  background-color: rgb(243, 243, 243);
+}
+
 @media screen and (max-width: 500px) {
   .hide-phone {
     display: none;
