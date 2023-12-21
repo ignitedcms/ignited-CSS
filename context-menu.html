@@ -28,16 +28,56 @@
                 <p>Right click on the element below</p>
 
                <div @contextmenu="handler($event)"
-                  class="m-t-2 panel br" style="min-height:400px;">
+                  class="m-t-2 panel br" style="min-height:200px;">
                
                </div>
                 
             </div>
         </div>
+
+         <!--context menu styles-->
+
+         <div class="bg-white b br drop-shadow p" style="max-width:250px;">
+            <div class="row p grey-hover ">
+               <div class="col no-margin text-black">Content</div>
+               <div class="col right no-margin">
+                  <span class="v-a">
+                     <i data-feather="chevron-right"></i>    
+                  </span>
+               </div>
+            </div>
+            <div class="row p grey-hover">
+               <div class="col no-margin">
+                  <span class="text-muted">
+                     Testing
+                  </span>
+               </div>
+               <div class="col no-margin right"></div>
+            </div>
+            <div class="b-b" style="margin-left:-9px; margin-right:-9px;">
+            </div>
+
+            <div class="row p grey-hover">
+               <div class="col no-margin">More tools</div>
+               <div class="col no-margin right">
+                  <span class="v-a">
+                     <i data-feather="chevron-down"></i>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+
     </div>
 
     <script src="assets/js/click-outside.js"></script>
     <script src="assets/js/focus-trap.js"></script>
+    <script src="assets/js/feather.js"></script>
+    <script>
+       feather.replace({
+          class: "font-primary",
+       });
+    </script>
     <script>
        /*
         |---------------------------------------------------------------
