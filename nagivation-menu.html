@@ -79,6 +79,7 @@
               <button 
                 class="pos-rel  rm-btn-styles  grey-hover br"
                 style="padding:10px;"
+                @keyup.escape="escapePressed2"
                 @click="open2 =!open2"
                 v-click-outside="away2"
               >
@@ -174,7 +175,11 @@
               },
               escapePressed(){
                 this.open = false;
+              },
+              escapePressed2(){
+                this.open2 = false;
               }
+
            }
         })
     </script>
