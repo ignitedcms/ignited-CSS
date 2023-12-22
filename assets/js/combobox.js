@@ -22,13 +22,13 @@ Vue.component('combobox', {
           <input
             class="rm-input-styles"
             :name="name"
-            @keydown.tab.prevent
-            v-model="searchQuery"
-            @keydown.enter="onEnter"
             autocomplete="off"
             ref="start"
+            @keydown.tab.prevent
+            @keydown.enter="onEnter"
             @keydown.down="highlightNext"
             @keydown.up="highlightPrev"
+            v-model="searchQuery"
             placeholder="Search list"
           />
 
