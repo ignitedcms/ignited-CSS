@@ -13,8 +13,7 @@ Vue.component('emitpicker', {
     </div>
   `,
   data() {
-    return {
-    }
+    return {}
   },
   methods: {
     updateDate(newValue) {
