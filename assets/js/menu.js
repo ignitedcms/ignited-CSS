@@ -53,7 +53,7 @@ Vue.component('menu-items', {
       <div
         v-if="children === 'yes'"
         class="menu-main m-l-2 hand v-a pos-rel"
-        @click="show = !show"
+        @click="toggle"
         v-click-outside="away"
       >
         <button class="rm-btn-styles">{{title}}</button>
@@ -76,6 +76,9 @@ Vue.component('menu-items', {
     };
   },
   methods: {
+    toggle() {
+        this.show = !this.show;
+    },
     away() {
       this.show = false;
     },
