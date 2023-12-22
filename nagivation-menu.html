@@ -36,13 +36,13 @@
                     <i data-feather="chevron-down" class="m-l"></i>    
                  </span>
                  <div v-show="open"  class="row pos-abs bg-white b br p-2 
-                    drop-shadow fade-in" style="top:50px; left:0; width:400px; min-height:300px;" 
+                    drop-shadow fade-in" style="top:50px; left:0; width:500px; min-height:300px;" 
                     @click.stop
                     >
-                    <div class="col-4 no-margin bg-grey v-a h-a br">
-                       test
+                    <div class="col-6 no-margin bg-grey v-a h-a br">
+                      test 
                     </div>
-                    <div class="col-8 m">
+                    <div class="col-6 m">
                        <div class="row">
                           <a href="#" class="rm-link-styles">
                              <div class="no-margin col br p grey-hover">
@@ -75,21 +75,18 @@
                  </div>
               </button>
               
-              
-              
 
               <button 
                 class="pos-rel  rm-btn-styles  grey-hover br"
                 style="padding:10px;"
                 @click="open2 =!open2"
-                @click.stop
                 v-click-outside="away2"
               >
               <span class="v-a">
                  Components
                  <i data-feather="chevron-down" class="m-l"></i>    
               </span>
-               <div v-if="open2" class="pos-abs b bg-white p-2 br drop-shadow" 
+               <div v-if="open2" @click.stop class="pos-abs b bg-white p-2 br drop-shadow" 
                   style="top:50px; left:0; min-height:200px; width:600px; ">
                 <div class="row">
                    <div class="col-6 no-margin col br p grey-hover">
@@ -136,6 +133,8 @@
                </div>
 
               </button>
+
+              <div class="grey-hover p br">Documentation</div>
 
            </div>
         </div>
