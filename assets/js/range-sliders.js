@@ -9,10 +9,10 @@ Vue.component('range-slider', {
         :name="name"
         :value="value"
         type="range"
-        v-model="sliderValue"
-        @input="updateSlider($event.target.value)"
         :min="min"
         :max="max"
+        v-model="sliderValue"
+        @input="updateSlider($event.target.value)"
       />
       <p class="m-t-2">Value:
         <span id="demo">
