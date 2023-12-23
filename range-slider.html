@@ -25,10 +25,12 @@
                 <h3>Range sliders</h3>
 
                 <div class="form-group">
-                   <range-slider name="a" min="0" max="100"></range-slider> 
+                   {{foo}}
+                   <range-slider name="a" v-model="foo" min="0" max="100">
+                   </range-slider> 
                 </div>
                 <div class="form-group">
-                   <range-slider name="b" min="50" max="200"></range-slider> 
+                   <range-slider name="b" value="55" min="50" max="200"></range-slider> 
                 </div>
             </div>
         </div>
@@ -47,7 +49,7 @@
         var app = new Vue({
             el: '#app',
             data: {
-                message: ''
+                foo: 7
             },
             methods: {
                 // someFunc: function () {
