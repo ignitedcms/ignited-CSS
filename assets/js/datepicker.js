@@ -44,17 +44,18 @@ Vue.component('datepicker', {
             <button class="date-button rm-btn-styles"
               @click="showPreviousMonth"
               tabindex="0"
-              @keydown.enter.prevent
             >
               <i data-feather="chevron-left"></i>
             </button>
-            <button class="year-box rm-btn-styles">
+            <button 
+              class="year-box rm-btn-styles"
+              @click="enableArrowkeys = !enableArrowkeys"
+            >
               {{ getMonthName(currentMonth) }} {{ currentYear }}
             </button>
             <button class="date-button rm-btn-styles"
               @click="showNextMonth"
               tabindex="0"
-              @keydown.enter.prevent
             >
               <i data-feather="chevron-right"></i>
             </button>
@@ -101,6 +102,7 @@ Vue.component('datepicker', {
       foo: this.value,
       focusedRow: -1,
       focusedCell: -1,
+      enableArrowkeys: false
     };
   },
   computed: {
@@ -206,18 +208,20 @@ Vue.component('datepicker', {
         cell.year === this.today.getFullYear();
     },
     handleKeyDown(event) {
-      if (event.key === 'ArrowLeft') {
-        this.moveFocus(0, -1);
-      } else if (event.key === 'ArrowRight') {
-        this.moveFocus(0, 1);
-      } else if (event.key === 'ArrowUp') {
-        this.moveFocus(-1, 0);
-      } else if (event.key === 'ArrowDown') {
-        this.moveFocus(1, 0);
-      } else if (event.key === 'Enter') {
-        this.foo = this.formatDate(this.selectedDate);
-        this.updateDate(this.foo);
-      }
+       if(this.enableArrowkeys) {
+            if (event.key === 'ArrowLeft') {
+              this.moveFocus(0, -1);
+            } else if (event.key === 'ArrowRight') {
+              this.moveFocus(0, 1);
+            } else if (event.key === 'ArrowUp') {
+              this.moveFocus(-1, 0);
+            } else if (event.key === 'ArrowDown') {
+              this.moveFocus(1, 0);
+            } else if (event.key === 'Enter') {
+              this.foo = this.formatDate(this.selectedDate);
+              this.updateDate(this.foo);
+            }
+       }
     },
     moveFocus(rowChange, colChange) {
       let date = new Date(this.selectedDate);
