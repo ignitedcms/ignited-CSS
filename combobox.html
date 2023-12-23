@@ -24,7 +24,10 @@
             <div class="col">
                 <h3>Combobox</h3>
               
+
                 {{foo}}
+                <br>
+                test with v-model
                 <div class="form-group">
                    <combobox name="foo" v-model="foo">
                    <combo-item val="Next.js"></combo-item>
@@ -35,8 +38,10 @@
                    </combobox>
                 </div>
 
+                <div class="divider"></div>
                 <div class="form-group">
-                   <combobox name="test" value="semily">
+                test with setting value first
+                   <combobox name="test" value="emily">
                    <combo-item val="john"></combo-item>
                    <combo-item val="emily"></combo-item>
                    <combo-item val="sarah"></combo-item>

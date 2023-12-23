@@ -2,6 +2,8 @@ Vue.component('combobox', {
   props: ['value' , 'name'],
   template: `
     <div @keyup.escape="escapePressed">
+     <label  for="{{name}}">{{name}}</label>
+      <div class="m-b"></div>
       <button
         @click="load"
         ref="button"
