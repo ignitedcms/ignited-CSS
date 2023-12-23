@@ -1,140 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light weight framework</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
-
-</head>
-
-<body class="full-screen bg-light-grey">
-    <div class="container" id="app">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div class="container" id="app">
          <div class="gap"></div>
-        <div class="row">
+         <div class="row">
             <div class="col">
-                <h3>Context menu</h3>
-                {{xCord}}
-                {{yCord}}
-                <p>Right click on the element below</p>
-
-               <div 
-                 id="context"
-                 @contextmenu="handler($event)"
-                 v-click-outside="away"
-                  class="pos-rel m-t-5 panel br" 
+               <h3>Context menu</h3>
+               {{xCord}}
+               {{yCord}}
+               <p>Right click on the element below</p>
+               <div
+                  id="context"
+                  @contextmenu="handler($event)"
+                  class="pos-rel m-t-5 panel br v-a h-a"
                   style="min-height:300px;"
+               >
+                  Right click here
+                  <div 
+                    v-if="show" 
+                    class="pos-abs bg-white b br drop-shadow p" 
+                    style="width:250px;"
+                    :style="{'top':yCord+'px','left':xCord+'px'}"
+                    v-click-outside="away"
                   >
-               
-                  <div v-if="show" class="pos-abs bg-white b br drop-shadow p" style="width:250px;"
-                     :style="{'top':yCord+'px','left':xCord+'px'}"
-                     >
                      <div class="row p grey-hover ">
                         <div class="col no-margin text-black">Content</div>
                         <div class="col right no-margin">
                            <span class="v-a">
-                              <i data-feather="chevron-right"></i>    
+                           <i data-feather="chevron-right"></i>
                            </span>
                         </div>
                      </div>
                      <div class="row p grey-hover">
                         <div class="col no-margin">
                            <span class="text-muted">
-                              Testing
+                           Testing
                            </span>
                         </div>
                         <div class="col no-margin right"></div>
                      </div>
                      <div class="b-b" style="margin-left:-9px; margin-right:-9px;">
                      </div>
-
                      <div class="row p grey-hover">
                         <div class="col no-margin">More tools</div>
                         <div class="col no-margin right">
                            <span class="v-a">
-                              <i data-feather="chevron-down"></i>
+                           <i data-feather="chevron-down"></i>
                            </span>
                         </div>
                      </div>
                   </div>
-
-
-
-
-
                </div>
-                
             </div>
-        </div>
-
+         </div>
          <!--context menu styles-->
+      </div>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/focus-trap.js"></script>
+      <script src="assets/js/feather.js"></script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+      <script>
+         /*
+          |---------------------------------------------------------------
+          | Base entry for vue app
+          |---------------------------------------------------------------
+          |
+          */
 
-         
+         var app = new Vue({
+            el: '#app',
+            data:{
+               xCord:0,
+               yCord:0,
+               show: false
+            },
+            methods:{
+               handler: function(event) {
+                  this.show = true;
 
+                  event.preventDefault();
+                   // Get a reference to the div element
+                 const divElement = event.target;
 
-    </div>
+                 // Calculate the mouse coordinates relative to the div
+                 const rect = divElement.getBoundingClientRect();
+                 const mouseX = event.clientX - rect.left;
+                 const mouseY = event.clientY - rect.top;
 
-    <script src="assets/js/click-outside.js"></script>
-    <script src="assets/js/focus-trap.js"></script>
-    <script src="assets/js/feather.js"></script>
-    <script>
-       feather.replace({
-          class: "font-primary",
-       });
-    </script>
-    <script>
-       /*
-        |---------------------------------------------------------------
-        | Base entry for vue app
-        |---------------------------------------------------------------
-        |
-        */
+                 // Update coordinates
+                 //this.coordinates = { x: mouseX, y: mouseY };
 
-       var app = new Vue({
-          el: '#app',
-          data:{
-             xCord:0,
-             yCord:0,
-             show: false
-          },
-          methods:{
-             handler: function(event) {
-                this.show = true;
+                  this.xCord = mouseX;
+                  this.yCord = mouseY;
 
-                event.preventDefault();
-                 // Get a reference to the div element
-               const divElement = event.target;
-
-               // Calculate the mouse coordinates relative to the div
-               const rect = divElement.getBoundingClientRect();
-               const mouseX = event.clientX - rect.left;
-               const mouseY = event.clientY - rect.top;
-
-               // Update coordinates
-               //this.coordinates = { x: mouseX, y: mouseY };
-
-                this.xCord = mouseX;
-                this.yCord = mouseY;
-
-
-             },
-            away()
-            {
-                this.show = false;
+               },
+              away()
+              {
+                  this.show = false;
+              }
             }
-          }
-       })
-    </script>
-</body>
-
+         })
+      </script>
+   </body>
 </html>
-
