@@ -2,6 +2,8 @@ Vue.component('range-slider', {
   props: ['name','value','min', 'max'],
   template: `
     <div class="slidecontainer">
+     <label :for="name">{{name}}</label>
+     <div class="m-b"></div>
       <input
         class="slider2"
         :name="name"
