@@ -124,7 +124,8 @@
     cursor: pointer;
 
     &:hover {
-        background-color: $light-grey;
+        background-color: $primary;
+        color:#fff;
         border-radius: 4px;
     }
 
