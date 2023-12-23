@@ -27,9 +27,50 @@
                 {{yCord}}
                 <p>Right click on the element below</p>
 
-               <div @contextmenu="handler($event)"
-                  class="m-t-2 panel br" style="min-height:200px;">
+               <div 
+                 id="context"
+                 @contextmenu="handler($event)"
+                 v-click-outside="away"
+                  class="pos-rel m-t-5 panel br" 
+                  style="min-height:300px;"
+                  >
                
+                  <div v-if="show" class="pos-abs bg-white b br drop-shadow p" style="width:250px;"
+                     :style="{'top':yCord+'px','left':xCord+'px'}"
+                     >
+                     <div class="row p grey-hover ">
+                        <div class="col no-margin text-black">Content</div>
+                        <div class="col right no-margin">
+                           <span class="v-a">
+                              <i data-feather="chevron-right"></i>    
+                           </span>
+                        </div>
+                     </div>
+                     <div class="row p grey-hover">
+                        <div class="col no-margin">
+                           <span class="text-muted">
+                              Testing
+                           </span>
+                        </div>
+                        <div class="col no-margin right"></div>
+                     </div>
+                     <div class="b-b" style="margin-left:-9px; margin-right:-9px;">
+                     </div>
+
+                     <div class="row p grey-hover">
+                        <div class="col no-margin">More tools</div>
+                        <div class="col no-margin right">
+                           <span class="v-a">
+                              <i data-feather="chevron-down"></i>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+
+
+
+
+
                </div>
                 
             </div>
@@ -37,35 +78,7 @@
 
          <!--context menu styles-->
 
-         <div class="bg-white b br drop-shadow p" style="max-width:250px;">
-            <div class="row p grey-hover ">
-               <div class="col no-margin text-black">Content</div>
-               <div class="col right no-margin">
-                  <span class="v-a">
-                     <i data-feather="chevron-right"></i>    
-                  </span>
-               </div>
-            </div>
-            <div class="row p grey-hover">
-               <div class="col no-margin">
-                  <span class="text-muted">
-                     Testing
-                  </span>
-               </div>
-               <div class="col no-margin right"></div>
-            </div>
-            <div class="b-b" style="margin-left:-9px; margin-right:-9px;">
-            </div>
-
-            <div class="row p grey-hover">
-               <div class="col no-margin">More tools</div>
-               <div class="col no-margin right">
-                  <span class="v-a">
-                     <i data-feather="chevron-down"></i>
-                  </span>
-               </div>
-            </div>
-         </div>
+         
 
 
     </div>
@@ -91,16 +104,33 @@
           data:{
              xCord:0,
              yCord:0,
+             show: false
           },
           methods:{
-             handler: function(e) {
+             handler: function(event) {
+                this.show = true;
 
-                this.xCord = event.screenX;
-                this.yCord = event.screenY;
+                event.preventDefault();
+                 // Get a reference to the div element
+               const divElement = event.target;
+
+               // Calculate the mouse coordinates relative to the div
+               const rect = divElement.getBoundingClientRect();
+               const mouseX = event.clientX - rect.left;
+               const mouseY = event.clientY - rect.top;
+
+               // Update coordinates
+               //this.coordinates = { x: mouseX, y: mouseY };
+
+                this.xCord = mouseX;
+                this.yCord = mouseY;
 
 
-                e.preventDefault();
-             }
+             },
+            away()
+            {
+                this.show = false;
+            }
           }
        })
     </script>
