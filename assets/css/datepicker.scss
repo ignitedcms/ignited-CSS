@@ -2,13 +2,15 @@
 
 .current-date{
 
-   background-color: $primary;
+   background-color: $grey;
    color:#fff !important;
    border-radius: $border-radius;
 }
 
 .focused {
-   outline: 2px solid #ccc;
+   //outline: 2px solid #ccc;
+   background-color: $primary;
+   color:#fff !important;
    border-radius: $border-radius;
 }
 

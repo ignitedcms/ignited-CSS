@@ -1,11 +1,12 @@
 .current-date {
-  background-color: #292F3E;
+  background-color: #cccccc;
   color: #fff !important;
   border-radius: 5px;
 }
 
 .focused {
-  outline: 2px solid #ccc;
+  background-color: #292F3E;
+  color: #fff !important;
   border-radius: 5px;
 }
 
