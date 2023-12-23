@@ -2,8 +2,10 @@ Vue.component('combobox', {
   props: ['value' , 'name'],
   template: `
     <div @keyup.escape="escapePressed">
-     <label  for="{{name}}">{{name}}</label>
+     <label  :for="name">{{name}}</label>
       <div class="m-b"></div>
+
+
       <button
         @click="load"
         ref="button"
@@ -72,9 +74,9 @@ Vue.component('combobox', {
   mounted() {
     this.items = this.$children;
 
-    this.$nextTick(() => {
-      this.$refs.start.focus();
-    });
+    //this.$nextTick(() => {
+      //this.$refs.start.focus();
+    //});
   },
   computed: {
     filteredItems() {
