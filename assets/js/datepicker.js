@@ -5,7 +5,6 @@ Vue.component('datepicker', {
       @keydown.up.prevent
       @keydown.down.prevent
       @keyup.escape="escapePressed"
-      @click.stop
       v-click-outside="away"
     >
       <input class="form-control"
@@ -26,14 +25,17 @@ Vue.component('datepicker', {
           <i data-feather='calendar'  class='icon-inside hand'></i>
         </span>
         {{foo}}
-      </button>
+
 
       <input type="text" v-model="selectedDate" readonly style="display:none;">
+
       <div v-show="show"
         role="dialog"
         aria-model="true"
+        style="position:absolute; top:40px; left:0;"
         class="date-flyout fade-in"
         tabindex="-1"
+        @click.stop
         @keydown="handleKeyDown"
         ref="datepicker"
       >
@@ -82,6 +84,11 @@ Vue.component('datepicker', {
           </div>
         </focus-trap>
       </div>
+
+
+      </button>
+
+      
     </div>
   `,
   data() {
