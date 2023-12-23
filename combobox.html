@@ -23,9 +23,10 @@
         <div class="row">
             <div class="col">
                 <h3>Combobox</h3>
-               
+              
+                {{foo}}
                 <div class="form-group">
-                   <combobox name="boo">
+                   <combobox name="foo" v-model="foo">
                    <combo-item val="Next.js"></combo-item>
                    <combo-item val="SvelteKit"></combo-item>
                    <combo-item val="Nuxt.js"></combo-item>
@@ -35,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                   <combobox name="foo">
+                   <combobox name="test" value="semily">
                    <combo-item val="john"></combo-item>
                    <combo-item val="emily"></combo-item>
                    <combo-item val="sarah"></combo-item>
@@ -70,6 +71,9 @@
 
         var app = new Vue({
             el: '#app',
+           data:{
+              foo:'Astro'
+           }
 
 
         })

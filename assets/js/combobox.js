@@ -1,12 +1,15 @@
 Vue.component('combobox', {
-  props: ['name'],
+  props: ['value' , 'name'],
   template: `
     <div @keyup.escape="escapePressed">
       <button
         @click="load"
         ref="button"
         class="form-control hand left combo-btn-container"
+        :name="name"
+        :value="value"
         v-click-outside="away"
+        @input="updateInput($event.target.value)"
       >
         <span>
           <i data-feather='chevron-down' class='icon-inside hand'></i>
@@ -60,7 +63,7 @@ Vue.component('combobox', {
       searchQuery: '',
       items: [],
       highlightedIndex: 0,
-      selectedItem: 'Select Item',
+      selectedItem: this.value,
       show: false,
     };
   },
@@ -83,6 +86,11 @@ Vue.component('combobox', {
     },
   },
   methods: {
+
+    updateInput(newValue)
+     {
+      this.$emit('input', newValue);
+     },
     load() {
       this.show = true;
       this.$nextTick(() => {
@@ -94,6 +102,7 @@ Vue.component('combobox', {
     },
     onClick(item) {
       this.selectedItem = item;
+      this.updateInput(this.selectedItem);
       this.show = false;
       this.highlightedIndex = 0;
       this.searchQuery = '';
@@ -112,6 +121,7 @@ Vue.component('combobox', {
       if (this.filteredItems.length > 0 && this.highlightedIndex !== -1) {
         const selectedItem = this.filteredItems[this.highlightedIndex].val;
         this.selectedItem = selectedItem;
+        this.updateInput(this.selectedItem);
         this.show = false;
         this.highlightedIndex = 0;
         this.searchQuery = '';
