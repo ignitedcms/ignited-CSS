@@ -80,9 +80,9 @@ Vue.component('combobox', {
   mounted() {
     this.items = this.$children;
 
-    this.$nextTick(() => {
+    //this.$nextTick(() => {
       //this.$refs.start.focus();
-    });
+    //});
   },
   computed: {
     filteredItems() {
