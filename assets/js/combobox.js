@@ -5,6 +5,12 @@ Vue.component('combobox', {
      <label  :for="name">{{name}}</label>
       <div class="m-b"></div>
 
+      <input class="form-control"
+        type="text"
+        :name="name"
+        :value="selectedItem"
+        style="display:none;"
+      >
 
       <button
         @click="load"
@@ -74,9 +80,9 @@ Vue.component('combobox', {
   mounted() {
     this.items = this.$children;
 
-    //this.$nextTick(() => {
+    this.$nextTick(() => {
       //this.$refs.start.focus();
-    //});
+    });
   },
   computed: {
     filteredItems() {
