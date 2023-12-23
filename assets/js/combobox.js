@@ -15,7 +15,7 @@ Vue.component('combobox', {
       <button
         @click="load"
         ref="button"
-        class="form-control hand left combo-btn-container"
+        class="pos-rel form-control hand left combo-btn-container"
         :name="name"
         :value="value"
         v-click-outside="away"
@@ -25,47 +25,55 @@ Vue.component('combobox', {
           <i data-feather='chevron-down' class='icon-inside hand'></i>
         </span>
         {{ selectedItem }}
+        
+         <div v-if="show" 
+           class="combobox-container fade-in" 
+           style="position:absolute; top:40px; left:0; z-index:2;"
+           @click.stop
+         >
+           <div class="pos-rel">
+             <span>
+               <i data-feather='search' class='icon-inside hand' style="right:25px"></i>
+             </span>
+             <input
+               class="rm-input-styles"
+               :name="name"
+               autocomplete="off"
+               ref="start"
+               @keydown.tab.prevent
+               @keydown.enter="onEnter"
+               @keydown.down="highlightNext"
+               @keydown.up="highlightPrev"
+               v-model="searchQuery"
+               placeholder="Search list"
+             />
+
+             <div class="b-t"></div>
+             <div
+               v-for="(item, index) in filteredItems"
+               :key="index"
+               class="combobox-container-item"
+               @mouseover="setHighlighted(index)"
+               @click="onClick(item.val)"
+               :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
+             >
+               {{ item.val }}
+             </div>
+
+             <div
+               v-if="filteredItems.length === 0 && searchQuery.trim() !== ''"
+               class="combobox-container-item"
+             >
+               No searches found. . .
+             </div>
+           </div>
+                 <slot></slot>
+         </div>
+
+
       </button>
 
-      <div v-if="show" class="combobox-container fade-in" @click.stop>
-        <div class="pos-rel">
-          <span>
-            <i data-feather='search' class='icon-inside hand' style="right:25px"></i>
-          </span>
-          <input
-            class="rm-input-styles"
-            :name="name"
-            autocomplete="off"
-            ref="start"
-            @keydown.tab.prevent
-            @keydown.enter="onEnter"
-            @keydown.down="highlightNext"
-            @keydown.up="highlightPrev"
-            v-model="searchQuery"
-            placeholder="Search list"
-          />
-
-          <div class="b-t"></div>
-          <div
-            v-for="(item, index) in filteredItems"
-            :key="index"
-            class="combobox-container-item"
-            @mouseover="setHighlighted(index)"
-            @click="onClick(item.val)"
-            :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
-          >
-            {{ item.val }}
-          </div>
-
-          <div
-            v-if="filteredItems.length === 0 && searchQuery.trim() !== ''"
-            class="combobox-container-item"
-          >
-            No searches found. . .
-          </div>
-        </div>
-        <slot></slot>
-      </div>
+      
     </div>
   `,
   data() {
