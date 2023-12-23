@@ -39,6 +39,7 @@ Vue.component('datepicker', {
         @keydown="handleKeyDown"
         ref="datepicker"
       >
+        <focus-trap :active="show">
           <div class="date-buttons-container">
             <button class="date-button rm-btn-styles"
               @click="showPreviousMonth"
@@ -81,12 +82,13 @@ Vue.component('datepicker', {
               </button>
             </div>
           </div>
+        </focus-trap>
       </div>
 
 
       </button>
 
-      
+
     </div>
   `,
   data() {
@@ -245,4 +247,3 @@ Vue.component('datepicker', {
     },
   },
 });
-
