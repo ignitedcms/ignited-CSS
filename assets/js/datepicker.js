@@ -32,14 +32,13 @@ Vue.component('datepicker', {
       <div v-show="show"
         role="dialog"
         aria-model="true"
-        style="position:absolute; top:40px; left:0;"
-        class="date-flyout fade-in"
+        style="position:absolute; top:35px; left:0;"
+        class="date-flyout drop-shadow fade-in"
         tabindex="-1"
         @click.stop
         @keydown="handleKeyDown"
         ref="datepicker"
       >
-        <focus-trap :active="show">
           <div class="date-buttons-container">
             <button class="date-button rm-btn-styles"
               @click="showPreviousMonth"
@@ -82,7 +81,6 @@ Vue.component('datepicker', {
               </button>
             </div>
           </div>
-        </focus-trap>
       </div>
 
 
