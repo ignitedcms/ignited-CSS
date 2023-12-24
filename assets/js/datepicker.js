@@ -51,7 +51,8 @@ Vue.component('datepicker', {
         <div
           v-show="show"
           role="dialog"
-          aria-model="true"
+          aria-haspopup="dialog"
+          :aria-expanded="arr"
           style="position:absolute; top:35px; left:0;"
           class="date-flyout drop-shadow fade-in"
           tabindex="-1"
@@ -131,7 +132,8 @@ Vue.component('datepicker', {
       foo: this.value,
       focusedRow: -1,
       focusedCell: -1,
-      enableArrowkeys: false
+      enableArrowkeys: false,
+      arr: 'false'
     };
   },
   computed: {
@@ -189,15 +191,23 @@ Vue.component('datepicker', {
     },
     open() {
       this.show = !this.show;
+      if(this.show == true) {
+         this.arr = 'true';
+      }
+      else {
+         this.arr = 'false';
+      }
       this.$nextTick(() => {
         this.$refs.datepicker.focus();
       });
     },
     away() {
       this.show = false;
+      this.arr = 'false';
     },
     escapePressed() {
       this.show = false;
+      this.arr = 'false';
     },
     formatDate(date) {
       var d = new Date(date),
