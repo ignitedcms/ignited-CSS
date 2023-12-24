@@ -26,6 +26,7 @@ Vue.component('tooltip', {
       <span class="tooltip-highlight"> {{link}} </span>
       <div
         class="tooltip fade-in"
+        role="dialog"
         v-if="show"
         :style="{ width: width }"
         @click.stop
