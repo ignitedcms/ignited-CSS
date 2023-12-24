@@ -34,7 +34,11 @@ Vue.component('modal', {
         v-show="show"
         @keyup.escape="escapePressed"
       >
-        <div class="modal-content fade-in" @click.stop>
+        <div 
+          class="modal-content fade-in" 
+          role="dialog"
+          @click.stop
+        >
 
           <focus-trap :active="show">
             <div class="modal-header">

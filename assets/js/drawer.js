@@ -17,6 +17,8 @@ Vue.component('drawer', {
     <div>
       <button  
         type="submit"
+        aria-haspopup="dialog"
+        :aria-expanded="arr"
         class="btn btn-white m-b-2"
         @click="toggle"
         v-click-outside="away"
@@ -24,7 +26,12 @@ Vue.component('drawer', {
       >
         {{title}}
       </button>
-      <div v-if="show" @click.stop class="drawer fade-in b-l">
+      <div 
+        v-if="show" 
+        class="drawer fade-in b-l"
+        role="dialog"
+        @click.stop 
+      >
         <focus-trap :active="show">
           <slot></slot>
         </focus-trap>
@@ -34,17 +41,26 @@ Vue.component('drawer', {
   data() {
     return {
       show: false,
+      arr: 'false'
     };
   },
   methods: {
     toggle(){
       this.show = !this.show;
+      if(this.show == true) {
+         this.arr = 'true';
+      }
+      else {
+         this.arr = 'false';
+      }
     },
     away() {
       this.show = false;
+      this.arr = 'false';
     },
     escapePressed() {
       this.show = false;
+      this.arr = 'false';
     },
   },
 });
