@@ -36,12 +36,12 @@ em {
 }
 
 a {
-  color: #007bd9;
+  color: #0053ff;
   transition: all 0.1s ease;
 }
 
 a:hover {
-  color: #007bd9;
+  color: #0053ff;
 }
 
 label {

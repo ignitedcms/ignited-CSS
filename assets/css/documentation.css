@@ -49,7 +49,7 @@
 }
 .sidebar > ul > li > a:hover {
   margin-left: 5px;
-  color: #007bd9;
+  color: #0053ff;
 }
 
 .sidebar > ul > li {
@@ -65,7 +65,7 @@
 }
 .sidebar-fixed > ul > li > a:hover {
   margin-left: 5px;
-  color: #007bd9;
+  color: #0053ff;
 }
 
 .sidebar-fixed > ul > li {
@@ -129,7 +129,7 @@
 }
 .sidebar-dark > ul > li > a:hover {
   margin-left: 5px;
-  color: #007bd9;
+  color: #0053ff;
 }
 @media screen and (max-width: 1200px) {
   .sidebar {
@@ -182,7 +182,7 @@
 }
 .sidebar-fixed-dark > ul > li > a:hover {
   margin-left: 5px;
-  color: #007bd9;
+  color: #0053ff;
 }
 @media screen and (min-width: 1200px) {
   .sidebar-fixed {

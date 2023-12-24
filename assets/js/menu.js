@@ -27,6 +27,7 @@ Vue.component('mega-menu', {
           >
             <img
               :src="logo"
+              alt="Ignitedcms logo"
             ></img>
           </a>
         </div>
@@ -115,6 +116,7 @@ Vue.component('menu-item', {
       >
         <img
           :src="icon"
+          :alt="title"
           style="width:40px; height:auto;"
         ></img>
         <div class="m-l-2">{{title}}</div>

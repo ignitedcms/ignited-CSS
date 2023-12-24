@@ -18,6 +18,7 @@ Vue.component('tabs', {
         type="button"
         v-for='(tab, index) in tabs'
         @click='selectTab(index)'
+        role="tab"
         :class='{"tab__selected": (index == selectedIndex)}'
         :aria-selected='index === selectedIndex ? "true" : "false"'
         :aria-controls="'tab-' + index"
@@ -55,7 +56,7 @@ Vue.component('tabs', {
 Vue.component('tab-item', {
   props: ['title'],
   template: `
-    <div class='tab-content' v-show='isActive' :aria-labelledby="'tab-' + tabIndex">
+    <div class='tab-content' role="tabpanel" v-show='isActive' :aria-labelledby="'tab-' + tabIndex">
       <slot></slot>
     </div>
   `,
