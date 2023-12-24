@@ -20,7 +20,9 @@ Vue.component('tabs', {
         @click='selectTab(index)'
         :class='{"tab__selected": (index == selectedIndex)}'
         :aria-selected='index === selectedIndex ? "true" : "false"'
+        :aria-labelledby="'tab-' + index"
         class="rm-btn-styles tab-header"
+        :id="'tab-' + index"
       >
         {{ tab.title }}
       </button>
@@ -41,11 +43,11 @@ Vue.component('tabs', {
   },
   methods: {
     selectTab(i) {
-      this.selectedIndex = i
+      this.selectedIndex = i;
       // loop over all the tabs
       this.tabs.forEach((tab, index) => {
-        tab.isActive = (index === i)
-      })
+        tab.isActive = (index === i);
+      });
     }
   }
 });
@@ -53,13 +55,19 @@ Vue.component('tabs', {
 Vue.component('tab-item', {
   props: ['title'],
   template: `
-    <div class='tab-content' v-show='isActive' role='tabpanel'>
+    <div class='tab-content' v-show='isActive' :aria-labelledby="'tab-' + tabIndex">
       <slot></slot>
     </div>
   `,
   data: function () {
     return {
       isActive: true
+    }
+  },
+  computed: {
+    tabIndex() {
+      // Find the index of the parent tab to associate with aria-labelledby
+      return this.$parent.tabs.indexOf(this);
     }
   }
 });
