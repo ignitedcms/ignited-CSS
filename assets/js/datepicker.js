@@ -42,18 +42,19 @@ Vue.component('datepicker', {
           <div class="date-buttons-container">
             <button class="date-button rm-btn-styles"
               @click="showPreviousMonth"
+              @focus="focusPreviousMonth"
               tabindex="0"
             >
               <i data-feather="chevron-left"></i>
             </button>
             <button 
               class="year-box rm-btn-styles"
-              @click="enableArrowkeys = !enableArrowkeys"
             >
               {{ getMonthName(currentMonth) }} {{ currentYear }}
             </button>
             <button class="date-button rm-btn-styles"
               @click="showNextMonth"
+              @focus="focusNextMonth"
               tabindex="0"
             >
               <i data-feather="chevron-right"></i>
@@ -155,9 +156,14 @@ Vue.component('datepicker', {
     },
     calendarFocused(event)
     {
-      console.log('focused');
-      //alert('calendar is focused');
+      this.enableArrowkeys = true;
       //event.target.blur(); // Remove focus from the button
+    },
+    focusPreviousMonth(){
+      this.enableArrowkeys = false;
+    },
+    focusNextMonth(){
+      this.enableArrowkeys = false;
     },
     open() {
       this.show = !this.show;
