@@ -27,6 +27,9 @@ Vue.component('combobox', {
 
       <button
         @click="load"
+        role="combobox"
+        aria-haspopup="dialog"
+        :aria-expanded="arr"
         ref="button"
         class="pos-rel form-control hand left combo-btn-container"
         :name="name"
@@ -51,6 +54,9 @@ Vue.component('combobox', {
              <input
                class="rm-input-styles"
                :name="name"
+               aria-autocomplete="list"
+               role="combobox"
+               :aria-expanded="arr"
                autocomplete="off"
                ref="start"
                @keydown.tab.prevent
@@ -96,6 +102,7 @@ Vue.component('combobox', {
       highlightedIndex: 0,
       selectedItem: this.value,
       show: false,
+      arr: 'false'
     };
   },
   mounted() {
@@ -124,6 +131,7 @@ Vue.component('combobox', {
      },
     load() {
       this.show = true;
+      this.arr = 'true';
       this.$nextTick(() => {
         this.$refs.start.focus();
       });
@@ -135,6 +143,7 @@ Vue.component('combobox', {
       this.selectedItem = item;
       this.updateInput(this.selectedItem);
       this.show = false;
+      this.arr = 'false';
       this.highlightedIndex = 0;
       this.searchQuery = '';
     },
@@ -154,19 +163,23 @@ Vue.component('combobox', {
         this.selectedItem = selectedItem;
         this.updateInput(this.selectedItem);
         this.show = false;
+        this.arr = 'false';
         this.highlightedIndex = 0;
         this.searchQuery = '';
       } else {
         this.show = false;
+        this.arr = 'false';
         this.highlightedIndex = 0;
         this.searchQuery = '';
       }
     },
     away() {
       this.show = false;
+      this.arr = 'false';
     },
     escapePressed() {
       this.show = false;
+      this.arr = 'false';
     },
   },
 });
