@@ -109,7 +109,6 @@ Vue.component('datepicker', {
 
       </button>
 
-
     </div>
   `,
   data() {
@@ -201,12 +200,19 @@ Vue.component('datepicker', {
         day = '0' + day;
       return (year.toString() + "-" + month.toString() + "-" + day.toString());
     },
-    showPreviousMonth() {
+    showPreviousMonth(cell) {
       this.currentMonth--;
       if (this.currentMonth < 0) {
         this.currentMonth = 11;
         this.currentYear--;
       }
+
+      //Final focus UX tweaks
+      //When tabbing
+      const b = new Date(this.currentYear, this.currentMonth, 1);
+      this.selectedDate = b;
+      this.focusOnSelectedDate(b);
+
     },
     showNextMonth() {
       this.currentMonth++;
@@ -214,6 +220,12 @@ Vue.component('datepicker', {
         this.currentMonth = 0;
         this.currentYear++;
       }
+
+      //Final focus UX tweaks
+      //When tabbing
+      const b = new Date(this.currentYear, this.currentMonth, 1);
+      this.selectedDate = b;
+      this.focusOnSelectedDate(b);
     },
     getMonthName(monthIndex) {
       const months = ['January', 'February', 'March', 'April', 'May',
