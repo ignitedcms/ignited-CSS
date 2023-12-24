@@ -37,7 +37,6 @@ Vue.component('datepicker', {
         tabindex="-1"
         @click.stop
         @keydown="handleKeyDown"
-        ref="datepicker"
       >
         <focus-trap :active="show">
           <div class="date-buttons-container">
@@ -70,7 +69,12 @@ Vue.component('datepicker', {
               <div class="cal-no-hover cal-day">Fr</div>
               <div class="cal-no-hover cal-day">Sa</div>
             </div>
-            <button class="rm-btn-styles" style="width:100%;"> 
+            <button 
+              class="rm-btn-styles" 
+              style="width:100%;"
+              @focus="calendarFocused"
+              ref="datepicker"
+            > 
                <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
                  <button v-for="(cell, cellIndex) in row" :key="cell.date"
                    @click="selectDate(cell)"
@@ -148,6 +152,12 @@ Vue.component('datepicker', {
   methods: {
     updateDate(newValue) {
       this.$emit('input', newValue);
+    },
+    calendarFocused(event)
+    {
+      console.log('focused');
+      //alert('calendar is focused');
+      //event.target.blur(); // Remove focus from the button
     },
     open() {
       this.show = !this.show;
