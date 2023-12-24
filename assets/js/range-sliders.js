@@ -19,6 +19,7 @@ Vue.component('range-slider', {
      <div class="m-b"></div>
       <input
         class="slider2"
+        :id="name"
         :name="name"
         :value="value"
         type="range"
