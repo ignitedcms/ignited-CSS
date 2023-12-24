@@ -60,7 +60,7 @@ Vue.component('datepicker', {
               <i data-feather="chevron-right"></i>
             </button>
           </div>
-          <div class="date-holder">
+          <div class="date-holder rm-btn-styles">
             <div class="date-days">
               <div class="cal-no-hover cal-day">Su</div>
               <div class="cal-no-hover cal-day">Mo</div>
@@ -70,18 +70,20 @@ Vue.component('datepicker', {
               <div class="cal-no-hover cal-day">Fr</div>
               <div class="cal-no-hover cal-day">Sa</div>
             </div>
-            <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
-              <button v-for="(cell, cellIndex) in row" :key="cell.date"
-                @click="selectDate(cell)"
-                class="rm-btn-styles pull-left cal cal-day"
-                :class="{ 'current-date': isCurrentDate(cell),
-                  focused: isFocused(rowIndex, cellIndex) }"
-                tabindex="-1"
-                @focus="setFocus(rowIndex, cellIndex)"
-              >
-                {{ cell.date }}
-              </button>
-            </div>
+            <button class="rm-btn-styles" style="width:100%;"> 
+               <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
+                 <button v-for="(cell, cellIndex) in row" :key="cell.date"
+                   @click="selectDate(cell)"
+                   class="rm-btn-styles pull-left cal cal-day"
+                   :class="{ 'current-date': isCurrentDate(cell),
+                     focused: isFocused(rowIndex, cellIndex) }"
+                   tabindex="-1"
+                   @focus="setFocus(rowIndex, cellIndex)"
+                 >
+                   {{ cell.date }}
+                 </button>
+               </div>
+            </button>
           </div>
         </focus-trap>
       </div>
