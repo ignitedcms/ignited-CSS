@@ -14,20 +14,22 @@
 Vue.component('datepicker', {
   props: ['value', 'name'],
   template: `
-    <div class="date-container"
+  <div class="date-container"
       @keydown.up.prevent
       @keydown.down.prevent
       @keyup.escape="escapePressed"
       v-click-outside="away"
     >
-      <input class="form-control"
+      <input
+        class="form-control"
         type="text"
         :name="name"
         :value="foo"
         style="display:none;"
       >
 
-      <button class="pos-rel form-control left hand"
+      <button
+        class="pos-rel form-control left hand"
         style="height:40px;"
         :name="name"
         :value="value"
@@ -35,80 +37,88 @@ Vue.component('datepicker', {
         @click="open"
       >
         <span>
-          <i data-feather='calendar'  class='icon-inside hand'></i>
+          <i data-feather='calendar' class='icon-inside hand'></i>
         </span>
         {{foo}}
 
+        <input
+          type="text"
+          v-model="selectedDate"
+          readonly
+          style="display:none;"
+        >
 
-      <input type="text" v-model="selectedDate" readonly style="display:none;">
-
-      <div v-show="show"
-        role="dialog"
-        aria-model="true"
-        style="position:absolute; top:35px; left:0;"
-        class="date-flyout drop-shadow fade-in"
-        tabindex="-1"
-        @click.stop
-        @keydown="handleKeyDown"
-      >
-        <focus-trap :active="show">
-          <div class="date-buttons-container">
-            <button class="date-button rm-btn-styles"
-              @click="showPreviousMonth"
-              @focus="focusPreviousMonth"
-              tabindex="0"
-            >
-              <i data-feather="chevron-left"></i>
-            </button>
-            <button 
-              class="year-box rm-btn-styles"
-            >
-              {{ getMonthName(currentMonth) }} {{ currentYear }}
-            </button>
-            <button class="date-button rm-btn-styles"
-              @click="showNextMonth"
-              @focus="focusNextMonth"
-              tabindex="0"
-            >
-              <i data-feather="chevron-right"></i>
-            </button>
-          </div>
-          <div class="date-holder rm-btn-styles">
-            <div class="date-days">
-              <div class="cal-no-hover cal-day">Su</div>
-              <div class="cal-no-hover cal-day">Mo</div>
-              <div class="cal-no-hover cal-day">Tu</div>
-              <div class="cal-no-hover cal-day">We</div>
-              <div class="cal-no-hover cal-day">Th</div>
-              <div class="cal-no-hover cal-day">Fr</div>
-              <div class="cal-no-hover cal-day">Sa</div>
+        <div
+          v-show="show"
+          role="dialog"
+          aria-model="true"
+          style="position:absolute; top:35px; left:0;"
+          class="date-flyout drop-shadow fade-in"
+          tabindex="-1"
+          @click.stop
+          @keydown="handleKeyDown"
+        >
+          <focus-trap :active="show">
+            <div class="date-buttons-container">
+              <button
+                class="date-button rm-btn-styles"
+                @click="showPreviousMonth"
+                @focus="focusPreviousMonth"
+                tabindex="0"
+              >
+                <i data-feather="chevron-left"></i>
+              </button>
+              <button
+                class="year-box rm-btn-styles"
+              >
+                {{ getMonthName(currentMonth) }} {{ currentYear }}
+              </button>
+              <button
+                class="date-button rm-btn-styles"
+                @click="showNextMonth"
+                @focus="focusNextMonth"
+                tabindex="0"
+              >
+                <i data-feather="chevron-right"></i>
+              </button>
             </div>
-            <button 
-              class="rm-btn-styles" 
-              style="width:100%;"
-              @focus="calendarFocused"
-              ref="datepicker"
-            > 
-               <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
-                 <button v-for="(cell, cellIndex) in row" :key="cell.date"
-                   @click="selectDate(cell)"
-                   class="rm-btn-styles pull-left cal cal-day"
-                   :class="{ 'current-date': isCurrentDate(cell),
-                     focused: isFocused(rowIndex, cellIndex) }"
-                   tabindex="-1"
-                   @focus="setFocus(rowIndex, cellIndex)"
-                 >
-                   {{ cell.date }}
-                 </button>
-               </div>
-            </button>
-          </div>
-        </focus-trap>
-      </div>
-
-
+            <div class="date-holder rm-btn-styles">
+              <div class="date-days">
+                <div class="cal-no-hover cal-day">Su</div>
+                <div class="cal-no-hover cal-day">Mo</div>
+                <div class="cal-no-hover cal-day">Tu</div>
+                <div class="cal-no-hover cal-day">We</div>
+                <div class="cal-no-hover cal-day">Th</div>
+                <div class="cal-no-hover cal-day">Fr</div>
+                <div class="cal-no-hover cal-day">Sa</div>
+              </div>
+              <button
+                class="rm-btn-styles"
+                style="width:100%;"
+                @focus="calendarFocused"
+                ref="datepicker"
+              >
+                <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
+                  <button
+                    v-for="(cell, cellIndex) in row"
+                    :key="cell.date"
+                    @click="selectDate(cell)"
+                    class="rm-btn-styles pull-left cal cal-day"
+                    :class="{
+                      'current-date': isCurrentDate(cell),
+                      focused: isFocused(rowIndex, cellIndex)
+                    }"
+                    tabindex="-1"
+                    @focus="setFocus(rowIndex, cellIndex)"
+                  >
+                    {{ cell.date }}
+                  </button>
+                </div>
+              </button>
+            </div>
+          </focus-trap>
+        </div>
       </button>
-
     </div>
   `,
   data() {
