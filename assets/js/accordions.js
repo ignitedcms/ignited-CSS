@@ -45,9 +45,10 @@ Vue.component('accordion-item', {
         </button>
         <div
           v-if="isActive"
+          :id="'accordion-' + uniqueId" 
+          role="region"
           class="accordion-content fade-in"
           :aria-labelledby="'accordion-title-' + uniqueId"
-          :id="'accordion-' + uniqueId" 
         >
           <slot></slot>
         </div>
