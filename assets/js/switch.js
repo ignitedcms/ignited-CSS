@@ -18,6 +18,7 @@ Vue.component('switchIos', {
       <input
         :name="name"
         type="checkbox"
+        role="switch"
         :checked="value"
         @change="handleChange"
       />
