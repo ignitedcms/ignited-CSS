@@ -63,6 +63,7 @@ Vue.component('datepicker', {
             <div class="date-buttons-container">
               <button
                 class="date-button rm-btn-styles"
+                aria-label="previous month"
                 @click="showPreviousMonth"
                 @focus="focusPreviousMonth"
                 tabindex="0"
@@ -76,6 +77,7 @@ Vue.component('datepicker', {
               </button>
               <button
                 class="date-button rm-btn-styles"
+                aria-label="next month"
                 @click="showNextMonth"
                 @focus="focusNextMonth"
                 tabindex="0"
