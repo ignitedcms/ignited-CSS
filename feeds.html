@@ -14,25 +14,86 @@
 
     <!-- vue 2 -->
     <script src="assets/js/vue2.js"></script>
+<style>
 
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 19px;
+      width: 1px;
+      height: 100%;
+      background: #ccc;
+    }
+    .event {
+      position: relative;
+      margin-bottom: 60px; /* Increased the margin to create larger gaps */
+      padding-left: 30px;
+    }
+    .event:last-child {
+      margin-bottom: 0;
+    }
+    .event::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -8px; /* Adjusted the left position */
+      width: 15px; /* Increased the width */
+      height: 15px; /* Increased the height */
+      border-radius: 50%;
+      background: #333;
+      border: 2px solid #fff;
+      margin-top: -10px; /* Added margin to create larger vertical gap */
+    }
+    .date {
+      position:relative;
+      top:-15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .description {
+      //margin-left: 20px;
+    }
+  </style>
 </head>
 
 <body class="full-screen bg-light-grey">
-    <div class="container" id="app">
-         <div class="gap"></div>
-        <div class="row">
-            <div class="col">
-                <h3>Feeds</h3>
-                
+   <div class="container" id="app">
+      <div class="gap"></div>
+
+      <div class="timeline">
+         <div class="event">
+            <div class="date">2023</div>
+            <div class="description">
+               <h3>Event Title 1</h3>
+               <p>Event Description 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-        </div>
+         </div>
+         <div class="event">
+            <div class="date">2022</div>
+            <div class="description">
+               <h3>Event Title 2</h3>
+               <p>Event Description 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+         </div>
+         <div class="event">
+            <div class="date">2021</div>
+            <div class="description">
+               <h3>Event Title 3</h3>
+               <p>Event Description 3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+         </div>
+         <!-- Add more events as needed -->
+      </div>
+   </div>
 
-        
-
-        
-        <div class="gap"></div>
-    </div>
-
+    <script src="assets/js/feather.js"></script>
     <script>
         /*
         |---------------------------------------------------------------
@@ -45,8 +106,12 @@
             el: '#app',
         })
     </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+
 </body>
-
 </html>
-
 
