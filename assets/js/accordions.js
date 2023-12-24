@@ -30,7 +30,9 @@ Vue.component('accordion-item', {
       <div class="col no-margin">
         <button
           type="button"
-          :aria-expanded="arr"
+          :aria-expanded="isActive.toString()" 
+          :aria-controls="'accordion-' + uniqueId" 
+          :id="'accordion-title-' + uniqueId" 
           class="accordion-title rm-btn-styles"
           @click="toggle"
         >
@@ -44,7 +46,8 @@ Vue.component('accordion-item', {
         <div
           v-if="isActive"
           class="accordion-content fade-in"
-         >
+          :id="'accordion-' + uniqueId" 
+        >
           <slot></slot>
         </div>
       </div>
@@ -53,17 +56,12 @@ Vue.component('accordion-item', {
   data() {
     return {
       isActive: false,
-      arr: 'false',
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
     };
   },
   methods: {
     toggle() {
       this.isActive = !this.isActive;
-      if (this.arr === 'false') {
-        this.arr = 'true';
-      } else {
-        this.arr = 'false';
-      }
     },
   },
 });
