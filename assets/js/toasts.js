@@ -1,3 +1,16 @@
+/*
+|---------------------------------------------------------------
+| Toasts component
+|---------------------------------------------------------------
+|
+|
+| @author: IgnitedCMS
+| @license: MIT
+| @version: 1.0
+| @since: 1.0
+|
+*/
+
 Vue.component('toast', {
   props: ['time'],
   template: `

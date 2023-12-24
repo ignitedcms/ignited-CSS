@@ -1,3 +1,16 @@
+/*
+|---------------------------------------------------------------
+| Mobile menu component
+|---------------------------------------------------------------
+|
+|
+| @author: IgnitedCMS
+| @license: MIT
+| @version: 1.0
+| @since: 1.0
+|
+*/
+
 Vue.component('mobile-menu', {
   props: [
     'title',

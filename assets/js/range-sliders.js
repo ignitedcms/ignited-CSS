@@ -1,3 +1,16 @@
+/*
+|---------------------------------------------------------------
+| Range slider component
+|---------------------------------------------------------------
+|
+|
+| @author: IgnitedCMS
+| @license: MIT
+| @version: 1.0
+| @since: 1.0
+|
+*/
+
 Vue.component('range-slider', {
   props: ['name','value','min', 'max'],
   template: `
