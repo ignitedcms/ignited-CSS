@@ -13,7 +13,7 @@
 
 Vue.component('tabs', {
   template: `
-    <div class="tab-container">
+    <div class="tab-container" role="tablist">
       <button
         type="button"
         v-for='(tab, index) in tabs'
