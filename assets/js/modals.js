@@ -29,9 +29,8 @@ Vue.component('modal', {
 
       <div
         class="modal"
-        role="dialog"
-        aria-modal="true"
-        :aria-hidden="arr"
+        aria-haspopup="dialog"
+        :aria-expanded="arr"
         v-show="show"
         @keyup.escape="escapePressed"
       >
@@ -62,17 +61,17 @@ Vue.component('modal', {
     return {
       message: 'Hello',
       show: false,
-      arr: 'true'
+      arr: 'false'
     };
   },
   methods: {
     away() {
       this.show = false;
-      this.arr = 'true';
+      this.arr = 'false';
     },
     escapePressed() {
       this.show = false;
-      this.arr = 'true';
+      this.arr = 'false';
     }
   }
 });
