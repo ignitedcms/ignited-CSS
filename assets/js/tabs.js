@@ -20,7 +20,7 @@ Vue.component('tabs', {
         @click='selectTab(index)'
         :class='{"tab__selected": (index == selectedIndex)}'
         :aria-selected='index === selectedIndex ? "true" : "false"'
-        :aria-labelledby="'tab-' + index"
+        :aria-controls="'tab-' + index"
         class="rm-btn-styles tab-header"
         :id="'tab-' + index"
       >
