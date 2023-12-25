@@ -19,13 +19,15 @@ Vue.component('tabs', {
         type="button"
         v-for='(tab, index) in tabs'
         :id="'tab-' + index"
-        @click='selectTab(index)'
         role="tab"
         :class='{"tab__selected": (index == currentIndex)}'
         :aria-selected='index === currentIndex ? "true" : "false"'
         :aria-controls="'tabpanel-' + index"
         :tabindex="currentIndex === index ? 0 : -1"
         class="rm-btn-styles tab-header"
+        @click='selectTab(index)'
+        @keydown="onTabKeyDown($event, index)"
+        ref="tabButtons"
       >
         {{ tab.title }}
       </button>
@@ -55,7 +57,41 @@ Vue.component('tabs', {
       this.tabs.forEach((tab, index) => {
         tab.isActive = (index === i);
       });
-    }
+    },
+     onTabKeyDown(event, index) {
+        const tabsCount = this.tabs.length;
+
+        switch (event.key) {
+           case 'ArrowRight':
+              event.preventDefault();
+              this.currentIndex = (index + 1) % tabsCount;
+              this.$refs.tabButtons[this.currentIndex].focus();
+              break;
+           case 'ArrowLeft':
+              event.preventDefault();
+              this.currentIndex = (index - 1 + tabsCount) % tabsCount;
+              this.$refs.tabButtons[this.currentIndex].focus();
+              break;
+           case 'Home':
+              event.preventDefault();
+              this.currentIndex = 0;
+              this.$refs.tabButtons[this.currentIndex].focus();
+              break;
+           case 'End':
+              event.preventDefault();
+              this.currentIndex = tabsCount - 1;
+              this.$refs.tabButtons[this.currentIndex].focus();
+              break;
+           case 'Enter':
+           case 'Space':
+              event.preventDefault();
+              this.changeTab(index);
+              break;
+           default:
+              break;
+        }
+     },
+
   }
 });
 
