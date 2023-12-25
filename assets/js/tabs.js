@@ -56,7 +56,15 @@ Vue.component('tabs', {
 Vue.component('tab-item', {
   props: ['title'],
   template: `
-    <div class='tab-content' :id="'tabpanel-'+ tabIndex" role="tabpanel" v-show='isActive' :aria-labelledby="'tab-' + tabIndex">
+    <div 
+     class='tab-content' 
+     :id="'tabpanel-'+ tabIndex" 
+     role="tabpanel" 
+     v-show='isActive' 
+     :aria-hidden="!isActive"
+     tabindex="0"
+     :aria-labelledby="'tab-' + tabIndex"
+   >
       <slot></slot>
     </div>
   `,
