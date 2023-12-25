@@ -13,6 +13,7 @@
 
 Vue.component('tabs', {
   template: `
+  <div>
     <div class="tab-container" role="tablist">
       <button
         type="button"
@@ -28,8 +29,11 @@ Vue.component('tabs', {
       >
         {{ tab.title }}
       </button>
+   </div>
+   <div>
       <slot></slot>
     </div>
+  </div>
   `,
   data: function () {
     return {
@@ -63,9 +67,9 @@ Vue.component('tab-item', {
      :id="'tabpanel-'+ tabIndex"
      role="tabpanel"
      v-show='isActive'
+     :aria-labelledby="'tab-' + tabIndex"
      :aria-hidden="isActive === true ? 'false' : 'true'"
      :tabindex="isActive === true ? 0 : -1"
-     :aria-labelledby="'tab-' + tabIndex"
    >
       <slot></slot>
     </div>
