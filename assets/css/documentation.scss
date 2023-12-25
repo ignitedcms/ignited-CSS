@@ -48,7 +48,7 @@
 .sidebar > ul > li > a{
   
    color:$font-color;
-   font-size:15px;
+   //font-size:15px;
    text-decoration: none;
    transition: all 0.4s;
 
@@ -69,7 +69,7 @@
 .sidebar-fixed > ul > li > a{
   
    color:$font-color;
-   font-size:15px;
+   //font-size:15px;
    text-decoration: none;
    transition: all 0.4s;
 
@@ -136,7 +136,7 @@
       > ul > li > a{
 
          color: #FFFFFF;
-         font-size:15px;
+         //font-size:15px;
          text-decoration: none;
          transition: all 0.4s;
 
@@ -201,7 +201,7 @@
             > ul > li > a{
 
                color: #FFFFFF;
-               font-size:15px;
+               //font-size:15px;
                text-decoration: none;
                transition: all 0.4s;
 
@@ -225,7 +225,7 @@
     margin-left:270px;
     margin-bottom:20px;
     float:left;
-    width: $desktop;
+    width: 1000px;
     height:100vh;
 
     @media screen and (max-width:$desktop) {

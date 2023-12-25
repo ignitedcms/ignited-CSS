@@ -43,7 +43,6 @@
 
 .sidebar > ul > li > a {
   color: #666666;
-  font-size: 15px;
   text-decoration: none;
   transition: all 0.4s;
 }
@@ -59,7 +58,6 @@
 
 .sidebar-fixed > ul > li > a {
   color: #666666;
-  font-size: 15px;
   text-decoration: none;
   transition: all 0.4s;
 }
@@ -123,7 +121,6 @@
 }
 .sidebar-dark > ul > li > a {
   color: #FFFFFF;
-  font-size: 15px;
   text-decoration: none;
   transition: all 0.4s;
 }
@@ -176,7 +173,6 @@
 }
 .sidebar-fixed-dark > ul > li > a {
   color: #FFFFFF;
-  font-size: 15px;
   text-decoration: none;
   transition: all 0.4s;
 }
@@ -195,7 +191,7 @@
   margin-left: 270px;
   margin-bottom: 20px;
   float: left;
-  width: 1200px;
+  width: 1000px;
   height: 100vh;
 }
 @media screen and (max-width: 1200px) {
