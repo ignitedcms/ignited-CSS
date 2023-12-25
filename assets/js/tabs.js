@@ -13,121 +13,72 @@
 
 Vue.component('tabs', {
   template: `
- <div >
-    <div role="tablist">
+    <div class="tab-container" role="tablist">
       <button
-        v-for="(tab, index) in tabs"
-        :key="index"
-        :id="tabIds[index].tabId"
-        :role="'tab'"
-        :aria-selected="currentIndex === index"
-        :aria-controls="tabIds[index].panelId"
-        :tabindex="currentIndex === index ? 0 : -1"
-        @click="changeTab(index)"
-        @keydown="onTabKeyDown($event, index)"
-        ref="tabButtons"
+        type="button"
+        v-for='(tab, index) in tabs'
+        @click='selectTab(index)'
+        role="tab"
+        :class='{"tab__selected": (index == selectedIndex)}'
+        :aria-selected='index === selectedIndex ? "true" : "false"'
+        :aria-controls="'tabpanel-' + index"
+        class="rm-btn-styles tab-header"
+        :id="'tab-' + index"
       >
         {{ tab.title }}
       </button>
-    </div>
-    <div>
-      <div
-        v-for="(tab, index) in tabs"
-        :key="index"
-        :id="tabIds[index].panelId"
-        :role="'tabpanel'"
-        :aria-labelledby="tabIds[index].tabId"
-        :aria-hidden="currentIndex !== index"
-        :tabindex="currentIndex === index ? 0 : -1"
-        ref="tabPanels"
-      >
-        <div v-if="currentIndex === index">
-
-        </div>
-      </div>
-
-          <slot></slot>
-    </div>
-  </div>
-  `,
-  data: function () {
-    return {
-      currentIndex: 0,      
-      tabs: [
-
-      ],
-      tabIds:[],
-    }
-  },
-  created() {
-    this.tabs = this.$children;
-  },
-  mounted(){
-    //must go here
-    this.generateTabIds();
-  },
-   methods: {
-      changeTab(index) {
-         this.currentIndex = index;
-         this.$nextTick(() => {
-            this.$refs.tabPanels[index].focus();
-         });
-      },
-      onTabKeyDown(event, index) {
-
-         const tabsCount = this.tabs.length;
-
-         switch (event.key) {
-            case 'ArrowRight':
-               event.preventDefault();
-               this.currentIndex = (index + 1) % tabsCount;
-               this.$refs.tabButtons[this.currentIndex].focus();
-               break;
-            case 'ArrowLeft':
-               event.preventDefault();
-               this.currentIndex = (index - 1 + tabsCount) % tabsCount;
-               this.$refs.tabButtons[this.currentIndex].focus();
-               break;
-            case 'Home':
-               event.preventDefault();
-               this.currentIndex = 0;
-               this.$refs.tabButtons[this.currentIndex].focus();
-               break;
-            case 'End':
-               event.preventDefault();
-               this.currentIndex = tabsCount - 1;
-               this.$refs.tabButtons[this.currentIndex].focus();
-               break;
-            case 'Enter':
-            case 'Space':
-               event.preventDefault();
-               this.changeTab(index);
-               break;
-            default:
-               break;
-         }
-      },
-      generateTabIds() {
-         this.tabIds = this.tabs.map((_, index) => ({
-            tabId: `tab-${Math.random().toString(36).substr(2, 9)}`,
-            panelId: `panel-${Math.random().toString(36).substr(2, 9)}`
-         }));
-      }
-
-   }
-});
-
-Vue.component('tab-item', {
-   props: ['title','content'],
-   template: `
-    <div>
       <slot></slot>
     </div>
   `,
-   data: function () {
-      return {
-
-      }
-   },
+  data: function () {
+    return {
+      selectedIndex: 0,
+      tabs: []
+    }
+  },
+  created() {
+    this.tabs = this.$children
+  },
+  mounted() {
+    this.selectTab(0)
+  },
+  methods: {
+    selectTab(i) {
+      this.selectedIndex = i;
+      // loop over all the tabs
+      this.tabs.forEach((tab, index) => {
+        tab.isActive = (index === i);
+      });
+    }
+  }
 });
+
+Vue.component('tab-item', {
+  props: ['title'],
+  template: `
+    <div
+     class='tab-content'
+     :id="'tabpanel-'+ tabIndex"
+     role="tabpanel"
+     v-show='isActive'
+     :aria-hidden="!isActive"
+     tabindex="0"
+     :aria-labelledby="'tab-' + tabIndex"
+   >
+      <slot></slot>
+    </div>
+  `,
+  data: function () {
+    return {
+      isActive: true
+    }
+  },
+  computed: {
+    tabIndex() {
+      // Find the index of the parent tab to associate with aria-labelledby
+      return this.$parent.tabs.indexOf(this);
+    }
+  }
+});
+
 
