@@ -51,6 +51,7 @@ Vue.component('tabs', {
     this.selectTab(0)
   },
   methods: {
+
     selectTab(i) {
       this.currentIndex = i;
       // loop over all the tabs
@@ -66,11 +67,17 @@ Vue.component('tabs', {
               event.preventDefault();
               this.currentIndex = (index + 1) % tabsCount;
               this.$refs.tabButtons[this.currentIndex].focus();
+               
+              this.selectTab(this.currentIndex);
+
               break;
            case 'ArrowLeft':
               event.preventDefault();
               this.currentIndex = (index - 1 + tabsCount) % tabsCount;
               this.$refs.tabButtons[this.currentIndex].focus();
+
+              this.selectTab(this.currentIndex);
+
               break;
            case 'Home':
               event.preventDefault();
@@ -106,6 +113,7 @@ Vue.component('tab-item', {
      :aria-labelledby="'tab-' + tabIndex"
      :aria-hidden="isActive === true ? 'false' : 'true'"
      :tabindex="isActive === true ? 0 : -1"
+     ref="tabPanels"
    >
       <slot></slot>
     </div>
