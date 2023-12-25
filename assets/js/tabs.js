@@ -43,10 +43,10 @@ Vue.component('tabs', {
       >
         <div v-if="currentIndex === index">
           {{ tab.content }}
-          <slot></slot>
         </div>
       </div>
 
+          <slot></slot>
     </div>
   </div>
   `,
@@ -54,17 +54,17 @@ Vue.component('tabs', {
     return {
       currentIndex: 0,      
       tabs: [
-        { title: 'Tab 1', content: 'Content for Tab 1' },
-        { title: 'Tab 2', content: 'Content for Tab 2' },
-        { title: 'Tab 3', content: 'Content for Tab 3' }
+
       ],
       tabIds:[],
     }
   },
   created() {
-    //this.tabs = this.$children;
-    this.generateTabIds();
+    this.tabs = this.$children;
   },
+   mounted(){
+    this.generateTabIds();
+   },
    methods: {
       changeTab(index) {
          this.currentIndex = index;
