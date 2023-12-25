@@ -17,13 +17,14 @@ Vue.component('tabs', {
       <button
         type="button"
         v-for='(tab, index) in tabs'
+        :id="'tab-' + index"
         @click='selectTab(index)'
         role="tab"
         :class='{"tab__selected": (index == selectedIndex)}'
         :aria-selected='index === selectedIndex ? "true" : "false"'
         :aria-controls="'tabpanel-' + index"
+        :tabindex="selectedIndex === index ? 0 : -1"
         class="rm-btn-styles tab-header"
-        :id="'tab-' + index"
       >
         {{ tab.title }}
       </button>
@@ -33,7 +34,8 @@ Vue.component('tabs', {
   data: function () {
     return {
       selectedIndex: 0,
-      tabs: []
+      tabs: [],
+      tabIds: []
     }
   },
   created() {
@@ -62,7 +64,7 @@ Vue.component('tab-item', {
      role="tabpanel"
      v-show='isActive'
      :aria-hidden="!isActive"
-     tabindex="0"
+     :tabindex="isActive === true ? 0 : -1"
      :aria-labelledby="'tab-' + tabIndex"
    >
       <slot></slot>
@@ -70,7 +72,7 @@ Vue.component('tab-item', {
   `,
   data: function () {
     return {
-      isActive: true
+      isActive: true,
     }
   },
   computed: {
