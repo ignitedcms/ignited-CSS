@@ -46,7 +46,7 @@ Vue.component('modal', {
                 type="button"
                 aria-label="Close"
                 class="rm-btn-styles close m-t"
-                @click="show = false; arr='true'"
+                @click="show = false; arr='false'"
               >
                 &times;
               </button>
