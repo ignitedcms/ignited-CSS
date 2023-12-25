@@ -10,10 +10,10 @@
       <button
         v-for="(tab, index) in tabs"
         :key="index"
-        :id="`tab-${index}`"
+        :id="tabIds[index].tabId"
         :role="'tab'"
         :aria-selected="currentIndex === index"
-        :aria-controls="`panel-${index}`"
+        :aria-controls="tabIds[index].panelId"
         :tabindex="currentIndex === index ? 0 : -1"
         @click="changeTab(index)"
         @keydown="onTabKeyDown($event, index)"
@@ -26,9 +26,9 @@
       <div
         v-for="(tab, index) in tabs"
         :key="index"
-        :id="`panel-${index}`"
+        :id="tabIds[index].panelId"
         :role="'tabpanel'"
-        :aria-labelledby="`tab-${index}`"
+        :aria-labelledby="tabIds[index].tabId"
         :aria-hidden="currentIndex !== index"
         :tabindex="currentIndex === index ? 0 : -1"
         ref="tabPanels"
@@ -51,8 +51,12 @@
             { title: 'Tab 2', content: 'Content for Tab 2' },
             { title: 'Tab 3', content: 'Content for Tab 3' }
             // Add more tabs as needed
-          ]
+          ],
+          tabIds: [] // Store generated IDs
         };
+      },
+      mounted() {
+        this.generateTabIds();
       },
       methods: {
         changeTab(index) {
@@ -93,6 +97,12 @@
             default:
               break;
           }
+        },
+        generateTabIds() {
+          this.tabIds = this.tabs.map((_, index) => ({
+            tabId: `tab-${Math.random().toString(36).substr(2, 9)}`,
+            panelId: `panel-${Math.random().toString(36).substr(2, 9)}`
+          }));
         }
       }
     });
