@@ -42,7 +42,7 @@ Vue.component('tabs', {
         ref="tabPanels"
       >
         <div v-if="currentIndex === index">
-          {{ tab.content }}
+
         </div>
       </div>
 
@@ -62,9 +62,10 @@ Vue.component('tabs', {
   created() {
     this.tabs = this.$children;
   },
-   mounted(){
+  mounted(){
+    //must go here
     this.generateTabIds();
-   },
+  },
    methods: {
       changeTab(index) {
          this.currentIndex = index;
@@ -107,26 +108,26 @@ Vue.component('tabs', {
          }
       },
       generateTabIds() {
-          this.tabIds = this.tabs.map((_, index) => ({
+         this.tabIds = this.tabs.map((_, index) => ({
             tabId: `tab-${Math.random().toString(36).substr(2, 9)}`,
             panelId: `panel-${Math.random().toString(36).substr(2, 9)}`
-          }));
+         }));
       }
 
    }
 });
 
 Vue.component('tab-item', {
-  props: ['title'],
-  template: `
+   props: ['title','content'],
+   template: `
     <div>
       <slot></slot>
     </div>
   `,
-  data: function () {
-    return {
+   data: function () {
+      return {
 
-    }
-  },
+      }
+   },
 });
 
