@@ -63,7 +63,7 @@ Vue.component('tab-item', {
      :id="'tabpanel-'+ tabIndex"
      role="tabpanel"
      v-show='isActive'
-     :aria-hidden="!isActive"
+     :aria-hidden="isActive === true ? 'false' : 'true'"
      :tabindex="isActive === true ? 0 : -1"
      :aria-labelledby="'tab-' + tabIndex"
    >
