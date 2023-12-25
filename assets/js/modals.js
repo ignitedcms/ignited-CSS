@@ -21,7 +21,7 @@ Vue.component('modal', {
       <button
         type="button"
         class="btn btn-white "
-        @click="show=true; arr='false'"
+        @click="show=true; arr='true'"
         v-click-outside="away"
       >
         {{buttonTitle}}
