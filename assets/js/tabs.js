@@ -21,10 +21,10 @@ Vue.component('tabs', {
         :id="'tab-' + index"
         @click='selectTab(index)'
         role="tab"
-        :class='{"tab__selected": (index == selectedIndex)}'
-        :aria-selected='index === selectedIndex ? "true" : "false"'
+        :class='{"tab__selected": (index == currentIndex)}'
+        :aria-selected='index === currentIndex ? "true" : "false"'
         :aria-controls="'tabpanel-' + index"
-        :tabindex="selectedIndex === index ? 0 : -1"
+        :tabindex="currentIndex === index ? 0 : -1"
         class="rm-btn-styles tab-header"
       >
         {{ tab.title }}
@@ -37,7 +37,7 @@ Vue.component('tabs', {
   `,
   data: function () {
     return {
-      selectedIndex: 0,
+      currentIndex: 0,
       tabs: [],
       tabIds: []
     }
@@ -50,7 +50,7 @@ Vue.component('tabs', {
   },
   methods: {
     selectTab(i) {
-      this.selectedIndex = i;
+      this.currentIndex = i;
       // loop over all the tabs
       this.tabs.forEach((tab, index) => {
         tab.isActive = (index === i);
