@@ -19,6 +19,7 @@ Vue.component('drawer', {
         type="submit"
         aria-haspopup="dialog"
         :aria-expanded="arr"
+        :aria-controls="'drawer-' + uniqueId"
         class="btn btn-white m-b-2"
         @click="toggle"
         v-click-outside="away"
@@ -28,6 +29,7 @@ Vue.component('drawer', {
       </button>
       <div 
         v-if="show" 
+        :id="'drawer-' + uniqueId"
         class="drawer fade-in b-l"
         role="dialog"
         @click.stop 
@@ -41,7 +43,8 @@ Vue.component('drawer', {
   data() {
     return {
       show: false,
-      arr: 'false'
+      arr: 'false',
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
     };
   },
   methods: {
