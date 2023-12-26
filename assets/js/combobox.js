@@ -59,6 +59,7 @@ Vue.component('combobox', {
                aria-autocomplete="list"
                role="dialog"
                :aria-expanded="arr"
+               aria-activedescendant
                autocomplete="off"
                ref="start"
                @keydown.tab.prevent
@@ -77,6 +78,7 @@ Vue.component('combobox', {
                @mouseover="setHighlighted(index)"
                @click="onClick(item.val)"
                :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
+               v-bind="getAriaSelected(index === highlightedIndex)"
              >
                {{ item.val }}
              </div>
@@ -126,7 +128,13 @@ Vue.component('combobox', {
     },
   },
   methods: {
-
+     getAriaSelected(index) {
+        if (index ) {
+           return { 'aria-selected': 'true' };
+        } else {
+           return {}; // Empty object means no aria-selected attribute will be applied
+        }
+     },
     updateInput(newValue)
      {
       this.$emit('input', newValue);
