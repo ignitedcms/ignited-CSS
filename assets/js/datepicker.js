@@ -31,6 +31,9 @@ Vue.component('datepicker', {
       <button
         class="pos-rel form-control left hand"
         style="height:40px;"
+        aria-haspopup="dialog"
+        :aria-expanded="arr"
+        :aria-controls="'datepicker-'+ uniqueId"
         :name="name"
         :value="value"
         @input="updateDate($event.target.value)"
@@ -50,9 +53,8 @@ Vue.component('datepicker', {
 
         <div
           v-show="show"
+          :id="'datepicker-'+ uniqueId"
           role="dialog"
-          aria-haspopup="dialog"
-          :aria-expanded="arr"
           style="position:absolute; top:35px; left:0;"
           class="date-flyout drop-shadow fade-in"
           tabindex="-1"
@@ -135,7 +137,9 @@ Vue.component('datepicker', {
       focusedRow: -1,
       focusedCell: -1,
       enableArrowkeys: false,
-      arr: 'false'
+      arr: 'false',
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
+
     };
   },
   computed: {
