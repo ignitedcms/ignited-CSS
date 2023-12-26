@@ -17,7 +17,7 @@ Vue.component('drop-down', {
   ],
   template: `
     <button
-      :id="uniqueId"  
+      :id="'dropdown-' + uniqueId"  
       type="button"
       aria-haspopup="menu"
       :aria-expanded="arr"
@@ -30,7 +30,7 @@ Vue.component('drop-down', {
       <div 
          v-if="show"
          role="menu"
-         :aria-labelledby="uniqueId"
+         :aria-labelledby="'dropdown-' + uniqueId"
 
          class="dropdown br drop-shadow fade-in"
          @click.stop
