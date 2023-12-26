@@ -20,6 +20,9 @@ Vue.component('modal', {
     <div @keyup.escape="escapePressed()">
       <button
         type="button"
+        aria-haspopup="dialog"
+        :aria-expanded="arr"
+        :aria-controls="'modal-' + uniqueId"
         class="btn btn-white "
         @click="show=true; arr='true'"
         v-click-outside="away"
@@ -29,13 +32,12 @@ Vue.component('modal', {
 
       <div
         class="modal"
-        aria-haspopup="dialog"
-        :aria-expanded="arr"
         v-show="show"
         @keyup.escape="escapePressed"
       >
         <div 
           class="modal-content fade-in" 
+          :id="'modal-' + uniqueId"
           role="dialog"
           @click.stop
         >
@@ -65,7 +67,9 @@ Vue.component('modal', {
     return {
       message: 'Hello',
       show: false,
-      arr: 'false'
+      arr: 'false',
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
+
     };
   },
   methods: {
