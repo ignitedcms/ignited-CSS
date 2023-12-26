@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light weight framework</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="assets/js/vue2.js"></script>
+
+</head>
+
+<body class="full-screen bg-light-grey">
+    <div class="container" id="app">
+       <div class="gap"></div>
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center">Carousel</h3>
+                <div class="text-muted text-center">
+                   A lightweight carousel with mobile
+                   touch gesture support
+                </div>
+            </div>
+        </div>
+        
+        <!--Important cannot go inside flex row   -->
+        <div class="small-container pos-rel">
+           <div class="siema">
+              <div class="panel m-5 br drop-shadow v-a h-a" 
+                 style="min-height:380px;">
+                 <h4>1</h4>
+              </div>
+              <div class="panel m-5 br drop-shadow v-a h-a" 
+                 style="min-height:380px;">
+                 <h4>2</h4>
+              </div>
+              <div class="panel m-5 br drop-shadow v-a h-a" 
+                 style="min-height:380px;">
+                 <h4>3</h4>
+              </div>
+              <div class="panel m-5 br drop-shadow v-a h-a" 
+                 style="min-height:380px;">
+                 <h4>4</h4>
+              </div>
+           </div>
+
+           <button 
+                class="prev br-full bg-white b v-a h-a grey-hover hide-tablet" 
+                style="position:absolute; top:200px; 
+                width:40px; height:40px; left:-20px;"
+           >
+             <i data-feather="chevron-left"></i>    
+            </button>
+           <button 
+             class="next br-full bg-white b v-a h-a grey-hover hide-tablet" 
+             style="position:absolute; top:200px; right:-20px;
+             width:40px; height:40px; "
+           >
+              <i data-feather="chevron-right"></i>    
+            </button>
+        </div>
+        
+
+        
+    </div>
+
+    <script src="assets/js/feather.js"></script>
+    <script src="assets/js/siema.min.js"></script>
+    <script>
+        /*
+        |---------------------------------------------------------------
+        | Base entry for vue app
+        |---------------------------------------------------------------
+        |
+        */
+
+        var app = new Vue({
+            el: '#app',
+        })
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+    <script>
+       const mySiema = new Siema();
+       document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+       document.querySelector('.next').addEventListener('click', () => mySiema.next());
+    </script>
+</body>
+
+</html>
+
