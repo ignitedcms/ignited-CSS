@@ -44,6 +44,7 @@ Vue.component('combobox', {
         {{ selectedItem }}
         
          <div v-if="show" 
+            :id="name"
            class="combobox-container fade-in" 
            style="position:absolute; top:40px; left:0; z-index:2;"
            @click.stop
