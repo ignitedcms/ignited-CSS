@@ -12,7 +12,7 @@
 */
 
 Vue.component('combobox', {
-  props: ['value' , 'name'],
+  props: ['value', 'name'],
   template: `
     <div @keyup.escape="escapePressed">
      <label  :for="name">{{name}}</label>
@@ -30,6 +30,7 @@ Vue.component('combobox', {
         role="combobox"
         aria-haspopup="dialog"
         :aria-expanded="arr"
+        :aria-controls="name"
         ref="button"
         class="pos-rel form-control hand left combo-btn-container"
         :name="name"
@@ -55,7 +56,7 @@ Vue.component('combobox', {
                class="rm-input-styles"
                :name="name"
                aria-autocomplete="list"
-               role="combobox"
+               role="dialog"
                :aria-expanded="arr"
                autocomplete="off"
                ref="start"
