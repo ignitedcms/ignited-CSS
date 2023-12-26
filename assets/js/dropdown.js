@@ -17,8 +17,9 @@ Vue.component('drop-down', {
   ],
   template: `
     <button
+      :id="uniqueId"  
       type="button"
-      aria-haspopup="dialog"
+      aria-haspopup="menu"
       :aria-expanded="arr"
       class="btn btn-white  pos-rel"
       @keyup.escape="escapePressed()"
@@ -28,6 +29,9 @@ Vue.component('drop-down', {
       {{buttonTitle}}
       <div 
          v-if="show"
+         role="menu"
+         :aria-labelledby="uniqueId"
+
          class="dropdown br drop-shadow fade-in"
          @click.stop
       >
@@ -41,6 +45,7 @@ Vue.component('drop-down', {
     return {
       show: false,
       arr: 'false',
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
     };
   },
   methods: {
