@@ -19,12 +19,14 @@ Vue.component('tooltip', {
       class="btn rm-btn-styles tooltip-rel"
       aria-haspopup="dialog"
       :aria-expanded="arr"
+      :aria-controls="'popover-' + uniqueId"
       @keyup.escape="escapePressed()"
       @click="tmp"
       v-click-outside="away"
     >
       <span class="tooltip-highlight"> {{link}} </span>
       <div
+        :id="'popover-' + uniqueId"
         class="tooltip fade-in"
         role="dialog"
         v-if="show"
@@ -42,6 +44,8 @@ Vue.component('tooltip', {
       message: 'Hello',
       show: false,
       arr: 'false',
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
+
     };
   },
   methods: {
