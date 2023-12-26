@@ -38,6 +38,7 @@ Vue.component('datepicker', {
         :value="value"
         @input="updateDate($event.target.value)"
         @click="open"
+        @click.prevent
       >
         <span>
           <i data-feather='calendar' class='icon-inside hand'></i>
@@ -69,11 +70,13 @@ Vue.component('datepicker', {
                 @click="showPreviousMonth"
                 @focus="focusPreviousMonth"
                 tabindex="0"
+                @click.prevent
               >
                 <i data-feather="chevron-left"></i>
               </button>
               <button
                 class="year-box rm-btn-styles"
+                @click.prevent
               >
                 {{ getMonthName(currentMonth) }} {{ currentYear }}
               </button>
@@ -83,6 +86,7 @@ Vue.component('datepicker', {
                 @click="showNextMonth"
                 @focus="focusNextMonth"
                 tabindex="0"
+                @click.prevent
               >
                 <i data-feather="chevron-right"></i>
               </button>
@@ -102,6 +106,7 @@ Vue.component('datepicker', {
                 style="width:100%;"
                 @focus="calendarFocused"
                 ref="datepicker"
+                @click.prevent
               >
                 <div v-for="(row, rowIndex) in calendar" :key="rowIndex">
                   <button
@@ -115,6 +120,7 @@ Vue.component('datepicker', {
                     }"
                     tabindex="-1"
                     @focus="setFocus(rowIndex, cellIndex)"
+                    @click.prevent
                   >
                     {{ cell.date }}
                   </button>
