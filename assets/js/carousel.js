@@ -26,7 +26,7 @@ Vue.component('carousel', {
   `,
   data() {
     return {
-      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
+      uniqueId: 'splide-' + Math.random().toString(36).substring(2) // Generate a unique ID
     }
   },
   mounted() {
