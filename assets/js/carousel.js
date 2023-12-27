@@ -13,7 +13,7 @@
 Vue.component('carousel', {
   template: `
     <div>
-       <div class="splide" aria-labelledby="carousel-heading">
+       <div :id="uniqueId" class="splide" aria-labelledby="carousel-heading">
 
           <div class="splide__track">
              <ul class="splide__list">
@@ -26,13 +26,16 @@ Vue.component('carousel', {
   `,
   data() {
     return {
-      // Nothing here
+      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
     }
   },
   mounted() {
-    new Splide('.splide', {
+    var t = this.uniqueId;
+    t = '#'+t.toString();
+
+    new Splide(t, {
        arrows: true,
-       pagination:false
+       pagination:true
     }).mount();
   }
 });
@@ -51,14 +54,8 @@ Vue.component('carousel-item', {
   `,
   data() {
     return {
-      isActive: false,
-      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
+
     };
-  },
-  methods: {
-    toggle() {
-      this.isActive = !this.isActive;
-    },
   },
 });
 
