@@ -15,6 +15,14 @@
     <!-- vue 2 -->
     <script src="assets/js/vue2.js"></script>
 
+    <style>
+      .splide__pagination__page.is-active {
+          background: #333;
+          transform: scale(1.4);
+          z-index: 1;
+      }
+    </style>
+
 </head>
 
 <body class="full-screen bg-light-grey">
@@ -30,11 +38,10 @@
             </div>
         </div>
         
-        <!--Important cannot go inside flex row   -->
         <div class="medium-container pos-rel">
 
            <div class="row">
-              <div class="col ">
+              <div class="col">
                  <div class="splide" aria-labelledby="carousel-heading">
 
                     <div class="splide__track">
@@ -99,7 +106,10 @@
         });
     </script>
     <script>
-       new Splide( '.splide' ).mount();
+       new Splide('.splide', {
+          arrows: true,
+          pagination:false
+       }).mount();
     </script>
     
 </body>
