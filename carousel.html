@@ -41,37 +41,14 @@
         <div class="medium-container pos-rel">
 
 
-           <div class="splide" aria-labelledby="carousel-heading">
-
-              <div class="splide__track">
-                 <ul class="splide__list">
-                    <li class="splide__slide">
-                       <div class="panel m-5 br drop-shadow v-a h-a" 
-                            style="min-height:380px;">
-                          <h4>1</h4>
-                       </div>           
-                    </li>
-                    <li class="splide__slide">
-                       <div class="panel m-5 br drop-shadow v-a h-a" 
-                            style="min-height:380px;">
-                          <h4>2</h4>
-                       </div>           
-                    </li>
-                    <li class="splide__slide">
-                       <div class="panel m-5 br drop-shadow v-a h-a" 
-                            style="min-height:380px;">
-                          <h4>3</h4>
-                       </div>           
-                    </li>
-                    <li class="splide__slide">
-                       <div class="panel m-5 br drop-shadow v-a h-a" 
-                            style="min-height:380px;">
-                          <h4>4</h4>
-                       </div>           
-                    </li>
-                 </ul>
-              </div>
-           </div>             
+           <carousel>               
+              <carousel-item>               
+                 foo
+              </carousel-item>               
+              <carousel-item>               
+                 bar
+              </carousel-item>               
+           </carousel>               
 
 
 
@@ -87,6 +64,7 @@
 
     <script src="assets/js/feather.js"></script>
     <script src="assets/js/splide.min.js"></script>
+    <script src="assets/js/carousel.js"></script>
     <script>
         /*
         |---------------------------------------------------------------
@@ -104,12 +82,7 @@
             class: "font-primary",
         });
     </script>
-    <script>
-       new Splide('.splide', {
-          arrows: true,
-          pagination:false
-       }).mount();
-    </script>
+    
     
 </body>
 
