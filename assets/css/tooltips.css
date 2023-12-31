@@ -65,7 +65,7 @@
 }
 
 .tooltip-highlight {
-  border-bottom: 2px dashed #0053ff;
+  border-bottom: 2px solid #292F3E;
   text-decoration-style: dashed;
   padding-left: 5px;
   padding-right: 5px;
