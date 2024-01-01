@@ -25,34 +25,22 @@
                 <h3>Toasts</h3>
 
                 <div class="form-group">
-                    <button class="btn btn-white" v-on:click="test()">show another toast</button>
+                    <button class="btn btn-white" @click="showToast">show another toast</button>
                 </div>
 
             </div>
         </div>
 
-    <div class="toasts">
-        
-        <toast time="4000">
-          <div class="p-2">
-            <strong class="text-black">
-               Scheduled meetup
-            </strong>
-             <p class="text-muted">Friday 2nd February, 2023 3:00pm</p>
-          </div>
-            
-        </toast>
-        
-        <toast time="5000">
-        <div class="p-2">
-           <strong class="text-black">
-              Meeting cancelled
-           </strong>
-           <p class="text-muted">Monday 9th October, 2023 8:00pm</p>
+        <div class="toasts">
+
+           <toast ref="toast">
+             <div class="p-2">
+                <div class="text-black">Success</div>
+                <div class="text-muted small">We are in business</div>
+             </div>
+           </toast>
+
         </div>
-        </toast>
-        
-    </div>
 
 
 
@@ -74,6 +62,11 @@
 
         var app = new Vue({
             el: '#app',
+           methods: {
+              showToast() {
+                 this.$refs.toast.showToast(2000);
+              }
+           }
 
         })
     </script>
