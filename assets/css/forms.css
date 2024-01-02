@@ -58,6 +58,16 @@
   border: 1px solid #2b6739;
 }
 
+.form-upload {
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  color: #666666;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #cccccc;
