@@ -27,29 +27,31 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
+                           <h4>Forgot password?</h4>
                            <label for="email">Email</label>
                            <div class="small text-muted">Enter a valid email address you can access</div>
                             <input type="text" class="form-control" placeholder="Email">
                         </div>
-                        <password value="foobar"> </password>
                         <div class="row v-a m-t">
-                            <button class="col btn btn-primary " type="submit">Login</button>
+                            <button @click="showToast" class="col btn btn-primary " type="submit">Send a reset link</button>
                         </div>
 
                     </div>
                 </div>
 
             </div>
-            <div class="v-a h-a m-t">
-                <div class="nothing m-t">
-                    <div class="text-muted text-center">
-                        <a href="">Go back</a>
-                    </div>
-                    <div class="text-muted text-center">
-                        <a href="">Forgot password?</a>
-                    </div>
-                </div>
-            </div>
+            
+        </div>
+        <div class="toasts">
+
+           <toast ref="toast">
+             <div class="p-2">
+                <div class="text-black">Email sent</div>
+                <div class="text-muted small">Please check your inbox for
+                further information</div>
+             </div>
+           </toast>
+
         </div>
 
 
@@ -62,7 +64,7 @@
 
     <!-- Click out must go before all other scripts -->
     <script src="assets/js/click-outside.js"></script>
-    <script src="assets/js/password.js"></script>
+    <script src="assets/js/toasts.js"></script>
 
     <script>
         /*
@@ -74,6 +76,12 @@
             */
         var app = new Vue({
             el: '#app',
+           methods: {
+              showToast() {
+                 this.$refs.toast.showToast(6000);
+              }
+           }
+
         })
     </script>
 
@@ -86,3 +94,4 @@
 </body>
 
 </html>
+
