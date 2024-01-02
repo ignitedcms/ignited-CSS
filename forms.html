@@ -36,13 +36,12 @@
          <div class="col">
             <div class="form-group">
 
+               <file-upload name="foo"> </file-upload>
 
-            <!--id must match for label-->
+            </div>
+            <div class="form-group">
 
-            <input type="file" name="test" id="test" @change="handleFileInputChange" hidden />
-               <label for="test" class="form-upload">Choose File</label>
-               <span >{{ fileName }}</span>
-
+               <file-upload name="bar"> </file-upload>
 
             </div>
          </div>
@@ -52,6 +51,7 @@
    </div>
 
     <script src="assets/js/feather.js"></script>
+    <script src="assets/js/file-upload.js"></script>
     <script>
        /*
        |---------------------------------------------------------------
@@ -62,14 +62,6 @@
 
        var app = new Vue({
           el: '#app',
-          data:{
-             fileName: ''
-          },
-          methods:{
-             handleFileInputChange(event) {
-                this.fileName = event.target.files[0].name; // Update fileName with the selected file name
-             }
-          }
        })
     </script>
     <script>
