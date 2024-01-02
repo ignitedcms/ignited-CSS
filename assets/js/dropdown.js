@@ -35,8 +35,8 @@ Vue.component('drop-down', {
         @keydown.down.prevent="navigate('down')"
         @keydown.up.prevent="navigate('up')"
         @keydown.enter.prevent="selectItem"
-        @click.stop
-        ref="datepicker"
+        @keyup.esc="escapePressed"
+        ref="drop"
       >
         <slot></slot>
       </div>
@@ -56,7 +56,7 @@ Vue.component('drop-down', {
       this.arr = this.show ? 'true' : 'false';
 
       this.$nextTick(() => {
-        this.$refs.datepicker.focus();
+        this.$refs.drop.focus();
       });
     },
     away() {
