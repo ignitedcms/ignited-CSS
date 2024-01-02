@@ -20,9 +20,10 @@ Vue.component('file-upload', {
        :name="name" 
        :id="name" 
        @change="handleFileInputChange" 
-       hidden 
+       tabindex="0"
+       class="upload-hide"
       />
-      <label :for="name" class="form-upload">Choose File</label>
+      <label :for="name" class="form-upload" >Choose File</label>
       <span >{{ fileName }}</span>
    </div>
 
