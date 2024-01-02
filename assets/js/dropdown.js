@@ -13,7 +13,7 @@
 Vue.component('drop-down', {
   props: ['buttonTitle'],
   template: `
-    <div>
+    <div class="pos-rel">
       <button
         :id="'dropdown-' + uniqueId"
         type="button"
