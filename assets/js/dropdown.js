@@ -13,32 +13,35 @@
 Vue.component('drop-down', {
   props: ['buttonTitle'],
   template: `
-    <button
-      :id="'dropdown-' + uniqueId"
-      type="button"
-      aria-haspopup="menu"
-      :aria-expanded="arr"
-      class="btn btn-white pos-rel"
-      @keyup.esc="escapePressed"
-      @click="toggle"
-      v-click-outside="away"
-      @keydown.down.prevent="navigate('down')"
-      @keydown.up.prevent="navigate('up')"
-      @keydown.enter.prevent="selectItem"
-    >
-      {{ buttonTitle }}
+    <div class="pos-rel">
+     {{selectedIndex}}
+      <button
+        :id="'dropdown-' + uniqueId"
+        type="button"
+        aria-haspopup="menu"
+        :aria-expanded="arr"
+        class="btn btn-white"
+        @keyup.esc="escapePressed"
+        @click="toggle"
+        v-click-outside="away"
+        @keydown.enter.prevent="selectItem"
+        @keydown.arrow-down.prevent="handleArrowNavigation"
+        @keydown.arrow-up.prevent="handleArrowNavigation"
+      >
+        {{ buttonTitle }}
+      </button>
       <div
         v-if="show"
         role="menu"
         :aria-labelledby="'dropdown-' + uniqueId"
-        class="dropdown br drop-shadow fade-in"
+        class="pos-abs dropdown br drop-shadow fade-in"
         @click.stop
       >
         <focus-trap :active="show">
           <slot></slot>
         </focus-trap>
       </div>
-    </button>
+    </div>
   `,
   data() {
     return {
@@ -63,17 +66,6 @@ Vue.component('drop-down', {
       this.arr = 'false';
       this.selectedIndex = -1; // Reset selected index on escape
     },
-    navigate(direction) {
-      if (this.show) {
-        const items = this.$el.querySelectorAll('.dropdown-item');
-        if (direction === 'down') {
-          this.selectedIndex = (this.selectedIndex + 1) % items.length;
-        } else if (direction === 'up') {
-          this.selectedIndex = this.selectedIndex <= 0 ? items.length - 1 : this.selectedIndex - 1;
-        }
-        items[this.selectedIndex].focus(); // Set focus on the selected item
-      }
-    },
     selectItem() {
       if (this.show && this.selectedIndex !== -1) {
         const items = this.$el.querySelectorAll('.dropdown-item');
@@ -81,19 +73,30 @@ Vue.component('drop-down', {
         // Perform action based on the selected item (e.g., emit an event)
         this.$emit('item-selected', selectedItem.textContent);
         this.toggle(); // Close dropdown after selection
+      } else {
+        this.toggle();
       }
-       else{
-          this.toggle();
-       }
+    },
+    handleArrowNavigation(event) {
+      const items = this.$el.querySelectorAll('.dropdown-item');
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        this.selectedIndex = (this.selectedIndex + 1) % items.length;
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        this.selectedIndex = (this.selectedIndex - 1 + items.length) % items.length;
+      }
     },
   },
 });
 
+
 Vue.component('item', {
-  props: ['title', 'url'],
+  props: ['title', 'url','index', 'selectedIndex'],
   template: `
     <div
-      class="row"
+      class="rows"
+       :class="{ 'selected': index === selectedIndex }"
       tabindex="-1"
       role="menuitem"
       class="dropdown-item"
