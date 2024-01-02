@@ -1,3 +1,28 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #0053ff;
+}
 
+.tooltip .tooltiptext {
+  display: none;
+  width: 120px;
+  background-color: #292F3E;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 4px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  display: block;
+}
 
 /*# sourceMappingURL=tooltips.css.map */
