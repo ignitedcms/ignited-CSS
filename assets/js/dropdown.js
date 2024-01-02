@@ -10,38 +10,49 @@
 | @since: 1.0
 |
 */
+/*
+|---------------------------------------------------------------
+| Dropdown component
+|---------------------------------------------------------------
+|
+|
+| @author: IgnitedCMS
+| @license: MIT
+| @version: 1.0
+| @since: 1.0
+|
+*/
 Vue.component('drop-down', {
   props: ['buttonTitle'],
   template: `
-    <div class="pos-rel">
-     {{selectedIndex}}
-      <button
-        :id="'dropdown-' + uniqueId"
-        type="button"
-        aria-haspopup="menu"
-        :aria-expanded="arr"
-        class="btn btn-white"
-        @keyup.esc="escapePressed"
-        @click="toggle"
-        v-click-outside="away"
-        @keydown.enter.prevent="selectItem"
-        @keydown.arrow-down.prevent="handleArrowNavigation"
-        @keydown.arrow-up.prevent="handleArrowNavigation"
-      >
-        {{ buttonTitle }}
-      </button>
+   <div>
+    <button
+      :id="'dropdown-' + uniqueId"
+      type="button"
+      aria-haspopup="menu"
+      :aria-expanded="arr"
+      class="btn btn-white pos-rel"
+      @keyup.esc="escapePressed"
+      @click="toggle"
+      v-click-outside="away"
+    >
+      {{ buttonTitle }}
+      
+    </button>
       <div
         v-if="show"
         role="menu"
         :aria-labelledby="'dropdown-' + uniqueId"
         class="pos-abs dropdown br drop-shadow fade-in"
+      @keydown.down.prevent="navigate('down')"
+      @keydown.up.prevent="navigate('up')"
+      @keydown.enter.prevent="selectItem"
         @click.stop
       >
-        <focus-trap :active="show">
           <slot></slot>
-        </focus-trap>
       </div>
-    </div>
+
+   </div>
   `,
   data() {
     return {
@@ -66,6 +77,23 @@ Vue.component('drop-down', {
       this.arr = 'false';
       this.selectedIndex = -1; // Reset selected index on escape
     },
+     navigate(direction) {
+        console.log('pres');
+  if (this.show) {
+    const items = this.$el.querySelectorAll('.dropdown-item');
+    console.log('Items:', items.length); // Check if items are being properly selected
+    if (direction === 'down') {
+      this.selectedIndex = (this.selectedIndex + 1) % items.length;
+    } else if (direction === 'up') {
+      this.selectedIndex = this.selectedIndex <= 0 ? items.length - 1 : this.selectedIndex - 1;
+    }
+    if (items.length > 0) {
+      console.log('Selected Index:', this.selectedIndex); // Check the selected index value
+      items[this.selectedIndex].focus(); // Set focus on the selected item if it exists
+    }
+  }
+},
+
     selectItem() {
       if (this.show && this.selectedIndex !== -1) {
         const items = this.$el.querySelectorAll('.dropdown-item');
@@ -73,30 +101,19 @@ Vue.component('drop-down', {
         // Perform action based on the selected item (e.g., emit an event)
         this.$emit('item-selected', selectedItem.textContent);
         this.toggle(); // Close dropdown after selection
-      } else {
-        this.toggle();
       }
-    },
-    handleArrowNavigation(event) {
-      const items = this.$el.querySelectorAll('.dropdown-item');
-      if (event.key === 'ArrowDown') {
-        event.preventDefault();
-        this.selectedIndex = (this.selectedIndex + 1) % items.length;
-      } else if (event.key === 'ArrowUp') {
-        event.preventDefault();
-        this.selectedIndex = (this.selectedIndex - 1 + items.length) % items.length;
-      }
+       else{
+          this.toggle();
+       }
     },
   },
 });
 
-
 Vue.component('item', {
-  props: ['title', 'url','index', 'selectedIndex'],
+  props: ['title', 'url'],
   template: `
     <div
-      class="rows"
-       :class="{ 'selected': index === selectedIndex }"
+      class="row"
       tabindex="-1"
       role="menuitem"
       class="dropdown-item"
@@ -106,4 +123,3 @@ Vue.component('item', {
     </div>
   `,
 });
-
