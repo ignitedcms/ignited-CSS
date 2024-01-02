@@ -69,19 +69,20 @@ Vue.component('drop-down', {
       this.arr = 'false';
       this.selectedIndex = -1; // Reset selected index on escape
     },
-    navigate(direction) {
-      if (this.show) {
-        const items = this.$el.querySelectorAll('.dropdown-item');
-        if (direction === 'down') {
-          this.selectedIndex = (this.selectedIndex + 1) % items.length;
-        } else if (direction === 'up') {
-          this.selectedIndex = this.selectedIndex <= 0 ? items.length - 1 : this.selectedIndex - 1;
-        }
-        if (items.length > 0) {
-          items[this.selectedIndex].focus(); // Set focus on the selected item if it exists
-        }
-      }
-    },
+     navigate(direction) {
+     if (this.show) {
+       const items = this.$el.querySelectorAll('.dropdown-item');
+       if (direction === 'down') {
+         this.selectedIndex = Math.min(this.selectedIndex + 1, items.length - 1);
+       } else if (direction === 'up') {
+         this.selectedIndex = Math.max(this.selectedIndex - 1, 0);
+       }
+       if (items.length > 0) {
+         items[this.selectedIndex].focus(); // Set focus on the selected item if it exists
+       }
+     }
+   },
+
     selectItem() {
       if (this.show && this.selectedIndex !== -1) {
         const items = this.$el.querySelectorAll('.dropdown-item');
