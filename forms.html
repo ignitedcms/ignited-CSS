@@ -35,13 +35,15 @@
       <div class="row">
          <div class="col">
             <div class="form-group">
-               <input type="file" id="actual-btn" hidden/>
 
-               <!-- our custom upload button -->
+
+            <!--id must match for label-->
+
+            <input type="file" id="actual-btn" @change="handleFileInputChange" hidden />
                <label for="actual-btn" class="form-upload">Choose File</label>
+               <span >{{ fileName }}</span>
 
-               <!-- name of file chosen -->
-               <span id="file-chosen">No file chosen</span>
+
             </div>
          </div>
       </div>
@@ -51,25 +53,24 @@
 
     <script src="assets/js/feather.js"></script>
     <script>
-        /*
-        |---------------------------------------------------------------
+       /*
+       |---------------------------------------------------------------
         | Base entry for vue app
         |---------------------------------------------------------------
         |
         */
 
-        var app = new Vue({
-            el: '#app',
-           mounted(){
-              const actualBtn = document.getElementById('actual-btn');
-
-              const fileChosen = document.getElementById('file-chosen');
-
-              actualBtn.addEventListener('change', function(){
-                 fileChosen.textContent = this.files[0].name
-              })
-           }
-        })
+       var app = new Vue({
+          el: '#app',
+          data:{
+             fileName: ''
+          },
+          methods:{
+             handleFileInputChange(event) {
+                this.fileName = event.target.files[0].name; // Update fileName with the selected file name
+             }
+          }
+       })
     </script>
     <script>
         feather.replace({
