@@ -16,7 +16,7 @@ Vue.component('popover', {
   template: `
     <button
       type="button"
-      class="btn rm-btn-styles tooltip-rel"
+      class="btn rm-btn-styles popover-rel"
       aria-haspopup="dialog"
       :aria-expanded="arr"
       :aria-controls="'popover-' + uniqueId"
