@@ -20,25 +20,20 @@
 </head>
 
 <body class="full-screen bg-light-grey">
-    <div class="container" id="app">
+   <div class="container" id="app">
       <div class="gap"></div>
-        <div class="row">
-            <div class="col">
-                <h3>Charts</h3>
-                <div>
-                   <canvas id="myChart"></canvas>
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
 
-<script>
-        var app = new Vue({
-            el: '#app',
-        })
-    </script>
+      <h3>Charts</h3>
+      <div style="height:500px;">
+         <canvas id="myChart"></canvas>
+      </div>
+   </div>
+
+ <script>
+    var app = new Vue({
+       el: '#app',
+    })
+ </script>
 
 <script>
   const ctx = document.getElementById('myChart');
@@ -46,6 +41,7 @@
   Chart.defaults.font.family = 'Plus Jakarta Sans';
   Chart.defaults.font.size = 14;
 
+  //Change from 'bar' to 'line' etc
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -59,6 +55,7 @@
       }]
     },
     options: {
+      responsive:true,
       scales: {
         y: {
           beginAtZero: true
