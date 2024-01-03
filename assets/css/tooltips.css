@@ -6,13 +6,13 @@
 
 .tooltip .tooltiptext {
   display: none;
-  width: 120px;
-  background-color: #292F3E;
-  color: #fff;
-  text-align: center;
+  width: 220px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 5px 9px 0px rgba(99, 99, 99, 0.29);
   font-size: 14px;
   border-radius: 5px;
-  padding: 4px;
+  padding: 9px;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
