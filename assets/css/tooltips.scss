@@ -16,14 +16,14 @@
   //text-align: center;
   font-size:14px;
   border-radius: $border-radius;
-  padding: 9px;
+  padding: 10px;
 
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
   bottom: 100%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -100px;
 }
 
 .tooltip:hover .tooltiptext {

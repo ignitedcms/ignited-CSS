@@ -12,13 +12,13 @@
   box-shadow: 2px 5px 9px 0px rgba(99, 99, 99, 0.29);
   font-size: 14px;
   border-radius: 5px;
-  padding: 9px;
+  padding: 10px;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
   bottom: 100%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -100px;
 }
 
 .tooltip:hover .tooltiptext {
