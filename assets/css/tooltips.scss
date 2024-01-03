@@ -3,12 +3,12 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted $link-color;
+  //border-bottom: 1px dotted $link-color;
 }
 
 .tooltip .tooltiptext {
   display:none;
-  width: 220px;
+  min-width: 180px;
   background-color: #fff;
   border:1px solid #ccc;
   box-shadow: $shadow;
@@ -21,7 +21,7 @@
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  bottom: 100%;
+  bottom: 120%;
   left: 50%;
   margin-left: -100px;
 }
