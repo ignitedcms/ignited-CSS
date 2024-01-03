@@ -31,7 +31,7 @@ Vue.component('drop-down', {
         tabindex="-1"
         role="menu"
         :aria-labelledby="'dropdown-' + uniqueId"
-        class="pos-abs dropdown br drop-shadow fade-in"
+        class="pos-abs dropdown br drop-shadow fade-in-bottom"
         @keydown.down.prevent="navigate('down')"
         @keydown.up.prevent="navigate('up')"
         @keydown.enter.prevent="selectItem"
