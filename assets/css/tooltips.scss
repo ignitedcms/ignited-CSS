@@ -23,7 +23,7 @@
   z-index: 1;
   bottom: 120%;
   left: 50%;
-  margin-left: -90px;
+  margin-left: calc(-180px / 2);
 }
 
 .tooltip:hover .tooltiptext {
