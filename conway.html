@@ -9,10 +9,10 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f0f0f0;
+      background-color: #292F3E;
     }
     canvas {
-      border: 1px solid #ccc;
+      //border: 1px solid #ccc;
     }
   </style>
 </head>
@@ -23,7 +23,7 @@
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
 
-    const cellSize = 25;
+    const cellSize = 15;
     const numRows = Math.floor(canvas.height / cellSize);
     const numCols = Math.floor(canvas.width / cellSize);
     let grid = createEmptyGrid();
@@ -36,9 +36,9 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let row = 0; row < numRows; row++) {
         for (let col = 0; col < numCols; col++) {
-          ctx.fillStyle = grid[row][col] ? '#292F3E' : 'white';
+          ctx.fillStyle = grid[row][col] ? 'white' : '#292F3E';
           ctx.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
-          ctx.strokeRect(col * cellSize, row * cellSize, cellSize, cellSize);
+          //ctx.strokeRect(col * cellSize, row * cellSize, cellSize, cellSize);
         }
       }
     }
