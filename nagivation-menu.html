@@ -28,15 +28,17 @@
         </div>
 
         <div>
-           <div class="left bg-white p">
-              <button @keyup.escape="escapePressed" @click="toggle" class="m-r text-black pos-rel 
+           <div class="left bg-white p pos-rel">
+              <button @keyup.escape="escapePressed" @click="toggle" class="m-r text-black  
                  grey-hover  br no-select rm-btn-styles" style="min-width:180px; padding:10px;" v-click-outside="away">
                  <span class="v-a">
                     Getting started
                     <i data-feather="chevron-down" class="m-l"></i>    
                  </span>
-                 <div v-show="open"  class="row pos-abs bg-white b br p-2 
-                    drop-shadow fade-in" style="top:50px; left:0; width:500px; min-height:300px;" 
+                 
+              </button>
+              <div v-show="open"  class="row pos-abs bg-white b br p-2 
+                    drop-shadow fade-in-bottom" style="top:60px; left:0; width:500px; min-height:300px;" 
                     @click.stop
                     >
                     <div class="col-6 no-margin bg-grey v-a h-a br">
@@ -73,8 +75,6 @@
                        </div>
                     </div>
                  </div>
-              </button>
-              
 
               <button 
                 class="pos-rel  rm-btn-styles  grey-hover br"
@@ -87,8 +87,11 @@
                  Components
                  <i data-feather="chevron-down" class="m-l"></i>    
               </span>
-               <div v-if="open2" @click.stop class="pos-abs b bg-white p-2 br drop-shadow" 
-                  style="top:50px; left:0; min-height:200px; width:600px; ">
+              </button>
+
+              
+               <div v-if="open2" @click.stop class="pos-abs b bg-white p-2 br drop-shadow fade-in-bottom" 
+                  style="top:60px; left:0; min-height:200px; width:600px; ">
                 <div class="row">
                    <div class="col-6 no-margin col br p grey-hover">
                       <div class="text-black">Alert Dialogue</div>
@@ -132,9 +135,6 @@
                    </div>
                 </div>
                </div>
-
-              </button>
-
               <div class="grey-hover p br">Documentation</div>
 
            </div>
