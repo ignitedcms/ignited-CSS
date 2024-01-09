@@ -48,7 +48,7 @@ Vue.component('combobox', {
         <div 
            v-if="show" 
            :id="name"
-           class="combobox-container fade-in" 
+           class="combobox-container fade-in-bottom" 
            style="position:absolute; top:75px; left:0; z-index:2;"
            @click.stop
          >
