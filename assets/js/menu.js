@@ -18,7 +18,7 @@ Vue.component('mega-menu', {
     'url'
   ],
   template: `
-    <div style="top:0; position:sticky; z-index:2;">
+    <div style="top:0; position:sticky; z-index:2;" class="hide-tablet">
       <div class="h-e v-a bg-white p-2 b-b" :aria-labelledby="title">
         <div class="">
           <a
