@@ -96,15 +96,15 @@ Vue.component('mobile-menu-items', {
 
       <div 
         v-if="children === 'yes'" 
-        class="p p-l-2 v-a bg-white b-b h-e no-select"
+        class="p-l-2 p-r-2 v-a bg-white b-b h-e no-select"
         @click="toggle" 
       >
         <div>
           {{title}}
         </div>
-        <h5>
+        <div>
           +
-        </h5>
+        </div>
       </div>
       <div 
         v-if="show" 
