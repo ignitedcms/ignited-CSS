@@ -1,71 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div class="container" id="app">
+         <div class="gap"></div>
+         <h3>Charts</h3>
+         <div style="height:500px;">
+            <canvas id="myChart"></canvas>
+         </div>
+      </div>
+      <script>
+         var app = new Vue({
+           el: '#app',
+         })
+      </script>
+      <script>
+         const ctx = document.getElementById('myChart');
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Light weight framework</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+         Chart.defaults.font.family = 'Plus Jakarta Sans';
+         Chart.defaults.font.size = 14;
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-  <!-- vue 2 -->
-  <script src="assets/js/vue2.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-</head>
-
-<body class="full-screen bg-light-grey">
-  <div class="container" id="app">
-    <div class="gap"></div>
-
-    <h3>Charts</h3>
-    <div style="height:500px;">
-      <canvas id="myChart"></canvas>
-    </div>
-  </div>
-
-  <script>
-    var app = new Vue({
-      el: '#app',
-    })
-  </script>
-
-  <script>
-    const ctx = document.getElementById('myChart');
-
-    Chart.defaults.font.family = 'Plus Jakarta Sans';
-    Chart.defaults.font.size = 14;
-
-    //Change from 'bar' to 'line' etc
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1,
-          borderColor: '#292F3E',
-          backgroundColor: '#292F3E',
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  </script>
-
-
-</body>
-
+         //Change from 'bar' to 'line' etc
+         new Chart(ctx, {
+           type: 'bar',
+           data: {
+             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+             datasets: [{
+               label: '# of Votes',
+               data: [12, 19, 3, 5, 2, 3],
+               borderWidth: 1,
+               borderColor: '#292F3E',
+               backgroundColor: '#292F3E',
+             }]
+           },
+           options: {
+             responsive: true,
+             scales: {
+               y: {
+                 beginAtZero: true
+               }
+             }
+           }
+         });
+      </script>
+   </body>
 </html>
