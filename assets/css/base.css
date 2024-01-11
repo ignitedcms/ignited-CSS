@@ -819,6 +819,18 @@ ol {
   justify-content: center;
 }
 
+.v-e {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.h-e {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .center,
 .right {
   align-items: center;
