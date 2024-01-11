@@ -1,72 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SortableJS with Vue.js 2 Example</title>
-    <!-- Include Vue.js 2 from CDN -->
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
-
-    <script src="assets/js/sortable.js"></script>
-</head>
-
-<body class="full-screen bg-light-grey">
-    <div id="app">
-        <div class="gap"></div>
-        <div class="container">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SortableJS with Vue.js 2 Example</title>
+      <!-- Include Vue.js 2 from CDN -->
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+      <script src="assets/js/sortable.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div id="app">
+         <div class="gap"></div>
+         <div class="container">
             <h3>Sortable</h3>
             <ul id="sortable-list">
-                <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
-                    {{ item.text }}
-                </li>
+               <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
+                  {{ item.text }}
+               </li>
             </ul>
             <div class="code m-t-3">
-                {{items}}
+               {{items}}
             </div>
-        </div>
-    </div>
-
-    <script src="assets/js/feather.js"></script>
-
-    <script>
-        feather.replace({
-            class: "font-primary",
-        });
-    </script>
-
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                items: [
-                    { id: 1, text: 'Item 1' },
-                    { id: 2, text: 'Item 2' },
-                    { id: 3, text: 'Item 3' },
-                    { id: 4, text: 'Item 4' },
-                    { id: 5, text: 'Item 5' }
-                ]
-            },
-            mounted() {
-                // Initialize SortableJS on the list
-                new Sortable(document.getElementById('sortable-list'), {
-                    animation: 150,
-                    onEnd: evt => {
-                        // Update the data array after sorting
-                        const movedItem = this.items.splice(evt.oldIndex, 1)[0];
-                        this.items.splice(evt.newIndex, 0, movedItem);
-                    }
-                });
-            }
-        });
-    </script>
-</body>
-
+         </div>
+      </div>
+      <script src="assets/js/feather.js"></script>
+      <script>
+         feather.replace({
+             class: "font-primary",
+         });
+      </script>
+      <script>
+         new Vue({
+             el: '#app',
+             data: {
+                 items: [
+                     { id: 1, text: 'Item 1' },
+                     { id: 2, text: 'Item 2' },
+                     { id: 3, text: 'Item 3' },
+                     { id: 4, text: 'Item 4' },
+                     { id: 5, text: 'Item 5' }
+                 ]
+             },
+             mounted() {
+                 // Initialize SortableJS on the list
+                 new Sortable(document.getElementById('sortable-list'), {
+                     animation: 150,
+                     onEnd: evt => {
+                         // Update the data array after sorting
+                         const movedItem = this.items.splice(evt.oldIndex, 1)[0];
+                         this.items.splice(evt.newIndex, 0, movedItem);
+                     }
+                 });
+             }
+         });
+      </script>
+   </body>
 </html>

@@ -1,142 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Light weight framework</title>
-   <link rel="stylesheet" href="assets/css/main.css">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-   <!-- vue 2 -->
-   <script src="assets/js/vue2.js"></script>
-
-</head>
-
-<body class="full-screen bg-light-grey">
-   <div id="app">
-      <mega-menu title="Login" logo="assets/images/ignitedcms-logo.svg" url="http://www.google.com">
-         <menu-items title="Resources" children="yes">
-            <menu-item title="Documentation" icon="assets/images/book2.svg" url="s">
-            </menu-item>
-            <menu-item title="Laravel" icon="assets/images/book2.svg" url="d">
-            </menu-item>
-            <menu-item title="CSS" icon="assets/images/book2.svg" url="d">
-            </menu-item>
-            <menu-item title="IgnitedJS" icon="assets/images/book2.svg" url="d">
-            </menu-item>
-         </menu-items>
-         <menu-items title="Blog" url="http://www.google.com">
-         </menu-items>
-         <menu-items title="Contact" url="sss">
-         </menu-items>
-      </mega-menu>
-      <div class="row">
-
-      </div>
-
-      <div class="container">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div id="app">
+         <mega-menu title="Login" logo="assets/images/ignitedcms-logo.svg" url="http://www.google.com">
+            <menu-items title="Resources" children="yes">
+               <menu-item title="Documentation" icon="assets/images/book2.svg" url="s">
+               </menu-item>
+               <menu-item title="Laravel" icon="assets/images/book2.svg" url="d">
+               </menu-item>
+               <menu-item title="CSS" icon="assets/images/book2.svg" url="d">
+               </menu-item>
+               <menu-item title="IgnitedJS" icon="assets/images/book2.svg" url="d">
+               </menu-item>
+            </menu-items>
+            <menu-items title="Blog" url="http://www.google.com">
+            </menu-items>
+            <menu-items title="Contact" url="sss">
+            </menu-items>
+         </mega-menu>
          <div class="row">
-            <div class="col">
-               <h3>Modals</h3>
-               <div class="form-group">
-                  <modal button-title="Form" modal-header="Form Example">
-                     <div class="p-3">
-                        <div class="row">
-                           <div class="col">
-                              <label for="test">First name</label>
-                              <div class="small text-muted">title</div>
-                              <input type="text" class="form-control" placeholder="testing">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col">
+                  <h3>Modals</h3>
+                  <div class="form-group">
+                     <modal button-title="Form" modal-header="Form Example">
+                        <div class="p-3">
+                           <div class="row">
+                              <div class="col">
+                                 <label for="test">First name</label>
+                                 <div class="small text-muted">title</div>
+                                 <input type="text" class="form-control" placeholder="testing">
+                              </div>
+                              <div class="col">
+                                 <label for="test">Last name</label>
+                                 <div class="small text-muted">title</div>
+                                 <input type="text" class="form-control" placeholder="testing">
+                              </div>
                            </div>
-                           <div class="col">
-                              <label for="test">Last name</label>
-                              <div class="small text-muted">title</div>
-                              <input type="text" class="form-control" placeholder="testing">
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col">
-                              <label for="test">Address</label>
-                              <div class="small text-muted">title</div>
-                              <textarea name="area" rows="5" class="form-control"></textarea>
-                           </div>
-                        </div>
-                     </div>
-                     <!--add this if you need a footer-->
-                     <div class="modal-footer">
-                        <div class="row">
-                           <div class="col-12 right">
-                              <button type="button" class="btn btn-primary pull-right">Save</button>
+                           <div class="row">
+                              <div class="col">
+                                 <label for="test">Address</label>
+                                 <div class="small text-muted">title</div>
+                                 <textarea name="area" rows="5" class="form-control"></textarea>
+                              </div>
                            </div>
                         </div>
-                     </div>
-                  </modal>
+                        <!--add this if you need a footer-->
+                        <div class="modal-footer">
+                           <div class="row">
+                              <div class="col-12 right">
+                                 <button type="button" class="btn btn-primary pull-right">Save</button>
+                              </div>
+                           </div>
+                        </div>
+                     </modal>
+                  </div>
+                  <div class="form-group">
+                     <modal button-title="Text" modal-header="Text">
+                        <div class="p-3">
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam aliquid distinctio
+                              accusantium ut explicabo ea harum repellat consequatur, facilis consequuntur minima ex
+                              magnam
+                              aliquam totam necessitatibus reprehenderit veniam, blanditiis rerum.
+                           </p>
+                        </div>
+                     </modal>
+                  </div>
+                  <div class="form-group">
+                     <modal button-title="video" modal-header="video">
+                        <div class="p">
+                           <iframe width="100%" height="400" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                           </iframe>
+                        </div>
+                     </modal>
+                  </div>
+                  <div class="form-group">
+                     <modal button-title="Image" modal-header="Image">
+                        <img src="assets/images/seo.jpg" class="img-responsive img-center"></img>
+                     </modal>
+                  </div>
+                  <div class="form-group">
+                  </div>
                </div>
-               <div class="form-group">
-                  <modal button-title="Text" modal-header="Text">
-                     <div class="p-3">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam aliquid distinctio
-                           accusantium ut explicabo ea harum repellat consequatur, facilis consequuntur minima ex
-                           magnam
-                           aliquam totam necessitatibus reprehenderit veniam, blanditiis rerum.
-                        </p>
-                     </div>
-                  </modal>
-               </div>
-               <div class="form-group">
-                  <modal button-title="video" modal-header="video">
-                     <div class="p">
-                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                     </div>
-                  </modal>
-               </div>
-
-               <div class="form-group">
-                  <modal button-title="Image" modal-header="Image">
-                     <img src="assets/images/seo.jpg" class="img-responsive img-center"></img>
-                  </modal>
-               </div>
-
-               <div class="form-group">
-
-
-               </div>
-
             </div>
          </div>
       </div>
-
-
-
-
-   </div>
-
-
-
-   <script src="assets/js/click-outside.js"></script>
-   <script src="assets/js/focus-trap.js"></script>
-   <script src="assets/js/modals.js"></script>
-   <script src="assets/js/menu.js"></script>
-   <script src="assets/js/mobile-menu.js"></script>
-   <script src="assets/js/feather.js"></script>
-   <script>
-      var app = new Vue({
-         el: '#app',
-         data: {
-            //foo:false
-         }
-      })
-   </script>
-   <script>
-      feather.replace({
-         class: "font-primary",
-      });
-   </script>
-</body>
-
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/focus-trap.js"></script>
+      <script src="assets/js/modals.js"></script>
+      <script src="assets/js/menu.js"></script>
+      <script src="assets/js/mobile-menu.js"></script>
+      <script src="assets/js/feather.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+            data: {
+               //foo:false
+            }
+         })
+      </script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+   </body>
 </html>
