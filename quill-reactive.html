@@ -20,7 +20,7 @@
 
 <body class="full-screen bg-light-grey">
     <div class="container" id="app">
-      <div class="gap"></div>
+        <div class="gap"></div>
         <div class="row">
             <div class="col">
                 <h3>Quill reactive</h3>
@@ -29,16 +29,8 @@
                 <div class="form-group code">{{foo}}</div>
                 <div class="form-group panel br drop-shadow">
 
-                   <quill-editor  
-                     ref="quillEditor"
-                     class="editor"
-                     name="testing"
-                     v-model="foo"
-                     :options="editorOption"
-                     @blur="onEditorBlur($event)"
-                     @focus="onEditorFocus($event)"
-                     @ready="onEditorReady($event)"
-                     />
+                    <quill-editor ref="quillEditor" class="editor" name="testing" v-model="foo" :options="editorOption"
+                        @blur="onEditorBlur($event)" @focus="onEditorFocus($event)" @ready="onEditorReady($event)" />
 
 
                 </div>
@@ -46,72 +38,64 @@
                 <div class="form-group code">{{bar}}</div>
 
                 <div class="form-group panel br">
-                
-                   <quill-editor  
-                     ref="quillEditor"
-                     class="editor"
-                     v-model="bar"
-                     :options="editorOption"
-                     @blur="onEditorBlur($event)"
-                     @focus="onEditorFocus($event)"
-                     @ready="onEditorReady($event)"
-                     />
+
+                    <quill-editor ref="quillEditor" class="editor" v-model="bar" :options="editorOption"
+                        @blur="onEditorBlur($event)" @focus="onEditorFocus($event)" @ready="onEditorReady($event)" />
                 </div>
-       </div>
-    </div>
+            </div>
+        </div>
 
-    <!-- Click out must go before all other scripts -->
-    <script src="assets/js/click-outside.js"></script>
+        <!-- Click out must go before all other scripts -->
+        <script src="assets/js/click-outside.js"></script>
 
-   <script src="assets/js/quill.js"></script>
-    <script src="assets/js/quill-vue.js"></script>
-    <!-- Include stylesheet -->
-    <link href="assets/css/quill.css" rel="stylesheet">
+        <script src="assets/js/quill.js"></script>
+        <script src="assets/js/quill-vue.js"></script>
+        <!-- Include stylesheet -->
+        <link href="assets/css/quill.css" rel="stylesheet">
 
-    <script>
-      Vue.use(window.VueQuillEditor);
-        var app = new Vue({
-            el: '#app',
-           data: {
-                foo: '<h2>I\'m quill vuejs example</h2>',
-                bar: 'hello',
-                editorOption: {
-                     modules: {
-                     toolbar: [
-                       ['bold', 'italic', 'underline' ],
-                       ['blockquote'],
-                       [{ 'header': 1 }, { 'header': 2 }],
-                       [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                       [{ 'align': [] }],
-                       ['clean'],
-                       ['link']
-                     ]
-                   },
-                   // theme: 'snow'
-                }
-            },
-           methods: {
-                onEditorBlur(quill) {
-                    console.log('editor blur!', quill)
+        <script>
+            Vue.use(window.VueQuillEditor);
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    foo: '<h2>I\'m quill vuejs example</h2>',
+                    bar: 'hello',
+                    editorOption: {
+                        modules: {
+                            toolbar: [
+                                ['bold', 'italic', 'underline'],
+                                ['blockquote'],
+                                [{ 'header': 1 }, { 'header': 2 }],
+                                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                                [{ 'align': [] }],
+                                ['clean'],
+                                ['link']
+                            ]
+                        },
+                        // theme: 'snow'
+                    }
                 },
-                onEditorFocus(quill) {
-                    console.log('editor focus!', quill)
+                methods: {
+                    onEditorBlur(quill) {
+                        console.log('editor blur!', quill)
+                    },
+                    onEditorFocus(quill) {
+                        console.log('editor focus!', quill)
+                    },
+                    onEditorReady(quill) {
+                        console.log('editor ready!', quill)
+                    }
                 },
-                onEditorReady(quill) {
-                    console.log('editor ready!', quill)
+                computed: {
+                    editor() {
+                        return this.$refs.quillEditor.quill
+                    }
+                },
+                mounted() {
+                    console.log('this is quill instance object', this.editor)
                 }
-            },
-            computed: {
-                editor() {
-                    return this.$refs.quillEditor.quill
-                }
-            },
-            mounted() {
-               console.log('this is quill instance object', this.editor)
-            }
-        })
-    </script>
+            })
+        </script>
 </body>
 
 </html>
-

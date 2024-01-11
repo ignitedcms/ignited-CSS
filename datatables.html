@@ -2,103 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light weight framework</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Light weight framework</title>
+   <link rel="stylesheet" href="assets/css/main.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
 
-    <!-- datatables -->
-    <link rel="stylesheet" href="assets/datatables/datatables.css">
+   <!-- datatables -->
+   <link rel="stylesheet" href="assets/datatables/datatables.css">
 
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
+   <!-- vue 2 -->
+   <script src="assets/js/vue2.js"></script>
 
 </head>
 
 <body class="full-screen bg-light-grey">
-    <div class="container" id="app">
-       <div class="gap"></div>
-        <div class="row">
-            <div class="col panel br">
-                <h3>Datatables</h3>
+   <div class="container" id="app">
+      <div class="gap"></div>
+      <div class="row">
+         <div class="col panel br">
+            <h3>Datatables</h3>
 
-                <table id="example" class="display" style="width:100%">
-                   <thead>
-                      <tr>
-                         <th>Company</th>
-                         <th>Contact</th>
-                         <th>Country</th>
-                      </tr>
-                   </thead>
-                   <tbody>
+            <table id="example" class="display" style="width:100%">
+               <thead>
+                  <tr>
+                     <th>Company</th>
+                     <th>Contact</th>
+                     <th>Country</th>
+                  </tr>
+               </thead>
+               <tbody>
 
-                      <tr>
-                         <td>Alfreds Futterkiste</td>
-                         <td>Maria Anders</td>
-                         <td>Germany</td>
-                      </tr>
-                      <tr>
-                         <td>Centro comercial Moctezuma</td>
-                         <td>Francisco Chang</td>
-                         <td>Mexico</td>
-                      </tr>
-                      <tr>
-                         <td>Ernst Handel</td>
-                         <td>Roland Mendel</td>
-                         <td>Austria</td>
-                      </tr>
-                      <tr>
-                         <td>Island Trading</td>
-                         <td>Helen Bennett</td>
-                         <td>UK</td>
-                      </tr>
-                      <tr>
-                         <td>Laughing Bacchus Winecellars</td>
-                         <td>Yoshi Tannamuri</td>
-                         <td>Canada</td>
-                      </tr>
-                      <tr>
-                         <td>Magazzini Alimentari Riuniti</td>
-                         <td>Giovanni Rovelli</td>
-                         <td>Italy</td>
-                      </tr>
-                   </tbody>
+                  <tr>
+                     <td>Alfreds Futterkiste</td>
+                     <td>Maria Anders</td>
+                     <td>Germany</td>
+                  </tr>
+                  <tr>
+                     <td>Centro comercial Moctezuma</td>
+                     <td>Francisco Chang</td>
+                     <td>Mexico</td>
+                  </tr>
+                  <tr>
+                     <td>Ernst Handel</td>
+                     <td>Roland Mendel</td>
+                     <td>Austria</td>
+                  </tr>
+                  <tr>
+                     <td>Island Trading</td>
+                     <td>Helen Bennett</td>
+                     <td>UK</td>
+                  </tr>
+                  <tr>
+                     <td>Laughing Bacchus Winecellars</td>
+                     <td>Yoshi Tannamuri</td>
+                     <td>Canada</td>
+                  </tr>
+                  <tr>
+                     <td>Magazzini Alimentari Riuniti</td>
+                     <td>Giovanni Rovelli</td>
+                     <td>Italy</td>
+                  </tr>
+               </tbody>
 
-                </table>
-                
-            </div>
-        </div>
-    </div>
+            </table>
 
-    <!--load jquery first-->
-    <script src="assets/datatables/jquery.min.js"></script>
-     <!-- datatables -->
-     <script src="assets/datatables/jquery.dataTables.min.js"></script>
+         </div>
+      </div>
+   </div>
 
-    <script src="assets/js/feather.js"></script>
-    <script>
+   <!--load jquery first-->
+   <script src="assets/datatables/jquery.min.js"></script>
+   <!-- datatables -->
+   <script src="assets/datatables/jquery.dataTables.min.js"></script>
 
-        var app = new Vue({
-            el: '#app',
-        })
-    </script>
-    <script>
-        feather.replace({
-            class: "font-primary",
-        });
-    </script>
+   <script src="assets/js/feather.js"></script>
+   <script>
 
-    <script>
-       $('#example').dataTable({
-          "iDisplayLength": 20
-       });
-    </script>
+      var app = new Vue({
+         el: '#app',
+      })
+   </script>
+   <script>
+      feather.replace({
+         class: "font-primary",
+      });
+   </script>
+
+   <script>
+      $('#example').dataTable({
+         "iDisplayLength": 20
+      });
+   </script>
 </body>
 
 </html>
-

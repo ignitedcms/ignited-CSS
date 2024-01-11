@@ -1,34 +1,36 @@
 @import "variables";
 
-.dropdown{
+.dropdown {
     position: absolute;
     overflow: hidden;
     font-family: inherit;
     font-size: inherit;
-    top:45px;
-    right:0;
+    top: 45px;
+    right: 0;
     background-color: #ffffff;
     min-width: 200px;
     min-height: 100px;
     border: 1px solid #ccc;
     z-index: 1;
 
-    &:focus{
-       outline: none;
+    &:focus {
+        outline: none;
     }
 
-    &-item{
-        padding:10px;
+    &-item {
+        padding: 10px;
         transition: all 0.5s;
-        margin:5px;  
-        border-radius:5px;
+        margin: 5px;
+        border-radius: 5px;
+
         a {
             text-decoration: none;
             color: $font-color;
         }
-        &:hover{
+
+        &:hover {
             background-color: $light-grey;
-            
+
             a {
                 // color: #ffffff;
             }

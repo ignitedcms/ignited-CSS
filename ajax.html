@@ -19,22 +19,22 @@
 
 <body class="full-screen bg-light-grey">
     <div class="container" id="app">
-         <div class="gap"></div>
+        <div class="gap"></div>
         <div class="row">
             <div class="col">
                 <h3>Ajax</h3>
                 <div class="form-group">
                     https://jsonplaceholder.typicode.com/guide/
                 </div>
-                <button type="button" class="btn btn-white m-t"  v-on:click="get">get data</button>
+                <button type="button" class="btn btn-white m-t" v-on:click="get">get data</button>
                 <div class="code p m-t-3">
                     <pre> {{message1}}</pre>
                 </div>
-                <button type="button" class="btn btn-white m-t"  v-on:click="post">post</button>
+                <button type="button" class="btn btn-white m-t" v-on:click="post">post</button>
                 <div class="code p m-t-3">
                     <pre> {{message2}}</pre>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -42,43 +42,40 @@
     <script src="assets/js/feather.js"></script>
     <script>
         var app = new Vue({
-           el: '#app',
-           data:
-           {
-              message1: '',
-              message2: '',
-           },
-           methods:
-           {
-              async get()
-              {
-                let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-                let data = await response.json();
-                this.message1 = data;
-                alert(response.status);
-              },
-              
-              async post()
-              {
-               let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-                  method: 'POST',
-                  body: JSON.stringify({
-                    title: 'foo',
-                    body: 'bar',
-                    userId: 1,
-                  }),
-                  headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                  },
-                })
-                let data = await response.json();
-                this.message2 = data;
-              }
-           },
-           mounted()
-           {
-              //do something
-           }
+            el: '#app',
+            data:
+            {
+                message1: '',
+                message2: '',
+            },
+            methods:
+            {
+                async get() {
+                    let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+                    let data = await response.json();
+                    this.message1 = data;
+                    alert(response.status);
+                },
+
+                async post() {
+                    let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            title: 'foo',
+                            body: 'bar',
+                            userId: 1,
+                        }),
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                        },
+                    })
+                    let data = await response.json();
+                    this.message2 = data;
+                }
+            },
+            mounted() {
+                //do something
+            }
         });    
     </script>
     <script>

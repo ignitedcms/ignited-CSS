@@ -1,62 +1,62 @@
 @import "variables";
 
-.menu{
+.menu {
    background-color: #ffffff;
-   border-bottom:1px solid $grey;
+   border-bottom: 1px solid $grey;
    min-height: 70px;
-   display:flex;
-   flex-direction:row;
-   justify-content:space-between;
-   align-items:center;
-   padding:20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
 
-   @media (max-width: $tablet ) 
-   {
-      display:none;
+   @media (max-width: $tablet ) {
+      display: none;
    }
 
-   &-logo{
-      min-width: 160px; 
+   &-logo {
+      min-width: 160px;
    }
 
-   &-main{
-     &:hover{
+   &-main {
+      &:hover {
 
-         color:$link-color !important;
-     }
+         color: $link-color !important;
+      }
    }
 
-   &-large-items{
-      position:relative;
+   &-large-items {
+      position: relative;
       transition: 0.4s all;
-      margin-right:10px;
-      &:hover{
-         color:$link-color !important;
+      margin-right: 10px;
+
+      &:hover {
+         color: $link-color !important;
          //text-decoration:underline;
       }
 
    }
 
-   &-item-container{
-      position:relative;  
-      display:flex;
-      flex-direction:row;
+   &-item-container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
    }
 
-   &-dropdown{
-      position:absolute;
-      top:40px;
-      left:-40px;
-      min-width:400px; 
-      min-height:100px; 
-      background-color:#ffffff;
-      padding:20px;
-      border:1px solid $grey;
-      border-radius:$border-radius;
-      box-shadow:$shadow;   
-      z-index:2;
+   &-dropdown {
+      position: absolute;
+      top: 40px;
+      left: -40px;
+      min-width: 400px;
+      min-height: 100px;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid $grey;
+      border-radius: $border-radius;
+      box-shadow: $shadow;
+      z-index: 2;
 
-   } 
+   }
 }
 
 /*                                                                          
@@ -64,18 +64,18 @@
 | For the mobile menu                                                
 |---------------------------------------------------------------            
 |                                                                           
-*/       
+*/
 
 
-.menu-bar{
+.menu-bar {
 
    //position: sticky;
    //top:0;
    background-color: #ffffff;
-   border-bottom:1px solid $grey;
-   color:$font-color;
+   border-bottom: 1px solid $grey;
+   color: $font-color;
    min-height: 70px;
-   padding:20px;
+   padding: 20px;
    display: none;
    justify-content: space-between;
    align-items: center;
@@ -83,15 +83,15 @@
    z-index: 4;
 }
 
-.menu-overlay{
-   top:87px;
-   left:0;
+.menu-overlay {
+   top: 87px;
+   left: 0;
    //padding: $margin;
    position: fixed;
    height: 100%;
    width: 100%;
    background-color: #ffffff;
-   color:$font-color;
+   color: $font-color;
    display: none;
    justify-content: flex-start;
    align-items: flex-start;
@@ -99,53 +99,55 @@
    z-index: 4;
 }
 
-.menu-item{
+.menu-item {
    position: relative;
    padding: 20px;
-   border-bottom:1px solid $grey;
-   cursor:pointer;
-   width:100%;
+   border-bottom: 1px solid $grey;
+   cursor: pointer;
+   width: 100%;
    font-size: 18px;
-   display:flex;
-   flex-direction:row;
-   justify-content:space-between;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
    //align-items: flex-start;
 
-   &-block{
+   &-block {
       background-color: #ffffff;
       padding: 2 * $margin;
 
-      & > ul > li {
+      &>ul>li {
          list-style-type: none;
       }
    }
 
 }
-.menu-item:hover{
-   background-color:$light-grey;
+
+.menu-item:hover {
+   background-color: $light-grey;
    text-decoration: none;
-   color:inherit;
+   color: inherit;
 }
 
-.item-content{
-   position:relative;
+.item-content {
+   position: relative;
 
-   & > ul > li
-   {
+   &>ul>li {
       list-style-type: none;
-      margin-left:10px;
+      margin-left: 10px;
    }
 }
 
 
-@media (max-width:$tablet){
-   .menu{
+@media (max-width:$tablet) {
+   .menu {
       display: none;
    }
-   .menu-bar{
+
+   .menu-bar {
       display: flex;
    }
-   .menu-overlay{
+
+   .menu-overlay {
       display: flex;
    }
 }

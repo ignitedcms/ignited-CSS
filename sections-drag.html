@@ -1,132 +1,130 @@
 <!doctype html>
 <html lang="en">
- 
+
 <head>
-<meta charset='utf-8'>
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" href="assets/css/main.css" type='text/css' />
-<title>sections</title>
+   <meta charset='utf-8'>
+   <link rel="shortcut icon" href="favicon.ico">
+   <link rel="stylesheet" href="assets/css/main.css" type='text/css' />
+   <title>sections</title>
 
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-<!-- vue 2 -->
-<script src="assets/js/vue2.js"></script>
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+   <!-- vue 2 -->
+   <script src="assets/js/vue2.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
 </head>
-   <body class="full-screen bg-light-grey">
-      <div class="full-screen" id="app">
-         <div class="gap"></div>
-         <div class='container'>
-            
-             <div class="row">
-                <div class="col-12 right">
-                     <button type="button" class="btn btn-primary-outline">Edit</button>
-                     <button @click="onClicking" type="button" class="m-l btn btn-primary">Save</button>
-                </div>
-             </div>
 
-            <!--main part for section styles -->
-            <div class="panel br drop-shadow">
-               <div class="row">
-                  <div class="col">
-                     <div class="form-group">
-                        <h3>Sections</h3>
-                     </div>
-                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <div class="small text-muted">Section title, 
-                           must be unique and contain no 
-                           spaces or special characters
-                        </div>
-                        <input class="form-control" 
-                               name="a" 
-                               value="" 
-                               placeholder="test" />
-                     </div>
-                     <div class="form-group">
-                        <label for="type">Section type</label>
-                        <div class="small text-muted">Choose section type</div>
-                        <select class="form-select" aria-label="Default select example">
-                           <option value="single" selected>Single</option>
-                           <option value="multiple">Multiple</option>
-                           <option value="global">Global</option>
-                        </select>
-                     </div>
-                     <div class="divider"></div>
+<body class="full-screen bg-light-grey">
+   <div class="full-screen" id="app">
+      <div class="gap"></div>
+      <div class='container'>
+
+         <div class="row">
+            <div class="col-12 right">
+               <button type="button" class="btn btn-primary-outline">Edit</button>
+               <button @click="onClicking" type="button" class="m-l btn btn-primary">Save</button>
+            </div>
+         </div>
+
+         <!--main part for section styles -->
+         <div class="panel br drop-shadow">
+            <div class="row">
+               <div class="col">
+                  <div class="form-group">
+                     <h3>Sections</h3>
                   </div>
-               </div>
-
-               <!--drag and drop content-->
-               <div class="nothing">
-                  <div class="alert alert-info m-t-2 m-b-2">Drag and drop the fields you need, reorder and click save</div>
-               </div>
-               <div class="row">
-                  <div class="col-8">
-                     
-                     <div class="nothing">
-                        <h4>Page</h4>
+                  <div class="form-group">
+                     <label for="title">Title</label>
+                     <div class="small text-muted">Section title,
+                        must be unique and contain no
+                        spaces or special characters
                      </div>
-                     <div id='list1' class='scroll-y bg-light-grey cross-grid p-2 b br' style="height:500px;">
-
-                        <div class="pill" id="textField">
-                           <div>textField</div>   
-                           <div>
-                              <span class="small text-muted">
-                                 textField
-                              </span>
-                           </div>   
-                        </div>
-
-                     </div>
-                  </div> 
-
-                  <div class="col-4">
-                     <div class="nothing">
-                        <h4>Fields</h4>
-                     </div>
-                     <div id='list2' class='scroll-y bg-grey b br p-2'>
-                        <div class="pill" id="color">
-                           <div>color</div>   
-                           <div>
-                              <span class="small text-muted">
-                                 color
-                              </span>
-                           </div>   
-                        </div>
-                        <div class="pill" id="matrix">
-                           <div>matrix</div>   
-                           <div>
-                              <span class="small text-muted">
-                                 matrix
-                              </span>
-                           </div>   
-                        </div>
-                     </div>
+                     <input class="form-control" name="a" value="" placeholder="test" />
                   </div>
+                  <div class="form-group">
+                     <label for="type">Section type</label>
+                     <div class="small text-muted">Choose section type</div>
+                     <select class="form-select" aria-label="Default select example">
+                        <option value="single" selected>Single</option>
+                        <option value="multiple">Multiple</option>
+                        <option value="global">Global</option>
+                     </select>
+                  </div>
+                  <div class="divider"></div>
                </div>
-               <!--end-->
-               <div class="row">
-                  <div class="col">{{items}}</div>
-               </div>
-
             </div>
 
+            <!--drag and drop content-->
+            <div class="nothing">
+               <div class="alert alert-info m-t-2 m-b-2">Drag and drop the fields you need, reorder and click save</div>
+            </div>
             <div class="row">
-                <div class="col-12 right">
-                     <button type="button" class="btn btn-primary-outline">Edit</button>
-                     <button @click="onClicking" type="button" class="m-l btn btn-primary">Save</button>
-                </div>
-             </div>
+               <div class="col-8">
 
-            <div class="gap"></div>
-            <!--end main part-->
+                  <div class="nothing">
+                     <h4>Page</h4>
+                  </div>
+                  <div id='list1' class='scroll-y bg-light-grey cross-grid p-2 b br' style="height:500px;">
+
+                     <div class="pill" id="textField">
+                        <div>textField</div>
+                        <div>
+                           <span class="small text-muted">
+                              textField
+                           </span>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+               <div class="col-4">
+                  <div class="nothing">
+                     <h4>Fields</h4>
+                  </div>
+                  <div id='list2' class='scroll-y bg-grey b br p-2'>
+                     <div class="pill" id="color">
+                        <div>color</div>
+                        <div>
+                           <span class="small text-muted">
+                              color
+                           </span>
+                        </div>
+                     </div>
+                     <div class="pill" id="matrix">
+                        <div>matrix</div>
+                        <div>
+                           <span class="small text-muted">
+                              matrix
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--end-->
+            <div class="row">
+               <div class="col">{{items}}</div>
+            </div>
 
          </div>
+
+         <div class="row">
+            <div class="col-12 right">
+               <button type="button" class="btn btn-primary-outline">Edit</button>
+               <button @click="onClicking" type="button" class="m-l btn btn-primary">Save</button>
+            </div>
+         </div>
+
+         <div class="gap"></div>
+         <!--end main part-->
+
       </div>
+   </div>
 
    <script src="assets/js/feather.js"></script>
    <script>
@@ -135,22 +133,20 @@
          data: {
             items: []
          },
-         methods:{
-            onClicking()
-            {         
+         methods: {
+            onClicking() {
                var ids = [];
                this.items = [];
                //get container element children.
-               var children = document.getElementById("list1").children; 
-               for (var i = 0, len = children.length ; i < len; i++) {
+               var children = document.getElementById("list1").children;
+               for (var i = 0, len = children.length; i < len; i++) {
 
-                  this.items.push(children[i].id); 
+                  this.items.push(children[i].id);
                }
             }
 
          },
-         mounted()
-         {
+         mounted() {
             var list1 = document.getElementById('list1');
             var list2 = document.getElementById('list2');
 
@@ -168,13 +164,14 @@
          }
       })
    </script>
-    
-    <script>
-       feather.replace({
-          class: "font-primary",
-       });
-    </script>
+
+   <script>
+      feather.replace({
+         class: "font-primary",
+      });
+   </script>
 
 
-   </body>
+</body>
+
 </html>

@@ -19,22 +19,22 @@
 
 <body class="full-screen bg-light-grey">
     <div class="container" id="app">
-         <div class="gap"></div>
+        <div class="gap"></div>
         <div class="row">
             <div class="col">
                 <h3>Switches</h3>
                 {{foo}}
                 <br>
                 <div class="form-group">
-                   <div class="text-muted m-b">With v-model binding</div>
-                    <switch-ios v-model="foo" name="a" ></switch-ios>
+                    <div class="text-muted m-b">With v-model binding</div>
+                    <switch-ios v-model="foo" name="a"></switch-ios>
                 </div>
                 <div class="form-group">
-                   <div class="text-muted m-b">With value given at start</div>
+                    <div class="text-muted m-b">With value given at start</div>
                     <switch-ios value="checked" name="b"></switch-ios>
                 </div>
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -45,9 +45,9 @@
         var app = new Vue({
             el: '#app',
             data:
-           {
-              foo: false,
-           }
+            {
+                foo: false,
+            }
         })
     </script>
 </body>

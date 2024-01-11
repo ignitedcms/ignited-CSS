@@ -27,13 +27,14 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                           <h4>Forgot password?</h4>
-                           <label for="email">Email</label>
-                           <div class="small text-muted">Enter a valid email address you can access</div>
+                            <h4>Forgot password?</h4>
+                            <label for="email">Email</label>
+                            <div class="small text-muted">Enter a valid email address you can access</div>
                             <input type="text" class="form-control" placeholder="Email">
                         </div>
                         <div class="row v-a m-t">
-                            <button @click="showToast" class="col btn btn-primary " type="submit">Send a reset link</button>
+                            <button @click="showToast" class="col btn btn-primary " type="submit">Send a reset
+                                link</button>
                         </div>
 
                     </div>
@@ -47,17 +48,17 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="toasts">
 
-           <toast ref="toast">
-             <div class="p-2">
-                <div class="text-black">Email sent</div>
-                <div class="text-muted small">Please check your inbox for
-                further information</div>
-             </div>
-           </toast>
+            <toast ref="toast">
+                <div class="p-2">
+                    <div class="text-black">Email sent</div>
+                    <div class="text-muted small">Please check your inbox for
+                        further information</div>
+                </div>
+            </toast>
 
         </div>
 
@@ -76,11 +77,11 @@
     <script>
         var app = new Vue({
             el: '#app',
-           methods: {
-              showToast() {
-                 this.$refs.toast.showToast(6000);
-              }
-           }
+            methods: {
+                showToast() {
+                    this.$refs.toast.showToast(6000);
+                }
+            }
 
         })
     </script>
@@ -94,4 +95,3 @@
 </body>
 
 </html>
-

@@ -2,149 +2,149 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light weight framework</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Light weight framework</title>
+   <link rel="stylesheet" href="assets/css/main.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
 
-    <!-- vue 2 -->
-    <script src="assets/js/vue2.js"></script>
+   <!-- vue 2 -->
+   <script src="assets/js/vue2.js"></script>
 
 </head>
 
 <body class="full-screen bg-light-grey">
-    <div class="container" id="app">
+   <div class="container" id="app">
       <div class="gap"></div>
-        <div class="row bg-light-grey" style="min-height:200px;">
-           <div class="col v-a h-a">
-              <h2>Shopping cart</h2>
-           </div>
-        </div>
-        
-        <div class="row m-t-3">
-           <div class="col-8">
-              <div class="row">
-                 <div class="col no-margin">
-                    <h5>Cart</h5>
-                 </div>
-              </div>
-              <div class="row m">
-                 <div class="col no-margin">
-                    <img src="assets/images/t-shirt.jpg" style="height:150px;" class="img-responsive hide-tablet  b br"></img>
-                    <img src="assets/images/t-shirt.jpg"  class="img-responsive show-tablet  b br"></img>
-                 </div>
-                 <div class="col no-margin">
-                    <p class="small text-black m-l-2">Basic T-shirt</p>
-                 </div>
-                 <div class="col no-margin">
-                    <select class="form-select" style="width:100px;" name="a" aria-label="Default select example">
-                       <option value="1" selected>1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                    </select>
-                 </div>
-                 <div class="col no-margin ">
-                    <span class="pull-right hand bg-white br-full b v-a h-a icon" >
-                       <i data-feather="x"></i>    
-                    </span>
-                 </div>
-              </div>
-              <div class="b-b p-t-2"></div>
-              
-              <div class="row m p-t-2">
-                 <div class="col no-margin">
-                    <img src="assets/images/t-shirt.jpg" style="height:150px;" class="img-responsive hide-tablet b br"></img>
-                    <img src="assets/images/t-shirt.jpg"  class="img-responsive show-tablet  b br"></img>
-                 </div>
-                 <div class="col no-margin">
-                    <p class="small text-black m-l-2">Basic T-shirt</p>
-                 </div>
-                 <div class="col no-margin">
-                    <select class="form-select" style="width:100px;" name="a" aria-label="Default select example">
-                       <option value="1" selected>1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                    </select>
-                 </div>
-                 <div class="col no-margin ">
-                    <span class="pull-right hand bg-white br-full b v-a h-a icon" >
-                       <i data-feather="x"></i>    
-                    </span>
-                 </div>
-              </div>
+      <div class="row bg-light-grey" style="min-height:200px;">
+         <div class="col v-a h-a">
+            <h2>Shopping cart</h2>
+         </div>
+      </div>
 
-              <div class="b-b p-t-2"></div>
-           </div>
+      <div class="row m-t-3">
+         <div class="col-8">
+            <div class="row">
+               <div class="col no-margin">
+                  <h5>Cart</h5>
+               </div>
+            </div>
+            <div class="row m">
+               <div class="col no-margin">
+                  <img src="assets/images/t-shirt.jpg" style="height:150px;"
+                     class="img-responsive hide-tablet  b br"></img>
+                  <img src="assets/images/t-shirt.jpg" class="img-responsive show-tablet  b br"></img>
+               </div>
+               <div class="col no-margin">
+                  <p class="small text-black m-l-2">Basic T-shirt</p>
+               </div>
+               <div class="col no-margin">
+                  <select class="form-select" style="width:100px;" name="a" aria-label="Default select example">
+                     <option value="1" selected>1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                  </select>
+               </div>
+               <div class="col no-margin ">
+                  <span class="pull-right hand bg-white br-full b v-a h-a icon">
+                     <i data-feather="x"></i>
+                  </span>
+               </div>
+            </div>
+            <div class="b-b p-t-2"></div>
 
-           <!--right column-->
-           <div class="col-4 panel br drop-shadow">
-             <div class="row">
-                <div class="col">
-                   <h4>Order summary</h4>
-                </div>
-             </div>
-             
-             
-             
-             <div class="row b-b">
-                <div class="col"><strong>
-                      Subtotal
-                </strong></div>
-                <div class="col right">$39.99</div>
-             </div>
-             <div class="row b-b">
-                <div class="col">
-                   <strong>
-                      Total
-                   </strong>
-                </div>
-                <div class="col right">$39.99</div>
-             </div>
-             <div class="row m-t-2">
-                <div class="col">
-                   <button type="submit" class="btn btn-block btn-primary">
-                      Proceed to checkout
-                   </button>
-                </div>
-             </div>
-          </div>
-        </div>
+            <div class="row m p-t-2">
+               <div class="col no-margin">
+                  <img src="assets/images/t-shirt.jpg" style="height:150px;"
+                     class="img-responsive hide-tablet b br"></img>
+                  <img src="assets/images/t-shirt.jpg" class="img-responsive show-tablet  b br"></img>
+               </div>
+               <div class="col no-margin">
+                  <p class="small text-black m-l-2">Basic T-shirt</p>
+               </div>
+               <div class="col no-margin">
+                  <select class="form-select" style="width:100px;" name="a" aria-label="Default select example">
+                     <option value="1" selected>1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                  </select>
+               </div>
+               <div class="col no-margin ">
+                  <span class="pull-right hand bg-white br-full b v-a h-a icon">
+                     <i data-feather="x"></i>
+                  </span>
+               </div>
+            </div>
 
-        
-        
+            <div class="b-b p-t-2"></div>
+         </div>
+
+         <!--right column-->
+         <div class="col-4 panel br drop-shadow">
+            <div class="row">
+               <div class="col">
+                  <h4>Order summary</h4>
+               </div>
+            </div>
+
+
+
+            <div class="row b-b">
+               <div class="col"><strong>
+                     Subtotal
+                  </strong></div>
+               <div class="col right">$39.99</div>
+            </div>
+            <div class="row b-b">
+               <div class="col">
+                  <strong>
+                     Total
+                  </strong>
+               </div>
+               <div class="col right">$39.99</div>
+            </div>
+            <div class="row m-t-2">
+               <div class="col">
+                  <button type="submit" class="btn btn-block btn-primary">
+                     Proceed to checkout
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
       <div class="gap"></div>
-    </div>
+   </div>
 
    <!-- Click out must go before all other scripts -->
    <script src="assets/js/click-outside.js"></script>
    <script src="assets/js/focus-trap.js"></script>
    <script src="assets/js/dropdown.js"></script>
 
-    <!-- feather icons -->
-    <script src="assets/js/feather.js"></script>
+   <!-- feather icons -->
+   <script src="assets/js/feather.js"></script>
 
-    
-        <script>
-            var app = new Vue({
-                el: '#app',
-                data:{
-                }
-            })
-        </script>
 
-      <script>
+   <script>
+      var app = new Vue({
+         el: '#app',
+         data: {
+         }
+      })
+   </script>
+
+   <script>
       feather.replace({
-        class: "font-primary",
+         class: "font-primary",
       });
-    </script>
+   </script>
 
 </body>
 
 </html>
-
-

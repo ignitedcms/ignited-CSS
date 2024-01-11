@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,28 +17,29 @@
 
     <script src="assets/js/sortable.js"></script>
 </head>
+
 <body class="full-screen bg-light-grey">
     <div id="app">
-       <div class="gap"></div>
-       <div class="container">
-          <h3>Sortable</h3>
-        <ul id="sortable-list">
-            <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
-               {{ item.text }}
-            </li>
-        </ul>
-        <div class="code m-t-3">
-            {{items}}
+        <div class="gap"></div>
+        <div class="container">
+            <h3>Sortable</h3>
+            <ul id="sortable-list">
+                <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
+                    {{ item.text }}
+                </li>
+            </ul>
+            <div class="code m-t-3">
+                {{items}}
+            </div>
         </div>
-       </div>
     </div>
 
     <script src="assets/js/feather.js"></script>
 
     <script>
-       feather.replace({
-          class: "font-primary",
-       });
+        feather.replace({
+            class: "font-primary",
+        });
     </script>
 
     <script>
@@ -66,4 +68,5 @@
         });
     </script>
 </body>
+
 </html>
