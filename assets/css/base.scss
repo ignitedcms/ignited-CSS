@@ -310,6 +310,14 @@ ol {
   box-shadow: $shadow;
 }
 
+.display-none {
+   display:none;
+}
+
+.inline-block {
+   display:inline-block;
+}
+
 .br {
    border-radius: $border-radius;
 

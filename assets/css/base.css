@@ -288,6 +288,14 @@ ol {
   box-shadow: 2px 5px 9px 0px rgba(99, 99, 99, 0.29);
 }
 
+.display-none {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 .br {
   border-radius: 5px;
 }
