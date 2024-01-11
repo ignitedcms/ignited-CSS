@@ -972,6 +972,12 @@ ol {
    }
 }
 
+.underline-hover{
+   &:hover{
+      text-decoration: underline;
+   }
+}
+
 @media screen and (max-width:$mobile) {
    .hide-phone {
       display: none;
