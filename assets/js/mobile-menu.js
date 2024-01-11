@@ -19,12 +19,13 @@ Vue.component('mobile-menu', {
   ],
   template: `
     <div style="top:0; position:sticky; z-index:2;">
-      <div class="p-2 h-e bg-white b-b">
+      <div class="p h-e bg-white b-b v-a">
         <div  style="width:150px;">
           <a 
             :href="url"
           >
             <img 
+              class="v-a"
               :src="logo"
             ></img>
           </a>
