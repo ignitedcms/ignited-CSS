@@ -40,6 +40,13 @@
              </div>
            </toast>
 
+           <toast ref="toast2">
+             <div class="p-2">
+                <div class="text-danger">Error</div>
+                <div class="text-danger small">Warning you have an error</div>
+             </div>
+           </toast>
+
         </div>
 
 
@@ -64,7 +71,8 @@
             el: '#app',
            methods: {
               showToast() {
-                 this.$refs.toast.showToast(2000);
+                 this.$refs.toast.showToast(3000);
+                 this.$refs.toast2.showToast(4000);
               }
            }
 
