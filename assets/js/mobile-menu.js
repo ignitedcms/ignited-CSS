@@ -19,8 +19,8 @@ Vue.component('mobile-menu', {
   ],
   template: `
     <div style="top:0; position:sticky; z-index:2;">
-      <div class="menu-bar">
-        <div class="menu-logo">
+      <div class="p-2 h-e bg-white b-b">
+        <div  style="width:150px;">
           <a 
             :href="url"
           >
@@ -43,7 +43,7 @@ Vue.component('mobile-menu', {
 
       <div 
         v-if="show"
-        class="menu-overlay fade-in-bottom" 
+        class="fade-in-bottom" 
       >
         <slot></slot>
 
@@ -53,7 +53,7 @@ Vue.component('mobile-menu', {
           class="rm-link-styles"
         >
           <div 
-            class="menu-item"
+            class="p-2 bg-white"
           >
             {{title}}
           </div>
@@ -87,7 +87,7 @@ Vue.component('mobile-menu-items', {
         class="rm-link-styles"
       >
         <div 
-          class="menu-item"
+          class="row p-2 bg-white b-b"
         >
           {{title}}
         </div>
@@ -95,7 +95,7 @@ Vue.component('mobile-menu-items', {
 
       <div 
         v-if="children === 'yes'" 
-        class="menu-item no-select"
+        class="p-2 bg-white b-b h-e no-select"
         @click="toggle" 
       >
         <div>
@@ -111,7 +111,7 @@ Vue.component('mobile-menu-items', {
       </div>
       <div 
         v-if="show" 
-        class="item-content no-select"
+        class="no-select"
       >
         <slot></slot>
       </div>
