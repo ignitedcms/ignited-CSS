@@ -1,349 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Light weight framework</title>
-   <link rel="stylesheet" href="assets/css/main.css">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-   <!-- vue 2 -->
-   <script src="assets/js/vue2.js"></script>
-
-</head>
-
-<body class="full-screen bg-light-grey">
-   <div id="app">
-      <div class="gap"></div>
-
-      <!-- source https://stackoverflow.com/questions/12692089/preventing-double-borders-in-css -->
-
-      <div class="container">
-
-         <h2>Full calendar</h2>
-         <p>A fully responsive robust calendar</p>
-
-         <div class="row  br m-b ">
-            <div class="col ">
-               <div class="row">
-                  <div class="col no-margin text-muted">Month view</div>
-               </div>
-               <div class="row">
-                  <div class="col no-margin">
-                     <h4>Jan 2022</h4>
-                  </div>
-               </div>
-            </div>
-            <div class="col right hide-tablet">
-               <button class="btn btn-white m-r">Today</button>
-               <drop-down button-title="Month view" class="m-r">
-                  <item title="Day view" url="bob"></item>
-                  <item title="Week view" url="bob"></item>
-                  <item title="Month view" url="bob"></item>
-               </drop-down>
-               <modal button-title="Add event" modal-header="Event">
-                  <div class="p-3">
-                     <div class="row">
-                        <div class="col">
-                           <div class="form-group">
-                              <label for="title">Event</label>
-                              <div class="small text-muted">Enter the name of
-                                 the event</div>
-                              <input class="form-control" placeholder="Event name . . ." />
-                           </div>
-                           <div class="form-group">
-                              <label for="title">Time</label>
-                              <div class="small text-muted">Please choose
-                                 a suitable time</div>
-                              <input class="form-control" placeholder="Event time. . ." />
-                           </div>
-                           <div class="form-group right">
-                              <button type="submit" class="btn btn-dark">Save</button>
-
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </modal>
-            </div>
-
-            <div class="col pull-right show-tablet">
-               <button type="submit" class="btn btn-white right">
-                  <div class="v-a">
-                     <i data-feather="more-horizontal"></i>
-                  </div>
-               </button>
-
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="col p-t ">
-
-               <div class="day-headers">Mo</div>
-               <div class="day-headers">Tu</div>
-               <div class="day-headers">We</div>
-               <div class="day-headers">Th</div>
-               <div class="day-headers">Fr</div>
-               <div class="day-headers">Sa</div>
-               <div class="day-headers">Su</div>
-
-               <div class="day day-disabled"></div>
-               <div class="day day-disabled"></div>
-               <div class="day">1</div>
-               <div class="day">2</div>
-               <div class="day">3</div>
-               <div class="day">4</div>
-               <div class="day">
-                  <div class="row">
-                     <div class="col no-margin">
-                        5
-                     </div>
-                  </div>
-                  <div class="row hide-tablet">
-                     <div class="col no-margin">
-                        <div class="badge badge-light ">Some task </div>
-                     </div>
-                  </div>
-                  <div class="row hide-tablet">
-                     <div class="col no-margin">
-                        <div class="badge badge-dark  m-t">Another task </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="day">
-                  <div class="row">
-                     <div class="col no-margin">6</div>
-                  </div>
-                  <div class="row">
-                     <div class="col no-margin hide-tablet">Date night</div>
-                  </div>
-
-               </div>
-               <div class="day">7</div>
-               <div class="day">8</div>
-               <div class="day">9</div>
-               <div class="day">10</div>
-               <div class="day">11</div>
-               <div class="day">12</div>
-               <div class="day">13</div>
-               <div class="day">14</div>
-               <div class="day">15</div>
-               <div class="day">16</div>
-               <div class="day">17</div>
-               <div class="day">18</div>
-               <div class="day">19</div>
-               <div class="day">20</div>
-               <div class="day">21</div>
-               <div class="day">22</div>
-               <div class="day">23</div>
-               <div class="day">24</div>
-               <div class="day">25</div>
-               <div class="day">26</div>
-               <div class="day">27</div>
-               <div class="day">28</div>
-               <div class="day day-disabled"></div>
-               <div class="day day-disabled"></div>
-               <div class="day day-disabled"></div>
-               <div class="day day-disabled"></div>
-               <div class="day day-disabled"></div>
-            </div>
-         </div>
-
-         <!-- weekday view -->
-
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div id="app">
          <div class="gap"></div>
-
-         <div class="row  br m-b ">
-            <div class="col ">
-               <div class="row">
-                  <div class="col no-margin text-muted">Week view</div>
-               </div>
-               <div class="row">
-                  <div class="col no-margin">
-                     <h4>Jan 2022</h4>
+         <div class="container">
+            <h2>Full calendar</h2>
+            <p>A fully responsive robust calendar</p>
+            <div class="row  br m-b ">
+               <div class="col ">
+                  <div class="row">
+                     <div class="col no-margin text-muted">Month view</div>
+                  </div>
+                  <div class="row">
+                     <div class="col no-margin">
+                        <h4>Jan 2022</h4>
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="col right hide-tablet">
-               <button class="btn btn-white m-r">Today</button>
-               <drop-down button-title="Month view" class="m-r">
-                  <item title="Day view" url="bob"></item>
-                  <item title="Week view" url="bob"></item>
-                  <item title="Month view" url="bob"></item>
-               </drop-down>
-               <modal button-title="Add event" modal-header="Event">
-                  <div class="p-3">
-                     <div class="row">
-                        <div class="col">
-                           <div class="form-group">
-                              <label for="title">Event</label>
-                              <div class="small text-muted">Enter the name of
-                                 the event</div>
-                              <input class="form-control" placeholder="test" />
-                           </div>
-                           <div class="form-group">
-                              <label for="title">Time</label>
-                              <div class="small text-muted">Please choose
-                                 a suitable time</div>
-                              <input class="form-control" placeholder="test" />
-                           </div>
-                           <div class="form-group right">
-                              <button type="submit" class="btn btn-dark">Save</button>
-
+               <div class="col right hide-tablet">
+                  <button class="btn btn-white m-r">Today</button>
+                  <drop-down button-title="Month view" class="m-r">
+                     <item title="Day view" url="bob"></item>
+                     <item title="Week view" url="bob"></item>
+                     <item title="Month view" url="bob"></item>
+                  </drop-down>
+                  <modal button-title="Add event" modal-header="Event">
+                     <div class="p-3">
+                        <div class="row">
+                           <div class="col">
+                              <div class="form-group">
+                                 <label for="title">Event</label>
+                                 <div class="small text-muted">Enter the name of
+                                    the event
+                                 </div>
+                                 <input class="form-control" placeholder="Event name . . ." />
+                              </div>
+                              <div class="form-group">
+                                 <label for="title">Time</label>
+                                 <div class="small text-muted">Please choose
+                                    a suitable time
+                                 </div>
+                                 <input class="form-control" placeholder="Event time. . ." />
+                              </div>
+                              <div class="form-group right">
+                                 <button type="submit" class="btn btn-dark">Save</button>
+                              </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-               </modal>
+                  </modal>
+               </div>
+               <div class="col pull-right show-tablet">
+                  <button type="submit" class="btn btn-white right">
+                     <div class="v-a">
+                        <i data-feather="more-horizontal"></i>
+                     </div>
+                  </button>
+               </div>
             </div>
-
-            <div class="col pull-right show-tablet">
-               <button type="submit" class="btn btn-white right">
-                  <div class="v-a">
-                     <i data-feather="more-horizontal"></i>
+            <div class="row">
+               <div class="col p-t ">
+                  <div class="day-headers">Mo</div>
+                  <div class="day-headers">Tu</div>
+                  <div class="day-headers">We</div>
+                  <div class="day-headers">Th</div>
+                  <div class="day-headers">Fr</div>
+                  <div class="day-headers">Sa</div>
+                  <div class="day-headers">Su</div>
+                  <div class="day day-disabled"></div>
+                  <div class="day day-disabled"></div>
+                  <div class="day">1</div>
+                  <div class="day">2</div>
+                  <div class="day">3</div>
+                  <div class="day">4</div>
+                  <div class="day">
+                     <div class="row">
+                        <div class="col no-margin">
+                           5
+                        </div>
+                     </div>
+                     <div class="row hide-tablet">
+                        <div class="col no-margin">
+                           <div class="badge badge-light ">Some task </div>
+                        </div>
+                     </div>
+                     <div class="row hide-tablet">
+                        <div class="col no-margin">
+                           <div class="badge badge-dark  m-t">Another task </div>
+                        </div>
+                     </div>
                   </div>
-               </button>
-
+                  <div class="day">
+                     <div class="row">
+                        <div class="col no-margin">6</div>
+                     </div>
+                     <div class="row">
+                        <div class="col no-margin hide-tablet">Date night</div>
+                     </div>
+                  </div>
+                  <div class="day">7</div>
+                  <div class="day">8</div>
+                  <div class="day">9</div>
+                  <div class="day">10</div>
+                  <div class="day">11</div>
+                  <div class="day">12</div>
+                  <div class="day">13</div>
+                  <div class="day">14</div>
+                  <div class="day">15</div>
+                  <div class="day">16</div>
+                  <div class="day">17</div>
+                  <div class="day">18</div>
+                  <div class="day">19</div>
+                  <div class="day">20</div>
+                  <div class="day">21</div>
+                  <div class="day">22</div>
+                  <div class="day">23</div>
+                  <div class="day">24</div>
+                  <div class="day">25</div>
+                  <div class="day">26</div>
+                  <div class="day">27</div>
+                  <div class="day">28</div>
+                  <div class="day day-disabled"></div>
+                  <div class="day day-disabled"></div>
+                  <div class="day day-disabled"></div>
+                  <div class="day day-disabled"></div>
+                  <div class="day day-disabled"></div>
+               </div>
             </div>
-         </div>
-
-         <div class="pos-rel">
-
-            <div style="position:absolute; width:100%; top:0; left:0; 
+            <!-- weekday view -->
+            <div class="gap"></div>
+            <div class="row  br m-b ">
+               <div class="col ">
+                  <div class="row">
+                     <div class="col no-margin text-muted">Week view</div>
+                  </div>
+                  <div class="row">
+                     <div class="col no-margin">
+                        <h4>Jan 2022</h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col right hide-tablet">
+                  <button class="btn btn-white m-r">Today</button>
+                  <drop-down button-title="Month view" class="m-r">
+                     <item title="Day view" url="bob"></item>
+                     <item title="Week view" url="bob"></item>
+                     <item title="Month view" url="bob"></item>
+                  </drop-down>
+                  <modal button-title="Add event" modal-header="Event">
+                     <div class="p-3">
+                        <div class="row">
+                           <div class="col">
+                              <div class="form-group">
+                                 <label for="title">Event</label>
+                                 <div class="small text-muted">Enter the name of
+                                    the event
+                                 </div>
+                                 <input class="form-control" placeholder="test" />
+                              </div>
+                              <div class="form-group">
+                                 <label for="title">Time</label>
+                                 <div class="small text-muted">Please choose
+                                    a suitable time
+                                 </div>
+                                 <input class="form-control" placeholder="test" />
+                              </div>
+                              <div class="form-group right">
+                                 <button type="submit" class="btn btn-dark">Save</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </modal>
+               </div>
+               <div class="col pull-right show-tablet">
+                  <button type="submit" class="btn btn-white right">
+                     <div class="v-a">
+                        <i data-feather="more-horizontal"></i>
+                     </div>
+                  </button>
+               </div>
+            </div>
+            <div class="pos-rel">
+               <div style="position:absolute; width:100%; top:0; left:0;
                   overflow:hidden scroll;" class="b-t b-l b-r">
-               <div class="day-headers">
-                  <div class="hide-tablet">Monday 10th</div>
-                  <div class="show-tablet">M
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Monday 10th</div>
+                     <div class="show-tablet">M
+                        <span class="small">
                         10
-                     </span>
+                        </span>
+                     </div>
                   </div>
-               </div>
-               <div class="day-headers">
-                  <div class="hide-tablet">Tuesday 11th</div>
-                  <div class="show-tablet">T
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Tuesday 11th</div>
+                     <div class="show-tablet">T
+                        <span class="small">
                         11
-                     </span>
+                        </span>
+                     </div>
                   </div>
-               </div>
-               <div class="day-headers">
-                  <div class="hide-tablet">Wednesday 12th</div>
-                  <div class="show-tablet">W
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Wednesday 12th</div>
+                     <div class="show-tablet">W
+                        <span class="small">
                         12
-                     </span>
+                        </span>
+                     </div>
                   </div>
-               </div>
-               <div class="day-headers">
-                  <div class="hide-tablet">Thursday 13th</div>
-                  <div class="show-tablet">T
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Thursday 13th</div>
+                     <div class="show-tablet">T
+                        <span class="small">
                         13
-                     </span>
+                        </span>
+                     </div>
                   </div>
-               </div>
-               <div class="day-headers">
-                  <div class="hide-tablet">Friday 14th</div>
-                  <div class="show-tablet">F
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Friday 14th</div>
+                     <div class="show-tablet">F
+                        <span class="small">
                         14
-                     </span>
+                        </span>
+                     </div>
                   </div>
-               </div>
-               <div class="day-headers">
-                  <div class="hide-tablet">Saturday 15th</div>
-                  <div class="show-tablet">S
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Saturday 15th</div>
+                     <div class="show-tablet">S
+                        <span class="small">
                         15
-                     </span>
+                        </span>
+                     </div>
                   </div>
-               </div>
-               <div class="day-headers">
-                  <div class="hide-tablet">Sunday 16th</div>
-                  <div class="show-tablet">S
-                     <span class="small">
+                  <div class="day-headers">
+                     <div class="hide-tablet">Sunday 16th</div>
+                     <div class="show-tablet">S
+                        <span class="small">
                         16
-                     </span>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <div class="scroll-y b" style="height:400px; width:100%; ">
+                  <div style="height:800px; ">
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
+                     <div class="day day-week">
+                     </div>
                   </div>
                </div>
             </div>
-
-
-            <div class="scroll-y b" style="height:400px; width:100%; ">
-               <div style="height:800px; ">
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-                  <div class="day day-week">
-                  </div>
-
-
-               </div>
-            </div>
-
-
-
+            <div class="gap"></div>
+            <div class="gap"></div>
+            <div class="gap"></div>
+            <div class="gap"></div>
          </div>
-
-
-         <div class="gap"></div>
-         <div class="gap"></div>
-         <div class="gap"></div>
-         <div class="gap"></div>
-
-
-
       </div>
-
-
-   </div>
-   <!-- feather icons -->
-   <script src="assets/js/feather.js"></script>
-   <script src="assets/js/click-outside.js"></script>
-   <script src="assets/js/focus-trap.js"></script>
-   <script src="assets/js/dropdown.js"></script>
-   <script src="assets/js/modals.js"></script>
-
-   <script>
-      var app = new Vue({
-         el: '#app',
-      })
-   </script>
-   <script>
-      feather.replace({
-         class: "font-primary",
-      });
-   </script>
-</body>
-
+      <!-- feather icons -->
+      <script src="assets/js/feather.js"></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/focus-trap.js"></script>
+      <script src="assets/js/dropdown.js"></script>
+      <script src="assets/js/modals.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+         })
+      </script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+   </body>
 </html>
