@@ -19,7 +19,7 @@ Vue.component('mega-menu', {
   ],
   template: `
     <div style="top:0; position:sticky; z-index:2;">
-      <div class=" h-e v-a bg-white p-2 b-b" :aria-labelledby="title">
+      <div class="h-e v-a bg-white p-2 b-b" :aria-labelledby="title">
         <div class="">
           <a
             class="rm-link-styles"

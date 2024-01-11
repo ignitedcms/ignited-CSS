@@ -88,7 +88,7 @@ Vue.component('mobile-menu-items', {
         class="rm-link-styles"
       >
         <div 
-          class="row p-2 bg-white b-b"
+          class="row p-2 bg-white b-b v-a"
         >
           {{title}}
         </div>
@@ -96,19 +96,15 @@ Vue.component('mobile-menu-items', {
 
       <div 
         v-if="children === 'yes'" 
-        class="p-2 bg-white b-b h-e no-select"
+        class="p p-l-2 v-a bg-white b-b h-e no-select"
         @click="toggle" 
       >
         <div>
           {{title}}
         </div>
-        <div>
+        <h5>
           +
-          <i 
-            data-feather="menu" 
-            class="hand"
-          ></i>
-        </div>
+        </h5>
       </div>
       <div 
         v-if="show" 
