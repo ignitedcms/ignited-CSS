@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Light weight framework</title>
-   <link rel="stylesheet" href="assets/css/main.css">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-   <!-- vue 2 -->
-   <script src="assets/js/vue2.js"></script>
-
-</head>
-
-<body class="full-screen bg-light-grey">
-   <div class="container" id="app">
-      <div class="gap"></div>
-
-      <div class="small-container timeline">
-         <div class="event">
-            <div class="date">2023</div>
-            <div class="description">
-               <h3>Event Title 1</h3>
-               <div class="panel br d drop-shadow">
-                  <p>
-                     Leverage agile frameworks to provide a robust synopsis for high level
-                     overviews. Iterative approaches to corporate strategy foster collaborative
-                     thinking to further the overall value proposition. Organically grow the
-                     holistic world view of disruptive innovation via workplace diversity and empowerment.
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div class="container" id="app">
+         <div class="gap"></div>
+         <div class="small-container timeline">
+            <div class="event">
+               <div class="date">2023</div>
+               <div class="description">
+                  <h3>Event Title 1</h3>
+                  <div class="panel br d drop-shadow">
+                     <p>
+                        Leverage agile frameworks to provide a robust synopsis for high level
+                        overviews. Iterative approaches to corporate strategy foster collaborative
+                        thinking to further the overall value proposition. Organically grow the
+                        holistic world view of disruptive innovation via workplace diversity and empowerment.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="event">
+               <div class="date">2022</div>
+               <div class="description">
+                  <h3>Event Title 2</h3>
+                  <p>Event Description 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+               </div>
+            </div>
+            <div class="event">
+               <div class="date">2021</div>
+               <div class="description">
+                  <h3>Event Title 3</h3>
+                  <p>Event Description 3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.
                   </p>
                </div>
             </div>
+            <!-- Add more events as needed -->
          </div>
-         <div class="event">
-            <div class="date">2022</div>
-            <div class="description">
-               <h3>Event Title 2</h3>
-               <p>Event Description 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-         </div>
-         <div class="event">
-            <div class="date">2021</div>
-            <div class="description">
-               <h3>Event Title 3</h3>
-               <p>Event Description 3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                  ex ea commodo consequat.</p>
-            </div>
-         </div>
-         <!-- Add more events as needed -->
+         <div class="gap"></div>
       </div>
-      <div class="gap"></div>
-   </div>
-
-   <script src="assets/js/feather.js"></script>
-   <script>
-      var app = new Vue({
-         el: '#app',
-      })
-   </script>
-   <script>
-      feather.replace({
-         class: "font-primary",
-      });
-   </script>
-
-</body>
-
+      <script src="assets/js/feather.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+         })
+      </script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+   </body>
 </html>

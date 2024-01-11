@@ -1,65 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Light weight framework</title>
-   <link rel="stylesheet" href="assets/css/main.css">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-
-   <!-- vue 2 -->
-   <script src="assets/js/vue2.js"></script>
-
-
-</head>
-
-<body class="full-screen bg-light-grey">
-   <div class="container" id="app">
-      <div class="gap"></div>
-      <div class="row">
-         <div class="col">
-            <h3>Focus trap</h3>
-            <p>Tab through to see it in action</p>
-
-            <div class="form-group bg-dark p-2 ">
-               <focus-trap :active="isTrapActive">
-                  <p>Here is a focus trap <a href='#!'>with</a>
-                     <a href='#!'>some</a>
-                     <a href='#!'>focusable</a> parts.
-                  </p>
-                  <button @click="isTrapActive = !isTrapActive">toggle trap</button>
-               </focus-trap>
-            </div>
-
-            <div class="form-group">
-               <input class="form-control" placeholder="test" />
-            </div>
-            <div class="form-group">
-               <button @click="alert('hi')" type="submit" class="btn btn-white">title</button>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div class="container" id="app">
+         <div class="gap"></div>
+         <div class="row">
+            <div class="col">
+               <h3>Focus trap</h3>
+               <p>Tab through to see it in action</p>
+               <div class="form-group bg-dark p-2 ">
+                  <focus-trap :active="isTrapActive">
+                     <p>Here is a focus trap <a href='#!'>with</a>
+                        <a href='#!'>some</a>
+                        <a href='#!'>focusable</a> parts.
+                     </p>
+                     <button @click="isTrapActive = !isTrapActive">toggle trap</button>
+                  </focus-trap>
+               </div>
+               <div class="form-group">
+                  <input class="form-control" placeholder="test" />
+               </div>
+               <div class="form-group">
+                  <button @click="alert('hi')" type="submit" class="btn btn-white">title</button>
+               </div>
             </div>
          </div>
-
       </div>
-   </div>
-
-   <script src="assets/js/click-outside.js"></script>
-   <script src="assets/js/focus-trap.js"></script>
-   <script>
-
-
-      var app = new Vue({
-         el: '#app',
-         data: {
-            isTrapActive: true
-         }
-
-      })
-   </script>
-</body>
-
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/focus-trap.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+            data: {
+               isTrapActive: true
+            }
+         })
+      </script>
+   </body>
 </html>
