@@ -49,7 +49,7 @@ Vue.component('combobox', {
         <div 
            v-if="show" 
            :id="name"
-           class=" fade-in-bottom bg-white br scroll-y b drop-shadow" 
+           class="fade-in-bottom bg-white br scroll-y b drop-shadow" 
            style="position:absolute; width:240px; height:300px; top:78px; left:0; z-index:2;"
            @click.stop
          >
