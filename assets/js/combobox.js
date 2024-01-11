@@ -32,32 +32,33 @@ Vue.component('combobox', {
         :aria-expanded="arr"
         :aria-controls="name"
         ref="button"
-        class="form-control hand left combo-btn-container"
+        class="form-control hand p h-e v-a"
+        style="width:240px;"
         :name="name"
         :value="value"
         v-click-outside="away"
         @input="updateInput($event.target.value)"
       >
-        <span>
-          <i data-feather='chevron-down' class='icon-inside hand'></i>
-        </span>
         {{ selectedItem }}
+        <span class="v-a">
+          <i data-feather='chevron-down'></i>
+        </span>
 
       </button>
 
         <div 
            v-if="show" 
            :id="name"
-           class="combobox-container fade-in-bottom" 
-           style="position:absolute; top:75px; left:0; z-index:2;"
+           class=" fade-in-bottom bg-white br scroll-y b drop-shadow" 
+           style="position:absolute; width:240px; height:300px; top:78px; left:0; z-index:2;"
            @click.stop
          >
-           <div class="pos-rel">
+           <div class="pos-rel ">
              <span>
                <i data-feather='search' class='icon-inside hand' style="right:25px"></i>
              </span>
              <input
-               class="rm-input-styles"
+               class="rm-input-styles br"
                :name="name"
                aria-autocomplete="list"
                role="dialog"
@@ -77,10 +78,10 @@ Vue.component('combobox', {
              <div
                v-for="(item, index) in filteredItems"
                :key="index"
-               class="combobox-container-item"
+               class="p m grey-hover br"
                @mouseover="setHighlighted(index)"
                @click="onClick(item.val)"
-               :class="{ 'combobox-container-item-highlighted': index === highlightedIndex }"
+               :class="{ 'bg-grey': index === highlightedIndex }"
                v-bind="getAriaSelected(index === highlightedIndex)"
              >
                {{ item.val }}
@@ -88,7 +89,7 @@ Vue.component('combobox', {
 
              <div
                v-if="filteredItems.length === 0 && searchQuery.trim() !== ''"
-               class="combobox-container-item"
+               class="p m grey-hover br"
              >
                No searches found. . .
              </div>

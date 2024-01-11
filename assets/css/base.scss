@@ -830,7 +830,32 @@ ol {
    padding: 0;
 }
 
+/*
+|---------------------------------------------------------------
+| Remove input styles
+|---------------------------------------------------------------
+*/
 
+.rm-input-styles {
+   position: relative;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   width: 100%;
+   padding: .275rem .85rem;
+   font-family: inherit;
+   font-size: 1em;
+   line-height: 1.8em;
+   color: #495057;
+   background-color: #fff;
+   background-clip: padding-box;
+   border: 1px solid #fff;
+
+   &:focus {
+
+      background-color: #fff;
+      outline: 0;
+   }
+}
 
 /*
 |---------------------------------------------------------------
