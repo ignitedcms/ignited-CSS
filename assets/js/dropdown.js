@@ -31,7 +31,8 @@ Vue.component('drop-down', {
         tabindex="-1"
         role="menu"
         :aria-labelledby="'dropdown-' + uniqueId"
-        class="pos-abs dropdown br drop-shadow fade-in-bottom"
+        class="pos-abs b bg-white br p drop-shadow fade-in-bottom"
+        style="min-width:240px; right:0;"
         @keydown.down.prevent="navigate('down')"
         @keydown.up.prevent="navigate('up')"
         @keydown.enter.prevent="selectItem"
@@ -101,10 +102,10 @@ Vue.component('item', {
   props: ['title', 'url'],
   template: `
     <div
-      class="row"
+      class="row "
       tabindex="-1"
       role="menuitem"
-      class="dropdown-item"
+      class="col grey-hover p no-margin br"
       @click="$emit('item-selected', title)"
     >
       <div :href="url" class="left">{{ title }}</div>

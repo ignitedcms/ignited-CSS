@@ -15,7 +15,7 @@
 @import url("checkbox.css");
 @import url("buttons.css");
 @import url("drop-downs.css");
-@import url("dashboard.css");
+/*@import url("dashboard.css");*/
 @import url("datatables.css");
 @import url("drawer.css");
 @import url("feeds.css");
@@ -26,8 +26,7 @@
 @import url("modals.css");
 @import url("matrix.css");
 @import url("datepicker.css");
-@import url("documentation.css");
-@import url("gallery.css");
+/*@import url("documentation.css");*/
 @import url("toasts.css");
 @import url("range-sliders.css");
 @import url("full-calendar.css");
@@ -42,4 +41,4 @@
 @import url("tooltips.css");
 @import url("trees.css");
 @import url("random.css");
-@import url("landing.css");
+/*@import url("landing.css");*/
