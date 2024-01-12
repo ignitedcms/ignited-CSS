@@ -16,7 +16,7 @@ Vue.component('sidebar', {
   template: `
     <div>
       <div 
-       class="sidebar p-3 bg-dark scroll-y full-screen"
+       class="sidebar p-3 bg-dark scroll-y full-screen hide-tablet"
        style="width:270px; float:left;"
       >
         <a href="https://www.ignitedcms.com/"></a>
@@ -34,12 +34,12 @@ Vue.component('sidebar', {
         <slot name="header"></slot>
       </div>
       <div 
-        class="main-content pos-rel m-b-2" 
+        class="main-content p-t-4  pos-rel m-b-2" 
         style="float:left; width:1000px;"
       >
         <div>
           <button 
-           class="bg-white v-a h-a icon hand b br"
+           class="bg-white v-a h-a icon hand b br show-tablet"
            @click="toggle" 
            v-click-outside="away" 
           >
