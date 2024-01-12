@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js 2 Dropdown Component with Keyboard Navigation</title>
+  <!-- Include Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <dropdown :options="dropdownOptions" v-model="selectedOption"></dropdown>
+  <p>Selected option: {{ selectedOption }}</p>
+</div>
+
+<script>
+// Dropdown component
+Vue.component('dropdown', {
+  props: {
+    options: {
+      type: Array,
+      required: true
+    },
+    value: {
+      type: String,
+      required: false
+    }
+  },
+  data() {
+    return {
+      isOpen: false,
+      focusedIndex: -1
+    };
+  },
+  methods: {
+    selectOption(option) {
+      this.$emit('input', option);
+      this.isOpen = false;
+      this.focusedIndex = -1;
+    },
+    handleKeyDown(event) {
+      switch (event.key) {
+        case 'ArrowUp':
+          this.moveFocus(-1);
+          event.preventDefault();
+          break;
+        case 'ArrowDown':
+          this.moveFocus(1);
+          event.preventDefault();
+          break;
+        case 'Enter':
+          if (this.focusedIndex !== -1) {
+            this.selectOption(this.options[this.focusedIndex]);
+          }
+          break;
+        case 'Escape':
+          this.isOpen = false;
+          this.focusedIndex = -1;
+          break;
+      }
+    },
+    moveFocus(step) {
+      this.focusedIndex = Math.min(
+        Math.max(this.focusedIndex + step, -1),
+        this.options.length - 1
+      );
+    }
+  },
+  template: `
+    <div class="dropdown">
+      <div @click="isOpen = !isOpen" class="dropdown-toggle" @keydown="handleKeyDown" tabindex="0">
+        {{ value || 'Select an option' }}
+      </div>
+      <ul v-if="isOpen" class="dropdown-menu">
+        <li
+          v-for="(option, index) in options"
+          @click="selectOption(option)"
+          @mouseenter="focusedIndex = index"
+          :class="{ 'focused': index === focusedIndex }"
+        >
+          {{ option }}
+        </li>
+      </ul>
+    </div>
+  `
+});
+
+// Vue instance
+new Vue({
+  el: '#app',
+  data: {
+    dropdownOptions: ['Option 1', 'Option 2', 'Option 3'],
+    selectedOption: ''
+  }
+});
+</script>
+
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .focused {
+    background-color: #f0f0f0;
+  }
+</style>
+
+</body>
+</html>
+
