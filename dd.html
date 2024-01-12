@@ -69,9 +69,9 @@ Vue.component('dropdown', {
   },
   template: `
     <div class="dropdown">
-      <div @click="isOpen = !isOpen" class="dropdown-toggle" @keydown="handleKeyDown" tabindex="0">
+      <button @click="isOpen = !isOpen" class="dropdown-toggle" @keydown="handleKeyDown" tabindex="0">
         {{ value || 'Select an option' }}
-      </div>
+      </button>
       <ul v-if="isOpen" class="dropdown-menu">
         <li
           v-for="(option, index) in options"
