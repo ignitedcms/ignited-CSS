@@ -1,9 +1,5 @@
 @import "variables";
 
-.landing {
-   background-color: red;
-   color: #ffffff;
-}
 
 .console {
    position: relative;
@@ -35,8 +31,6 @@
       background-color: #ffffff;
       border: 1px solid $grey;
       color: #333333;
-
-
 
    }
 }
@@ -102,12 +96,3 @@
    }
 }
 
-.testimonial {
-   &-pic {
-      width: 60px;
-      height: 60px;
-      border-radius: 50px;
-      border: 4px solid #ffffff;
-      box-shadow: $shadow;
-   }
-}
