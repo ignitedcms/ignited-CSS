@@ -24,13 +24,14 @@ Vue.component('sidebar', {
         <slot name="header"></slot>
       </div>
       <div 
-        class="sidebar-fixed  fade-in" 
+        class="sidebar-fixed bg-dark overflow-y full-screen fade-in" 
+        style="position:fixed; top:0; left:0; width:270px; float:left; z-index:2; padding:30px;"
         :style="{ display: styles }" 
         id="sidebar-fixed" 
         @click.stop
       >
         <a href="https://www.ignitedcms.com/"></a>
-        <h5 class="m-l m-t-2">Dashboard</h5>
+        <h5 class="text-white">Dashboard</h5>
         <slot name="header"></slot>
       </div>
       <div 
