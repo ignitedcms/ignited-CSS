@@ -33,7 +33,7 @@ Vue.component('combobox', {
         :aria-controls="name"
         ref="button"
         class="form-control hand p h-e v-a"
-        style="width:240px;"
+        style="width:250px;"
         :name="name"
         :value="value"
         v-click-outside="away"
@@ -50,10 +50,10 @@ Vue.component('combobox', {
            v-if="show" 
            :id="name"
            class="pos-abs fade-in-bottom bg-white br scroll-y b drop-shadow" 
-           style="width:240px; height:300px; top:78px; left:0; z-index:2;"
+           style="width:250px; height:300px; top:78px; left:0; z-index:2;"
            @click.stop
          >
-           <div class="pos-rel ">
+           <div class="pos-rel">
              <span>
                <i data-feather='search' class='icon-inside hand' style="right:25px"></i>
              </span>
@@ -78,7 +78,8 @@ Vue.component('combobox', {
              <div
                v-for="(item, index) in filteredItems"
                :key="index"
-               class="p m grey-hover br"
+               class=" m grey-hover br"
+               style="padding:6px;"
                @mouseover="setHighlighted(index)"
                @click="onClick(item.val)"
                :class="{ 'bg-grey': index === highlightedIndex }"
