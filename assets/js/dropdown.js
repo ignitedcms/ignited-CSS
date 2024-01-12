@@ -31,8 +31,8 @@ Vue.component('drop-down', {
         tabindex="-1"
         role="menu"
         :aria-labelledby="'dropdown-' + uniqueId"
-        class="pos-abs b bg-white br p drop-shadow fade-in-bottom"
-        style="min-width:240px; right:0;"
+        class="pos-abs b bg-white br  drop-shadow fade-in-bottom"
+        style="min-width:200px;top:45px; right:0; padding:5px;"
         @keydown.down.prevent="navigate('down')"
         @keydown.up.prevent="navigate('up')"
         @keydown.enter.prevent="selectItem"
@@ -105,7 +105,8 @@ Vue.component('item', {
       class="row "
       tabindex="-1"
       role="menuitem"
-      class="col grey-hover p no-margin br"
+      class="col grey-hover no-margin br"
+      style="padding:7px;"
       @click="$emit('item-selected', title)"
     >
       <div :href="url" class="left">{{ title }}</div>
