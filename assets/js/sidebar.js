@@ -37,9 +37,9 @@ Vue.component('sidebar', {
       <div 
         class="main-content p-t-4  pos-rel m-b-2" 
       >
-        <div>
+        <div class="p-l-3 show-desktop">
           <button 
-           class="bg-white v-a h-a icon hand b br show-desktop"
+           class=" bg-white v-a h-a icon hand b br"
            @click="toggle" 
            v-click-outside="away" 
           >
