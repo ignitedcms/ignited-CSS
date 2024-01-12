@@ -16,8 +16,8 @@ Vue.component('sidebar', {
   template: `
     <div>
       <div 
-       class="sidebar p-3 bg-dark scroll-y full-screen hide-tablet"
-       style="width:270px; float:left;"
+       class="sidebar p-3 bg-dark scroll-y  hide-tablet"
+       style="position:fixed; top:0; left:0; width:270px; float:left; height:100vh;"
       >
         <a href="https://www.ignitedcms.com/"></a>
         <h5 class="text-white">Dashboard</h5>
@@ -36,7 +36,7 @@ Vue.component('sidebar', {
       </div>
       <div 
         class="main-content p-t-4  pos-rel m-b-2" 
-        style="float:left; width:1000px;"
+        style="float:left; width:1000px; margin-left:270px;"
       >
         <div>
           <button 
