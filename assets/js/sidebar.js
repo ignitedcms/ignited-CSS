@@ -16,7 +16,7 @@ Vue.component('sidebar', {
   template: `
     <div>
       <div 
-       class="sidebar p-3 bg-dark scroll-y  hide-tablet"
+       class="sidebar p-3 bg-dark scroll-y  hide-desktop"
        style="position:fixed; top:0; left:0; width:270px; float:left; height:100vh;"
       >
         <a href="https://www.ignitedcms.com/"></a>
@@ -39,7 +39,7 @@ Vue.component('sidebar', {
       >
         <div>
           <button 
-           class="bg-white v-a h-a icon hand b br "
+           class="bg-white v-a h-a icon hand b br show-desktop"
            @click="toggle" 
            v-click-outside="away" 
           >

@@ -1027,3 +1027,17 @@ ol {
       display: none;
    }
 }
+
+
+@media screen and (min-width:1000px) {
+   .show-desktop {
+      display: none;
+   }
+}
+
+
+@media screen and (max-width:1000px) {
+   .hide-desktop {
+      display: none;
+   }
+}
