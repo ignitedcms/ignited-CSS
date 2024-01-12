@@ -26,7 +26,7 @@
             <div id="context" @contextmenu="handler($event)" class="pos-rel m-t-5 panel br v-a h-a"
                style="min-height:300px;">
                Right click here
-               <div v-if="show" class="pos-abs bg-white b br drop-shadow p" style="width:250px;"
+               <div v-if="show" class="pos-abs bg-white b br drop-shadow" style="width:250px; padding:6px;"
                   :style="{'top':yCord+'px','left':xCord+'px'}" v-click-outside="away">
                   <div class="row p grey-hover br">
                      <div class="col no-margin h-e">
