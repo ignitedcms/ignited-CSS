@@ -19,7 +19,7 @@ Vue.component('mobile-menu', {
   ],
   template: `
     <div style="top:0; position:sticky; z-index:2;" class="show-tablet">
-      <div class="p h-e bg-white b-b v-a">
+      <div class="h-e bg-white b-b v-a" style="padding:20px;">
         <div  style="width:150px;">
           <a 
             :href="url"
