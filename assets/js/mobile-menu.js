@@ -55,6 +55,7 @@ Vue.component('mobile-menu', {
         >
           <div 
             class="p-2 bg-white"
+            style="padding:20px;"
           >
             {{title}}
           </div>
@@ -89,6 +90,7 @@ Vue.component('mobile-menu-items', {
       >
         <div 
           class="row p-2 bg-white b-b v-a"
+          style="padding:20px;"
         >
           {{title}}
         </div>
@@ -96,7 +98,8 @@ Vue.component('mobile-menu-items', {
 
       <div 
         v-if="children === 'yes'" 
-        class="p-l-2 p-r-2 v-a bg-white b-b h-e no-select"
+        class="v-a bg-white b-b h-e no-select"
+        style="padding:20px;"
         @click="toggle" 
       >
         <div>
