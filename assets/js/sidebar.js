@@ -44,11 +44,9 @@ Vue.component('sidebar', {
            @click="toggle" 
            v-click-outside="away" 
           >
-            <i data-feather="menu"></i>
+            <i data-feather="menu" class="v-a h-a"></i>
           </button>
-          <div style="width:60%;" class="m-l-2">
-            <input class="form-control" placeholder="Search then hit enter" />
-          </div>
+          
         </div>
         <div class="p-3">
           <slot></slot>
