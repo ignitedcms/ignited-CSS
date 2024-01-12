@@ -44,7 +44,8 @@ Vue.component('mobile-menu', {
 
       <div 
         v-if="show"
-        class="fade-in-bottom" 
+        class="fade-in-bottom bg-white" 
+        style="position:fixed; height:100%; width:100%;" 
       >
         <slot></slot>
 
@@ -111,7 +112,7 @@ Vue.component('mobile-menu-items', {
       </div>
       <div 
         v-if="show" 
-        class="no-select"
+        class="no-select p-2 bg-light-grey"
       >
         <slot></slot>
       </div>
