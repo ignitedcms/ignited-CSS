@@ -115,7 +115,7 @@ Vue.component('menu-item', {
     <div class="row m-t hand">
       <a
         :href="url"
-        class="rm-link-styles col v-a no-margin grey-hover br"
+        class="rm-list-styles rm-link-styles col v-a no-margin grey-hover br"
       >
         <img
           :src="icon"
