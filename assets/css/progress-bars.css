@@ -12,11 +12,16 @@
   justify-content: center;
   color: #fff;
   text-align: center;
-  background-color: #0053ff;
   transition: width 0.6s ease;
 }
 .progress-bar-primary {
   background-color: #292F3E;
+}
+.progress-bar-white {
+  background-color: #fff !important;
+}
+.progress-bar-light {
+  background-color: #fff !important;
 }
 
 /*# sourceMappingURL=progress-bars.css.map */

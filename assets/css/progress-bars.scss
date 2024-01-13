@@ -14,11 +14,18 @@
         justify-content: center;
         color: #fff;
         text-align: center;
-        background-color: $link-color;
         transition: width .6s ease;
 
         &-primary {
             background-color: $primary;
+        }
+
+        &-white {
+            background-color: #fff !important;
+        }
+
+        &-light {
+            background-color: #fff !important;
         }
     }
 
