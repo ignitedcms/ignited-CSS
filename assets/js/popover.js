@@ -16,7 +16,7 @@ Vue.component('popover', {
   template: `
     <button
       type="button"
-      class="btn rm-btn-styles popover-rel"
+      class=" rm-btn-styles popover-rel"
       style="padding:0;"
       aria-haspopup="dialog"
       :aria-expanded="arr"
@@ -29,6 +29,7 @@ Vue.component('popover', {
       <div
         :id="'popover-' + uniqueId"
         class="popover fade-in-bottom"
+        style="padding:10px;"
         role="dialog"
         v-if="show"
         :style="{ width: width }"
