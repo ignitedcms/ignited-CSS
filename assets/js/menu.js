@@ -54,7 +54,7 @@ Vue.component('menu-items', {
     'url'
   ],
   template: `
-    <div @keyup.escape="escapePressed()" :aria-controls="title">
+    <div @keyup.escape="escapePressed()" class="pos-rel">
       <div
         v-if="children !== 'yes'"
       >
@@ -70,13 +70,21 @@ Vue.component('menu-items', {
         class="hand v-a pos-rel"
         @click="toggle"
         v-click-outside="away"
-        :aria-expanded="show.toString()"
       >
-        <button class="rm-btn-styles" :id="title">{{title}}</button>
+        <button 
+          class="rm-btn-styles" 
+          :id="title"
+          aria-haspopup="true"
+          :aria-expanded="show.toString()"
+        >
+         {{title}}
+        </button>
         <span class="m-l v-a">
           <i data-feather="chevron-down"></i>
         </span>
-        <div
+        
+      </div>
+      <div
           v-if="show"
           @click.stop
           class="pos-abs fade-in-bottom bg-white b p br drop-shadow"
@@ -84,7 +92,6 @@ Vue.component('menu-items', {
         >
           <slot></slot>
         </div>
-      </div>
     </div>
   `,
   data() {
