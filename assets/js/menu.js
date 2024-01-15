@@ -54,7 +54,7 @@ Vue.component('menu-items', {
     'url'
   ],
   template: `
-    <div @keyup.escape="escapePressed()" class="pos-rel" >
+    <div @keyup.escape="escapePressed()" :aria-controls="title">
       <div
         v-if="children !== 'yes'"
       >
@@ -76,16 +76,15 @@ Vue.component('menu-items', {
         <span class="m-l v-a">
           <i data-feather="chevron-down"></i>
         </span>
-      </div>
-      <div
+        <div
           v-if="show"
-          :id=""
           @click.stop
           class="pos-abs fade-in-bottom bg-white b p br drop-shadow"
           style="top:40px; left:-10px; min-height:100px;  min-width:250px;"
-       >
+        >
           <slot></slot>
-       </div>
+        </div>
+      </div>
     </div>
   `,
   data() {
