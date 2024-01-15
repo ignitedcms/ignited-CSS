@@ -27,6 +27,7 @@ Vue.component('mobile-menu', {
             <img 
               class="v-a"
               :src="logo"
+              alt="logo"
             ></img>
           </a>
         </div> 
