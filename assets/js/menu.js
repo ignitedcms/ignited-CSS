@@ -32,9 +32,9 @@ Vue.component('mega-menu', {
             ></img>
           </a>
         </div>
-        <div class="h-e" style="min-width:300px;">
+        <nav class="h-e" style="min-width:300px;">
           <slot></slot>
-        </div>
+        </nav>
         <button type="button" class="btn btn-white" :id="title">{{title}}</button>
       </div>
     </div>
@@ -84,14 +84,14 @@ Vue.component('menu-items', {
         </span>
         
       </div>
-      <div
+      <ul
           v-if="show"
           @click.stop
           class="pos-abs fade-in-bottom bg-white b p br drop-shadow"
           style="top:40px; left:-10px; min-height:100px;  min-width:250px;"
         >
           <slot></slot>
-        </div>
+      </ul>
     </div>
   `,
   data() {
@@ -119,7 +119,7 @@ Vue.component('menu-item', {
     'url'
   ],
   template: `
-    <div class="row m-t hand">
+    <li class="row m-t hand">
       <a
         :href="url"
         class="rm-list-styles rm-link-styles col v-a no-margin grey-hover br"
@@ -131,7 +131,7 @@ Vue.component('menu-item', {
         ></img>
         <div class="m-l-2">{{title}}</div>
       </a>
-    </div>
+    </li>
   `,
   data() {
     return {};
