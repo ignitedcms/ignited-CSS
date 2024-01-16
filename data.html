@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <script src="assets/js/vue2.js"></script>
+      <style>
+       table {
+         border-collapse: collapse;
+         width: 100%;
+       }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sortable, Searchable, and Paginated DataTable</title>
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+       th,
+       td {
+         border: 1px solid #dddddd;
+         text-align: left;
+         padding: 8px;
+         cursor: pointer;
+       }
 
-    th,
-    td {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-      cursor: pointer;
-    }
+       tr:nth-child(even){
+        background-color:#f2f2f2;
+       }
 
-    .pagination {
-      margin-top: 10px;
-    }
+       .pagination {
+         margin-top: 10px;
+       }
 
-    .pagination button {
-      cursor: pointer;
-      margin: 0 5px;
-    }
+       .pagination button {
+         cursor: pointer;
+         margin: 0 5px;
+       }
   </style>
-</head>
+   </head>
+   <body class="full-screen bg-light-grey">
+      <div class="gap"></div>
+      <div class="container" id="app">
 
-<body>
+         <div class="panel br drop-shadow">
+            <input v-model="searchQuery" style="width:300px;" class="pull-right form-control m-b-2" placeholder="Search..." @input="searchTable">
 
-  <div id="app">
-    <h2>Sortable, Searchable, and Paginated Data Table Example</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th @click="sortTable(0)">ID</th>
+                     <th @click="sortTable(1)">Name</th>
+                     <th @click="sortTable(2)">Email</th>
+                     <th @click="sortTable(3)">Date</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr v-for="(item, index) in paginatedData" :key="index">
+                     <td v-for="value in Object.values(item)">{{ value }}</td>
+                  </tr>
+               </tbody>
+            </table>
 
-    <input v-model="searchQuery" placeholder="Search..." @input="searchTable">
+            <div class="pagination right p-t">
+               <button class="btn btn-white" @click="prevPage" :disabled="currentPage === 1">Previous</button>
+               <span>{{ currentPage }}</span>
+               <button class="btn btn-white" @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+            </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th @click="sortTable(0)">ID</th>
-          <th @click="sortTable(1)">Name</th>
-          <th @click="sortTable(2)">Email</th>
-          <th @click="sortTable(3)">Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in paginatedData" :key="index">
-          <td v-for="value in Object.values(item)">{{ value }}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="pagination">
-      <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
-      <span>{{ currentPage }}</span>
-      <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
-    </div>
+         </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script>
     new Vue({
       el: '#app',
