@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sortable and Searchable DataTable</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <h2>Sortable and Searchable Data Table Example</h2>
+
+    <input v-model="searchQuery" placeholder="Search..." @input="searchTable">
+
+    <table>
+      <thead>
+        <tr>
+          <th @click="sortTable(0)">ID</th>
+          <th @click="sortTable(1)">Name</th>
+          <th @click="sortTable(2)">Email</th>
+          <th @click="sortTable(3)">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in filteredData" :key="index">
+          <td v-for="value in Object.values(item)">{{ value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        data: [
+          { id: 1, name: 'John Doe', email: 'john@example.com', date: '2001-01-01' },
+          { id: 2, name: 'Jane Doe', email: 'jane@example.com', date: '2000-01-01' },
+          { id: 3, name: 'Sarah Doe', email: 'sarah@example.com', date: '2020-01-01' },
+          // Add more data as needed
+        ],
+        sortOrders: {},
+        searchQuery: '',
+      },
+      computed: {
+        filteredData() {
+          const query = this.searchQuery.toLowerCase();
+          return this.data.filter((item) => {
+            return Object.values(item).some((value) => {
+              return value.toString().toLowerCase().includes(query);
+            });
+          });
+        },
+      },
+      methods: {
+        sortTable(columnIndex) {
+          const currentOrder = this.sortOrders[columnIndex] || 'asc';
+
+          const newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+          this.$set(this.sortOrders, columnIndex, newOrder);
+
+          this.data.sort((a, b) => {
+            const aValue = Object.values(a)[columnIndex];
+            const bValue = Object.values(b)[columnIndex];
+
+            if (newOrder === 'asc') {
+              return aValue.localeCompare(bValue);
+            } else {
+              return bValue.localeCompare(aValue);
+            }
+          });
+        },
+        searchTable() {
+          // No need to update the data directly, as it's computed from searchQuery
+        },
+      },
+      mounted() {
+        // Call the function to initially populate the table
+        // No need for createTable() in Vue, as the template is reactive
+      },
+    });
+  </script>
+
+</body>
+
+</html>
+
