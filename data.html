@@ -44,7 +44,19 @@
       <div class="container" id="app">
 
          <div class="panel br drop-shadow">
-            <input v-model="searchQuery" style="width:300px;" class="pull-right form-control m-b-2" placeholder="Search..." @input="searchTable">
+
+            <div class="row">
+               <div class="col h-e">
+
+                  <select class="form-select" v-model="itemsPerPage" style="width:100px;" aria-label="Default select example">
+                     <option value="10" selected>10</option>
+                     <option value="50">50</option>
+                     <option value="100">100</option>
+                  </select>
+
+                  <input v-model="searchQuery" style="width:300px;" class="form-control" placeholder="Search..." @input="searchTable">
+               </div>
+            </div>
 
             <table>
                <thead>
@@ -69,8 +81,8 @@
             </div>
 
          </div>
-  </div>
-
+      </div>
+      <div class="gap"></div>
   <script>
     new Vue({
       el: '#app',
@@ -100,7 +112,7 @@
         sortOrders: {},
         searchQuery: '',
         currentPage: 1,
-        itemsPerPage: 8,
+        itemsPerPage: 10,
       },
       computed: {
         filteredData() {
