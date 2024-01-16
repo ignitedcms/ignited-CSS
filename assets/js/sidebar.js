@@ -15,23 +15,38 @@ Vue.component('sidebar', {
   props: ['theme'],
   template: `
     <div>
-      <div 
+      <div v-if="theme =='dark'" 
        class="sidebar p-3 bg-dark scroll-y full-screen hide-desktop"
        style="position:fixed; top:0; left:0; width:270px; float:left;"
       >
-        <a href="https://www.ignitedcms.com/"></a>
         <h5 class="text-white">Dashboard</h5>
         <slot name="header"></slot>
       </div>
-      <div 
+      <div v-if="theme =='light'" 
+       class="sidebar b-r p-3 bg-light scroll-y full-screen hide-desktop"
+       style="position:fixed; top:0; left:0; width:270px; float:left;"
+      >
+        <h5 class="">Dashboard</h5>
+        <slot name="header"></slot>
+      </div>
+      <div v-if="theme == 'dark'" 
         class="sidebar-fixed bg-dark overflow-y full-screen fade-in" 
         style="position:fixed; top:0; left:0; width:270px; float:left; z-index:2; padding:30px;"
         :style="{ display: styles }" 
         id="sidebar-fixed" 
         @click.stop
       >
-        <a href="https://www.ignitedcms.com/"></a>
         <h5 class="text-white">Dashboard</h5>
+        <slot name="header"></slot>
+      </div>
+      <div v-if="theme == 'light'" 
+        class="sidebar-fixed b-r bg-light overflow-y full-screen fade-in" 
+        style="position:fixed; top:0; left:0; width:270px; float:left; z-index:2; padding:30px;"
+        :style="{ display: styles }" 
+        id="sidebar-fixed" 
+        @click.stop
+      >
+        <h5 class="">Dashboard</h5>
         <slot name="header"></slot>
       </div>
       <div 
