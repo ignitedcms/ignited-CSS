@@ -34,7 +34,7 @@ Vue.component('accordion-item', {
           :aria-controls="'accordion-' + uniqueId" 
           :id="'accordion-title-' + uniqueId" 
           class="h-e v-a underline-hover p-2 rm-btn-styles"
-          style="width:100%; border-bottom:1px solid #ccc;"
+          style="width:100%; border-bottom:1px solid #ccc; padding:15px;"
           @click="toggle"
         >
           <div class="text-black">
