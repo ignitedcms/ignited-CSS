@@ -32,8 +32,10 @@ Vue.component('mega-menu', {
             ></img>
           </a>
         </div>
-        <nav class="h-e" style="min-width:300px;">
+        <nav  style="min-width:300px;">
+          <ul class="rm-list-styles h-e">
           <slot></slot>
+          </ul>
         </nav>
         <button type="button" class="btn btn-white" :id="title">{{title}}</button>
       </div>
@@ -54,7 +56,7 @@ Vue.component('menu-items', {
     'url'
   ],
   template: `
-    <div @keyup.escape="escapePressed()" class="pos-rel">
+    <li @keyup.escape="escapePressed()" class="pos-rel">
       <div
         v-if="children !== 'yes'"
       >
@@ -71,8 +73,8 @@ Vue.component('menu-items', {
         @click="toggle"
         v-click-outside="away"
       >
-        <button 
-          class="rm-btn-styles" 
+        <button
+          class="rm-btn-styles"
           :id="title"
           aria-haspopup="true"
           :aria-expanded="show.toString()"
@@ -82,17 +84,16 @@ Vue.component('menu-items', {
         <span class="m-l v-a">
           <i data-feather="chevron-down"></i>
         </span>
-        
       </div>
       <ul
-          v-if="show"
-          @click.stop
-          class="pos-abs fade-in-bottom bg-white b p br drop-shadow"
-          style="top:40px; left:-10px; min-height:100px;  min-width:250px;"
-        >
-          <slot></slot>
+        v-if="show"
+        @click.stop
+        class="pos-abs fade-in-bottom bg-white b p br drop-shadow"
+        style="top:40px; left:-10px; min-height:100px;  min-width:250px;"
+      >
+        <slot></slot>
       </ul>
-    </div>
+    </li>
   `,
   data() {
     return {
@@ -138,4 +139,3 @@ Vue.component('menu-item', {
   },
   methods: {}
 });
-
