@@ -17,12 +17,19 @@
          width: 100%;
        }
 
-       th,
+       th {
+         border: 1px solid #dddddd;
+         color:#000;
+         background-color:#eee;
+         text-align: left;
+         padding: 8px;
+         cursor: pointer;
+       }
+
        td {
          border: 1px solid #dddddd;
          text-align: left;
          padding: 8px;
-         cursor: pointer;
        }
 
        tr:nth-child(even){
@@ -61,10 +68,32 @@
             <table>
                <thead>
                   <tr>
-                     <th @click="sortTable(0)">ID</th>
-                     <th @click="sortTable(1)">Name</th>
-                     <th @click="sortTable(2)">Email</th>
-                     <th @click="sortTable(3)">Date</th>
+                     <th @click="sortTable(0)" >
+                        id
+                        <span>
+                           &#8597;
+                        </span>
+                     </th>
+                     <th @click="sortTable(0)" >
+                        name
+                        <span>
+                           &#8597;
+                        </span>
+                     </th>
+                     <th @click="sortTable(0)" >
+                        email
+                        <span>
+                           &#8597;
+                        </span>
+                        
+                     </th>
+                     <th @click="sortTable(0)" >
+                        dob
+                        <span>
+                           &#8597;
+                        </span>
+                        
+                     </th>
                   </tr>
                </thead>
                <tbody>
@@ -83,6 +112,7 @@
          </div>
       </div>
       <div class="gap"></div>
+   <script src="assets/js/feather.js"></script>
   <script>
     new Vue({
       el: '#app',
@@ -178,7 +208,11 @@
       },
     });
   </script>
-
+  <script>
+     feather.replace({
+        class: "font-primary",
+     });
+  </script>
 </body>
 
 </html>
