@@ -17,7 +17,9 @@ Vue.component('tooltip', {
   <div class="tooltip hand" @mouseover="showTooltip" @mouseleave="hideTooltip">
     <slot></slot>
     <div v-if="displayTooltip" class="tooltiptext fade-in-bottom">
-      {{ text }}
+      <div class="text-center">
+        {{ text }}
+      </div>
     </div>
   </div>
   `,
