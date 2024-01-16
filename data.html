@@ -35,20 +35,38 @@
   <div id="app">
     <h2>Sortable, Searchable, and Paginated Data Table Example</h2>
 
+    <div>
+      <label>
+        <input type="checkbox" v-model="visibleColumns" value="id"> ID
+      </label>
+      <label>
+        <input type="checkbox" v-model="visibleColumns" value="name"> Name
+      </label>
+      <label>
+        <input type="checkbox" v-model="visibleColumns" value="email"> Email
+      </label>
+      <label>
+        <input type="checkbox" v-model="visibleColumns" value="date"> Date
+      </label>
+    </div>
+
     <input v-model="searchQuery" placeholder="Search..." @input="searchTable">
 
     <table>
       <thead>
         <tr>
-          <th @click="sortTable(0)">ID</th>
-          <th @click="sortTable(1)">Name</th>
-          <th @click="sortTable(2)">Email</th>
-          <th @click="sortTable(3)">Date</th>
+          <th v-if="visibleColumns.includes('id')" @click="sortTable(0)">ID</th>
+          <th v-if="visibleColumns.includes('name')" @click="sortTable(1)">Name</th>
+          <th v-if="visibleColumns.includes('email')" @click="sortTable(2)">Email</th>
+          <th v-if="visibleColumns.includes('date')" @click="sortTable(3)">Date</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(item, index) in paginatedData" :key="index">
-          <td v-for="value in Object.values(item)">{{ value }}</td>
+          <td v-if="visibleColumns.includes('id')">{{ item.id }}</td>
+          <td v-if="visibleColumns.includes('name')">{{ item.name }}</td>
+          <td v-if="visibleColumns.includes('email')">{{ item.email }}</td>
+          <td v-if="visibleColumns.includes('date')">{{ item.date }}</td>
         </tr>
       </tbody>
     </table>
@@ -66,31 +84,33 @@
       el: '#app',
       data: {
         data: [
-          { id: 1, name: 'Ethan Wilson', email: 'ethan.wilson@gmail.com', date: '1995-05-15' },
-          { id: 2, name: 'Sophia Rodriguez', email: 'sophia.rodriguez@yahoo.com', date: '1988-10-22' },
-          { id: 3, name: 'Mason Martinez', email: 'mason.martinez@hotmail.com', date: '2002-03-07' },
-          { id: 4, name: 'Isabella Brown', email: 'isabella.brown@gmail.com', date: '1990-12-12' },
-          { id: 5, name: 'Liam Davis', email: 'liam.davis@outlook.com', date: '2005-08-30' },
-          { id: 6, name: 'Olivia Johnson', email: 'olivia.johnson@gmail.com', date: '1985-06-18' },
-          { id: 7, name: 'Lucas Smith', email: 'lucas.smith@yahoo.com', date: '1998-04-25' },
-          { id: 8, name: 'Ava Taylor', email: 'ava.taylor@hotmail.com', date: '2008-11-02' },
-          { id: 9, name: 'Jackson Miller', email: 'jackson.miller@gmail.com', date: '1979-09-14' },
-          { id: 10, name: 'Sophie Hall', email: 'sophie.hall@outlook.com', date: '1993-07-09' },
-          { id: 11, name: 'Aiden Harris', email: 'aiden.harris@yahoo.com', date: '1983-02-28' },
-          { id: 12, name: 'Amelia Clark', email: 'amelia.clark@hotmail.com', date: '2003-06-05' },
-          { id: 13, name: 'Elijah Adams', email: 'elijah.adams@gmail.com', date: '1996-08-20' },
-          { id: 14, name: 'Avery Martin', email: 'avery.martin@yahoo.com', date: '2000-01-17' },
-          { id: 15, name: 'Abigail Harris', email: 'abigail.harris@hotmail.com', date: '1980-04-03' },
-          { id: 16, name: 'Logan Adams', email: 'logan.adams@outlook.com', date: '1992-09-11' },
-          { id: 17, name: 'Madison Evans', email: 'madison.evans@gmail.com', date: '2007-12-29' },
-          { id: 18, name: 'Carter Brooks', email: 'carter.brooks@yahoo.com', date: '1987-03-26' },
-          { id: 19, name: 'Evelyn Robinson', email: 'evelyn.robinson@hotmail.com', date: '2009-05-08' },
-          { id: 20, name: 'Grayson White', email: 'grayson.white@gmail.com', date: '1999-10-14' }
+              { id: 1, name: 'Ethan Wilson', email: 'ethan.wilson@gmail.com', date: '1995-05-15' },
+              { id: 2, name: 'Sophia Rodriguez', email: 'sophia.rodriguez@yahoo.com', date: '1988-10-22' },
+              { id: 3, name: 'Mason Martinez', email: 'mason.martinez@hotmail.com', date: '2002-03-07' },
+              { id: 4, name: 'Isabella Brown', email: 'isabella.brown@gmail.com', date: '1990-12-12' },
+              { id: 5, name: 'Liam Davis', email: 'liam.davis@outlook.com', date: '2005-08-30' },
+              { id: 6, name: 'Olivia Johnson', email: 'olivia.johnson@gmail.com', date: '1985-06-18' },
+              { id: 7, name: 'Lucas Smith', email: 'lucas.smith@yahoo.com', date: '1998-04-25' },
+              { id: 8, name: 'Ava Taylor', email: 'ava.taylor@hotmail.com', date: '2008-11-02' },
+              { id: 9, name: 'Jackson Miller', email: 'jackson.miller@gmail.com', date: '1979-09-14' },
+              { id: 10, name: 'Sophie Hall', email: 'sophie.hall@outlook.com', date: '1993-07-09' },
+              { id: 11, name: 'Aiden Harris', email: 'aiden.harris@yahoo.com', date: '1983-02-28' },
+              { id: 12, name: 'Amelia Clark', email: 'amelia.clark@hotmail.com', date: '2003-06-05' },
+              { id: 13, name: 'Elijah Adams', email: 'elijah.adams@gmail.com', date: '1996-08-20' },
+              { id: 14, name: 'Avery Martin', email: 'avery.martin@yahoo.com', date: '2000-01-17' },
+              { id: 15, name: 'Abigail Harris', email: 'abigail.harris@hotmail.com', date: '1980-04-03' },
+              { id: 16, name: 'Logan Adams', email: 'logan.adams@outlook.com', date: '1992-09-11' },
+              { id: 17, name: 'Madison Evans', email: 'madison.evans@gmail.com', date: '2007-12-29' },
+              { id: 18, name: 'Carter Brooks', email: 'carter.brooks@yahoo.com', date: '1987-03-26' },
+              { id: 19, name: 'Evelyn Robinson', email: 'evelyn.robinson@hotmail.com', date: '2009-05-08' },
+              { id: 20, name: 'Grayson White', email: 'grayson.white@gmail.com', date: '1999-10-14' }
+
         ],
         sortOrders: {},
         searchQuery: '',
         currentPage: 1,
         itemsPerPage: 8,
+        visibleColumns: ['id', 'name', 'email', 'date'],
       },
       computed: {
         filteredData() {
