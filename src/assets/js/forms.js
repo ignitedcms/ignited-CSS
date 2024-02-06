@@ -139,3 +139,22 @@ Vue.component('header5', {
   },
 });
 
+
+Vue.component('input-component', {
+  props: [''],
+  template: `
+  <input 
+   class="form-control form-dark" 
+   type="text"
+   name="a" 
+   value="foo" 
+   placeholder="test" />
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
+
+
