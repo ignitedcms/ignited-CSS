@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title></title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+    <link href="assets/css/output.css" rel="stylesheet" />
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class=" bg-light-gray dark:bg-darker">
+      <div class="v-screen h-screen " id="app">
+         <dark-mode top="20px">
+         </dark-mode>
+          <div class="gap"></div>
+         <div class="default-container">
+            <paragraph>
+               Leverage agile frameworks to provide a robust synopsis for high level
+               overviews. Iterative approaches to corporate strategy foster collaborative
+               thinking to further the overall value proposition. Organically grow the
+               holistic world view of disruptive innovation via workplace diversity and empowerment.
+            </paragraph>
+            <header1>Heading1</header1>
+            <header2>Heading2</header2>
+            <header3>Heading3</header3>
+            <header4>Heading4</header4>
+            <header5>Heading5</header5>
+            
+         </div>
+      </div>
+      <!-- Click out must go before all other scripts -->
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/buttons.js"></script>
+      <script src="assets/js/dark-mode.js"></script>
+      <script src="assets/js/forms.js"></script>
+      <!-- feather icons -->
+      <script src="assets/js/feather.js"></script>
+      <script>
+         var app = new Vue({
+             el: '#app',
+         })
+      </script>
+      <script>
+         feather.replace({
+             class: "font-primary",
+         });
+      </script>
+   </body>
+</html>
+
