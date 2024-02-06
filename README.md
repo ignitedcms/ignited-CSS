@@ -1,4 +1,8 @@
-# IgnitedCMS micro css and javascript framework
-A small framework with a light footprint that does not
-require any build steps, [Also follows A11y support for
-accessibility]
+# tailwind
+ ignitedcss for tailwind
+
+## run
+ npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch
+
+### Prettier sorting tailwind classes
+ npx prettier --write ./src/index.html

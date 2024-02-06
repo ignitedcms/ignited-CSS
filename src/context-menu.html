@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Light weight framework</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+   <!-- vue 2 -->
+    <link href="assets/css/output.css" rel="stylesheet" />
+   <script src="assets/js/vue2.js"></script>
+</head>
+
+<body class="v-screen h-screen bg-light-gray">
+   <div class="default-container" id="app">
+      <div class="gap"></div>
+      <div class="row">
+         <div class="col">
+            <h3>Context menu</h3>
+            {{xCord}}
+            {{yCord}}
+            <p>Right click on the element below</p>
+            <div id="context" @contextmenu="handler($event)" class="relative mt-5 panel v-a h-a min-h-[300px]">
+               Right click here
+               <div v-if="show" class="absolute border border-[--gray] overflow-hidden rounded-[--small-radius] bg-white shadow-md w-[250px] " 
+                  :style="{'top':yCord+'px','left':xCord+'px'}" v-click-outside="away">
+                  <div class="row">
+                     <div class="col m-0 h-e p-2 cursor-pointer hover:bg-[--light-gray]">
+                        <div>test</div>
+                        <span class="v-a">
+                           <i data-feather="chevron-right"></i>
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col m-0 h-e p-2 cursor-pointer hover:bg-[--light-gray]">
+                        <span class="text-muted">
+                           Testing
+                        </span>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col m-0 h-e p-2 cursor-pointer hover:bg-[--light-gray]">
+                        <div>more</div>
+                        <span class="v-a">
+                           <i data-feather="chevron-right"></i>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--context menu styles-->
+   </div>
+   <script src="assets/js/click-outside.js"></script>
+   <script src="assets/js/focus-trap.js"></script>
+   <script src="assets/js/feather.js"></script>
+   <script>
+      feather.replace({
+         class: "font-primary",
+      });
+   </script>
+   <script>
+
+      var app = new Vue({
+         el: '#app',
+         data: {
+            xCord: 0,
+            yCord: 0,
+            show: false
+         },
+         methods: {
+            handler: function (event) {
+               this.show = true;
+
+               event.preventDefault();
+               // Get a reference to the div element
+               const divElement = event.target;
+
+               // Calculate the mouse coordinates relative to the div
+               const rect = divElement.getBoundingClientRect();
+               const mouseX = event.clientX - rect.left;
+               const mouseY = event.clientY - rect.top;
+
+               // Update coordinates
+               this.xCord = mouseX;
+               this.yCord = mouseY;
+            },
+            away() {
+               this.show = false;
+            }
+         }
+      })
+   </script>
+</body>
+
+</html>

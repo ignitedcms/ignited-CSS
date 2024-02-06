@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="full-screen bg-light-gray dark:bg-darker">
+      <div id="app">
+         <div class="gap"></div>
+
+         <dark-mode top="20px">
+         </dark-mode>
+         <div class="default-container">
+            <h2 class="text-dark">Full calendar</h2>
+            <p class="text-dark">A fully responsive robust calendar</p>
+            <div class="row">
+               <div class="col-4">
+                  <div class="row">
+                     <div class="col no-margin text-muted text-dark">Month view</div>
+                  </div>
+                  <div class="row">
+                     <div class="col no-margin">
+                        <h4 class="text-dark">Jan 2022</h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-8 hide-tablet v-a justify-end">
+                  <div>
+                  <button class="btn-white mr">Today</button>
+                  <drop-down button-title="Month view" class="m-r">
+                     <item title="Day view" url="bob"></item>
+                     <item title="Week view" url="bob"></item>
+                     <item title="Month view" url="bob"></item>
+                  </drop-down>
+
+                  <modal button-title="Add event" modal-header="Event">
+                     <div class="p-6">
+                        <div class="row">
+                           <div class="col">
+                              <div class="form-group">
+                                 <label for="title" class="text-dark">Event</label>
+                                 <div class="small text-muted text-dark">Enter the name of
+                                    the event
+                                 </div>
+                                 <input class="form-control form-dark" placeholder="Event name . . ." />
+                              </div>
+                              <div class="form-group">
+                                 <label for="title" class="text-dark">Time</label>
+                                 <div class="small text-muted text-dark">Please choose
+                                    a suitable time
+                                 </div>
+                                 <input class="form-control form-dark" placeholder="Event time. . ." />
+                              </div>
+                              <div class="form-group float-right">
+                                 <button type="submit" class="btn btn-white">Save</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </modal>
+                  </div>
+               </div>
+               <div class="col float-right show-tablet">
+                  <button type="submit" class=" btn-white right">
+                     <div class="v-a">
+                        <i data-feather="more-horizontal"></i>
+                     </div>
+                  </button>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col p-t ">
+                  <div class="day-headers form-dark">Mo</div>
+                  <div class="day-headers form-dark">Tu</div>
+                  <div class="day-headers form-dark">We</div>
+                  <div class="day-headers form-dark">Th</div>
+                  <div class="day-headers form-dark">Fr</div>
+                  <div class="day-headers form-dark">Sa</div>
+                  <div class="day-headers form-dark">Su</div>
+                  <div class="day day-disabled form-dark"></div>
+                  <div class="day day-disabled form-dark"></div>
+                  <div class="day form-dark">1</div>
+                  <div class="day form-dark">2</div>
+                  <div class="day form-dark">3</div>
+                  <div class="day form-dark">4</div>
+                  <div class="day form-dark">
+                     <div class="row">
+                        <div class="col no-margin">
+                           5
+                        </div>
+                     </div>
+                     <div class="row hide-tablet">
+                        <div class="col no-margin">
+                           <badge variant="dark">fdsfds</badge>
+                        </div>
+                     </div>
+                     <div class="row hide-tablet">
+                        <div class="col no-margin">
+                           <badge variant="secondary">fdsfds</badge>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="day form-dark">
+                     <div class="row">
+                        <div class="col no-margin">6</div>
+                     </div>
+                     <div class="row">
+                        <div class="col no-margin hide-tablet">Date night</div>
+                     </div>
+                  </div>
+                  <div class="day form-dark">7</div>
+                  <div class="day form-dark">8</div>
+                  <div class="day form-dark">9</div>
+                  <div class="day form-dark">10</div>
+                  <div class="day form-dark">11</div>
+                  <div class="day form-dark">12</div>
+                  <div class="day form-dark">13</div>
+                  <div class="day form-dark">14</div>
+                  <div class="day form-dark">15</div>
+                  <div class="day form-dark">16</div>
+                  <div class="day form-dark">17</div>
+                  <div class="day form-dark">18</div>
+                  <div class="day form-dark">19</div>
+                  <div class="day form-dark">20</div>
+                  <div class="day form-dark">21</div>
+                  <div class="day form-dark">22</div>
+                  <div class="day form-dark">23</div>
+                  <div class="day form-dark">24</div>
+                  <div class="day form-dark">25</div>
+                  <div class="day form-dark">26</div>
+                  <div class="day form-dark">27</div>
+                  <div class="day form-dark">28</div>
+                  <div class="day day-disabled form-dark"></div>
+                  <div class="day day-disabled form-dark"></div>
+                  <div class="day day-disabled form-dark"></div>
+                  <div class="day day-disabled form-dark"></div>
+                  <div class="day day-disabled form-dark"></div>
+               </div>
+            </div>
+            <!-- weekday view -->
+            <div class="gap"></div>
+            <div class="row   mb">
+               <div class="col">
+                  <div class="row">
+                     <div class="col no-margin text-muted text-dark">Week view</div>
+                  </div>
+                  <div class="row">
+                     <div class="col no-margin">
+                        <h4 class="text-dark">Jan 2022</h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col right hide-tablet v-a justify-end">
+                  <div>
+
+                     <button class="btn btn-white m-r">Today</button>
+                     <drop-down button-title="Month view" class="m-r">
+                        <item title="Day view" url="bob"></item>
+                        <item title="Week view" url="bob"></item>
+                        <item title="Month view" url="bob"></item>
+                     </drop-down>
+                     <modal button-title="Add event" modal-header="Event">
+                     <div class="p-6">
+                        <div class="row">
+                           <div class="col">
+                              <div class="form-group">
+                                 <label for="title">Event</label>
+                                 <div class="small text-muted">Enter the name of
+                                    the event
+                                 </div>
+                                 <input class="form-control" placeholder="test" />
+                              </div>
+                              <div class="form-group">
+                                 <label for="title">Time</label>
+                                 <div class="small text-muted">Please choose
+                                    a suitable time
+                                 </div>
+                                 <input class="form-control" placeholder="test" />
+                              </div>
+                              <div class="form-group float-right">
+                                 <button type="submit" class="btn btn-white">Save</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     </modal>
+                  </div>
+
+               </div>
+               <div class="col float-right show-tablet">
+                  <button type="submit" class="btn btn-white right">
+                     <div class="v-a">
+                        <i data-feather="more-horizontal"></i>
+                     </div>
+                  </button>
+               </div>
+            </div>
+            <div class="relative">
+               <div style="overflow:hidden scroll;" class="absolute w-full top-0 left-0 border-l border-t border-[--gray] form-dark">
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Monday 10th</div>
+                     <div class="show-tablet">M
+                        <span class="small">
+                        10
+                        </span>
+                     </div>
+                  </div>
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Tuesday 11th</div>
+                     <div class="show-tablet">T
+                        <span class="small">
+                        11
+                        </span>
+                     </div>
+                  </div>
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Wednesday 12th</div>
+                     <div class="show-tablet">W
+                        <span class="small">
+                        12
+                        </span>
+                     </div>
+                  </div>
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Thursday 13th</div>
+                     <div class="show-tablet">T
+                        <span class="small">
+                        13
+                        </span>
+                     </div>
+                  </div>
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Friday 14th</div>
+                     <div class="show-tablet">F
+                        <span class="small">
+                        14
+                        </span>
+                     </div>
+                  </div>
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Saturday 15th</div>
+                     <div class="show-tablet">S
+                        <span class="small">
+                        15
+                        </span>
+                     </div>
+                  </div>
+                  <div class="day-headers form-dark">
+                     <div class="hide-tablet">Sunday 16th</div>
+                     <div class="show-tablet">S
+                        <span class="small">
+                        16
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <div class="scroll-y h-[400px] w-full" >
+                  <div class="h-[800px]">
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                     <div class="day day-week form-dark">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="gap"></div>
+            <div class="gap"></div>
+            <div class="gap"></div>
+            <div class="gap"></div>
+         </div>
+      </div>
+      <!-- feather icons -->
+      <script src="assets/js/feather.js"></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/focus-trap.js"></script>
+      <script src="assets/js/dropdown.js"></script>
+      <script src="assets/js/dark-mode.js"></script>
+      <script src="assets/js/badges.js"></script>
+      <script src="assets/js/modals.js"></script>
+      <script>
+         var app = new Vue({
+
+            el: '#app',
+            data:{
+               theme:''
+            },
+            methods:{
+               toggleDarkMode() {
+               if (this.theme == "") {
+                 document
+                   .getElementsByTagName("html")[0]
+                   .setAttribute("class", "dark");
+                 this.theme = "dark";
+
+               } else {
+                 document.getElementsByTagName("html")[0].removeAttribute("class");
+                 this.theme = "";
+               }
+             }
+          }
+
+         })
+      </script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

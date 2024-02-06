@@ -1,0 +1,725 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script src="assets/js/vue2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-light-gray dark:bg-darker">
+    <div id="app" class="">
+      <mega-menu
+        title="Login"
+        logo="assets/images/ignitedcms-logo.svg"
+        url="http://www.google.com"
+      >
+        <menu-items title="Resources" children="yes">
+          <menu-item
+            title="Documentation"
+            icon="assets/images/book2.svg"
+            url="s"
+          >
+          </menu-item>
+          <menu-item title="Laravel" icon="assets/images/book2.svg" url="d">
+          </menu-item>
+          <menu-item title="CSS" icon="assets/images/book2.svg" url="d">
+          </menu-item>
+          <menu-item title="JS" icon="assets/images/book2.svg" url="d">
+          </menu-item>
+        </menu-items>
+        <menu-items title="Blog" url="http://www.google.com"> </menu-items>
+        <menu-items title="Contact" url="sss"> </menu-items>
+      </mega-menu>
+      <!--now do the mobile menu-->
+      <mobile-menu
+        title="Login"
+        logo="assets/images/ignitedcms-logo.svg"
+        url="http://www.google.com"
+      >
+        <mobile-menu-items
+          title="One"
+          url="http://www.google.com"
+          children="yes"
+        >
+          <div class="bg-slate-50 p-4">
+            <ul class="rm-list-styles">
+              <li class="p">
+                <a href="#" class="rm-link-styles underline">foo</a>
+              </li>
+              <li class="p">
+                <a href="#" class="rm-link-styles underline">bar</a>
+              </li>
+            </ul>
+          </div>
+        </mobile-menu-items>
+        <mobile-menu-items title="Two" url="http://www.google.com">
+        </mobile-menu-items>
+        <mobile-menu-items title="Three" url="http://www.google.com">
+        </mobile-menu-items>
+      </mobile-menu>
+
+      <div class="default-container relative">
+        <div class="gap"></div>
+
+        <dark-mode top="90px"></dark-mode>
+
+         <div class="row">
+            <div class="col">
+               <breadcrumb>
+                  <breadcrumb-item title="Home"></breadcrumb-item>
+                  <breadcrumb-item title="About" url="test"></breadcrumb-item>
+               </breadcrumb>
+            </div>
+         </div>
+
+
+        <div class="row small-container min-h-[300px]">
+          <div class="col v-a h-e">
+            <button-component variant="primary"> Button </button-component>
+            <button-component variant="dark"> Button </button-component>
+            <button-component variant="outline"> Outline </button-component>
+            <button-component variant="destructive">
+              Destructive
+            </button-component>
+            <button-component variant="secondary"> Secondary </button-component>
+
+            <button-component variant="outline" style="padding: 8px">
+              <div class="h-a v-a">
+                <i
+                  data-feather="command"
+                  class="h-[10px] w-[10px] text-black"
+                ></i>
+              </div>
+            </button-component>
+            <button-component variant="dark" style="padding: 8px">
+              <div class="h-a v-a">
+                <i
+                  data-feather="command"
+                  class="h-[10px] w-[10px] text-white"
+                ></i>
+              </div>
+            </button-component>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <input class="form-control" name="a" disabled placeholder="test" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <alert variant="destructive">
+                <alert-title> Error </alert-title>
+                <alert-content> Your session has expired! </alert-content>
+              </alert>
+              <div class="mb-4"></div>
+              <alert variant="success">
+                <alert-title> Heads up </alert-title>
+                <alert-content>
+                  You can add components to the app
+                </alert-content>
+              </alert>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group panel">
+          <h3 class="dark:text-white">Quill</h3>
+          <quill-editor
+            ref="quillEditor"
+            class="editor bg-white"
+            name="testing"
+            v-model="foo"
+            :options="editorOption"
+            @blur="onEditorBlur($event)"
+            @focus="onEditorFocus($event)"
+            @ready="onEditorReady($event)"
+          />
+        </div>
+
+        <div class="row min-h-[200px]">
+          <div class="col v-a h-a">
+            <div class="spinner"></div>
+          </div>
+        </div>
+
+        <div class="row min-h-[100px]">
+          <div class="col v-a h-a">
+            <div class="form-group w-[100%]">
+              <range-slider min="0" max="100" name="a" value="0">
+              </range-slider>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <div class="progress w-[100%]">
+                <div
+                  class="progress-bar-primary"
+                  role="progressbar"
+                  style="width: 85%"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <password value="letmein1" name="password"></password>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1 class="text-dark">Heading 1</h1>
+            <h2 class="text-dark">Heading 2</h2>
+            <h3 class="text-dark">Heading 3</h3>
+            <h4 class="text-dark">Heading 4</h4>
+            <h5 class="text-dark">Heading 5</h5>
+          </div>
+        </div>
+        <div class="default-container">
+          <h3 class="text-dark">Charts</h3>
+          <div class="h-[500px]">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="row min-h-[300px]">
+          <div class="col v-a h-a">
+            <file-upload name="foo"> </file-upload>
+          </div>
+        </div>
+        <div class="medium-container relative">
+          <carousel>
+            <carousel-item> 1 </carousel-item>
+            <carousel-item> 2 </carousel-item>
+            <carousel-item> 3 </carousel-item>
+            <carousel-item> 4 </carousel-item>
+            <carousel-item> 5 </carousel-item>
+          </carousel>
+          <carousel>
+            <carousel-item> test </carousel-item>
+            <carousel-item> testing </carousel-item>
+          </carousel>
+        </div>
+        <div class="row min-h-[300px]">
+          <div class="col v-a h-a">
+            <datepicker name="foo" value=""></datepicker>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <a href="#" class="text-dark underline">link</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="text-dark">
+              Leverage agile frameworks to provide a robust synopsis for high
+              level overviews. Iterative approaches to corporate strategy foster
+              collaborative thinking to further the overall value proposition.
+              Organically grow the holistic world view of disruptive innovation
+              via workplace diversity and empowerment.
+            </p>
+          </div>
+        </div>
+        <div class="row min-h-[300px]">
+          <div class="col v-a h-a">
+            <drop-down button-title="Open">
+              <item title="File" url="/url"></item>
+              <item title="Upload" url="/url"></item>
+              <item title="Save" url="/url"></item>
+            </drop-down>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <badge variant="primary">Badge</badge>
+          <badge variant="dark">Badge</badge>
+          <badge variant="secondary">Badge</badge>
+          <badge variant="outline">Badge</badge>
+          <badge variant="destructive">Badge</badge>
+        </div>
+
+        <div class="row panel">
+          <div class="col">
+            <label for="test" class="text-dark">Test</label>
+            <div>
+              <input type="radio" class="form-check-input" name="a" />
+              <label for="radio a" class="text-dark ml-2">hello</label>
+            </div>
+            <div>
+              <input type="radio" class="form-check-input" name="a" />
+              <label for="radio b" class="text-dark ml-2">b</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <select
+              class="form-select form-dark"
+              name="a"
+              aria-label="Default select example"
+            >
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <textarea
+              class="form-control form-dark"
+              name="a"
+              placeholder="testing"
+              rows="4"
+            >
+            </textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div>
+              <input type="checkbox" name="" class="form-check-input" />
+              <label for="the label" class="text-dark ml-2"
+                >Default checkbox</label
+              >
+            </div>
+            <div>
+              <input type="checkbox" name="" class="form-check-input" checked />
+              <label for="the label" class="text-dark ml-2"
+                >Checked checkbox</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 panel">
+            <div>
+              <label for="title" class="text-dark">title</label>
+              <div class="small text-muted text-dark mb-4">title</div>
+              <input
+                class="form-control form-dark"
+                name="a"
+                placeholder="start typing"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mb-4"></div>
+        <div class="panel">
+          <div class="row">
+            <div class="col">
+              <h3 class="text-dark">Accordions</h3>
+              <accordion>
+                <accordion-item title="Is it accessible?">
+                  <p class="text-muted text-dark">
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </p>
+                </accordion-item>
+                <accordion-item title="Is it styled?">
+                  <p class="text-muted text-dark">
+                    Yes. It comes with default styles that matches the other
+                    components' aesthetic.
+                  </p>
+                </accordion-item>
+                <accordion-item title="Is it animated?">
+                  <p class="text-muted text-dark">
+                    Yes. It's animated by default, but you can disable it if you
+                    prefer.
+                  </p>
+                </accordion-item>
+              </accordion>
+            </div>
+          </div>
+        </div>
+        <div class="row min-h-[300px]">
+          <div class="col v-a h-a">
+            <modal button-title="Open modal" modal-header="Text">
+              <div class="p-6">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laboriosam aliquid distinctio accusantium ut explicabo ea
+                  harum repellat consequatur, facilis consequuntur minima ex
+                  magnam aliquam totam necessitatibus reprehenderit veniam,
+                  blanditiis rerum.
+                </p>
+              </div>
+            </modal>
+          </div>
+        </div>
+        <div class="row min-h-[300px]">
+          <div class="col v-a h-a">
+            <popover link="this is just another popup">
+              <div class="p-2 center">
+                 <div class="row">
+                    <div class="col no-margin">
+                       <input class="form-control mb-4 form-dark" 
+                           type="text"
+                           placeholder="test" />
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="col no-margin">
+                       <input class="form-control form-dark" 
+                           type="text"
+                           placeholder="test" />
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="col no-margin">
+                       <button type="submit" class="btn btn-white mt-4 w-full">Save</button>
+                    </div>
+
+                 </div>
+              </div>
+            </popover>
+          </div>
+        </div>
+        <div class="row panel min-h-[300px]">
+          <div class="col v-a h-a">
+            <tooltip text="Add to content to library">
+              <button
+                class="btn bg-primary dark:bg-darkest rounded-md"
+                style="padding: 6px"
+              >
+                <div class="h-a v-a">
+                  <i
+                    data-feather="command"
+                    class="h-[15px] w-[15px] text-white"
+                  ></i>
+                </div>
+              </button>
+            </tooltip>
+          </div>
+        </div>
+        <div class="row panel mt-8 min-h-[300px]">
+          <div class="col v-a h-a">
+            <button type="submit" @click="showToast" class="btn btn-white">
+              Show alert
+            </button>
+          </div>
+        </div>
+        <div class="toasts">
+          <toast ref="toast">
+            <div class="p-5">
+              <div class="text-black dark:text-white">Scheduled catch up</div>
+              <div class="text-muted small dark:text-white">
+                Friday, February 10, 2010
+              </div>
+            </div>
+          </toast>
+        </div>
+        <div class="row panel mt-8 min-h-[300px]">
+          <div class="col h-a v-a">
+            <div>
+              <div class="form-group">
+                <switch-ios name="a" value="checked"></switch-ios>
+              </div>
+              <div class="form-group">
+                <switch-ios name="b" value=""></switch-ios>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row min-h-[300px]">
+          <div class="col v-a h-a">
+            <combobox name="Frameworks" value="Astro">
+              <combo-item val="Next.js"></combo-item>
+              <combo-item val="SvelteKit"></combo-item>
+              <combo-item val="Nuxt.js"></combo-item>
+              <combo-item val="Remix"></combo-item>
+              <combo-item val="Astro"></combo-item>
+            </combobox>
+          </div>
+        </div>
+        <div class="row panel min-h-[300px]">
+          <div class="col v-a h-a">
+            <drawer title="Open drawer">
+              <div class="text-dark p-6">Some content</div>
+            </drawer>
+          </div>
+        </div>
+        <div class="mb-8"></div>
+        <div class="row panel min-h-[300px]">
+          <div class="col v-a h-a">
+            <avatar
+              alt="A picture of a lady"
+              path="assets/images/lady.png"
+            ></avatar>
+          </div>
+        </div>
+        <div class="mb-8"></div>
+        <div class="row panel min-h-[300px]">
+          <div class="col">
+            <tabs>
+              <tab-item title="tab 1">
+                <div class="text-dark p-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+              </tab-item>
+              <tab-item title="tab 2">
+                <div class="text-dark p-2">
+                  Leverage agile frameworks to provide a robust synopsis for
+                </div>
+              </tab-item>
+            </tabs>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3 class="text-dark">Lists</h3>
+            <ul class="text-dark ml-4 list-disc text-slate-500">
+              <li>a</li>
+              <li>b</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h3 class="text-dark">Scroll area</h3>
+            <p class="text-dark">
+              An easy way to scroll with either 'scroll-y or scroll-x'
+            </p>
+            <div class="panel scroll-y mt-8 max-h-[300px] w-[200px] rounded-md">
+              <div class="m-b">
+                <div class="text-dark mb-3 text-black">Tags</div>
+              </div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+              <div class="text-muted text-dark mb-2">v1.2 beta</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="panel br bg-light pos-rel drop-shadow">
+              <badge variant="primary" class="absolute top-[-35px]"
+                >Most popular</badge
+              >
+              <div class="row">
+                <div class="col no-margin h-a">
+                  <h1 class="text-primary text-dark">Premium</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col v-a h-a">
+                  <div class="m-r">
+                    <h1 class="text-dark">$12.99</h1>
+                  </div>
+                  <span class="text-bold text-dark">/ month</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col h-a">
+                  <i
+                    data-feather="x"
+                    class="icon rounded-full border border-[--gray] p-2 dark:text-white"
+                  ></i>
+                  <div class="v-a text-muted text-dark ml-2">
+                    Unlimited user access
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col h-a no-margin">
+                  <i
+                    data-feather="check"
+                    class="bg-dark icon rounded-full border border-[--gray] p-2 text-white"
+                  ></i>
+                  <div class="v-a text-dark ml-2">Unlimited user access</div>
+                </div>
+              </div>
+              <div class="gap"></div>
+              <div class="row m-t">
+                <button class="btn btn-primary col no-margin m-t">
+                   <button-component variant="dark" class="w-full mb-4">
+                      Buy now
+                   </button-component>
+                </button>
+              </div>
+              <div class="row">
+                <button class="btn btn-white col no-margin m-t">
+                  Buy later
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="panel br bg-light drop-shadow">
+              <div class="row">
+                <div class="col no-margin h-a">
+                  <h1 class="text-muted dark:text-white">Standard</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col v-a h-a">
+                  <div class="m-r">
+                    <h1 class="dark:text-white">$5.99</h1>
+                  </div>
+                  <span class="text-bold text-muted dark:text-white">/ month</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col h-a bg-light">
+                  <i data-feather="x" class="bg-white icon rounded-full border border-[--gray] p-2 "></i>
+                  <div class="ml-3 v-a text-muted dark:text-white">Unlimited user access</div>
+                </div>
+              </div>
+              <div class="gap"></div>
+              <div class="row">
+                <button class="btn btn-white col no-margin m-t">
+                  Buy later
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gap"></div>
+      </div>
+    </div>
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/focus-trap.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/alerts.js"></script>
+    <script src="assets/js/avatar.js"></script>
+    <script src="assets/js/breadcrumbs.js"></script>
+    <script src="assets/js/badges.js"></script>
+    <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/combobox.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/drawer.js"></script>
+    <script src="assets/js/dark-mode.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="assets/js/file-upload.js"></script>
+    <script src="assets/js/modals.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/popover.js"></script>
+    <script src="assets/js/password.js"></script>
+    <script src="assets/js/quill.js"></script>
+    <script src="assets/js/quill-vue.js"></script>
+    <script src="assets/js/range-sliders.js"></script>
+    <script src="assets/js/switch.js"></script>
+    <script src="assets/js/splide.min.js"></script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/toasts.js"></script>
+    <script src="assets/js/tooltip.js"></script>
+    <script src="assets/js/feather.js"></script>
+    <script>
+      Vue.use(window.VueQuillEditor);
+      var app = new Vue({
+        el: "#app",
+        data: {
+          foo: "I'm quill vuejs example",
+          editorOption: {
+            modules: {
+              toolbar: [
+                [{ font: ["sans-serif", "monospace"] }],
+                ["bold", "italic", "underline"],
+                // ['blockquote','code-block'],
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ align: [] }],
+                ["clean"],
+                ["link"],
+              ],
+            },
+          },
+        },
+        computed: {
+          editor() {
+            return this.$refs.quillEditor.quill;
+          },
+        },
+        methods: {
+          onEditorBlur(quill) {
+            console.log("editor blur!", quill);
+          },
+          onEditorFocus(quill) {
+            console.log("editor focus!", quill);
+          },
+          onEditorReady(quill) {
+            console.log("editor ready!", quill);
+          },
+          showToast() {
+            this.$refs.toast.showToast(3000);
+          },
+        },
+        mounted() {
+          //do something
+        },
+      });
+    </script>
+    <script>
+      feather.replace();
+    </script>
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      Chart.defaults.font.family = "Plus Jakarta Sans";
+      Chart.defaults.font.size = 14;
+
+      //Change from 'bar' to 'line' etc
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+              borderColor: "#292F3E",
+              backgroundColor: "#292F3E",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

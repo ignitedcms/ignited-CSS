@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Light weight framework</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+      <!-- vue 2 -->
+      <link href="assets/css/output.css" rel="stylesheet" />
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="v-screen h-screen bg-light-gray dark:bg-darker">
+      <div class="default-container" id="app">
+         <dark-mode>
+         </dark-mode>
+         <div class="gap"></div>
+         <div class="row">
+            <div class="col-4 m-0">
+
+            <div class="bg-gray-100 p-2 border border-t-gray-400 border-l-gray-400 border-b-gray-400">Fields</div>
+               <div class="bg-slate-100 h-[440px]  border  border-l-gray-400   border-b-gray-400">
+                  <div class="matrix-item h-e p-3 bg-slate-200 border border-b-[--gray]">
+                     <div class="text-xs v-a text-dark">
+                      test (plain-text)
+                     </div>
+                     <badge variant="outline" class="ml-3">
+                     Delete
+                     </badge>
+                  </div>
+               </div>
+            </div>
+            <div class="col-8 m-0">
+               <div>
+                  <div class="bg-gray-100 p-2 border border-t-gray-400 border-l-gray-400  border-r-gray-400 border-b-gray-400">Field settings</div>
+                  <div class="bg-slate-100 h-[440px] p-6 border  border-l-gray-400  border-r-gray-400 border-b-gray-400">
+                     <div class="form-group mt-0">
+                        <label>Field Name <span class="text-danger">*</span></label>
+                        <div class="small text-muted">(This cannot be empty and must be unique and contain no spaces or
+                           numbers) You can NOT use the following reserved names:<span class="text-black">
+                              [url,content,id,section,field,entrytitle,entryid]</span>
+                        </div>
+                        <input type="text" value="" class="form-control">
+                        <div class="small text-danger"></div>
+                     </div>
+                     <div class="form-group">
+                        <label>Instruction text</label>
+                        <div class="small text-muted">(Text instructions for user, optional)
+                        </div>
+                        <input type="text" placeholder="Type here" value="" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label>Field Type</label>
+                        <div class="small text-muted">Specify the field type</div>
+                        <select id="type" class="form-select m-b">
+                           <option value="plain-text" selected="selected">Plain Text</option>
+                           <option value="multi-line">Multi-line Box</option>
+                           <option value="rich-text">Rich Text Box</option>
+                           <option value="drop-down">Drop Down</option>
+                           <option value="check-box">Check Boxes</option>
+                           <option value="color">Color</option>
+                           <option value="file-upload">File Upload</option>
+                           <option value="number">Number</option>
+                           <option value="date">Date</option>
+                           <option value="switch">Switch</option>
+                        </select>
+                        <div class="errors"></div>
+                     </div>
+                     <div class="form-group float-right">
+                        <button-component variant="primary">
+                           Add
+                        </button-component>
+                     </div>
+                     <div class="clear-both"></div>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </div>
+      <script src="assets/js/feather.js"></script>
+      <script src="assets/js/badges.js"></script>
+      <script src="assets/js/buttons.js"></script>
+      <script src="assets/js/dark-mode.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+         })
+      </script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

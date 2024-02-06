@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Landing page</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+
+    <link href="assets/css/output.css" rel="stylesheet" />
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body>
+      <div class="v-screen h-screen">
+         <div class="page" id="app">
+            <mega-menu title="Login" logo="assets/images/ignitedcms-logo.svg" url="http://www.google.com">
+               <menu-items title="Resources" children="yes">
+                  <menu-item title="Documentation" icon="assets/images/book2.svg" url="s">
+                  </menu-item>
+                  <menu-item title="Laravel" icon="assets/images/book2.svg" url="d">
+                  </menu-item>
+                  <menu-item title="CSS and JS" icon="assets/images/book2.svg" url="d">
+                  </menu-item>
+               </menu-items>
+               <menu-items title="Blog" url="http://www.google.com">
+               </menu-items>
+               <menu-items title="Contact" url="sss">
+               </menu-items>
+            </mega-menu>
+            <mobile-menu title="Login" logo="assets/images/ignitedcms-logo.svg" url="http://www.google.com">
+               <mobile-menu-items title="One" url="http://www.google.com" children="yes">
+                  <div class="menu-item-block" style="border-bottom:1px solid #ccc;">
+                     <ul>
+                        <li>
+                           <a href="#">foo</a>
+                        </li>
+                        <li>
+                           <a href="#">bar</a>
+                        </li>
+                     </ul>
+                  </div>
+               </mobile-menu-items>
+               <mobile-menu-items title="Two" url="http://www.google.com">
+               </mobile-menu-items>
+               <mobile-menu-items title="Three" url="http://www.google.com">
+               </mobile-menu-items>
+            </mobile-menu>
+            <!--main above the fold-->
+            <div class="bg-white cross-grid  hide-tablet">
+               <div  class="medium-container p-l p-r">
+                  <div class="row min-h-[300px] pt-12">
+                     <div class="col-6  h-a">
+                        <div class="relative">
+                           <img src="assets/images/zap.svg" class="absolute w-[90px] top-[-10px] left-[-10px]" ></img>
+                           <h1 style="margin-left:90px;">
+                              IgnitedCSS
+                           </h1>
+                           <div>
+                              <h4 class="text-muted p-t-2">
+                                 Craft beautiful interfaces
+                                 with ease, with no build steps
+                              </h4>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-6  h-a">
+                        <div class="relative">
+                           <h1>
+                              The minimal
+                              <br>
+                              <span style="margin-left:160px;">UI Kit</span>
+                           </h1>
+                           <img src="assets/images/saas.svg" class="absolute" style="width:180px; top:60px; left:-20px;"></img>
+                           
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+            <div class="border border-t-[--gray] border-b-[--gray] hide-tablet" style="background:#F5F5F5;">
+               <div  class="default-container p-l p-r">
+                  <div class="row" style="min-height:400px;">
+                     <div class="col">
+                        <img src="assets/images/kit.jpg" alt="kit" class="img-responsive img-center"></img>  
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="bg-white cross-grid show-tablet">
+               <div  class="medium-container p-l p-r ">
+                  <div class="row" style="min-height:300px;">
+                     <div class="col  v-a h-a">
+                          <div> 
+                           <h1>
+                              IgnitedCSS
+                           </h1>
+                           <div>
+                              <h4 class="text-muted ">
+                                 Craft beautiful interfaces
+                                 with ease, with no build steps
+                              </h4>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+
+                  </div>
+               </div>
+            </div>
+
+            <div class="show-tablet" style="background:#F5F5F5;">
+               <div  class="default-container p-l p-r ">
+                  <div class="row" style="min-height:300px;">
+                     <div class="col v-a h-a">
+                        <img src="assets/images/kit.jpg" alt="kit" class="img-responsive"></img>  
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+            <!--logos-->
+            <div class="bg-light-gray p-b-5 p-t-5">
+               <div class="default-container">
+                  <div class="row" style="min-height:400px;">
+                     <div class="col-6 v-a h-a">
+                        <img class="img-responsive" style="width:400px;" src="assets/images/rings2.svg"></img>
+                     </div>
+                     <div class="col-6 v-a h-a">
+                        <div class="text-center">
+                           <h3>Tailwind support</h3>
+                           <p>Tailwind support is coming soon!</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--logos-->
+            <div class="bg-white">
+               <div class="default-container">
+                  <div class="row" style="min-height:600px;">
+                     <div class="col-6 v-a">
+                        <div >
+                           <h3>Interactive front ends</h3>
+                           <p>Javascript build steps are confusing, tedious and tiresome. It doesn’t have to be this way.
+                              <br><br>
+                              What if we went back to the days where we only used javascript as sprinkles to enhance the
+                              frontend. <br><br>
+                              Ignited CSS/JS, is just that. Built with Vuejs, simply hot swap files to create dynamic
+                              components. There is no build step.
+                              <br><br> It is a fully batteries included micro css/javascript framework!
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-6 v-a h-a m-t">
+                        <div class="console relative bg-darker w-[400px] h-[370px] rounded-b-lg">
+                           <div class="console-bar bg-black absolute v-a  border border-gray-700 h-[40px] w-full top-[-40px] rounded-t-lg ">
+                              <div class="console-bar-red ml-2 inline-block rounded-full bg-red-500 w-[10px] h-[10px]"></div>
+                              <div class="console-bar-yellow ml-1 inline-block rounded-full bg-yellow-500 w-[10px] h-[10px]"></div>
+                              <div class="console-bar-green ml-1 inline-block rounded-full bg-green-500 w-[10px] h-[10px]"></div>
+                           </div>
+                           <pre v-pre class="hide-tablet p-8 text-white text-sm v-a">
+&lt;Counter&gt;&lt;/Counter&gt;<br>&lt;script src="assets/js/counter.js"&gt;
+&lt;/script&gt;
+                           </pre>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--testimonials-->
+            <div class="bg-light-gray cross-grid pt-16">
+               <div class="default-container">
+                  <div class="panel br b drop-shadow">
+                     <div class="row">
+                        <div class="col text-center">
+                           <h3>Premium reactive components</h3>
+                        </div>
+                     </div>
+                     <div class="row p-b-5">
+                        <div class="col">
+                           <img src="assets/images/dash.jpg" class="img-responsive br b"></img>
+                           <div class="m-t">
+                              <h4>Dashboard</h4>
+                              <p class="text-muted">4 components</p>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <img src="assets/images/calendars.jpg" class="img-responsive br b"></img>
+                           <div class="m-t">
+                              <h4>Calendars</h4>
+                              <p class="text-muted">2 components</p>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <img src="assets/images/heading.jpg" class="img-responsive border border-[--gray] rounded-[--big-radius]"></img>
+                           <div class="mt">
+                              <h4>Headings</h4>
+                              <p class="text-muted">4 components</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col center no-margin">
+                           <div class="text-center mt-4">
+                              <h4>And much more!</h4>
+                              <a href="#" class=" rm-link-styles">
+                              <button class="btn btn-white">Show me</button>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--templates-->
+                  <div class="row">
+                     <div class="col-12">
+                        <h3 class="text-center mt-6">Testimonials</h3>
+                     </div>
+                  </div>
+                  <div class="row p-2">
+                     <div class="col-6">
+                        <div class="row">
+                           <div class="col-2">
+                              <avatar
+                                    alt="A picture of a lady"
+                                    path="assets/images/lady.png"
+                              ></avatar>
+                           </div>
+                           <div class="col-10">
+                              <h6>Helen Spiby</h6>
+                              <p class="text-muted">
+                                 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
+                                 approaches to corporate strategy foster
+                              </p>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     <div class="col-6">
+                        <div class="row">
+                           <div class="col-2">
+                              <avatar
+                                 alt="A picture of a lady"
+                                 path="assets/images/lady.png"
+                              ></avatar>
+                           </div>
+                           <div class="col-10">
+                              <h6>Helen Spiby</h6>
+                              <p class="text-muted">
+                                 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
+                                 approaches to corporate strategy foster
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="gap bg-light-gray"></div>
+            <div class="bg-light-gray">
+               <div class="default-container">
+                  <div class="panel br drop-shadow">
+                     <div class="row">
+                        <div class="col">
+                           <h3>FAQ</h3>
+                           <accordion>
+                              <accordion-item title="Is it accessible?">
+                                 <p class="text-muted">
+                                    Yes. It adheres to the WAI-ARIA design pattern.
+                                 </p>
+                              </accordion-item>
+                              <accordion-item title="Is it styled?">
+                                 <p class="text-muted">
+                                    Yes. It comes with default styles that matches the other
+                                    components' aesthetic. Should you wish you can change
+                                    the global styles of each component via a SASS _variables file.
+                                 </p>
+                              </accordion-item>
+                              <accordion-item title="Will you support an NPM build step?">
+                                 <p class="text-muted">
+                                    Currently there are no plans to support an official build step.
+                                 </p>
+                              </accordion-item>
+                              <accordion-item title="Can I use this for free?">
+                                 <p class="text-muted">
+                                    Yes, the library is distributed under the MIT licence. Use it
+                                    however you wish in your next project.
+                                 </p>
+                              </accordion-item>
+                           </accordion>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="gap bg-light-gray">
+            </div>
+            <div class="gap bg-light-gray">
+            </div>
+            <!--testimonials-->
+            <!--latency section -->
+            <!--footer-->
+            <div class="footer bg-white border border-t-[--gray]" style="width:100%; bottom:0; left:0; min-height:110px;">
+               <div class="default-container">
+                  <div class="row">
+                     <div class="col-6">
+                        <div class="row">
+                           <div class="col">
+                              <h4>Solutions</h4>
+                              <a href="#">Marketing</a> <br>
+                              <a href="#">Analytics</a> <br>
+                              <a href="#">Commerce</a> <br>
+                              <a href="#">Guides</a>
+                           </div>
+                           <div class="col">
+                              <h4>Solutions</h4>
+                              <a href="#">Marketing</a> <br>
+                              <a href="#">Analytics</a> <br>
+                              <a href="#">Commerce</a> <br>
+                              <a href="#">Guides</a>
+                           </div>
+                           <div class="col">
+                              <h4>Solutions</h4>
+                              <a href="#">Marketing</a> <br>
+                              <a href="#">Analytics</a> <br>
+                              <a href="#">Commerce</a> <br>
+                              <a href="#">Guides</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-6">
+                        <div class="row pull-right hide-tablet">
+                           <div class="col">
+                              <h4>Company</h4>
+                              <img style="width:150px;" src="assets/images/ignitedcms-logo.svg"></img>
+                           </div>
+                        </div>
+                        <div class="row  show-tablet">
+                           <div class="col">
+                              <h4>Company</h4>
+                              <img style="width:150px;" src="assets/images/ignitedcms-logo.svg"></img>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="gap"></div>
+            </div>
+         </div>
+      </div>
+      <script src="assets/js/feather.js"></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/menu.js"></script>
+      <script src="assets/js/avatar.js"></script>
+      <script src="assets/js/buttons.js"></script>
+      <script src="assets/js/accordions.js"></script>
+      <script src="assets/js/mobile-menu.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+            data: {
+               name: 'Vue.js'
+            },
+            methods: {
+               test() {
+                  alert('going to login');
+               }
+            }
+         })
+      </script>
+      <script>
+         feather.replace({
+            class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

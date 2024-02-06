@@ -1,0 +1,88 @@
+ <!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script src="assets/js/vue2.js"></script>
+  </head>
+  <!--needs to be h-screen-->
+  <body class="h-screen bg-light-gray">
+    <div id="app" >
+       <sidebar theme="light">
+            <ul slot="header" class="rm-list-styles">
+               <li class="p-t">
+                  <a href="#" class="" >Profile</a>
+               </li>
+               <li class="p-t">
+                  <a href="#" class="" >Permissions</a>
+               </li>
+               <li class="p-t">
+                  <a href="#" class="" >Log out</a>
+               </li>
+            </ul>
+            <h4>Dashboard</h4>
+            <p>
+               Leverage agile frameworks to provide a robust synopsis for high level
+               overviews. Iterative approaches to corporate strategy foster collaborative
+               thinking to further the overall value proposition. Organically grow the
+               holistic world view of disruptive innovation via workplace diversity and empowerment.
+            </p>
+            <div class="row">
+               <div class="col-6">fdsfd</div>
+               <div class="col-6">
+                  <label for="title">title</label>
+                  <div class="small text-muted">title</div>
+                  <input class="form-control" 
+                        name="a" 
+                        value="foo" 
+                        placeholder="test" />
+               </div>
+
+            </div>
+         </sidebar>
+    </div>
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/focus-trap.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/feather.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          theme: "",
+        },
+        methods: {
+            toggleDarkMode() {
+            if (this.theme == "") {
+              document
+                .getElementsByTagName("html")[0]
+                .setAttribute("class", "dark");
+              this.theme = "dark";
+            
+            } else {
+              this.theme = "";
+
+            }
+          },
+        },
+        mounted() {
+          //do something
+        },
+      });
+    </script>
+    <script>
+      feather.replace();
+    </script>
+    
+  </body>
+</html>
+

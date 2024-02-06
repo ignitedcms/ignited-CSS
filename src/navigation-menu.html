@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Light weight framework</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+         rel="stylesheet"
+         />
+      <!-- vue 2 -->
+      <link href="assets/css/output.css" rel="stylesheet" />
+      <script src="assets/js/vue2.js"></script>
+   </head>
+   <body class="v-screen bg-light-gray h-screen">
+      <div class="default-container" id="app">
+         <div class="gap"></div>
+         <div class="row">
+            <div class="col">
+               <h3>Navigation menu</h3>
+            </div>
+         </div>
+         <div>
+            <div class="relative flex bg-white">
+               <button
+                  @keyup.escape="escapePressed"
+                  @click="toggle"
+                  class="rm-btn-styles min-w-[180px] p-4"
+                  v-click-outside="away"
+                  >
+               <span class="v-a">
+               Getting started
+               <i data-feather="chevron-down" class="m-l"></i>
+               </span>
+               </button>
+               <div
+                  v-show="open"
+                  class="absolute top-[60px]  w-[500px] min-h-[300px]  row fade-in-bottom  rounded-[--big-radius] border border-[--gray] bg-white p-2"
+                  @click.stop
+                  >
+                  <div class="col-6 no-margin  v-a h-a bg-[--light-gray]">test</div>
+                  <div class="col-6 ">
+                     <div class="row">
+                        <a href="#" class="rm-link-styles">
+                           <div class="no-margin col">
+                              <div class="text-black">Introduction</div>
+                              <p class="text-muted">
+                                 Reusable components built using ignitedcms
+                              </p>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="row">
+                        <a href="#" class="rm-link-styles">
+                           <div class="no-margin col">
+                              <div class="text-black">Introduction</div>
+                              <p class="text-muted">
+                                 Reusable components built using ignitedcms
+                              </p>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="row">
+                        <a href="#" class="rm-link-styles">
+                           <div class="no-margin col">
+                              <div class="text-black">Introduction</div>
+                              <p class="text-muted">
+                                 Reusable components built using ignitedcms
+                              </p>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <button
+                  class="rm-btn-styles relative p-4"
+                  @keyup.escape="escapePressed2"
+                  @click="open2 =!open2"
+                  v-click-outside="away2"
+                  >
+               <span class="v-a">
+               Components
+               <i data-feather="chevron-down" class="m-l"></i>
+               </span>
+               </button>
+               <div
+                  v-if="open2"
+                  @click.stop
+                  class="border border-[--gray] rounded-[--big-radius] top-[60px] left-0 min-h-[200px] w-[600px]  fade-in-bottom absolute bg-white p-4"
+                  >
+                  <div class="row">
+                     <div class="col-6">
+                        <div class="text-black">Alert Dialogue</div>
+                        <div class="text-muted">
+                           <p>Leverage agile frameworks to provide a new working</p>
+                        </div>
+                     </div>
+                     <div class="col-6">
+                        <div class="text-black">Alert Dialogue</div>
+                        <div class="text-muted">
+                           <p>Leverage agile frameworks to provide a new working</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-6">
+                        <div class="text-black">Alert Dialogue</div>
+                        <div class="text-muted">
+                           <p>Leverage agile frameworks to provide a new working</p>
+                        </div>
+                     </div>
+                     <div class="col-6">
+                        <div class="text-black">Alert Dialogue</div>
+                        <div class="text-muted">
+                           <p>Leverage agile frameworks to provide a new working</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="hover:bg-[--gray] p-2 br v-a h-e">Documentation</div>
+            </div>
+         </div>
+      </div>
+      <script src="assets/js/feather.js"></script>
+      <script src="assets/js/click-outside.js"></script>
+      <script src="assets/js/focus-trap.js"></script>
+      <script>
+         var app = new Vue({
+           el: "#app",
+           data: {
+             open: false,
+             open2: false,
+           },
+           methods: {
+             toggle() {
+               this.open = !this.open;
+             },
+             away() {
+               this.open = false;
+             },
+             away2() {
+               this.open2 = false;
+             },
+             escapePressed() {
+               this.open = false;
+             },
+             escapePressed2() {
+               this.open2 = false;
+             },
+           },
+         });
+      </script>
+      <script>
+         feather.replace({
+           class: "font-primary",
+         });
+      </script>
+   </body>
+</html>

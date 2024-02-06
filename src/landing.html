@@ -1,0 +1,549 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet" />
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script src="assets/js/vue2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="v-screen">
+        <div class="page" id="app">
+            <mega-menu title="Login" logo="assets/images/ignitedcms-logo.svg" url="http://www.google.com">
+                <menu-items title="Resources" children="yes">
+                    <menu-item title="Documentation" icon="assets/images/book2.svg" url="s">
+                    </menu-item>
+                    <menu-item title="Laravel" icon="assets/images/book2.svg" url="d">
+                    </menu-item>
+                    <menu-item title="CSS and JS" icon="assets/images/book2.svg" url="d">
+                    </menu-item>
+                </menu-items>
+                <menu-items title="Blog" url="http://www.google.com">
+                </menu-items>
+                <menu-items title="Contact" url="sss">
+                </menu-items>
+            </mega-menu>
+            <mobile-menu title="Login" logo="assets/images/ignitedcms-logo.svg" url="http://www.google.com">
+                <mobile-menu-items title="One" url="http://www.google.com" children="yes">
+                    <div class="menu-item-block bg-slate-50 p-4">
+                        <ul class="rm-list-styles">
+                            <li>
+                                <a href="#" class="underline">foo</a>
+                            </li>
+                            <li>
+                                <a href="#" class="underline">bar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </mobile-menu-items>
+                <mobile-menu-items title="Two" url="http://www.google.com">
+                </mobile-menu-items>
+                <mobile-menu-items title="Three" url="http://www.google.com">
+                </mobile-menu-items>
+            </mobile-menu>
+            <!--main above the fold-->
+            <div class="bg-[--primary]">
+                <div style="" class="pl pr">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div>
+                                <h1 class="text-white text-center mt-3">
+                                    IgnitedCMS
+                                </h1>
+                                <div class="small-container">
+                                    <h4 class="text-white text-center">
+                                        A minimal Laravel CMS, that doesn't
+                                        get in your way and we're
+                                        giving it away for free.
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/images/laravel-white.svg" width="300" class="img-responsive img-center" />
+                        </div>
+                    </div>
+                    <div class="gap"></div>
+                </div>
+            </div>
+            <!--logos-->
+            <div class="row bg-light-gray pb-8 pt-8">
+                <div class="col-12 h-a v-a">
+                    <div class="nothing">
+                        <div class="small-container">
+                            <h3 class="text-center ">Download FREE with no catches</h3>
+                            <p class="text-center">It's our treat to you</p>
+                            <div class="text-center mt-8">
+                                <a href="">
+                                    <button class="btn btn-white ">Documentation</button>
+                                </a>
+
+                                <button-component variant="dark" class="ml-4">
+                                    Download
+                                </button-component>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--logos-->
+            <div class="bg-white">
+                <div class="default-container">
+                    <div class="row min-h-[600px]">
+                        <div class="col-6 v-a">
+                            <div class="nothing">
+                                <h3>Standing on the shoulders of giants</h3>
+                                <p>
+                                    Leverage agile frameworks to provide a robust synopsis for high level
+                                    overviews. Iterative approaches to corporate strategy foster collaborative
+                                    thinking to further the overall value proposition. Organically grow the
+                                    holistic world view of disruptive innovation via workplace diversity and
+                                    empowerment.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6 v-a h-a m-t">
+                            <div class="console relative bg-darker w-[400px] h-[370px] rounded-b-lg">
+                                <div
+                                    class="console-bar bg-black absolute v-a  border border-gray-700 h-[40px] w-full top-[-40px] rounded-t-lg ">
+                                    <div
+                                        class="console-bar-red ml-2 inline-block rounded-full bg-red-500 w-[10px] h-[10px]">
+                                    </div>
+                                    <div
+                                        class="console-bar-yellow ml-1 inline-block rounded-full bg-yellow-500 w-[10px] h-[10px]">
+                                    </div>
+                                    <div
+                                        class="console-bar-green ml-1 inline-block rounded-full bg-green-500 w-[10px] h-[10px]">
+                                    </div>
+                                </div>
+                                <pre class="hide-tablet p-8 text-white text-sm v-a">
+app()->post('/name/add', function () {
+   $body = request()->body();
+});
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- feature go here -->
+            <div class="bg-[--primary] pt-8 pb-8">
+                <div class="default-container">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="text-center text-white">Jam packed with features</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="mail" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Email</h4>
+                                    <p class="text-white">Full email SMTP control so that you can easily send email
+                                        templates. Setup includes
+                                        'Sendgrid' API
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="lock" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Authentication</h4>
+                                    <p class="text-white">Full baked authentication out of the box with password hashing
+                                        and optional JWT
+                                        settings. Includes email password reseting.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="sliders" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Page builders</h4>
+                                    <p class="text-white">Rapidly prototype your pages and easily add content inside
+                                        your backend</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="shield" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Secure</h4>
+                                    <p class="text-white">Never suffer the headache of a Wordpress exploit again, our
+                                        content management
+                                        system is engineered for security
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="feather" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Lightweight</h4>
+                                    <p class="text-white">Built with Vue and a Laravel core our CMS is superlight and a
+                                        breeze to use
+                                        and easy to extend.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="users" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">User Access</h4>
+                                    <p class="text-white">Easily set and customize permissions so users only have access
+                                        to the parts they need
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pb">
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="github" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Github</h4>
+                                    <p class="text-white">Download the latest source code from Github for FREE and stay
+                                        up to date</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="tablet" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">Mobile Ready</h4>
+                                    <p class="text-white">Our CMS is mobile ready and beautiful to use on all tablets
+                                        and devices</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt">
+                            <div class="row">
+                                <div class="col h-a text-white">
+                                    <i data-feather="shopping-cart" class="icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="text-center text-white">E-commerce</h4>
+                                    <p class="text-white">Easily configure Stripe and Paypal e-Commerce settings out of
+                                        the box</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end features -->
+            <!--testimonials-->
+            <div class="bg-light-gray cross-grid">
+                <div class="default-container">
+                    <!--templates-->
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="text-center mt-3">Testimonials</h3>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <avatar src="assets/images/lady.png">
+                                    </avatar>
+                                </div>
+                                <div class="col-10">
+                                    <h6>Helen Spiby</h6>
+                                    <p class="text-muted">
+                                        Leverage agile frameworks to provide a robust synopsis for high level overviews.
+                                        Iterative
+                                        approaches to corporate strategy foster
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <avatar src="assets/images/man.jpg">
+                                    </avatar>
+
+                                </div>
+                                <div class="col-10">
+                                    <h6>John Bolton</h6>
+                                    <p class="text-muted">
+                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                                        inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light-gray cross-grid  border-b border-[--gray]">
+                <div class="default-container">
+                    <div class="row min-h-[600px]">
+                        <div class="col-6 v-a">
+                            <div class="nothing">
+                                <h3>A beautiful syntax</h3>
+                                <p>
+                                    Leverage agile frameworks to provide a robust synopsis for high level
+                                    holistic world view of disruptive innovation via workplace diversity and
+                                    empowerment.
+                                </p>
+                                <p class="mt">
+                                    Leverage agile frameworks to provide a robust synopsis for high level
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6 v-a h-a mt">
+                            <div class=" console relative bg-darker w-[400px] h-[370px] rounded-b-lg">
+                                <div
+                                    class="console-bar bg-black absolute v-a  border border-gray-700 h-[40px] w-full top-[-40px] rounded-t-lg ">
+                                    <div
+                                        class="console-bar-red ml-2 inline-block rounded-full bg-red-500 w-[10px] h-[10px]">
+                                    </div>
+                                    <div
+                                        class="console-bar-yellow ml-1 inline-block rounded-full bg-yellow-500 w-[10px] h-[10px]">
+                                    </div>
+                                    <div
+                                        class="console-bar-green ml-1 inline-block rounded-full bg-green-500 w-[10px] h-[10px]">
+                                    </div>
+                                </div>
+                                <pre class=" p-8 text-white text-sm v-a">
+app()->post('/name/add', function () {
+   $body = request()->body();
+});
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light-grey">
+                <div class="default-container">
+                    <div class="row min-h-[600px]">
+                        <div class="col-6 v-a h-a ">
+                            <div class=" console relative bg-darker w-[400px] h-[370px] rounded-b-lg">
+                                <div
+                                    class="console-bar bg-black absolute v-a  border border-gray-700 h-[40px] w-full top-[-40px] rounded-t-lg ">
+                                    <div
+                                        class="console-bar-red ml-2 inline-block rounded-full bg-red-500 w-[10px] h-[10px]">
+                                    </div>
+                                    <div
+                                        class="console-bar-yellow ml-1 inline-block rounded-full bg-yellow-500 w-[10px] h-[10px]">
+                                    </div>
+                                    <div
+                                        class="console-bar-green ml-1 inline-block rounded-full bg-green-500 w-[10px] h-[10px]">
+                                    </div>
+                                </div>
+                                <pre class=" p-8 text-white text-sm v-a">
+app()->post('/name/add', function () {
+   $body = request()->body();
+});
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="col-6 v-a">
+                            <div>
+                                <h3>Lean and Fast</h3>
+                                <p>
+                                    Leverage agile frameworks to provide a robust synopsis for high level
+                                    holistic world view of disruptive innovation via workplace diversity and
+                                    empowerment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--testimonials-->
+            <!--latency section -->
+            <div class="bg-dark p-4">
+                <div class="default-container">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <h3 class="text-white text-center mb-8">Great developer experience</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div>
+                                <h5 class="text-white">Functional mode</h5>
+                                <p class="text-white">
+                                    Leverage agile frameworks to provide a robust synopsis for high level
+                                    holistic world view of disruptive innovation via workplace diversity and
+                                    empowerment.
+                                </p>
+                            </div>
+                            <div class="">
+                                <h5 class="text-white">CLI or GUI</h5>
+                                <p class="text-white">
+                                    thinking to further the overall value proposition. Organically grow the
+                                    holistic world view of disruptive innovation via workplace diversity and
+                                    empowerment.
+                                </p>
+                            </div>
+                            <div class=" p-2 border border-white rounded-[--big-radius] mt-8">
+                                <h5 class="text-white">Unit testing suite</h5>
+                                <p class="text-white">
+                                    Leverage agile frameworks to provide a robust synopsis for high level
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6 v-a h-a">
+                            <div class="col-6 v-a h-a mt">
+                                <div class=" console relative bg-darkest w-[400px] h-[370px] rounded-b-lg">
+                                    <div
+                                        class="console-bar bg-black absolute v-a  border border-gray-800 h-[40px] w-full top-[-40px] rounded-t-lg ">
+                                        <div
+                                            class="console-bar-red ml-2 inline-block rounded-full bg-red-500 w-[10px] h-[10px]">
+                                        </div>
+                                        <div
+                                            class="console-bar-yellow ml-1 inline-block rounded-full bg-yellow-500 w-[10px] h-[10px]">
+                                        </div>
+                                        <div
+                                            class="console-bar-green ml-1 inline-block rounded-full bg-green-500 w-[10px] h-[10px]">
+                                        </div>
+                                    </div>
+                                    <pre class=" p-8 text-white text-sm v-a">
+app()->post('/name/add', function () {
+   $body = request()->body();
+});
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--footer-->
+            <div class="footer bg-white border-t border-[--gray]">
+                <div class="default-container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col">
+                                    <h4>Solutions</h4>
+                                    <a href="#">Marketing</a> <br>
+                                    <a href="#">Analytics</a> <br>
+                                    <a href="#">Commerce</a> <br>
+                                    <a href="#">Guides</a>
+                                </div>
+                                <div class="col">
+                                    <h4>Solutions</h4>
+                                    <a href="#">Marketing</a> <br>
+                                    <a href="#">Analytics</a> <br>
+                                    <a href="#">Commerce</a> <br>
+                                    <a href="#">Guides</a>
+                                </div>
+                                <div class="col">
+                                    <h4>Solutions</h4>
+                                    <a href="#">Marketing</a> <br>
+                                    <a href="#">Analytics</a> <br>
+                                    <a href="#">Commerce</a> <br>
+                                    <a href="#">Guides</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row float-right hide-tablet">
+                                <div class="col">
+                                    <h4>Company</h4>
+                                    <img style="width:150px;" src="assets/images/ignitedcms-logo.svg"></img>
+                                </div>
+                            </div>
+                            <div class="row  show-tablet">
+                                <div class="col">
+                                    <h4>Company</h4>
+                                    <img style="width:150px;" src="assets/images/ignitedcms-logo.svg"></img>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gap"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/feather.js"></script>
+    <script src="assets/js/click-outside.js"></script>
+    <script src="assets/js/avatar.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+                test() {
+                    alert('going to login');
+                }
+            }
+        })
+    </script>
+    <script>
+        feather.replace({
+            class: "font-primary",
+        });
+    </script>
+</body>
+
+</html>
