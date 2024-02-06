@@ -156,5 +156,37 @@ Vue.component('input-component', {
   },
 });
 
+Vue.component('textarea-component', {
+  props: [''],
+  template: `
+  <textarea 
+    class="form-control form-dark" 
+    name="a" 
+    placeholder="testing" 
+    rows="4">
+  </textarea>
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
+Vue.component('textarea-component', {
+  props: [''],
+  template: `
+  <textarea 
+    class="form-control form-dark" 
+    name="a" 
+    placeholder="testing" 
+    rows="4">
+  </textarea>
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
 
 
