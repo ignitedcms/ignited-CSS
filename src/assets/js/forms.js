@@ -1,6 +1,6 @@
 /*
 |---------------------------------------------------------------
-| Forms  and typography components
+| Forms and typography components
 |---------------------------------------------------------------
 |
 |
@@ -25,7 +25,6 @@ Vue.component('paragraph', {
   `,
   data() {
      return {
-
      }
   },
 });
@@ -48,7 +47,6 @@ Vue.component('header1', {
   `,
   data() {
      return {
-
      }
   },
 });
@@ -71,7 +69,6 @@ Vue.component('header2', {
   `,
   data() {
      return {
-
      }
   },
 });
@@ -94,7 +91,6 @@ Vue.component('header3', {
   `,
   data() {
      return {
-
      }
   },
 });
@@ -117,7 +113,6 @@ Vue.component('header4', {
   `,
   data() {
      return {
-
      }
   },
 });
@@ -140,7 +135,6 @@ Vue.component('header5', {
   `,
   data() {
      return {
-
      }
   },
 });
