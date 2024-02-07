@@ -140,6 +140,23 @@ Vue.component('header5', {
 });
 
 
+Vue.component('checkbox-component', {
+  props: [''],
+  template: `
+  <div>
+    <input type="checkbox" name="" value="2" class="form-check-input">
+  </div>
+  
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
+
+
+
 Vue.component('input-component', {
   props: [''],
   template: `
@@ -155,6 +172,9 @@ Vue.component('input-component', {
      }
   },
 });
+
+
+
 
 Vue.component('textarea-component', {
   props: [''],
@@ -175,7 +195,9 @@ Vue.component('textarea-component', {
 Vue.component('label-component', {
   props: [''],
   template: `
-  <label for="title" class="text-dark">title</label>
+  <label for="title" class="text-dark">
+    <slot></slot>
+  </label>
   `,
   data() {
      return {
