@@ -172,15 +172,23 @@ Vue.component('textarea-component', {
   },
 });
 
-Vue.component('textarea-component', {
+Vue.component('label-component', {
   props: [''],
   template: `
-  <textarea 
-    class="form-control form-dark" 
-    name="a" 
-    placeholder="testing" 
-    rows="4">
-  </textarea>
+  <label for="title" class="text-dark">title</label>
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
+Vue.component('description', {
+  props: [''],
+  template: `
+  <div class="small text-muted text-dark">
+   <slot></slot>
+  </div>
   `,
   data() {
      return {
