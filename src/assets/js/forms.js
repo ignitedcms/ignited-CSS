@@ -141,22 +141,26 @@ Vue.component('header5', {
 
 
 Vue.component('checkbox-component', {
-  props: [''],
+  props: ['options','value'],
   template: `
-  <div>
-    <input 
-    type="checkbox" 
-    name="" 
-    value="2" 
-    @input="$emit('input', $event.target.value)"
-    class="form-check-input">
+   <div>
+    <div v-for="(option, index) in options" :key="index">
+      <input class="form-check-input" type="checkbox" :id="'checkbox-' + index" v-model="checkedOptions" :value="option" @change="handleChange">
+      <label :for="'checkbox-' + index">{{ option }}</label>
+    </div>
   </div>
   
   `,
   data() {
      return {
+        checkedOptions: [...this.value]
      }
   },
+   methods: {
+     handleChange() {
+        this.$emit('input', this.checkedOptions); // emit input event with updated value
+     }
+   }
 });
 
 Vue.component('select-component', {

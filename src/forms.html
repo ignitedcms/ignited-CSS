@@ -45,11 +45,10 @@
              This is just a  description to help
             </description>
 
-            {{bar}}
             <br>
-            <checkbox-component class="inline-block" v-model="bar">
-               testing
+            <checkbox-component v-model="selectedOptions" :options="options">
             </checkbox-component>
+            <p>Selected options: {{ selectedOptions }}</p>
 
             <label-component class="ml-1">
                testing
@@ -83,8 +82,9 @@
              el: '#app',
             data:{
                foo:'test',
-               bar:'baz',
-               boo:''
+               boo:'',
+               options: ['Option 1', 'Option 2', 'Option 3'], // array of options
+               selectedOptions: [] // initial value
             }
          })
       </script>
