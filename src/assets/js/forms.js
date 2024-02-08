@@ -146,7 +146,7 @@ Vue.component('checkbox-component', {
    <div>
     <div v-for="(option, index) in options" :key="index">
       <input class="form-check-input" type="checkbox" :id="'checkbox-' + index" v-model="checkedOptions" :value="option" @change="handleChange">
-      <label :for="'checkbox-' + index">{{ option }}</label>
+      <label class="ml-2 text-dark" :for="'checkbox-' + index">{{ option }}</label>
     </div>
   </div>
   
