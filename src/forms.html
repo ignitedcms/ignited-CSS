@@ -30,8 +30,8 @@
             <header4>Heading4</header4>
             <header5>Heading5</header5>
 
-            
-            <input-component>
+            {{foo}} 
+            <input-component v-model="foo" >
             </input-component>
 
             <textarea-component class="mt-4">
@@ -45,13 +45,29 @@
              This is just a  description to help
             </description>
 
-            <checkbox-component class="inline-block">
+            {{bar}}
+            <br>
+            <checkbox-component class="inline-block" v-model="bar">
                testing
             </checkbox-component>
 
             <label-component class="ml-1">
                testing
             </label-component>
+
+            <br>
+            {{boo}}
+            <br>
+            <select-component v-model="boo">
+               <select-item title="one">
+               </select-item >
+               <select-item title="two">
+               </select-item >
+               <select-item title="three">
+               </select-item >
+            </select-component>
+
+            <div class="gap"></div>
             
          </div>
       </div>
@@ -65,6 +81,11 @@
       <script>
          var app = new Vue({
              el: '#app',
+            data:{
+               foo:'test',
+               bar:'baz',
+               boo:''
+            }
          })
       </script>
       <script>

@@ -47,7 +47,7 @@ Vue.component('header1', {
   `,
   data() {
      return {
-     }
+}
   },
 });
 
@@ -144,7 +144,12 @@ Vue.component('checkbox-component', {
   props: [''],
   template: `
   <div>
-    <input type="checkbox" name="" value="2" class="form-check-input">
+    <input 
+    type="checkbox" 
+    name="" 
+    value="2" 
+    @input="$emit('input', $event.target.value)"
+    class="form-check-input">
   </div>
   
   `,
@@ -154,17 +159,47 @@ Vue.component('checkbox-component', {
   },
 });
 
+Vue.component('select-component', {
+  props: [''],
+  template: `
+  <select 
+   class="form-select" 
+   name="a" 
+   @input="$emit('input', $event.target.value)"
+   aria-label="Default select example"
+   >
+   <slot></slot>
+  </select>
+  
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
+Vue.component('select-item', {
+  props: ['title'],
+  template: `
+     <option :value="title">{{title}}</option>
+  `,
+  data() {
+     return {
+     }
+  },
+});
 
 
 
 Vue.component('input-component', {
-  props: [''],
+  props: ['value'],
   template: `
   <input 
    class="form-control form-dark" 
    type="text"
    name="a" 
-   value="foo" 
+   :value="value" 
+   @input="$emit('input',$event.target.value)"
    placeholder="test" />
   `,
   data() {
