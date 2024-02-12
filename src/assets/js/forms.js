@@ -163,6 +163,32 @@ Vue.component('checkbox-component', {
    }
 });
 
+Vue.component('radio-component', {
+  props: ['options','value'],
+  template: `
+   <div>
+    <div v-for="(option, index) in options" :key="index">
+      <input class="form-check-input" type="radio" :id="'radio-' + index" v-model="radioOptions" :value="option" @change="handleChange">
+      <label class="ml-2 text-dark" :for="'radio-' + index">{{ option }}</label>
+    </div>
+  </div>
+  
+  `,
+  data() {
+     return {
+        radioOptions: [...this.value]
+     }
+  },
+   methods: {
+     handleChange() {
+        this.$emit('input', this.radioOptions); // emit input event with updated value
+     }
+   }
+});
+
+
+
+
 Vue.component('select-component', {
   props: [''],
   template: `

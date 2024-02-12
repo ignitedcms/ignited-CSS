@@ -50,6 +50,12 @@
             </checkbox-component>
             <p>Selected options: {{ selectedOptions }}</p>
 
+            <br>
+            <label for="radios">radios</label>
+            <radio-component v-model="selectedRadioOptions" :options="options">
+            </radio-component>
+            <p>Selected options: {{ selectedRadioOptions }}</p>
+
             <label-component class="ml-1">
                testing
             </label-component>
@@ -84,7 +90,8 @@
                foo:'test',
                boo:'',
                options: ['Option 1', 'Option 2', 'Option 3'], // array of options
-               selectedOptions: [] // initial value
+               selectedOptions: [], // initial value
+               selectedRadioOptions: '' // initial value
             }
          })
       </script>
