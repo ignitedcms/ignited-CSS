@@ -199,8 +199,6 @@ Vue.component('radio-component', {
 });
 
 
-
-
 Vue.component('select-component', {
   props: [''],
   template: `
@@ -219,6 +217,7 @@ Vue.component('select-component', {
      }
   },
 });
+
 
 Vue.component('select-item', {
   props: ['title'],
