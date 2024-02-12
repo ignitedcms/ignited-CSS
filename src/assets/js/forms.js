@@ -193,7 +193,7 @@ Vue.component('select-component', {
   props: [''],
   template: `
   <select 
-   class="form-select" 
+   class="form-select form-dark" 
    name="a" 
    @input="$emit('input', $event.target.value)"
    aria-label="Default select example"
