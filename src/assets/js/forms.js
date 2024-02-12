@@ -2,7 +2,7 @@
 |---------------------------------------------------------------
 | Forms and typography components
 |---------------------------------------------------------------
-|
+| Currently beta version
 |
 | @author: IgnitedCMS
 | @license: MIT
@@ -242,14 +242,14 @@ Vue.component('input-component', {
 
 
 Vue.component('textarea-component', {
-  props: [''],
+  props: ['value'],
   template: `
   <textarea 
     class="form-control form-dark" 
     name="a" 
+    @input="$emit('input',$event.target.value)"
     placeholder="testing" 
-    rows="4">
-  </textarea>
+    rows="4">{{value}}</textarea>
   `,
   data() {
      return {

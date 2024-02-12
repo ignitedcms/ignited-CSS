@@ -34,7 +34,8 @@
             <input-component v-model="foo" >
             </input-component>
 
-            <textarea-component class="mt-4">
+            {{textarea}}
+            <textarea-component class="mt-4" v-model="textarea">
             </textarea-component>
 
             <label-component>
@@ -88,6 +89,7 @@
              el: '#app',
             data:{
                foo:'test',
+               textarea:'hello',
                boo:'',
                options: ['Option 1', 'Option 2', 'Option 3'], // array of options
                selectedOptions: [], // initial value
