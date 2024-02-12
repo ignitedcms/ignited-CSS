@@ -145,7 +145,13 @@ Vue.component('checkbox-component', {
   template: `
    <div>
     <div v-for="(option, index) in options" :key="index">
-      <input class="form-check-input" type="checkbox" :id="'checkbox-' + index" v-model="checkedOptions" :value="option" @change="handleChange">
+      <input 
+       class="form-check-input" 
+       type="checkbox" 
+       :id="'checkbox-' + index" 
+       v-model="checkedOptions" 
+       :value="option" 
+       @change="handleChange">
       <label class="ml-2 text-dark" :for="'checkbox-' + index">{{ option }}</label>
     </div>
   </div>
@@ -168,7 +174,13 @@ Vue.component('radio-component', {
   template: `
    <div>
     <div v-for="(option, index) in options" :key="index">
-      <input class="form-check-input" type="radio" :id="'radio-' + index" v-model="radioOptions" :value="option" @change="handleChange">
+      <input 
+      class="form-check-input" 
+      type="radio" 
+      :id="'radio-' + index" 
+      v-model="radioOptions" 
+      :value="option" 
+      @change="handleChange">
       <label class="ml-2 text-dark" :for="'radio-' + index">{{ option }}</label>
     </div>
   </div>
